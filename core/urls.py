@@ -25,6 +25,7 @@ from pages import views
 urlpatterns = [
     path("admin/", admin.site.urls),                  # http://127.0.0.1:8000/admin
     path('',include("pages.urls")),                   # http://127.0.0.1:8000/
+    path('courses/',include("courses.urls")),                   # http://127.0.0.1:8000/
 ] 
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # Serve static and media files during development
