@@ -38,7 +38,7 @@
 
                     <div class="headerLinksWrap">
                         <div class="navbarLogo">
-                            <a href="{% url "home" %}" class="headerLogo">
+                            <a href="{% url "home" %}" class="headerLogo  {% if '/' == request.path %} which_page {% endif %}">
                                 <img class="some-icon-light" src="{% static '/assets/images/footer/logo-dark.svg' %}"
                                 alt="">
                                 <img class="some-icon-dark" src="{% static 'assets/images/footer/logo-light.svg' %}"
@@ -52,13 +52,13 @@
 
                         <nav>
                             <ul class="headerNav">
-                                <li>
+                                <li class = "{% if 'features/' in request.path %} which_page {% endif %}">
                                     <a href="{% url "features" %}" class="headerLink">Features</a>
                                 </li>
-                                <li>
+                                <li class = "{% if 'pricing/' in request.path %} which_page {% endif %}">
                                     <a href="{% url "pricing" %}" class="headerLink">Pricing</a>
                                 </li>
-                                <li>
+                                <li class = "{% if 'download/' in request.path %} which_page {% endif %}">
                                     <a href="{% url "download" %}" class="headerLink">Download</a>
                                 </li>
                                 <li class="drop">
@@ -68,7 +68,8 @@
                                     </div>
                                     <ul class="classDropdownMenu">
                                         <li>
-                                            <a href="{% url "class01" %}" class="class_link">
+                                            {% comment %} <a href="{% url "class01" %}" class="class_link"> {% endcomment %}
+                                            <a href="#" class="class_link">
                                                 <div class="link_icon">
                                                     <i class="fa-brands fa-youtube"></i>
                                                 </div>
@@ -76,7 +77,8 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{% url "class02" %}" class="class_link">
+                                            {% comment %} <a href="{% url "class02" %}" class="class_link"> {% endcomment %}
+                                            <a href="#" class="class_link">
                                                 <div class="link_icon">
                                                     <i class="fa-solid fa-bolt"></i>
                                                 </div>
@@ -85,7 +87,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class = "{% if 'lifestyle/' in request.path %} which_page {% endif %}">
                                     <a href="{% url "lifestyle" %}" class="headerLink">Lifestyle</a>
                                 </li>
                             </ul>
@@ -279,7 +281,8 @@
                             <ul>
                                 <li><a class="footer__link" href="{% url "lifestyle" %}">Lifestyle</a></li>
                                 <li><a class="footer__link" href="{% url "pricing" %}">Pricing</a></li>
-                                <li><a class="footer__link" href="{% url "class02" %}">Class</a></li>
+                                {% comment %} <li><a class="footer__link" href="{% url "class02" %}">Class</a></li> {% endcomment %}
+                                <li><a class="footer__link" href="#">Class</a></li>
                                 <li><a class="footer__link" href="{% url "features" %}">Features</a></li>
                                 <li><a class="footer__link" href="{% url "download" %}">Download</a></li>
                             </ul>

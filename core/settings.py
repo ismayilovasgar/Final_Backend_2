@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     "filter",
     # Other apps
     "django_cleanup",
+    # my app 2
+    "pages",
+    "courses",
 ]
 
 MIDDLEWARE = [
