@@ -1,0 +1,676 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+
+{% comment %} {% block custom_favicon %}{% endblock custom_favicon %} {% endcomment %}
+
+{% block swiper_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+{% endblock swiper_css %}
+
+{% block custom_css %} 
+<link rel="stylesheet" href="{% static 'css/home/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/home/responsive.css' %}">
+{% endblock custom_css %}
+
+
+{% comment %} *--- Content ---* {% endcomment %}
+{% block content %}
+
+
+
+    {% comment %}? <!--? heroHeader Start  --> {% endcomment %}
+    <section class="heroHeader lightmzode">
+        <div class="container">
+            <div class="wrap">
+                <div class="contentCol">
+                    <div class="overlap">
+                        <p class="stage">Train smarter. get stronger</p>
+                        <h2 class="mainTitle">
+                            <p>Simple fitness experience for everyone.</p>
+                        </h2>
+                        <h3 class="mainTitle">
+                            Simple fitness experience for everyone.
+                        </h3>
+
+                        <p class="mainText">Track your workouts, get better results, and be the bestversion of you. Less
+                            thinking, more lifting.
+                        </p>
+                        <div class="buttons_bottomm">
+                            <button class="btn btn_orange">Download App</button>
+                            <button class="btn btn_white">Book a class</button>
+                        </div>
+                    </div>
+
+                    <button class="button_arrow_bottom">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+
+                </div>
+
+                <div class="previewCol">
+                    <img class="some-icon-light" src="{% static 'assets/images/home/heroHeader/Light.png' %}" alt="">
+                    <img class="some-icon-dark" src="{% static 'assets/images/home/heroHeader/Dark.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    {% comment %}! <!--! heroHeader End  --> {% endcomment %}
+    {% comment %}? <!--? clients Start  --> {% endcomment %}
+    <section class="clients lightmode">
+        <div class="container">
+            <div class="clientsTitle">
+                <p>Trusted by more than 2M users worldwide</p>
+                <p class="mobileText">We work with people from over the world</p>
+            </div>
+            <div class="clients_swiper" style="overflow: hidden;">
+                <ul class="swiper-wrapper"> 
+                    <li class="swiper-slide"><img src="{% static 'assets/images/home/clients/logo01.png' %}" alt=""></li>
+                    <li class="swiper-slide"><img src="{% static 'assets/images/home/clients/logo02.png' %}" alt=""></li>
+                    <li class="swiper-slide"><img src="{% static 'assets/images/home/clients/logo03.png' %}" alt=""></li>
+                    <li class="swiper-slide"><img src="{% static 'assets/images/home/clients/logo04.png' %}" alt=""></li>
+                    <li class="swiper-slide"><img src="{% static 'assets/images/home/clients/logo05.png' %}" alt=""></li>
+                    <!-- <li class="swiper-slide"><img src="% static 'assets/images/home/clients/logo06.png' %}" alt=""></li> -->
+                </ul>
+            </div>
+        </div>
+    </section>
+    {% comment %}! <!--! clients End  --> {% endcomment %}
+
+    {% comment %}? <!--? steps Start  --> {% endcomment %}
+    <div class="steps lightmode">
+        <div class="container ">
+            <div class="wrapper">
+                <div class="stepsHead">
+                    <h2 class="hline2">How it work</h2>
+                    <p class="body2">
+                        Stacks is a production-ready library of stackable <br>
+                        content blocks built in React Native.
+                    </p>
+                </div>
+                <div class="myswiper">
+                    <div class="stepsList ">
+                        <div class="stepsItem">
+                            <div class="stepsPreview">
+                                <img src="{% static 'assets/images/home/steps/donwload.svg' %}" alt="">
+                            </div>
+                            <div class="stepsNumber">Step 1</div>
+                            <div class="stepsSubtitle">Download</div>
+                            <div class="stepsContent">Fitness Pro tracks your workouts, get better results, and be the
+                                best
+                                version of you.
+                            </div>
+                        </div>
+
+                        <div class="stepsItem ">
+                            <div class="stepsPreview">
+                                <img src="{% static 'assets/images/home/steps/key.svg' %}" alt="">
+                            </div>
+                            <div class="stepsNumber">Step 2</div>
+                            <div class="stepsSubtitle">Choose your trainner</div>
+                            <div class="stepsContent">Fitness Pro tracks your workouts, get better results, and be the
+                                best
+                                version of you.
+                            </div>
+                        </div>
+
+                        <div class="stepsItem ">
+                            <div class="stepsPreview">
+                                <img src="{% static 'assets/images/home/steps/media.svg' %}" alt="">
+                            </div>
+                            <div class="stepsNumber">Step 3</div>
+                            <div class="stepsSubtitle">Set the goals</div>
+                            <div class="stepsContent">Fitness Pro tracks your workouts, get better results, and be the
+                                best
+                                version of you.
+                            </div>
+                        </div>
+
+                        <div class="stepsItem ">
+                            <div class="stepsPreview">
+                                <img src="{% static '/assets/images/home/steps/stopwatch.svg' %}" alt="">
+                            </div>
+                            <div class="stepsNumber">Step 4</div>
+                            <div class="stepsSubtitle">Workout time</div>
+                            <div class="stepsContent">Fitness Pro tracks your workouts, get better results, and be the
+                                best
+                                version of you.
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="navigations">
+                <ul>
+                    <li>
+                        <img src="{% static './assets/images/home/steps/left_arrow.svg' %}" alt="">
+                    </li>
+                    <li>
+                        <img src="{% static './assets/images/home/steps/right_arrow.svg' %}" alt="">
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    {% comment %}! <!--! steps End  --> {% endcomment %}
+    {% comment %}? <!--? intro Start  --> {% endcomment %}
+    <section class="intro lightmode">
+        <div class="container">
+            <div class="wrapper">
+
+                <div class="introContent">
+                    <h2 class="hline1">Train smarter, get stronger.</h2>
+                    <p class="body1">Fitness Pro helps track your workouts, get better results, and be the best
+                        version of you.Less thinking, more lifting &#128293;&#127936;
+                    </p>
+                    <button class="btn btn_orange">Start free trial</button>
+                </div>
+
+                <div class="introGallery">
+                    <img src="{% static 'assets/images/home/intro/Light.png' %}" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    {% comment %} <!--! intro End  --> {% endcomment %}
+    {% comment %} <!--? BookPoster Start  --> {% endcomment %}
+    <section class="bookPoster softlightmode">
+        <div class="container">
+            <div class="wrapper">
+
+                <div class="bookGallery">
+                    <img class="some-icon-light" src="{% static 'assets/images/home/bookPoster/light.png' %}" alt="">
+                    <img class="some-icon-dark" src="{% static './assets/images/home/bookPoster/dark.png' %}" alt="">
+                </div>
+
+                <div class="bookMenu lightmode">
+                    <h2 class="bookTitle">Book a class</h2>
+                    <p class="bookInfo">
+                        Track your workouts, get better results, and be the best version of you.
+                        Less thinking, more lifting.
+                    </p>
+
+                    <div class="bookList">
+                        <div class="bookItem">
+                            <div class="bookIcon">
+                                <img src="{% static 'assets/images/home/bookPoster/user.svg' %}" alt="">
+                            </div>
+                            <div class="bookDetails">
+                                <h3 class="bookSubtitle">For Beginners</h3>
+                                <p class="bookContent">You never workout before, it's now a good start</p>
+                            </div>
+                        </div>
+
+                        <div class="bookItem">
+                            <div class="bookIcon">
+                                <img src="{% static 'assets/images/home/bookPoster/media.svg' %}" alt="">
+                            </div>
+                            <div class="bookDetails">
+                                <h3 class="bookSubtitle">Advanced Classes</h3>
+                                <p class="bookContent">You never workout before, it's now a good start</p>
+                            </div>
+                        </div>
+
+                        <div class="bookItem">
+                            <div class="bookIcon">
+                                <img src="{% static 'assets/images/home/bookPoster/lighting.svg' %}" alt="">
+                            </div>
+                            <div class="bookDetails">
+                                <h3 class="bookSubtitle">Premium(limited)</h3>
+                                <p class="bookContent">You never workout before, it's now a good start</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="bookNote">
+                        <span class="bookGreen">10% Discount</span> if you're already using the
+                        <span class="bookBlack">Fitness Pro </span>on App Store
+                    </p>
+                    <!-- <div class="bookBtn"> -->
+                    <button class="btn btn_orange">
+                        <p>Book a class</p>
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </button>
+                    <!-- </div> -->
+                </div>
+
+            </div>
+        </div>
+    </section>
+    {% comment %} <!--! BookPoster End  --> {% endcomment %}
+    {% comment %}? <!--? details Start  --> {% endcomment %}
+    <section class="details lightmode">
+    <div class="container">
+        <div class="detailsHead">
+            <p class="stageSmall">New workouts added every week</p>
+            <h2 class="detailsTitle">A new fitness experience for everyone</h2>
+        </div>
+        <div class="detailsList">
+
+            <div class="detailsItem">
+                <div class="detailsIcon">
+                    <img class="some-icon-light" src="{% static 'assets/images/features/details/img1.svg' %}" alt="">
+                    <img class="some-icon-dark" src="{% static 'assets/images/features/details/img1_dark.svg' %}" alt="">
+                </div>
+                <h3 class="detailsCategory">Keep track of calories and macros</h3>
+                <p class="detailsContent">
+                    Fitness Pro helps track your workouts, get better results, and be the best
+                    version of you.Less thinking!
+                </p>
+            </div>
+            <div class="detailsItem">
+                <div class="detailsIcon">
+                    <img class="some-icon-light" src="{% static 'assets/images/features/details/img2.svg' %}" alt="">
+                    <img class="some-icon-dark" src="{% static 'assets/images/features/details/img2_dark.svg' %}" alt="">
+
+                </div>
+                <h3 class="detailsCategory">Keep track of calories and macros</h3>
+                <p class="detailsContent">
+                    Fitness Pro helps track your workouts, get better results, and be the best
+                    version of you.Less thinking!
+                </p>
+            </div>
+            <div class="detailsItem">
+                <div class="detailsIcon">
+                    <img class="some-icon-light" src="{% static 'assets/images/features/details/img3.svg' %}" alt="">
+                    <img class="some-icon-dark" src="{% static 'assets/images/features/details/img3_dark.svg' %}" alt="">
+
+                </div>
+                <h3 class="detailsCategory">Keep track of calories and macros</h3>
+                <p class="detailsContent">
+                    Fitness Pro helps track your workouts, get better results, and be the best
+                    version of you.Less thinking!
+                </p>
+            </div>
+
+        </div>
+    </div>
+    </section>
+    {% comment %}! <!--! details End  --> {% endcomment %}
+
+    {% comment %}? <!--? homeAbout Start  --> {% endcomment %}
+    <section class="homeAbout lightmode">
+        <div class="container">
+            <div class="topRow">
+                <div class="leftCol">
+                    <div class="aboutStage">
+                        fitness pro
+                    </div>
+                </div>
+                <div class="rightCol">
+                    <h2 class="aboutTitle">Simple, powerful, easy-to-use</h2>
+                    <p class="aboutInfo">Track your workouts, get better results, and be the best version of you. Less
+                        thinking, more lifting.
+                    </p>
+                </div>
+            </div>
+            <div class="bottomRow">
+                <div class="leftCol">
+                    <div class="aboutList">
+                        <div class="aboutItem">
+                            <div class="aboutNumber">01</div>
+                            <h2 class="aboutSubtitle">Intuitive and clean design</h2>
+                            <p class="aboutContent">Track your workouts, get better results, and be the best version of
+                                you.
+                            </p>
+                        </div>
+
+                        <div class="aboutItem">
+                            <div class="aboutNumber">02</div>
+                            <h2 class="aboutSubtitle">Intuitive and clean design</h2>
+                            <p class="aboutContent">Track your workouts, get better results, and be the best version of
+                                you.
+                            </p>
+                        </div>
+
+                        <div class="aboutItem">
+                            <div class="aboutNumber">03</div>
+                            <h2 class="aboutSubtitle">Intuitive and clean design</h2>
+                            <p class="aboutContent">Track your workouts, get better results, and be the best version of
+                                you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightCol">
+                    <div class="aboutPreview">
+                        <img class="some-icon-light" src="{% static 'assets/images/home/homeAbout/fitness_scene_light.png' %}" alt="">
+                        <img class="some-icon-dark" src="{% static 'assets/images/home/homeAbout/fitness_scene_dark.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% comment %} <!--! homeAbout End  --> {% endcomment %}
+    
+    {% comment %}? <!--? trainers Start  --> {% endcomment %}
+    <section class="trainers lightmode">
+        <div class="container">
+            <div class="trainerHead">
+                <h2 class="trainerTitle">Meet our pro trainers</h2>
+                <p class="trainerInfo">From all over the world, we select and provide you a team of seasoned trainers.
+                    What's more, the
+                    1-on-1 live practice mode helps you quickly get great results.
+                </p>
+                <div class="trainerNav">
+
+                    <div class="select sorting" id="toggle">
+                        <input type="text" name="style" class="current" value="Yoga" />
+                        <div class="select_arrow">
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <ul class="list mobil_view" id="popup">
+
+                            {% for key,value in categorys  %}
+                                <li data-value="{{value| cut:" " }}" class="option">{{value}}</li>
+                            {% endfor %}
+                        
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="trainersList">
+                <div class="listWrap">
+
+                    {% comment %} {% for trainer  in trainers %}
+                        <div class="trainerItem">
+                            <div class="profile">
+                                <img src="{{ trainer.image.url }}" alt="">
+                            </div>
+                            <div class="trainerName">{{ trainer.first_name}} {{ trainer.last_name}}</div>
+                            <div class="trainerPosition">
+                                
+                               {{ trainer.profession }}
+                            
+                            </div>
+                        </div>
+                    {% endfor %} {% endcomment %}
+
+                    {% comment %} <div class="trainerItem">
+                        <div class="profile">
+                            <img src="{% static 'assets/images/home/trainers/avatar-1.png' %}" alt="">
+                        </div>
+                        <div class="trainerName">Baron Toy</div>
+                        <div class="trainerPosition">Yoga Master</div>
+                    </div>
+
+                    <div class="trainerItem">
+                        <div class="profile">
+                            <img src="{% static 'assets/images/home/trainers/avatar-2.png' %}" alt="">
+                        </div>
+                        <div class="trainerName">Baron Toy</div>
+                        <div class="trainerPosition">Yoga Master</div>
+                    </div>
+
+                    <div class="trainerItem">
+                        <div class="profile">
+                            <img src="{% static 'assets/images/home/trainers/avatar-3.png' %}" alt="">
+                        </div>
+                        <div class="trainerName">Baron Toy</div>
+                        <div class="trainerPosition">Yoga Master</div>
+                    </div>
+
+                    <div class="trainerItem">
+                        <div class="profile">
+                            <img src="{% static 'assets/images/home/trainers/avatar-4.png' %}" alt="">
+                        </div>
+                        <div class="trainerName">Baron Toy</div>
+                        <div class="trainerPosition">Yoga Master</div>
+                    </div>
+
+                    <div class="trainerItem">
+                        <div class="profile">
+                            <img src="{% static 'assets/images/home/trainers/avatar-5.png' %}" alt="">
+                        </div>
+                        <div class="trainerName">Baron Toy</div>
+                        <div class="trainerPosition">Yoga Master</div>
+                    </div>
+
+                    <div class="trainerItem">
+                        <div class="profile">
+                            <img src="{% static 'assets/images/home/trainers/avatar-6.png' %}" alt="">
+                        </div>
+                        <div class="trainerName">Baron Toy</div>
+                        <div class="trainerPosition">Yoga Master</div>
+                    </div> {% endcomment %}
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    {% comment %} <!--! trainers End  --> {% endcomment %}
+
+    {% comment %}? <!-- * Slider --> {% endcomment %}
+    <section class="review lightmode">
+        <div class="container">
+
+            <div class="review-swiper">
+
+                <div class="review-swiper-content">
+                    <div class="swiper-wrapper">
+
+                        {% for review in reviews %}
+                        <div class="swiper-slide">
+                            <div class="reviewItem">
+                                <div class="reviewLogo">
+                                    <img src="{{ review.logo.url}}" alt="">
+                                </div>
+                                <div class="reviewTitle"> {{ review.content}}
+                                </div>
+                                <div class="reviewAuthor">{{ review.author }}</div>
+                                <div class="reviewPosition">{{ review.designer }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="reviewBtns">
+                <button class="previoustBtn"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="nextBtn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+
+        </div>
+    </section>
+    {% comment %}! <!--! review End  --> {% endcomment %}
+
+
+    {% comment %}? <!--? quality Start  --> {% endcomment %}
+    <section class="quality lightmode">
+        <div class="container">
+            <div class="qualityList">
+
+                <div class="qualityItem">
+                    <div class="qualityPreview">
+                        <img src="{% static 'assets/images/home/quality/user.svg' %}" alt="">
+                    </div>
+                    <div class="qualityCounter">
+                        <p>1M</p>
+                    </div>
+                    <div class="qualityTitle">Happy Users</div>
+                    <div class="qualityContent">Stacks is a production-readylibrary of stackable content blocks built in
+                        React Native.
+                    </div>
+                </div>
+
+                <div class="qualityItem">
+                    <div class="qualityPreview">
+                        <img src="{% static 'assets/images/home/quality/plugin.svg' %}" alt="">
+                    </div>
+                    <div class="qualityCounter">
+                        <p>1.2M</p>
+                    </div>
+                    <div class="qualityTitle">Downloads</div>
+                    <div class="qualityContent">
+                        Stacks is a production-readylibrary of stackable content blocks built in React Native.
+                    </div>
+                </div>
+
+                <div class="qualityItem">
+                    <div class="qualityPreview">
+                        <img src="{% static 'assets/images/home/quality/flag.svg' %}" alt="">
+                    </div>
+                    <div class="qualityCounter">
+                        <p>50+</p>
+                    </div>
+                    <div class="qualityTitle">Countries</div>
+                    <div class="qualityContent">Stacks is a production-readylibrary of stackable content blocks built in
+                        React Native.
+                    </div>
+                </div>
+
+                <div class="qualityItem">
+                    <div class="qualityPreview">
+                        <img src="{% static 'assets/images/home/quality/facebook.svg' %}" alt="">
+                    </div>
+                    <div class="qualityCounter">
+                        <p class="appearence_1">900k+</p>
+                        <p class="appearence_2">30k+</p>
+                    </div>
+                    <div class="qualityTitle">Likes on Facebook</div>
+                    <div class="qualityContent">Stacks is a production-readylibrary of stackable content blocks built in
+                        React Native.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    {% comment %} <!--! quality End  --> {% endcomment %}
+
+    {% comment %}? <!--? advantages Start  --> {% endcomment %}
+    <section class="advantages softlightmode">
+        <div class="container">
+
+            <div class="advantagesHead">
+                <h2 class="advantagesTitle">For any space, at any pace</h2>
+                <p class="advantagesInfo">From the comfort of your living room to a hotel room across the globe, we put
+                    the best classes at your fingertips. No WiFi? Download videos offline for a practice that moves with
+                    you.
+                </p>
+            </div>
+
+            <div class="advantagesList">
+
+                <div class="advantagesItem">
+                    <div class="profile">
+                        {% comment %} <!-- <img class="" src="./assets/images/home/advantages/hand-grip-circle@1x.png" alt=""> --> {% endcomment %}
+                        <img src="{% static 'assets/images/home/advantages/alet_95_154.png' %}" alt="">
+                    </div>
+                    <p class="advantagesSubtitle">Intuitive and clean design</p>
+                </div>
+                <div class="advantagesItem">
+                    <div class="profile">
+                        {% comment %} <!-- <img class="" src="assets/images/home/advantages/gloves-circle@1x.png" alt=""> --> {% endcomment %}
+                        <img src="{% static 'assets/images/home/advantages/elcekler_131_152.png' %}" alt="">
+                    </div>
+                    <p class="advantagesSubtitle">Track your progress easily</p>
+                </div>
+                <div class="advantagesItem">
+                    <div class="profile">
+                        {% comment %} <!-- <img class="" src="./assets/images/home/advantages/bottle-circle@1x.png" alt=""> --> {% endcomment %}
+                        <img src="{% static 'assets/images/home/advantages/bottle_64_168.png' %}" alt="">
+                    </div>
+                    <p class="advantagesSubtitle">Syncs with Apple Health</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    {% comment %} <!--! advantages End  --> {% endcomment %}
+
+    {% comment %}? <!--? workouts Start  --> {% endcomment %}
+    <section class="workouts lightmode">
+        <div class="container">
+            <div class="workoutsFrame">
+
+                <div class="workoutsWrap">
+                    <h2 class="hline2 workoutsTitle">All your workouts,in your pocket</h2>
+                    <p class="body1 workoutsInfo">Fitness Pro helps track your workouts, get better results, and be the
+                        best version of you.Less thinking!
+                    </p>
+                    <ul class="workoutsList">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <p>Fitness Pro Cloud</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <p> Syncs with Google Fit</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <p> Syncs with Apple Health</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <p>Track your progress easily</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <p> Intuitive and clean design</p>
+                        </li>
+                    </ul>
+                    <div class="workoutsBtns">
+                        <button class="btn btn_orange ">Choose a plan</button>
+                        <button class="btn btn_white ">Request a demo</button>
+                    </div>
+                </div>
+
+                <div class="workoutsGallery">
+                    <img class="some-icon-light" src="{% static 'assets/images/home/workouts/imageLight.png' %}" alt="">
+                    <img class="some-icon-dark" src="{% static 'assets/images/home/workouts/imageDark.png' %}" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    {% comment %} <!--! workouts End  --> {% endcomment %}
+
+    {% comment %}? <!--? offers  Start  --> {% endcomment %}
+    <section class="offers lightmode">
+        <div class="container">
+
+            <div class="frame">
+                <p class="stage">try it free for 14 days &#127934;</p>
+                <h2 class="offersTitle">Anywhere you want. Anytime you want.</h2>
+                <p class="offersText">Get started with two free weeks of unlimited yoga, fitness, and meditation
+                    classes.Cancel anytime.
+                </p>
+                <button class="offersButton"> <a class="btn btn_orange " href="#">Start Free Trial</a></button>
+            </div>
+
+        </div>
+    </section>
+    {% comment %} <!--! offers  End  --> {% endcomment %}
+
+
+
+
+
+
+
+{% endblock content %}
+{% comment %} *--- Content ---* {% endcomment %}
+
+{% block swiper_js %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{% endblock swiper_js %}
+
+
+{% block custom_js %}
+    <script src="{% static '/js/home/home.js' %}"></script>
+{% endblock custom_js  %}

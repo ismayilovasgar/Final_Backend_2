@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Single Blog{% endblock title %}
+{% comment %} {% block custom_favicon %}{% endblock custom_favicon %} {% endcomment %}
+
+{% block swiper_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+{% endblock swiper_css %}
+
+
+{% block custom_css %} 
+<link rel="stylesheet" href="{% static 'css/singleblog/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/singleblog/responsive.css' %}">
+{% endblock custom_css %}
+
+
+{% comment %} *--- Content ---* {% endcomment %}
+{% block content %}
+
+    {% comment %}? <!-- ? article Start --> {% endcomment %}
+        <section class="article lightmode">
+            <div class="container">
+                <div class="articleHead">
+                    <h1 class="articleTitle">
+                        Stories from Fitness Pro community.
+                    </h1>
+                    <button class="articleBtn">
+                        <img src="{% static 'assets/images/singleblog/article/button.svg' %}" alt="">
+                    </button>
+                </div>
+
+
+                <div class="articleRow">
+                    <div class="articleLeftCol">
+                        <div class="articlePreview">
+                            {% comment %} <img src="{% static 'assets/images/singleblog/article/history-pic.png' %}" alt=""> {% endcomment %}
+                            <img src="{{ trainer.move_image.url }}" alt="">
+                        </div>
+                    </div>
+
+                    <div class="articleRightCol">
+                        <h2 class="articleTitle">
+                            As easy as hitting play
+                        </h2>
+                        <div class="articleInfo text_justify">
+                            The Stacks series of products: Stacks: Landing Page Kit, Stacks: Portfolio Kit, Stacks:
+                            eCommerce
+                            Kit. "Stacks is a production-ready library of stackable content blocks built in React Native.
+                        </div>
+                        <div class="articlePreview">
+                            <img src="{% static 'assets/images/singleblog/article/post-pic.png' %}" alt="">
+                        </div>
+                        <div class="articleContent">
+                            <p class="text_justify">
+                                The Stacks series of products: Stacks: Landing Page Kit, Stacks: Portfolio Kit, Stacks:
+                                eCommerce Kit. "Stacks is a production-ready library of stackable content blocks built in
+                                React
+                                Native.
+                            </p>
+                            <p class="text_justify">
+                                Mix-and-match dozens of responsive elements to quickly configure your favorite landing page
+                                layouts or hit the ground running with 10 pre-built templates, all in light or dark mode."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    {% comment %}! <!-- ! article End --> {% endcomment %}
+
+
+    {% comment %}? <!--? review Start  --> {% endcomment %}
+        {% include "includes_partials/review.html" with theme="softlightmode" %}
+    {% comment %}! <!--? quality Start  --> {% endcomment %}
+
+
+    {% comment %}? <!-- ? story Start --> {% endcomment %}
+    <section class="story lightmode">
+        <div class="container">
+            <div class="stageSmall">
+                yoga story
+            </div>
+            <div class="storyRow">
+                <div class="storyLeftCol">
+                    <div class="storyPreview">
+                        <img src="{% static 'assets/images/singleblog/story/story-pic.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="storyRightCol">
+                    <div class="topTitle">
+                        <h2 class="storyTitle">
+                            {{ trainer.move_title}}
+                        </h2>
+                        <div class="sotryInfo ">
+                            The Stacks series of products: Stacks: Landing Page Kit, Stacks: Portfolio Kit, Stacks:
+                            eCommerce Kit. "Stacks is a production-ready library of stackable content blocks built in
+                            React Native.
+                        </div>
+                    </div>
+                    <div class="storyList">
+
+                        <div class="storyItem">
+                            <div class="storyCategory">
+                                How it work
+                            </div>
+                            <div class="storyContent ">
+                                Mix-and-match dozens of responsive elements to quickly configure your favorite landing
+                                page layouts
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="storyItem">
+                            <div class="storyCategory">
+                                How it work
+                            </div>
+                            <div class="storyContent ">
+                                Mix-and-match dozens of responsive elements to quickly configure your favorite landing
+                                page layouts
+                            </div>
+                        </div>
+
+                    </div>
+                    <button>
+                        <a href="{% url "class02" %}" class="storyBtn">Go to class</a>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    {% comment %}! <!-- ! story End --> {% endcomment %}
+
+{% endblock content %}
+{% comment %} *--- Content ---* {% endcomment %}
+
+
+{% block swiper_js %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{% endblock swiper_js %}
+
+
+{% block custom_js %}
+    <script src="{% static 'js/singleblog/singleblog.js' %}"></script>
+{% endblock custom_js  %}

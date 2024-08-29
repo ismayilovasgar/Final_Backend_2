@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Lifestyle{% endblock title %}
+
+{% comment %} {% block custom_favicon %}<link rel="stylesheet" href="style.css">{% endblock custom_favicon %} {% endcomment %}
+
+{% block custom_css %} 
+<link rel="stylesheet" href="{% static 'css/lifestyle/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/lifestyle/responsive.css' %}">
+{% endblock custom_css %}
+
+
+{% comment %} *--- Content ---* {% endcomment %}
+{% block content %}
+
+
+  {% comment %}? <!-- ? post Start --> {% endcomment %}
+  <section class="post lightmode">
+    <div class="container">
+
+        <h1 class="postTitle">Lifestyle</h1>
+        <div class="postInfo">Track your workouts, get better results, and be the bestversion of you. Less thinking,
+            more lifting.
+        </div>
+
+        <div class="history">
+            <div class="historyWrap">
+                <div class="historyItem">
+                    <div class="historyLeftCol">
+                        <div class="historyPreview">
+                            <img src="{% static 'assets/images/lifestyle/history/imag_slider_1.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="historyRightCol">
+                        <div class="historyDetails">
+                            <div class="historyStatus">new</div>
+                            <div class="historyTitle">Stories From Our Community: Kohaku & Moyo Shiro</div>
+                            <div class="historyContent">Track your workouts, get better results, and be the best
+                                version of you. Less thinking
+                            </div>
+                            <div class="btnDetail">
+                                <a href="#" class="btn_orange">Read full story</a>
+                                <span class="storyDate">
+                                    Jan 19, 2020
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="postTabs">
+            <div class="postNav">
+                <ul>
+                    <li>Lifestyle</li>
+                    <li>Fitness</li>
+                    <li>Mindfulness</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="postBox">
+            <div class="postList">
+                {% comment %} <div class="postItem">
+                    <div class="postPreview">
+                        <img src="{% static 'assets/images/lifestyle/postList/img1.png' %}" alt="">
+                    </div>
+                    <div class="postStatus fitness">New</div>
+                    <div class="postSubtitle">7 Impossibly Hard Yoga Moves to Master</div>
+                    <div class="postFoot">
+                        <div class="postUser">
+                            <div class="postAvatar">
+                                <img src="static 'assets/images/lifestyle/postList/avatar_1.png' " alt="">
+                            </div>
+                            <div class="postAuthor">Porter Daniel</div>
+                        </div>
+                        <div class="postDate">Feb 03, 2021</div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="postItem">
+                    <div class="postPreview">
+                        <img src="{% static 'assets/images/lifestyle/postList/img2.png' %}" alt="">
+                    </div>
+                    <div class="postStatus yoga">Yoga</div>
+                    <div class="postSubtitle">
+                        Keep It Chill: How To Do a Water Salutation
+                    </div>
+                    <div class="postFoot">
+                        <div class="postUser">
+                            <div class="postAvatar">
+                                <img src="static 'assets/images/lifestyle/postList/avatar_2.png' " alt="">
+                            </div>
+                            <div class="postAuthor">
+                                Clemens Reilly
+                            </div>
+                        </div>
+                        <div class="postDate">Feb 03, 2021</div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="postItem">
+                    <div class="postPreview">
+                        <img src="{% static 'assets/images/lifestyle/postList/img3.png' %}" alt="">
+                    </div>
+                    <div class="postStatus new">New</div>
+                    <div class="postSubtitle">
+                        Keep It Chill: How To Do a Water Salutation
+                    </div>
+                    <div class="postFoot">
+                        <div class="postUser">
+                            <div class="postAvatar">
+                                <img src="static 'assets/images/lifestyle/postList/avatar_3.png' " alt="">
+                            </div>
+                            <div class="postAuthor">
+                                Lorine Parker
+                            </div>
+                        </div>
+                        <div class="postDate">Feb 03, 2021</div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="postItem">
+                    <div class="postPreview">
+                        <img src="{% static 'assets/images/lifestyle/postList/img4.png' %}" alt="">
+                    </div>
+                    <div class="postStatus featured">featured</div>
+                    <div class="postSubtitle">
+                        7 Impossibly Hard Yoga Moves to Master
+                    </div>
+                    <div class="postFoot">
+                        <div class="postUser">
+                            <div class="postAvatar">
+                                <img src="static 'assets/images/lifestyle/postList/avatar_4.png' " alt="">
+                            </div>
+                            <div class="postAuthor">
+                                Felipa Kub
+                            </div>
+                        </div>
+                        <div class="postDate">Feb 03, 2021</div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="postItem">
+                    <div class="postPreview">
+                        <img src="{% static 'assets/images/lifestyle/postList/img5.png' %}" alt="">
+                    </div>
+                    <div class="postStatus fitness">fitness</div>
+                    <div class="postSubtitle">
+                        Fun Pose Friday: Half Camel With Raised Toe Pose
+                    </div>
+                    <div class="postFoot">
+                        <div class="postUser">
+                            <div class="postAvatar">
+                                <img src="static 'assets/images/lifestyle/postList/avatar_5.png' " alt="">
+                            </div>
+                            <div class="postAuthor">
+                                Mikel D'Amore
+                            </div>
+                        </div>
+                        <div class="postDate">Feb 03, 2021</div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="postItem">
+                    <div class="postPreview">
+                        <img src="{% static 'assets/images/lifestyle/postList/img6.png' %}" alt="">
+                    </div>
+                    <div class="postStatus fitness">Fitness</div>
+                    <div class="postSubtitle">
+                        7 Impossibly Hard Yoga Moves to Master
+                    </div>
+                    <div class="postFoot">
+                        <div class="postUser">
+                            <div class="postAvatar">
+                                <img src="static 'assets/images/lifestyle/postList/avatar_6.png' " alt="">
+                            </div>
+                            <div class="postAuthor">
+                                Shemar Ledner
+                            </div>
+                        </div>
+                        <div class="postDate">Feb 03, 2021</div>
+                    </div>
+                </div>
+                <!--  --> {% endcomment %}
+            </div>
+            <div class="postBtns">
+                <button class="btn">
+                    <i class="fa-solid fa-spinner"></i>
+                    <span class="postBtnText"> Load more
+                    </span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+  </section>
+ {% comment %}! <!-- ! post End --> {% endcomment %}
+
+ 
+ {% comment %}? <!-- ? Community Start --> {% endcomment %}
+  {% include "includes_partials/community.html" %}
+ {% comment %}! <!-- ! Community End --> {% endcomment %}
+
+
+ {% endblock content %}
+ {% comment %} *--- Content ---* {% endcomment %}
+
+
+{% block custom_js %}
+    <script src="{% static 'js/lifestyle/lifestyle.js' %}"></script>
+{% endblock custom_js  %}

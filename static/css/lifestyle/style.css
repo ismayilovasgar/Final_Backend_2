@@ -1,0 +1,417 @@
+form button i {
+  font-size: 17px;
+  color: var(--Neutrals-6);
+}
+
+:root {
+  --history_column-gap: 78px;
+}
+.post {
+  padding: 136px 0px;
+}
+.post .postTitle {
+  color: var(--Neutrals-2, #23262f);
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 96px;
+  letter-spacing: -1.92px;
+  margin: 0px 0px 20px 0px;
+}
+
+.post .postInfo {
+  max-width: 460px;
+  margin: 0px auto 80px auto;
+  color: var(--Neutrals-3, #353945);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.history {
+  margin: 0px 0px 80px 0px;
+}
+
+.history .historyItem {
+  display: flex;
+  column-gap: var(--history_column-gap);
+}
+
+.history .historyItem .historyLeftCol {
+  width: calc(50% - (var(--history_column-gap) * 0.5));
+}
+
+.history .historyItem .historyRightCol {
+  align-self: center;
+
+  width: calc(50% - (var(--history_column-gap) * 0.5));
+}
+
+.history .historyItem .historyPreview {
+  height: 100%;
+  border-radius: 20px 0 0 20px;
+  overflow: hidden;
+}
+.history .historyItem .historyPreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.history .historyDetails {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: flex-start;
+}
+.history .historyDetails .historyStatus {
+  align-self: flex-start;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: var(--Primary-3, #ef466f);
+  color: var(--Neutrals-8, #fcfcfd);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+.history .historyDetails .historyTitle {
+  max-width: 386px;
+  color: var(--Neutrals-2, #23262f);
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.4px;
+}
+.history .historyDetails .historyContent {
+  max-width: 386px;
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.history .historyDetails .btnDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.history .historyDetails .storyDate {
+  display: none;
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+.history .historyDetails a {
+  border-radius: 90px;
+  padding: 12px 16px;
+  color: var(--Neutrals-8, #fcfcfd);
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.post .postTabs {
+  padding-bottom: 80px;
+}
+
+.post .postTabs .postNav ul {
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.post .postTabs .postNav ul li {
+  padding: 6px 12px;
+  background-color: transparent;
+  transition: all 0.4s ease;
+  border-radius: 90px;
+  color: var(--Neutrals-4, #777e90);
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.post .postTabs .postNav ul li:hover {
+  cursor: pointer;
+}
+.post .postTabs .postNav li.selected {
+  background-color: var(--Neutrals-3, #353945);
+  color: var(--Neutrals-8, #fcfcfd);
+}
+
+.postBox .postList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px 32px;
+}
+.postBox .postItem {
+  border-radius: 12px 12px 0px 0px;
+}
+.postBox .postItem .postPreview {
+  margin: 0px 0px 32px 0px;
+  overflow: hidden;
+  border: 2px solid var(--Neutrals-8);
+  border-radius: 12px;
+  height: 305px;
+  width: 100%;
+}
+
+.postBox .postItem .postPreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+.postBox .postItem {
+  display: none;
+  padding-bottom: 40px;
+  border-bottom: 2px solid var(--Neutrals-6);
+}
+
+.postBox .postItem:nth-child(1),
+.postBox .postItem:nth-child(2),
+.postBox .postItem:nth-child(3) {
+  display: block;
+}
+
+.postBox .postItem:hover {
+  cursor: pointer;
+}
+
+.postBox .postItem:hover .postPreview img {
+  transform: scale(1.1);
+  border-radius: 12px;
+}
+.postBox .postItem:hover .postPreview {
+  border-radius: 12px;
+  border-color: var(--Primary-1);
+}
+
+.postBox .postItem .postStatus {
+  display: inline-block;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.postBox .postItem .postStatus.Fitness_Gym {
+  background: var(--Primary-1, #ff592c);
+  color: var(--Neutrals-6);
+}
+.postBox .postItem .postStatus.Yoga {
+  background: var(--Primary-4, #45b26b);
+  color: var(--Neutrals-6);
+}
+.postBox .postItem .postStatus.Running {
+  background: var(--Primary-3, #ef466f);
+  color: var(--Neutrals-6);
+}
+.postBox .postItem .postStatus.Gymnastics {
+  background: #3153bb;
+  color: var(--Neutrals-6);
+}
+
+.postBox .postItem .postSubtitle {
+  color: var(--Neutrals-2, #23262f);
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 32px;
+}
+
+.postBox .postItem .postFoot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.postBox .postItem .postUser {
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+}
+.postBox .postItem .postUser .postAvatar {
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.postBox .postItem .postUser .postAvatar img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.postBox .postItem .postFoot .postAuthor,
+.postBox .postItem .postFoot .postDate {
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+.post .postBox .postBtns {
+  text-align: center;
+  margin-top: 80px;
+}
+.post .postBox .postBtns button {
+  transition: all 0.3s ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 12px;
+  margin: 0 auto;
+  padding: 12px 12px 12px 16px;
+  border-radius: 90px;
+  border: 2px solid var(--Neutrals-6, #e6e8ec);
+}
+.post .postBox .postBtns button span.postBtnText {
+  color: var(--Neutrals-2, #23262f);
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.post .postBox .postBtns button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 2px var(--Neutrals-2) inset;
+  background-color: var(--Neutrals-2);
+}
+.post .postBox .postBtns button:hover span.postBtnText,
+.post .postBox .postBtns button:hover > i {
+  color: var(--Neutrals-8);
+}
+/*? Communtiy Start */
+.community {
+  padding: 0px 0px 136px 0px;
+}
+
+.community .communityPreview {
+  margin: 0px auto 64px auto;
+  max-width: 586px;
+}
+.community .communityPreview img {
+  width: 100%;
+  object-fit: cover;
+}
+.community .communityBottom {
+  max-width: 586px;
+  text-align: center;
+  margin: 0 auto;
+}
+.community p.subtitle {
+  margin: 0px auto 12px auto;
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+.community h2.communityTitle {
+  margin: 0px auto 20px auto;
+  color: var(--Neutrals-2, #23262f);
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: -0.96px;
+}
+
+.community p.communityText {
+  max-width: 456px;
+  margin: 0px auto 80px auto;
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.community form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 18px;
+  padding: 8px 8px 8px 16px;
+  max-width: 355px;
+  margin: 0px auto 16px auto;
+  border-radius: 90px;
+  border: 2px solid var(--Neutrals-6, #e6e8ec);
+}
+.community form input {
+  background: none;
+  appearance: none;
+  border: none;
+  color: var(--Neutrals-2, #23262f);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  height: 24px;
+  width: 100%;
+}
+.community form.subscription button {
+  padding: 4px;
+  border-radius: 50%;
+  background-color: var(--Primary-1, #ff592c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in;
+}
+
+.community form.subscription button:hover {
+  background-color: #f83500;
+  cursor: pointer;
+}
+.community .communityNote {
+  color: var(--Neutrals-5, #b1b5c3);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.community .communityNote a {
+  color: var(--Primary-1, #ff592c);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+/*! Communtiy End */

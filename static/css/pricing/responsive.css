@@ -1,0 +1,245 @@
+@media screen and (max-width: 1024px) {
+  :root {
+    --comment_column-count: 3;
+  }
+  
+  /** table  */
+  table tbody tr:nth-child(even) {
+    display: none;
+  }
+  table tfoot .btn {
+    padding: 12px 16px;
+  }
+  /** testimonials Start  */
+  .testimonials .testimonialsDetails .detailsDivider {
+    display: none;
+  }
+  .testimonials .testimonialsDetails .detailsAuthor,
+  .testimonials .testimonialsDetails .detailsDescription {
+    text-align: center;
+  }
+
+  :root {
+    --testimonials_column-count: 3;
+  }
+  /** Comment Start */
+  .comment {
+    padding: 112px 0;
+  }
+  /** faq */
+  .faq {
+    padding: 112px 0px;
+  }
+}
+
+/* Mobil Start */
+@media screen and (max-width: 768px) {
+  :root {
+    --comment_column-count: 2;
+  }
+
+  /*? Table Pricing */
+  :root {
+    --table_main_width: 25%;
+  }
+
+  /*? testimonials */
+  .testimonials .testmonialsItem .testimonialsRow {
+    column-gap: 20px;
+  }
+  .testimonials .testimonialsCol .testimonialsLogo {
+    margin: 0px 0px 16px 0px;
+  }
+  .testimonials .testimonialsCol .testimonialsComment {
+    margin: 0px 0px 16px 0px;
+  }
+
+  .testimonials .wrap .testmonialsNav .swiper ul li {
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  :root {
+    --comment_column-count: 1;
+  }
+  thead tbody td:nth-child(1) img {
+    display: none;
+  }
+  tbody {
+    display: none;
+  }
+  tfoot {
+    display: none;
+  }
+
+  /*! Pricing Table Flex Row */
+  .pricing {
+    padding: 64px 0px;
+  }
+  .row {
+    flex-direction: column;
+    row-gap: 32px;
+  }
+
+  .pricingTable .row .pricingCol:not(:first-child) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 48px 16px 24px 16px;
+    text-align: left;
+    background-color: var(--table-column-mobil);
+  }
+  .pricingTable .pricingCol:not(:nth-child(1)) .pricingParameter p {
+    display: block;
+    color: var(--section-text);
+  }
+  .pricingTable .pricingHead {
+    min-height: unset;
+    width: 100%;
+    padding: 0px;
+  }
+  .pricingCost {
+    display: flex;
+  }
+
+  .pricingMore {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .pricingHead {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .pricingMore i {
+    font-size: 18px;
+  }
+
+  .pricingMore i.rotate {
+    transform: rotate(180deg);
+  }
+  .row .pricingCol:nth-child(1) {
+    display: none;
+  }
+  .pricingList {
+    display: none;
+  }
+  .pricingList.active {
+    display: block;
+  }
+
+  .pricingTable .pricingList .pricingParameter {
+    display: flex;
+    justify-content: space-between;
+  }
+  .pricingBody {
+    align-self: stretch;
+  }
+
+  /*? comment */
+  .comment .commentHead .comment_head_wrap {
+    flex-direction: column;
+    row-gap: 48px;
+  }
+
+  /*? faq */
+  .faq .faqItemBody .faqRow {
+    flex-direction: column;
+  }
+  .faq .faqItemBody .faqRow .faqPreview {
+    width: 100%;
+  }
+  .faq .faqItemBody .faqRow .faqContext {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .testimonials .testimonialsCol .testimonialsLogo {
+    margin: 0px 0px 0px;
+  }
+
+  .testimonials .testimonialsCol .testimonialsComment {
+    font-size: 18px;
+  }
+  .testimonials .testimonialsDetails {
+    display: flex;
+    margin: 0px 0px 12px 0px;
+  }
+  .testimonials .testimonialsCol button.readmore {
+    border-radius: 40px;
+    width: 100%;
+    padding: 12px 0px;
+  }
+  /** Swiper  */
+  :root {
+    --testimonials_column-count: 2;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  /** testiMonials */
+  .testimonials {
+    padding: 64px 0px;
+  }
+  .testimonials .testmonialsItem .testimonialsRow {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+  }
+  .testimonials .testimonialsCol button.readmore {
+    padding: 16px 24px;
+  }
+  .testimonials .testimonialsCol .testimonialsComment {
+    margin: 32px 0px 24px 0px;
+  }
+  .testimonials .testimonialsDetails {
+    margin: 0px 0px 32px 0px;
+  }
+  .testimonials .testmonialsItem .testimonialsRow .testimonialsCol:first-child {
+    display: block;
+  }
+  .testimonials .testimonialsCol button.readmore {
+    width: unset;
+  }
+
+  /*? faq */
+  .faq .faqNav > ul.desktop {
+    display: none;
+  }
+  .select {
+    display: flex;
+  }
+  /*  */
+  /*  */
+}
+
+@media screen and (max-width: 410px) {
+  .testimonials .testimonialsDetails .descriptionInfo {
+    flex-direction: column;
+    align-items: unset;
+  }
+  .testimonials .testimonialsDetails .detailsAuthor,
+  .testimonials .testimonialsDetails .detailsDescription {
+    text-align: unset;
+  }
+  /** Swiper  */
+  :root {
+    --testimonials_column-count: 1;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0px 32px;
+  }
+}

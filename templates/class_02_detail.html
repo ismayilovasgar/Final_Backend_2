@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Class 02 detail{% endblock title %}
+
+{% comment %} {% block custom_favicon %}{% endblock custom_favicon %} {% endcomment %}
+
+{% block swiper_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+{% endblock swiper_css %}
+
+{% block custom_css %} 
+<link rel="stylesheet" href="{% static 'css/class_02_detail/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/class_02_detail/responsive.css' %}">
+{% endblock custom_css %}
+
+
+{% comment %} *--- Content ---* {% endcomment %}
+{% block content %}
+
+
+{% comment %}? portfolio Start {% endcomment %}
+<section class="portfolio">
+    <div class="container">
+
+        <div class="portfolioTop">
+            <div class="portfolioStatus">
+                limited premium class
+            </div>
+            <h1 class="portfolioTitle">
+                Premium Class
+            </h1>
+            <div class="portfolioInfo">
+                A 7-days training program designed to boost your strength & endurance over the course of a week.
+            </div>
+        </div>
+        <div class="portfolioGallery">
+            <img  class="some-icon-light" src="{% static 'assets/images/class_02_detail/portfolio/portfolioGallery_light.png' %}" alt="">
+            <img class="some-icon-dark" src="{% static 'assets/images/class_02_detail/portfolio/portfolioGallery_dark.png' %}" alt="">
+        </div>
+
+    </div>
+</section> 
+{% comment %}! portfolio End {% endcomment %}
+
+
+{% comment %}? book_class Start {% endcomment %}
+<div class="book__class">
+    <div class="container">
+
+        <div class="trainer__book">
+            <div class="trainer__class">
+                <div class="trainer__about">
+                    <div class="green__label">
+                        <h4>exclusive trainer</h4>
+                    </div>
+                    <div class="trainer__image"><img src="{% static 'assets/images/class_02_detail/book_class/trainer.png' %}"></div>
+                    <div class="trainer__subtitle">
+                        <h2>Darianna Hammers</h2>
+                        <p>Yoga Master</p>
+                    </div>
+                </div>
+                <div class="class__about">
+                    <div class="class__parametres">
+                        <div class="class__details">
+                            <ul>
+                                <li>
+                                    <div class="left">
+                                        <div class="class__icon">
+                                            {% comment %} <img src="./images/time.svg"> {% endcomment %}
+                                            <i class="fa-regular fa-calendar-days"></i>
+                                        </div>
+                                        <div class="class__content">Time</div>
+                                    </div>
+                                    <div class="right">
+                                        <p>7 days</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="left">
+                                        <div class="class__icon">
+                                            {% comment %} <img src="./images/duration.svg"> {% endcomment %}
+                                            <i class="fa-regular fa-clock"></i>
+                                        </div>
+                                        <div class="class__content">Average duration</div>
+                                    </div>
+                                    <div class="right">
+                                        <p>20 minutes</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="left">
+                                        <div class="class__icon">
+                                            {% comment %} <img src="./images/degree.svg"> {% endcomment %}
+                                            <i class="fa-solid fa-sliders"></i>
+                                        </div>
+                                        <div class="class__content">Difficulty</div>
+                                    </div>
+                                    <div class="right">
+                                        <p>Beginner</p>
+                                    </div>
+                                </li>
+
+
+                                <li>
+                                    <div class="left">
+                                        <div class="class__icon">
+                                            {% comment %} <img src="./images/intens.svg"> {% endcomment %}
+                                            {% comment %} <i class="fa-solid fa-sliders"></i> {% endcomment %}
+                                            <i class="fa-solid fa-signal"></i>
+                                        </div>
+                                        <div class="class__content">Intensity</div>
+                                    </div>
+                                    <div class="right">
+                                        <p>Level 2</p>
+                                    </div>
+                                </li>
+
+                            </ul>
+                
+                        </div>
+                        <div class="note">
+                            <p>A seven-day bodyweight training program designed to boost your strength and endurance
+                                over the course of a week.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="workout__time">
+                <div class="workouttime__head">
+                    <div class="workouttime__icon">
+                        {% comment %} <img src="./images/calendar.svg"> {% endcomment %}
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <div class="workouttime__title">
+                        <h1>Work-out time</h1>
+                    </div>
+                </div>
+                <div class="workouttime__body">
+                    <div class="workouttime__control">
+                        <button class="date__prev">
+                            {% comment %} <img src="./images/left__arrow.svg"> {% endcomment %}
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <div class="workouttime__date">Friday, March 5, 2021</div>
+                        <button class="date__next">
+                            {% comment %} <img src="./images/right__arrow.svg"> {% endcomment %}
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="date__options">
+                        <button class="date__option">07:00 AM</button>
+                        <button class="date__option">11:00 AM</button>
+                        <button class="date__option_df">More</button>
+                    </div>
+                    <div class="workouttime__btns">
+                        <button class="lock__button">
+                            {% comment %} <img src="./images/lock.svg"> {% endcomment %}
+                            <i class="fa-solid fa-lock"></i>
+                        </button>
+                        <button class="book__button">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% comment %}! book_class End {% endcomment %}
+
+
+{% comment %}? <!-- ? progams Start --> {% endcomment %}
+{% include "includes_partials/programs.html" with text="You may interested"  %}
+{% comment %}! <!-- ! programs End --> {% endcomment %}
+
+
+
+
+
+{% endblock content %}
+{% comment %} *--- Content ---* {% endcomment %}
+
+{% block swiper_js %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{% endblock swiper_js %}
+
+
+{% block custom_js %}
+    <script src="{% static '/js/class_02_detail/class_02_detail.js' %}"></script>r
+{% endblock custom_js  %}

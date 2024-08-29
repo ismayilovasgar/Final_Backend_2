@@ -1,0 +1,141 @@
+@media only screen and (max-width: 1024px) {
+  .class__details ul li {
+    column-gap: 12px;
+  }
+  .class__details ul li .left {
+    width: calc(65% - 0.65 * 12px);
+  }
+  .class__details ul li .right {
+    width: calc(35% - 0.35 * 12px);
+  }
+  .trainer__book {
+    gap: 32px;
+  }
+  .book__class {
+    padding: 112px 0px;
+  }
+  .date__options {
+    flex-wrap: wrap;
+  }
+  .date__option_df {
+    width: 100%;
+  }
+  .date__option {
+    width: calc(49.9% - 8px * 0.499);
+  }
+  .value__info {
+    display: none;
+  }
+  .value__top h2 {
+    font-size: 32px;
+  }
+  .value__card {
+    display: flex;
+    min-width: calc((100% - (24px * 1)) / 2);
+  }
+  .value__cards :nth-of-type(3) {
+    display: none;
+  }
+
+  .value__top {
+    margin: 0 auto 64px;
+  }
+
+  .class__parametres {
+    gap: 16px;
+  }
+  .workout__time {
+    gap: 20px;
+  }
+  .workouttime__body {
+    gap: 10px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .trainer__book {
+    flex-direction: column;
+  }
+  .trainer__class {
+    min-width: 100%;
+  }
+  .trainer__about {
+    min-width: calc((100% - (32px * 1)) / 2);
+  }
+  .class__about {
+    min-width: calc((100% - (32px * 1)) / 2);
+  }
+  .class__features {
+    font-size: 16px;
+  }
+  .features__details {
+    font-size: 16px;
+  }
+  .note {
+    font-size: 18px;
+  }
+  .class__parametres {
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .trainer__subtitle h2 {
+    font-size: 16px;
+  }
+  .trainer__subtitle p {
+    font-size: 14px;
+  }
+  .green__label h4 {
+    font-size: 14px;
+  }
+  .workout__time {
+    min-width: 100%;
+  }
+  .workouttime__body {
+    min-width: 100%;
+  }
+  .date__options {
+    min-width: 100%;
+  }
+  .workouttime__date {
+    font-size: 16px;
+  }
+  .date__option {
+    font-size: 16px;
+  }
+  .date__option_df {
+    font-size: 16px;
+  }
+  .book__button {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .class__about {
+    gap: 26px;
+  }
+  .trainer__class {
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .book__class {
+    padding: 64px 0px;
+  }
+  .trainer__class {
+    flex-direction: column;
+  }
+  .trainer__about {
+    min-width: 100%;
+  }
+  .class__about {
+    min-width: 100%;
+  }
+  .value__card {
+    min-width: 100%;
+  }
+
+  .value__top {
+    margin: 0 auto 40px;
+  }
+}

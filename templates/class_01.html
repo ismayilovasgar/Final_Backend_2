@@ -1,0 +1,477 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Class 01{% endblock title %}
+
+{% comment %} {% block custom_favicon %}{% endblock custom_favicon %} {% endcomment %}
+
+
+{% block swiper_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+{% endblock swiper_css %}
+
+
+{% block custom_css %} 
+<link rel="stylesheet" href="{% static 'css/class_01/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/class_01/responsive.css' %}">
+{% endblock custom_css %}
+
+
+{% comment %} *--- Content ---* {% endcomment %}
+{% block content %}
+
+
+
+  {% comment %}? <!-- ? breadcrumb Start --> {% endcomment %}
+  <section class="breadcrumb lightmode">
+    <div class="container">
+      <div class="breadcrumbWrap">
+        <h2 class="breadcrumbTitle">Find a class to achieve your goals</h2>
+        <div class="breadcrumbInfo">
+          Build your perfect workout with our pro trainers
+        </div>
+        <ul class="breadcrumbList">
+          <li class="breadcrumbItem">
+            <a href="#" class="breadcrumbLink">Class</a>
+          </li>
+          <li class="breadcrumbItem">
+            <a href="#" class="breadcrumbLink">
+              <i class="fa-solid fa-angle-right fa-lg"></i>
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 25 24"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M10.2929 7.79289C9.90237 8.18342 9.90237 8.81658 10.2929 9.20711L13.0858 12L10.2929 14.7929C9.90237 15.1834 9.90237 15.8166 10.2929 16.2071C10.6834 16.5976 11.3166 16.5976 11.7071 16.2071L15.2071 12.7071C15.5976 12.3166 15.5976 11.6834 15.2071 11.2929L11.7071 7.79289C11.3166 7.40237 10.6834 7.40237 10.2929 7.79289Z"
+                                    fill="#777E91" />
+                            </svg> -->
+            </a>
+          </li>
+          <li class="breadcrumbItem">
+            <a href="#" class="breadcrumbLink">Program</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  {% comment %}! <!-- ! breadcrumb End --> {% endcomment %}
+
+  {% comment %}? <!-- ? catalog Start --> {% endcomment %}
+  <section class="catalog lightmode">
+    <div class="container">
+      <div class="catalogHead">
+        <div class="catalogTitle">Find a class that fit with you</div>
+        {% comment %} <form action="" class="catalogSearch" id="catalog_search" method="POST"> {% endcomment %}
+        <div class="catalogSearch" id="catalog_search" >
+          {% comment %} {% csrf_token %} {% endcomment %}
+          <input class="catalogInput" id="catalog_input" type="text" placeholder="Find a class" name="name_search">
+          <button type="submit" class="catalogResult">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+        {% comment %} </form> {% endcomment %}
+
+      </div>
+
+      <div class="catalogWrap">
+        <div class="catalogTop">
+          <div class="nice-select select">
+            <input type="text" name="release" class="current" value="Newest" />
+            <div class="select_arrow">
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <ul class="list">
+              <li data-value="Newest" class="option selected">Newest</li>
+              <li data-value="Oldest" class="option">Oldest</li>
+            </ul>
+          </div>
+
+          <div class="catalogNav">
+            <ul>
+              {% for key,value in categorys  %}
+                  <li class="cataloglink {{value| cut:" " }}">{{value}}</li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <button class="customFilter catalogFilter">
+            <div class="catalogText">Filter</div>
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <button class="customFilter advancedFilter">
+            <div class="catalogText">Advanced Filter</div>
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="catalogSorting">
+
+          <div class="catalogCell">
+            <div class="cataloglabel">Style</div>
+
+            <div class="select sorting">
+              <input type="text" name="style" class="current" value="Acro Yoga" />
+              <div class="select_arrow">
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+              <ul class="list">
+                {% for key,value in styles %}
+                 <li data-value="{{value}}" class="option selected">{{value}}</li>
+                 {% comment %} <li data-value="Mini Yoga" class="option">Mini Yoga</li> {% endcomment %}
+                {% endfor %}
+              </ul>
+            </div>
+
+          </div>
+         
+          <div class="catalogCell">
+            <div class="cataloglabel">Time of Day</div>
+
+            <div class="select sorting">
+              <input type="text" name="timeofday" class="current" value="Morning" />
+              <div class="select_arrow">
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+              <ul class="list">
+                {% for key,value in timeofday %}
+                 <li data-value="{{value}}" class="option selected">{{value}}</li>
+                 {% comment %} <li data-value="Mini Yoga" class="option">Mini Yoga</li> {% endcomment %}
+                {% endfor %}
+                {% comment %} <li data-value="Morning" class="option selected">Morning</li>
+                <li data-value="Dinner" class="option">Dinner</li>
+                <li data-value="Evening" class="option">Evening</li> {% endcomment %}
+              </ul>
+            </div>
+
+          </div>
+         
+          <div class="catalogCell">
+            <div class="cataloglabel">Difficluty</div>
+
+            <div class="select sorting">
+              <input type="text" name="difficluty" class="current" value="Beginner" />
+              <div class="select_arrow">
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+              <ul class="list">
+                {% for key,value in difficulty %}
+                 <li data-value="{{value}}" class="option selected">{{value}}</li>
+                 {% comment %} <li data-value="Mini Yoga" class="option">Mini Yoga</li> {% endcomment %}
+                {% endfor %}
+                {% comment %} <li data-value="Beginner" class="option selected">Beginner</li>
+                <li data-value="intermediate" class="option">intermediate</li>
+                <li data-value="Advanced" class="option">Advanced</li> {% endcomment %}
+              </ul>
+            </div>
+
+          </div>
+         
+          <div class="catalogCell">
+            <div class="cataloglabel">Intensity</div>
+
+            <div class="select sorting">
+              <input type="text" name="intensity" class="current" value="Level 1" />
+              <div class="select_arrow">
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+              <ul class="list">
+                {% for key,value in intensity %}
+                <li data-value="{{value}}" class="option selected">{{value}}</li>
+                {% comment %} <li data-value="Mini Yoga" class="option">Mini Yoga</li> {% endcomment %}
+               {% endfor %}
+              </ul>
+            </div>
+
+          </div>
+         
+        </div>
+      </div>
+
+      
+       {% comment %}?  card html {% endcomment %}       
+      <div class="catalogList">
+
+        {% comment %} <div class="card">
+            <div class="cardPreview">
+                <img src="{% static 'assets/common/catalog_card/card-pic-1.png' %}" alt="">
+                <div class="cardStatus yoga">yoga</div>
+            </div>
+      
+            <div class="cardHead">
+                <div class="cardUser">
+                    <div class="cardAvatar">
+                        <img src="{% static 'assets/common/catalog_card/cardUserAvatar-5.png' %}" alt="">
+                    </div>
+                    <div class="cardDetails">
+                        <div class="cardTitle">7-days barre body</div>
+                        <div class="cardTrainer">
+                            <span class="firstName">FistName LastName</span>
+                            <span class="lastName"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardLevel beginner">Beginner</div>
+            </div>
+      
+            <div class="cardParameters">
+                <div class="cardParameter">
+                    <img src="{% static 'assets/common/catalog_card/youtube.svg' %}" alt=""> 7
+                </div>
+                <div class="cardParameter">
+                    <img src="{% static 'assets/common/catalog_card/people.svg' %}" alt=""> 160
+                </div>
+            </div>
+        </div>
+       
+        <div class="card">
+            <div class="cardPreview">
+                <img class="backPreview" src="{% static 'assets/common/catalog_card/card-pic-2.png' %}" alt="">
+                <div class="cardStatus fitness">fitness </div>
+                <div class="playSmall">
+                    <img src="{% static 'assets/common/catalog_card/playSmall.svg' %}" alt="">
+                </div>
+            </div>
+      
+            <div class="cardHead">
+                <div class="cardUser">
+                    <div class="cardAvatar">
+                        <img src="{% static 'assets/common/catalog_card/cardUserAvatar-2.png' %}" alt="">
+                    </div>
+                    <div class="cardDetails">
+                        <div class="cardTitle">Sweet and tone</div>
+                        <div class="cardTrainer">
+                            <span class="firstName">FistName</span>
+                            <span class="lastName">LastName</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardLevel beginner">beginner</div>
+            </div>
+      
+            <div class="cardParameters">
+                <div class="cardParameter">
+                    <img src="{% static 'assets/common/catalog_card/youtube.svg' %}" alt=""> 7
+                </div>
+                <div class="cardParameter">
+                    <img src="{% static 'assets/common/catalog_card/people.svg' %}" alt=""> 160
+                </div>
+            </div>
+        </div>
+       
+        <div class="card">
+            <div class="cardPreview">
+                <img src="{% static 'assets/common/catalog_card/card-pic-3.png' %}" alt="">
+                <div class="cardStatus yoga">yoga</div>
+            </div>
+      
+            <div class="cardHead">
+                <div class="cardUser">
+                    <div class="cardAvatar">
+                        <img src="{% static 'assets/common/catalog_card/cardUserAvatar-3.png' %}" alt="">
+                    </div>
+                    <div class="cardDetails">
+                        <div class="cardTitle">Baseline Bootcamp</div>
+                        <div class="cardTrainer">
+                            <span class="firstName">FistName</span>
+                            <span class="lastName">LastName</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardLevel beginner">beginner</div>
+          </div>
+      
+          <div class="cardParameters">
+                <div class="cardParameter">
+                    <img src="{% static 'assets/common/catalog_card/youtube.svg' %}" alt=""> 7
+                </div>
+                <div class="cardParameter">
+                    <img src="{% static 'assets/common/catalog_card/people.svg' %}" alt=""> 160
+                </div>
+          </div>
+   
+        </div> {% endcomment %}
+       
+     </div> 
+      {% comment %}!  card html {% endcomment %}
+
+      <div class="catalogBtn">
+        <button class="discoverMore">
+          <p>Discover more</p>
+          <i class="fa-solid fa-angle-down"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+  {% comment %}! <!-- ! catalog End --> {% endcomment %}
+
+  {% comment %}? <!--? testimonials Start  --> {% endcomment %}
+  {% comment %} {% include "includes_partials/testimonials.html" %} {% endcomment %}
+
+  <section class="testimonials softlightmode">
+    <div class="container">
+      <div class="wrap">
+
+        <div class="testmonialsItem">
+          <div class="testimonialsRow">
+            <div class="testimonialsCol">
+              <div class="testimonialsLogo">
+                <img src="{% static 'assets/images/pricing/testimonials/logo.png' %}" alt="" />
+              </div>
+              <div class="testimonialsComment">
+                “ Fitness Pro is the greatest fitness app. It's clear the
+                makers behind this thing use it every week, because it is so
+                perfect. “
+              </div>
+              <div class="testimonialsDetails">
+                <div class="detailsIcon">
+                  <img src="{% static 'assets/images/pricing/testimonials/details_icon.png' %}" alt="" />
+                </div>
+                <div class="descriptionInfo">
+
+                  <div class="detailsAuthor">Megane Schumm</div>
+                  <span class="detailsDivider"></span>
+                  <div class="detailsDescription">Legacy Data Coordinator</div>
+
+                </div>
+              </div>
+              <button class="btn readmore">Read full story</button>
+            </div>
+            <div class="testimonialsCol">
+              <div class="testimonialsPreview">
+                <img src="{% static 'assets/images/pricing/testimonials/preview.png' %}" alt="" />
+                <button class="play">
+                  <img src="{% static 'assets/images/pricing/testimonials/play.svg' %}" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testmonialsNav">
+          <div class="swiper">
+            <div class="testimonials-swiper">
+              <ul class="swiper-wrapper">
+
+
+                {% for trainer in trainers %}
+
+                  <li class="swiper-slide">
+                    <a href="#">
+                      <div class="testimonialsAvatar">
+                        <img src=" {{ trainer.image.url}}" alt="" />
+                      </div>
+                      <div class="testimonialsGroup">
+                        <div class="testmonialsName">{{ trainer.first_name }} {{ trainer.last_name}}</div>
+                        <div class="testmonialsPosition">{{ trainer.profession}}</div>
+                      </div>
+                    </a>
+                  </li>
+                
+                {% endfor %}
+
+                
+
+                {% comment %} <li class="swiper-slide">
+                  <a href="#">
+                    <div class="testimonialsAvatar">
+                      <img src="{% static 'assets/images/pricing/testimonials/cardUserAvatar-2.png' %}" alt="" />
+                    </div>
+                    <div class="testimonialsGroup">
+                      <div class="testmonialsName">Kaylah Botsford</div>
+                      <div class="testmonialsPosition">Personal Trainer</div>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="swiper-slide">
+                  <a href="#">
+                    <div class="testimonialsAvatar">
+                      <img src="{% static 'assets/images/pricing/testimonials/cardUserAvatar-4.png' %}" alt="" />
+                    </div>
+                    <div class="testimonialsGroup">
+                      <div class="testmonialsName">Reinhold Ullrich</div>
+                      <div class="testmonialsPosition">Personal Trainer</div>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="swiper-slide">
+                  <a href="#">
+                    <div class="testimonialsAvatar">
+                      <img src="{% static 'assets/images/pricing/testimonials/cardUserAvatar-1.png' %}" alt="" />
+                    </div>
+                    <div class="testimonialsGroup">
+                      <div class="testmonialsName">Josh Bartoletti</div>
+                      <div class="testmonialsPosition">Personal Trainer</div>
+                    </div>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#">
+                    <div class="testimonialsAvatar">
+                      <img src="{% static 'assets/images/pricing/testimonials/cardUserAvatar-1.png' %}" alt="" />
+                    </div>
+                    <div class="testimonialsGroup">
+                      <div class="testmonialsName">Jazmin Grady</div>
+                      <div class="testmonialsPosition">Personal Trainer</div>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="swiper-slide">
+                  <a href="#">
+                    <div class="testimonialsAvatar">
+                      <img src="{% static 'assets/images/pricing/testimonials/cardUserAvatar-2.png' %}" alt="" />
+                    </div>
+                    <div class="testimonialsGroup">
+                      <div class="testmonialsName">Kaylah Botsford</div>
+                      <div class="testmonialsPosition">Personal Trainer</div>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="swiper-slide">
+                  <a href="#">
+                    <div class="testimonialsAvatar">
+                      <img src="{% static 'assets/images/pricing/testimonials/cardUserAvatar-4.png' %}" alt="" />
+                    </div>
+                    <div class="testimonialsGroup">
+                      <div class="testmonialsName">Reinhold Ullrich</div>
+                      <div class="testmonialsPosition">Personal Trainer</div>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="swiper-slide">
+                  <a href="#">
+                    <div class="testimonialsAvatar">
+                      <img src="{% static 'assets/images/pricing/testimonials/cardUserAvatar-1.png' %}" alt="" />
+                    </div>
+                    <div class="testimonialsGroup">
+                      <div class="testmonialsName">Josh Bartoletti</div>
+                      <div class="testmonialsPosition">Personal Trainer</div>
+                    </div>
+                  </a>
+                </li> {% endcomment %}
+
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+  {% comment %}! <!--! testimonials End  --> {% endcomment %}
+
+
+{% endblock content %}
+{% comment %} *--- Content ---* {% endcomment %}
+
+{% block swiper_js %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{% endblock swiper_js %}
+
+
+{% block custom_js %}
+    <script src="{% static 'js/class_01/class_01.js' %}"></script>
+{% endblock custom_js  %}

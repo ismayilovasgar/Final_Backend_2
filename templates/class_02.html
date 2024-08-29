@@ -1,0 +1,388 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Class 02{% endblock title %}
+
+{% comment %} {% block custom_favicon %}{% endblock custom_favicon %} {% endcomment %}
+
+{% block swiper_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+{% endblock swiper_css %}
+
+{% block custom_css %} 
+<link rel="stylesheet" href="{% static 'css/class_02/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/class_02/responsive.css' %}">
+{% endblock custom_css %}
+
+
+{% comment %} *--- Content ---* {% endcomment %}
+{% block content %}
+
+
+    {% comment %}? <!--? heroHeader Start  --> {% endcomment %}
+     <section class="heroHeader lightmode">
+        <div class="container">
+            <div class="wrap">
+                <div class="contentCol">
+                    <div class="overlap">
+                        <p class="stage">Train smarter. get stronger</p>
+                        <h2 class="mainTitle">If you workout, Fitness Pro is made for you</h2>
+                        <p class="mainText">Track your workouts, get better results, and be the bestversion of you. Less
+                            thinking, more lifting.
+                        </p>
+                        <div class="buttons_bottomm">
+                            <button class="btn btn_orange">Book a class</button>
+                        </div>
+                    </div>
+
+                    <div class="button_arrow_bottom">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+
+                </div>
+
+                <div class="previewCol">
+                    <img class="some-icon-light" src="{% static 'assets/images/class_02/heroHeader/light_hero_img.png' %}" alt="">
+                    <img class="some-icon-dark" src="{% static 'assets/images/class_02/heroHeader/dark_hero_img.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+        </section>
+     </section>
+    {% comment %}! <!--! heroHeader End  --> {% endcomment %}
+
+    {% comment %}? <!-- ? programs Start --> {% endcomment %}
+    {% comment %} <section class="programs lightmode">
+        <div class="container">
+            <div class="programsTop">
+                <h2 class="programsTitle">A special 1-on-1 workout program that gives you complete control over the
+                    volume for a perfect physique
+                </h2>
+                <p class="programsInfo">
+                    <span class="programsGreen">10% Discount</span> if you&#39;re already using the
+                    <span class="programsBlack">Fitness Pro </span>on App Store
+                </p>
+            </div>
+
+            <div class="programsWrap swiper">
+                <div class="programs_swiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="programsItem swiper-slide">
+                            <div class="programsIcon personIcon">
+                                <!-- <i class="fa-solid fa-user"></i> -->
+                                <img src="{% static 'assets/images/class_02/programs/person.svg' %}" alt="">
+                            </div>
+                            <div class="programsText">
+                                <div class="programsSubtitle">Beginners</div>
+                                <div class="programsContent">A 7-days training program designed to boost your strength &
+                                    endurance over the course of a week.
+                                </div>
+                            </div>
+                            <div class="programLink">
+                                <a href="#" class="program_btn">Book a Class</a>
+                            </div>
+                        </div>
+
+                        <div class="programsItem swiper-slide">
+                            <div class="programsIcon medalIcon">
+                                <!-- <i class="fa-solid fa-medal"></i> -->
+                                <img src="{% static 'assets/images/class_02/programs/medal.svg' %}" alt="">
+                            </div>
+                            <div class="programsText">
+                                <div class="programsSubtitle">Advanced</div>
+                                <div class="programsContent">A 7-days training program designed to boost your strength &
+                                    endurance over the course of a week.
+                                </div>
+                            </div>
+                            <div class="programLink">
+                                <a href="#" class="program_btn">Book a Class</a>
+                            </div>
+                        </div>
+
+                        <div class="programsItem swiper-slide">
+                            <div class="programsIcon lightningIcon">
+                                <!-- <i class="fa-solid fa-bolt"></i> -->
+                                <img src="{% static 'assets/images/class_02/programs/lightning.svg' %}" alt="">
+                            </div>
+                            <div class="programsText">
+                                <div class="programsSubtitle">Premium</div>
+                                <div class="programsContent">A 7-days training program designed to boost your strength &
+                                    endurance over the course of a week.
+                                </div>
+                            </div>
+                            <div class="programLink">
+                                <a href="#" class="program_btn">Book a Class</a>
+                            </div>
+                        </div>
+
+                        <!-- Repeat -->
+
+                        <div class="programsItem swiper-slide">
+                            <div class="programsIcon medalIcon">
+                                <!-- <i class="fa-solid fa-medal"></i> -->
+                                <img src="{% static 'assets/images/class_02/programs/medal.svg' %}" alt="">
+                            </div>
+                            <div class="programsText">
+                                <div class="programsSubtitle">Advanced</div>
+                                <div class="programsContent">A 7-days training program designed to boost your strength &
+                                    endurance over the course of a week.
+                                </div>
+                            </div>
+                            <div class="programLink">
+                                <a href="#" class="program_btn">Book a Class</a>
+                            </div>
+                        </div>
+
+                        <div class="programsItem swiper-slide">
+                            <div class="programsIcon lightningIcon">
+                                <!-- <i class="fa-solid fa-bolt"></i> -->
+                                <img src="{% static 'assets/images/class_02/programs/lightning.svg' %}" alt="">
+                            </div>
+                            <div class="programsText">
+                                <div class="programsSubtitle">Premium</div>
+                                <div class="programsContent">A 7-days training program designed to boost your strength &
+                                    endurance over the course of a week.
+                                </div>
+                            </div>
+                            <div class="programLink">
+                                <a href="#" class="program_btn">Book a Class</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="programsBtns">
+                <button class="programs_prev_btn"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="programs_next_btn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+
+        </div>
+    </section> {% endcomment %}
+
+    {% comment %}? <!-- ? progams Start --> {% endcomment %}
+     {% include "includes_partials/programs.html" with text="A special 1-on-1 workout program that gives you complete control over the volume for a perfect physique"%}
+    {% comment %}! <!-- ! programs End --> {% endcomment %}
+
+    {% comment %}? <!-- ? trainers Start --> {% endcomment %}
+     <section class="trainers lightmode">
+        <div class="container">
+            <div class="trainerHead">
+                <h2 class="trainerTitle">Professional trainers</h2>
+                <p class="trainerInfo">Stacks is a production-ready library of stackable content blocks built in React
+                    Native.
+                </p>
+
+
+                <div class="select sorting" id="toggle">
+                    <input type="text" name="style" class="current" value="Yoga" />
+                    <div class="select_arrow">
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    
+                    <ul class="list mobil_view" id="popup">
+
+                        {% for key,value in categorys  %}
+                            <li data-value="{{value}}" class="option">{{value}}</li>
+                        {% endfor %}
+                    
+                    </ul>
+                </div>
+
+
+            </div>
+            <div class="trainersList">
+                <div class="listWrap">
+
+                    {% comment %} <a href="#" class="trainerItem">
+                        <div class="profile">
+                            <img src="{% static 'assets/images/class_02/trainers/avatar-1.png' %}" alt="">
+                        </div>
+                        <div class="trainerName">Baron Toy</div>
+                        <div class="trainerPosition">Yoga Master</div>
+                    </a>
+                    
+                    <a href="#" class="trainerItem">
+                        <div class="profile">
+                            <img src="{% static 'assets/images/class_02/trainers/avatar-2.png' %}" alt="">
+                        </div>
+                        <div class="trainerName">Baron Toy</div>
+                        <div class="trainerPosition">Yoga Master</div>
+                    </a>
+
+                    <a href="#" class="trainerItem">
+                        <div class="profile">
+                            <img src="{% static 'assets/images/class_02/trainers/avatar-3.png' %}" alt="">
+                        </div>
+                        <div class="trainerName">Baron Toy</div>
+                        <div class="trainerPosition">Yoga Master</div>
+                    </a>
+
+                    <a href="#" class="trainerItem">
+                        <div class="profile">
+                            <img src="{% static 'assets/images/class_02/trainers/avatar-4.png' %}" alt="">
+                        </div>
+                        <div class="trainerName">Baron Toy</div>
+                        <div class="trainerPosition">Yoga Master</div>
+                    </a>
+
+                    <a href="#" class="trainerItem">
+                        <div class="profile">
+                            <img src="{% static 'assets/images/class_02/trainers/avatar-5.png' %}" alt="">
+                        </div>
+                        <div class="trainerName">Baron Toy</div>
+                        <div class="trainerPosition">Yoga Master</div>
+                    </a>
+
+                    <a href="#" class="trainerItem">
+                        <div class="profile">
+                            <img src="{% static 'assets/images/class_02/trainers/avatar-2.png' %}" alt="">
+                        </div>
+                        <div class="trainerName">Baron Toy</div>
+                        <div class="trainerPosition">Yoga Master</div>
+                    </a>
+
+                    <a href="#" class="trainerItem">
+                        <div class="profile">
+                            <img src="{% static 'assets/images/class_02/trainers/avatar-3.png' %}" alt="">
+                        </div>
+                        <div class="trainerName">Baron Toy</div>
+                        <div class="trainerPosition">Yoga Master</div>
+                    </a>
+
+                    <a href="#" class="trainerItem">
+                        <div class="profile">
+                            <img src="{% static 'assets/images/class_02/trainers/avatar-4.png' %}" alt="">
+                        </div>
+                        <div class="trainerName">Baron Toy</div>
+                        <div class="trainerPosition">Yoga Master</div>
+                    </a> {% endcomment %}
+
+                </div>
+                {% comment %} <div class="modal" id="myModal">
+                    <div class="modalContent">
+                        <div class="popupContainer">
+
+                            <div class="trainerTop">
+                                <div class="trainerAvatar">
+                                    <img src="{% static 'assets/images/class_02/popup/avatar-5.png' %}" alt="">
+                                </div>
+                                <div class="trainerName">Johantan Kula</div>
+                                <div class="trainerPosition">Personal Trainer</div>
+                                <div class="trainerSocials">
+                                    <a href="#" target="_blank" class="trainer_social">
+                                        <i class="ri-facebook-circle-line"></i>
+                                    </a>
+                                    <a href="#" target="_blank" class="trainer_social">
+                                        <i class="ri-instagram-line"></i>
+                                    </a>
+                                    <a href="#" target="_blank" class="trainer_social">
+                                        <i class="ri-twitter-line"></i>
+                                    </a>
+                                    <a href="#" target="_blank" class="trainer_social">
+                                        <i class="ri-linkedin-box-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <form action="" method="/" class="subscriptionInput">
+                                <input class="subscription__input" type="email" placeholder="Find a class"
+                                    required="required">
+                                <button class="subscriptionBtn">
+                                    <img src="{% static 'assets/images/class_02/popup/form_arrow.svg' %}" alt="">
+                                </button>
+                            </form>
+
+                            <div class="trainerModalWrap">
+                                <div class="trainerSlider">
+                                    <a href="#" target="_blank">
+                                        <div class="card">
+                                            <div class="trainerPreview">
+                                                <img src="{% static 'assets/images/class_02/popup/trainerPreview_1.png' %}" alt="">
+                                                <p>Yoga</p>
+                                            </div>
+                                            <div class="modalTrainerHead">
+                                                <div class="trainer__title">Power Yoga Sculpt</div>
+                                                <div class="trainerLevel">beginner</div>
+                                            </div>
+                                            <div class="trainerParameters">
+                                                <div class="trainerParameter">
+                                                    <img src="{% static 'assets/images/class_02/popup/parameter_1.svg' %}" alt=""> 7
+                                                </div>
+                                                <div class="trainerParameter">
+                                                    <img src="{% static 'assets/images/class_02/popup/parameter_2.svg' %}" alt=""> 160
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" target="_blank">
+                                        <div class="card">
+                                            <div class="trainerPreview">
+                                                <img src="{% static 'assets/images/class_02/popup/trainerPreview_1.png' %}" alt="">
+                                                <p>Fitness</p>
+                                            </div>
+                                            <div class="modalTrainerHead">
+                                                <div class="trainer__title">Power Yoga Sculpt</div>
+                                                <div class="trainerLevel">beginner</div>
+                                            </div>
+                                            <div class="trainerParameters">
+                                                <div class="trainerParameter">
+                                                    <img src="{% static 'assets/images/class_02/popup/parameter_1.svg' %}" alt=""> 7
+                                                </div>
+                                                <div class="trainerParameter">
+                                                    <img src="{% static 'assets/images/class_02/popup/parameter_2.svg' %}" alt=""> 160
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="bottomBtns">
+                                <div class="arrowBtns">
+                                    <img src="{% static 'assets/images/class_02/popup/previousBtn.svg' %}" alt="">
+                                    <img src="{% static 'assets/images/class_02/popup/nextBtn.svg' %}" alt="">
+                                </div>
+                                <button class="btn btn_orange">Browse all class</button>
+                            </div>
+
+                            <button title="Close (Esc)" type="button" class="modalCloseBtn">
+                                <img src="{% static 'assets/images/class_02/popup/mfc-close.svg' %}" alt="">
+                            </button>
+
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+
+            </div>
+
+
+
+        </div>
+     </section>
+    {% comment %}! <!-- ! trainers End --> {% endcomment %}
+
+    {% comment %}? <!-- ? Community Start --> {% endcomment %}
+     {% include "includes_partials/community.html" with community_title="Join Stacks Community" %}
+    {% comment %}! <!-- ! Community End --> {% endcomment %}
+
+
+{% endblock content %}
+{% comment %} *--- Content ---* {% endcomment %}
+    
+
+{% block swiper_js %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{% endblock swiper_js %}
+
+
+{% block custom_js %}
+    <script src="{% static '/js/class_02/class_02.js' %}"></script>
+{% endblock custom_js  %}

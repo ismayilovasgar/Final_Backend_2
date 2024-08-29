@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Class 01 detail{% endblock title %}
+
+{% comment %} {% block custom_favicon %}{% endblock custom_favicon %} {% endcomment %}
+
+
+{% block custom_css %} 
+<link rel="stylesheet" href="{% static 'css/class_01_detail/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/class_01_detail/responsive.css' %}">
+{% endblock custom_css %}
+
+
+{% comment %} *--- Content ---* {% endcomment %}
+{% block content %}
+
+
+ {% comment %}? <!--? description Start --> {% endcomment %}
+ <section class="description lightmode">
+    <div class="container">
+
+        <div class="descriptionWrapper">
+            <div class="descriptionRow">
+                <div class="descriptionLeftCol">
+                    <div class="descriptionDetails">
+                        <span class="category">fitness</span>
+                        <span class="release">new release</span>
+                    </div>
+                    <h2 class="descroptionTitle">Sweet and tone</h2>
+                    <div class="descriptionInfo">A 7-days training program designed to boost your strength &
+                        endurance over the course of a week.
+                    </div>
+                </div>
+
+                <div class="descriptionRightCol">
+                    <div class="descriptionGroup">
+
+                        <div class="descriptionItem">
+                            <div class="left">
+                                <img src="{% static 'assets/images/class_01_detail/description/calendar.svg' %}" alt="">
+                                <span>Classes</span>
+                            </div>
+                            <span class="detailInfo">7</span>
+                        </div>
+                        <div class="descriptionItem">
+                            <div class="left">
+                                <img src="{% static 'assets/images/class_01_detail/description/clock.svg' %}" alt="">
+                                <span>Average duration</span>
+                            </div>
+                            <span class="detailInfo">20 minutes</span>
+                        </div>
+                        <div class="descriptionItem">
+                            <div class="left">
+                                <img src="{% static 'assets/images/class_01_detail/description/scoreboard.svg' %}" alt="">
+                                <span>Difficulity</span>
+                            </div>
+                            <span class="detailInfo">Beginner</span>
+                        </div>
+                        <div class="descriptionItem">
+                            <div class="left">
+                                <img src="{% static 'assets/images/class_01_detail/description/candlesticks.svg' %}" alt="">
+                                <span>Intensity</span>
+                            </div>
+                            <span class="detailInfo">Level 2</span>
+                        </div>
+
+                    </div>
+                    <div class="divider"></div>
+                </div>
+            </div>
+
+            <div class="descriptionRow">
+
+                <div class="descriptionLeftCol">
+                    <div class="descriptionPreview">
+                        <img src="{% static 'assets/images/class_01_detail/description/workout-pic.png' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="descriptionRightCol">
+                    <div class="descriptionText">
+                        <p>A seven-day bodyweight training program designed to boost your strength and endurance
+                            over
+                            the course of a week.
+                        </p>
+                        <p>In this series, you will:</p>
+                    </div>
+
+                    <ul class="descriptionList">
+                        <li>
+                            <img src=" {% static 'assets/images/class_01_detail/description/check.svg' %}" alt="">
+                            <span> Get a full strength and cardio workout — no equipment necessary</span>
+                        </li>
+                        <li> <img src="{% static 'assets/images/class_01_detail/description/check.svg' %}" alt="">
+                            <span> Strengthen and tone your entire body </span>
+                        </li>
+                        <li>
+                            <img src="{% static 'assets/images/class_01_detail/description/check.svg' %}" alt="">
+                            <span> Increase your balance, flexibility, and endurance</span>
+                        </li>
+                    </ul>
+
+                    <div class="desriptionBtns">
+                        <button class="btnLock">
+                            <img src="{% static 'assets/images/class_01_detail/description/lock.svg' %}" alt="">
+                        </button>
+                        <button class="btn btn_orange">Start free trial</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="interesting">
+            <h2 class="interestingTitle">You may interested
+            </h2>
+
+            <div class="swiperContainer">
+                {% comment %} 
+                  <div class="catalogList">
+
+                    <!--  -->
+                    <div class="card">
+                        <div class="cardPreview">
+                            <img src="{% static 'assets/images/class_01_detail/catalogList/card-pic-1.png' %}" alt="">
+                            <div class="cardStatus yoga">yoga</div>
+                        </div>
+
+                        <div class="cardHead">
+                            <div class="cardUser">
+                                <div class="cardAvatar">
+                                    <img src="{% static 'assets/images/class_01_detail/catalogList/cardUserAvatar-5.png' %}" alt="">
+                                </div>
+                                <div class="cardDetails">
+                                    <div class="cardTitle">7-days barre body</div>
+                                    <div class="cardTrainer">
+                                        <span class="firstName">FistName LastName</span>
+                                        <span class="lastName"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardLevel beginner">Beginner</div>
+                        </div>
+
+                        <div class="cardParameters">
+                            <div class="cardParameter">
+                                <img src="{% static 'assets/images/class_01_detail/catalogList/youtube.svg' %}" alt=""> 7
+                            </div>
+                            <div class="cardParameter">
+                                <img src="{% static 'assets/images/class_01_detail/catalogList/people.svg' %}" alt=""> 160
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="card">
+                        <div class="cardPreview">
+                            <img class="backPreview" src="{% static 'assets/images/class_01_detail/catalogList/card-pic-2.png' %}" alt="">
+                            <div class="cardStatus fitness">fitness </div>
+                            <div class="playSmall">
+                                <img src="{% static 'assets/images/class_01_detail/catalogList/playSmall.svg' %}" alt="">
+                            </div>
+                        </div>
+
+                        <div class="cardHead">
+                            <div class="cardUser">
+                                <div class="cardAvatar">
+                                    <img src="{% static 'assets/images/class_01_detail/catalogList/cardUserAvatar-2.png' %}" alt="">
+                                </div>
+                                <div class="cardDetails">
+                                    <div class="cardTitle">Sweet and tone</div>
+                                    <div class="cardTrainer">
+                                        <span class="firstName">FistName</span>
+                                        <span class="lastName">LastName</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardLevel beginner">beginner</div>
+                        </div>
+
+                        <div class="cardParameters">
+                            <div class="cardParameter">
+                                <img src="{% static 'assets/images/class_01_detail/catalogList/youtube.svg' %}" alt=""> 7
+                            </div>
+                            <div class="cardParameter">
+                                <img src="{% static 'assets/images/class_01_detail/catalogList/people.svg' %}" alt=""> 160
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="card">
+                        <div class="cardPreview">
+                            <img src="{% static 'assets/images/class_01_detail/catalogList/card-pic-3.png' %}" alt="">
+                            <div class="cardStatus yoga">yoga</div>
+                        </div>
+
+                        <div class="cardHead">
+                            <div class="cardUser">
+                                <div class="cardAvatar">
+                                    <img src="{% static 'assets/images/class_01_detail/catalogList/cardUserAvatar-3.png' %}" alt="">
+                                </div>
+                                <div class="cardDetails">
+                                    <div class="cardTitle">Baseline Bootcamp</div>
+                                    <div class="cardTrainer">
+                                        <span class="firstName">FistName</span>
+                                        <span class="lastName">LastName</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardLevel beginner">beginner</div>
+                        </div>
+
+                        <div class="cardParameters">
+                            <div class="cardParameter">
+                                <img src="{% static 'assets/images/class_01_detail/catalogList/youtube.svg' %}" alt=""> 7
+                            </div>
+                            <div class="cardParameter">
+                                <img src="{% static 'assets/images/class_01_detail/catalogList/people.svg' %}" alt=""> 160
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+
+                  </div>  
+                {% endcomment %}
+
+                {% comment %}? include card html {% endcomment %}
+                    {% include "includes_partials/catalog_cards.html" %}
+                {% comment %}! include card html {% endcomment %}
+
+                <button class="slickPrev direction"><i class="fa-solid fa-left-long"></i></button>
+                <button class="slickNext direction"><i class="fa-solid fa-right-long"></i></button>
+            </div>
+
+            <div class="interestingBtn">
+                <button class="discoverMore">Browser more</button>
+                <button class="tDiscoverMore">
+                    <span>Discover more </span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+{% comment %}! <!--! description End --> {% endcomment %}
+
+
+{% endblock content %}
+{% comment %} *--- Content ---* {% endcomment %}
+
+
+{% block custom_js %}
+    
+{% endblock custom_js  %}

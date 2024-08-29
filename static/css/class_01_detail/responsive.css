@@ -1,0 +1,117 @@
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --interesting_column_count: 2;
+    --columg-gap: 24px;
+  }
+
+  .description .descriptionWrapper {
+    padding: 112px 0px;
+  }
+
+  .interesting {
+    padding-bottom: 112px;
+  }
+
+  .interestingBtn button.discoverMore {
+    display: none;
+  }
+  .interestingBtn button.tDiscoverMore {
+    display: flex;
+  }
+
+}
+
+@media screen and (max-width: 985px) {
+  .descriptionLeftCol h2.descroptionTitle {
+    font-size: 42px;
+    line-height: 50px;
+  }
+  .descriptionLeftCol .descriptionInfo {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .descriptionRightCol .descriptionText p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .description .descriptionWrapper {
+    padding: 96px 0px;
+  }
+
+  .interesting {
+    padding-bottom: 96px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  /*  */
+  .description .descriptionWrapper .descriptionRow {
+    flex-direction: column;
+  }
+  .description .descriptionLeftCol,
+  .description .descriptionRightCol {
+    width: 100%;
+  }
+  .descriptionRightCol .descriptionText p {
+    font-size: unset;
+    line-height: unset;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --interesting_column_count: 1;
+  }
+
+  .catalogList .card .cardPreview img {
+    height: unset;
+  }
+  button.direction {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0px;
+    padding: 0px 32px;
+  }
+  .header {
+    padding: 48px 0px 24px 0px;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+  .descriptionLeftCol h2.descroptionTitle {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.4px;
+  }
+  .descriptionLeftCol .descriptionInfo {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .interestingBtn {
+    display: flex;
+    flex-direction: column;
+  }
+  .interestingBtn button {
+    margin: unset;
+  }
+  .interestingBtn button.tDiscoverMore {
+    justify-content: center;
+  }
+  .description .descriptionWrapper {
+    row-gap: 24px;
+  }
+  .interesting .interestingTitle {
+    text-align: center;
+  }
+}

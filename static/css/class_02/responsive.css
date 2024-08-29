@@ -1,0 +1,288 @@
+/*? Tablet Start */
+@media screen and (max-width: 1024px) {
+  /*? heroHeader */
+  .heroHeader .wrap .contentCol .mainTitle {
+    font-size: 56px;
+    line-height: 56px;
+    margin: 12px 0px 30px 0px;
+  }
+
+  /** trainers Start */
+  :root {
+    --trainers_columns-count: 3;
+    --programs_column-count: 2;
+  }
+}
+
+/* Mobil Start */
+@media screen and (max-width: 768px) {
+  .heroHeader .container {
+    width: 1120px;
+    max-width: 100%;
+    margin: 0px 0px 0px 2.5%;
+  }
+  /** trainers Start */
+  :root {
+    --trainers_columns-count: 2;
+  }
+  .trainers .trainersList .listWrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .heroHeader .wrap .contentCol .mainTitle {
+    font-size: 50px;
+    line-height: 50px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  :root {
+    /* --trainers_columns-count: 2; */
+    --programs_column-count: 1;
+  }
+  .modalContent .trainerSlider a {
+    width: 100%;
+  }
+
+  .heroHeader {
+    padding: 64px 0px;
+  }
+  .heroHeader .wrap {
+    display: block;
+    position: relative;
+  }
+  .heroHeader .container {
+    max-width: 95%;
+    margin: 0px auto;
+  }
+  .heroHeader .wrap .contentCol {
+    width: 100%;
+    display: block;
+    margin: 0px;
+  }
+
+  .heroHeader .wrap .contentCol .overlap button {
+    width: 100%;
+    font-size: 24px;
+    padding: 24px 0px;
+    border-radius: 32px;
+  }
+  .heroHeader .wrap .previewCol {
+    width: 100%;
+    margin: 40px 0px 10px 0px;
+  }
+
+  .heroHeader .wrap .contentCol .button_arrow_bottom {
+    position: absolute;
+    left: 0px;
+    margin-top: 20px;
+    bottom: 0px;
+  }
+
+  /*  */
+  .catalogNav > ul {
+    display: none;
+  }
+
+  .select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* ******************************************************** */
+@media screen and (max-width: 500px) {
+  .sorting {
+    width: 100%;
+  }
+
+  .select {
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    background: var(--Neutrals-8);
+    border-radius: 12px;
+    opacity: 1;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 48px;
+    border: 2px solid var(--Neutrals-6);
+  }
+  .select .select_arrow i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease-in;
+  }
+  .sorting .select_arrow i.up {
+    transform: rotate(180deg);
+  }
+
+  .focus {
+    border-color: var(--Neutrals-4);
+    /* box-shadow: inset 0 0 0 2px #4b6baa; */
+  }
+  .select .select_arrow {
+    display: block;
+    border-radius: 50%;
+    border: 2px solid var(--Neutrals-6);
+    color: var(--section-text);
+    padding: 4px;
+  }
+  .select .select_arrow.focus {
+    border-color: #23262f;
+  }
+
+  .select .list {
+    display: none;
+    position: absolute;
+    top: 140%;
+    left: 0px;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--Neutrals-8);
+    border-radius: 12px;
+    border: 2px solid var(--Neutrals-6);
+  }
+  .select .list li {
+    width: 100%;
+    color: var(--Neutrals-2, #edeeee);
+    background-color: var(--Neutrals-7);
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    min-height: auto;
+    padding: 10px 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    transition: all 0.5s ease;
+  }
+  .select .list li.selected {
+    border-radius: 0px;
+  }
+  ul.list li:hover {
+    cursor: pointer;
+    background-color: var(--Neutrals-6);
+  }
+  ul.list.show {
+    display: block;
+  }
+  .sorting .current {
+    color: var(--section-text);
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  .select input {
+    background-color: var(--Neutrals-8);
+    display: block;
+    border: none;
+    appearance: none;
+    height: 24px;
+    width: 100%;
+    color: var(--Neutrals-2, #23262f);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  .select .current {
+    display: block;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .select .select_arrow i.changeDirection {
+    transform: rotate(180deg);
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
+    --trainers_rows-gap: 24px;
+    --trainers_columns-gap: 8px;
+  }
+  .trainers .trainersList .listWrap .trainerItem .profile {
+    margin: 0px auto 32px auto;
+    width: 80px;
+    height: 80px;
+  }
+
+  .trainers .trainersList .listWrap .trainerItem {
+    padding: 24px;
+  }
+  /** Modal Content Start */
+  .modalContent .trainerModalWrap,
+  .modalContent .bottomBtns {
+    display: none;
+  }
+  .modalContent .trainerTop .trainerName {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .modalContent .trainerTop .trainerAvatar {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/*? Mobile Start */
+@media screen and (max-width: 390px) {
+  .container {
+    width: 311px;
+    max-width: 95%;
+    margin: 0px auto;
+  }
+  .heroHeader .wrap .contentCol .mainTitle {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .trainers .trainerHead h2.trainerTitle {
+    font-size: 42px;
+    line-height: 42px;
+  }
+  .header {
+    padding: 48px 0px 24px 0px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  :root {
+    --trainers_columns-count: 1;
+  }
+  .modalContent {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .heroHeader .wrap .contentCol .overlap button {
+    border-radius: 12px;
+  }
+  .programs .programsList .programsItem {
+    padding: 32px 16px;
+  }
+  .trainers .trainerHead h2.trainerTitle {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .community h2.communityTitle {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .programs .programsTop h2.programsTitle {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}

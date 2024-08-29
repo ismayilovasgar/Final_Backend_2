@@ -1,0 +1,767 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Pricing{% endblock title %}
+
+
+{% block swiper_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+{% endblock swiper_css %}
+
+
+{% block custom_css %} 
+<link rel="stylesheet" href="{% static './css/pricing/style.css' %}">
+<link rel="stylesheet" href="{% static './css/pricing/responsive.css' %}">
+{% endblock custom_css %}
+
+
+{% comment %} *--- Content ---* {% endcomment %}
+{% block content %}
+
+    {% comment %} <!-- ? pricing Start --> {% endcomment %}
+    <section class="pricing softlightmode_dark">
+      <div class="container">
+        <div class="stage">get stronger with fitness pro</div>
+        <div class="pricingTitle">Choose a plan that&#39; right for you</div>
+
+        {% comment %} ! Static 
+        <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+        <img src="{% static 'assets/images/pricing/pricingTable/minus.svg' %}" alt="">
+        <img src="{% static 'assets/images/pricing/pricingTable/info.svg' %}" alt=""> 
+        {% endcomment %}
+
+        <div class="pricingTable">
+          <div class="row">
+  
+            <div class="pricingCol">
+              <div class="pricingHead"></div>
+              <div class="pricingBody">
+                <div class="pricingItem">
+                  <div class="pricingCategory">Main Features</div>
+                  <div class="pricingParameters">
+  
+                    <div class="pricingParameter">
+                      <p>Time-Trackers</p>
+                      <img src="{% static 'assets/images/pricing/pricingTable/info.svg' %}" alt="">
+                    </div>
+                    <div class="pricingParameter">
+                      <p>Exclusive Music</p>
+                      <img src="{% static 'assets/images/pricing/pricingTable/info.svg' %}" alt="">
+                    </div>
+                    <div class="pricingParameter">
+                      <p>E-books</p>
+                      <img src="{% static 'assets/images/pricing/pricingTable/info.svg' %}" alt="">
+                    </div>
+                    <div class="pricingParameter">
+                      <p>Documents</p>
+                      <img src="{% static 'assets/images/pricing/pricingTable/info.svg' %}" alt="">
+                    </div>
+                    <div class="pricingParameter">
+                      <p>Premium Tutorial</p>
+                      <img src="{% static 'assets/images/pricing/pricingTable/info.svg' %}" alt="">
+                    </div>
+                    <div class="pricingParameter">
+                      <p>Client Support</p>
+                      <img src="{% static 'assets/images/pricing/pricingTable/info.svg' %}" alt="">
+                    </div>
+                    <div class="pricingParameter">
+                      <p>Premium Courses</p>
+                      <img src="{% static 'assets/images/pricing/pricingTable/info.svg' %}" alt="">
+                    </div>
+                    <div class="pricingParameter">
+                      <p>User Support</p>
+                      <img src="{% static 'assets/images/pricing/pricingTable/info.svg' %}" alt="">
+                    </div>
+                    <div class="pricingParameter">
+                      <p>Chat to trainers</p>
+                      <img src="{% static 'assets/images/pricing/pricingTable/info.svg' %}" alt="">
+                    </div>
+                    <div class="pricingParameter">
+                      <p>Unlimited videos</p>
+                      <img src="{% static 'assets/images/pricing/pricingTable/info.svg' %}" alt="">
+                    </div>
+  
+  
+  
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+  
+            <div class="pricingCol">
+              <div class="pricingHead">
+                <div class="pricingPackage">free trial</div>
+                <div class="pricingDescription">14 days of free trial</div>
+                <div class="pricingCost">
+                  <span class="symbol">$</span>
+                  <span class="amount">0</span>
+                </div>
+                <div class="pricingNote">per month</div>
+              </div>
+              <div class="pricingBody">
+                <div class="pricingMore">See all features <i class="fa-solid fa-angle-down"></i></div>
+  
+                <div class="pricingList">
+  
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/minus.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/minus.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/minus.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/minus.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/minus.svg' %}" alt="">
+                  </div>
+  
+                </div>
+                <button class="btn btn_orange">Start free trial</button>
+  
+              </div>
+            </div>
+  
+            <div class="pricingCol">
+              <div class="pricingHead">
+                <div class="pricingPackage">Premium</div>
+                <div class="pricingDescription">Fit with everyone</div>
+                <div class="pricingCost">
+                  <span class="symbol">$</span>
+                  <span class="amount">20.88</span>
+                </div>
+                <div class="pricingNote">per month</div>
+              </div>
+              <div class="pricingBody">
+                <div class="pricingMore">
+                  See all features
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+  
+                <div class="pricingList">
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/minus.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/minus.svg' %}" alt="">
+                  </div>
+                </div>
+                <button class="btn btn_orange">Get Started</button>
+  
+  
+              </div>
+            </div>
+  
+            <div class="pricingCol">
+              <div class="pricingHead">
+                <div class="pricingPackage">Unlimited Access</div>
+                <div class="pricingDescription">Are you pro? Let’s do it</div>
+              </div>
+              <div class="pricingBody">
+                <div class="pricingMore">See all features <i class="fa-solid fa-angle-down"></i></div>
+  
+                <div class="pricingList">
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                  <div class="pricingParameter">
+                    <p>Time-Trackers</p>
+                    <img src="{% static 'assets/images/pricing/pricingTable/check.svg' %}" alt="">
+                  </div>
+                </div>
+  
+  
+                <button class="btn contactSale">Contact Sale</button>
+              </div>
+            </div>
+  
+  
+          </div>
+        </div>
+      </div>
+    </section>
+    {% comment %} <!-- pricing End --> {% endcomment %}
+    {% comment %} <!--? comment Start  --> {% endcomment %}
+    <section class="comment lightmode">
+      <div class="container">
+        <div class="commentWrapper">
+  
+          <div class="commentHead">
+            <div class="comment_head_wrap">
+  
+              <div class="head_left_col">
+                <button class="myswiper-button-prev">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button class="myswiper-button-next">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+  
+              <div class="head_right_col">
+                <h2 class="commentTitle">Find what moves you</h2>
+                <div class="commentInfo">
+                  Whether you're a complete beginner or you want to step up your
+                  routine, get the full studio experience at home with thousands of
+                  classes for body, mind, and spirit.
+                </div>
+              </div>
+  
+            </div>
+          </div>
+  
+          <!-- <div class="swiper"> -->
+          <div class="comment_swiper">
+  
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="commentPreview">
+                  <img src="{% static 'assets/images/pricing/comment/weightplatescolor.png' %}" alt="" />
+                </div>
+                <div class="commentSubtitle">Fitness</div>
+                <div class="commentContent">Great physique</div>
+              </div>
+              <div class="swiper-slide">
+                <div class="commentPreview">
+                  <img src="{% static 'assets/images/pricing/comment/yogamatcolor.png' %}" alt="" />
+                </div>
+                <div class="commentSubtitle">Gymnastic</div>
+                <div class="commentContent">Enhanced strength</div>
+              </div>
+              <div class="swiper-slide">
+                <div class="commentPreview">
+                  <img src="{% static 'assets/images/pricing/comment/basketballcolor.png' %}" alt="" />
+                </div>
+                <div class="commentSubtitle">Basketball</div>
+                <div class="commentContent">Relax $ work efficiently</div>
+              </div>
+              <div class="swiper-slide">
+                <div class="commentPreview">
+                  <img src="{% static 'assets/images/pricing/comment/yogamatcolor.png' %}" alt="" />
+                </div>
+                <div class="commentSubtitle">Yoga</div>
+                <div class="commentContent">Perfect physique</div>
+              </div>
+              <div class="swiper-slide">
+                <div class="commentPreview">
+                  <img src="{% static 'assets/images/pricing/comment/yogamatcolor.png' %}" alt="" />
+                </div>
+                <div class="commentSubtitle">Yoga</div>
+                <div class="commentContent">Perfect physique</div>
+              </div>
+              <div class="swiper-slide">
+                <div class="commentPreview">
+                  <img src="{% static 'assets/images/pricing/comment/weightplatescolor.png' %}" alt="" />
+                </div>
+                <div class="commentSubtitle">Fitness</div>
+                <div class="commentContent">Great physique</div>
+              </div>
+              <div class="swiper-slide">
+                <div class="commentPreview">
+                  <img src="{% static 'assets/images/pricing/comment/yogamatcolor.png' %}" alt="" />
+                </div>
+                <div class="commentSubtitle">Gymnastic</div>
+                <div class="commentContent">Enhanced strength</div>
+              </div>
+            </div>
+  
+          </div>
+          <!-- </div> -->
+  
+  
+        </div>
+      </div>
+    </section>
+    {% comment %} <!--!comment End  --> {% endcomment %}
+    {% comment %} <!--? faq Start  --> {% endcomment %}
+    <section class="faq lightmode">
+      <div class="container">
+        <div class="faqTop">
+          <div class="stageSmall">learn how to get started</div>
+          <div class="faqTitle">Frequently Asked Questions</div>
+          <div class="faqInfo">
+            Join Fitness Pro community now to get free updates and also alot of
+            freebies are waiting for you or <span> Contact Support</span>
+          </div>
+  
+          <div class="faqNav">
+            
+  
+            {% comment %} <div class="select sorting">
+              <input type="text" name="style" class="current" value="General" />
+              <div class="select_arrow">
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+              <ul class="list">
+                <li data-value="General" class="option selected">General</li>
+                <li data-value="Trainer" class="option">Trainer</li>
+                <li data-value="Subscription" class="option">Subscription</li>
+                <li data-value="Class" class="option">Class</li>
+              </ul>
+            </div> {% endcomment %}
+  
+  
+          </div>
+        </div>
+        <div class="faqWrap">
+          <div class="faqList">
+            <div class="faqItem" data-name="p-1">
+              <div class="faqItemHead">
+                <p>How do I register for an in-person class?</p>
+                <i class="fa-solid fa-angle-down"></i>
+                <!-- <i class="fa-solid fa-angle-up"></i> -->
+              </div>
+              <div class="faqItemBody" data-target="p-1">
+                <div class="faqRow">
+                  <div class="faqPreview">
+                    <img src="{% static 'assets/images/pricing/faq/video.png' %}" alt="" />
+                  </div>
+                  <div class="faqContext">
+                    <div class="faqSubtitle">
+                      You don't need to do anything else
+                    </div>
+                    <div class="faqContent">
+                      <p>
+                        Mix-and-match dozens of responsive elements to quickly
+                        configure your favorite landing page layouts.
+                      </p>
+                      <p>
+                        Or hit the ground running with 10 pre-built templates,
+                        all in light or dark mode."
+                      </p>
+                    </div>
+                    <button class="btn">Learn more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="faqItem">
+              <div class="faqItemHead">
+                <p>What is the status of my Fitness Pro membership?</p>
+                <i class="fa-solid fa-angle-down"></i>
+                <i class="fa-solid fa-angle-up"></i>
+              </div>
+              <div class="faqItemBody">
+                <div class="faqRow">
+                  <div class="faqPreview">
+                    <img src="{% static 'assets/images/pricing/faq/video.png' %}" alt="" />
+                  </div>
+                  <div class="faqContext">
+                    <div class="faqSubtitle">
+                      You don't need to do anything else
+                    </div>
+                    <div class="faqContent">
+                      <p>
+                        Mix-and-match dozens of responsive elements to quickly
+                        configure your favorite landing page layouts.
+                      </p>
+                      <p>
+                        Or hit the ground running with 10 pre-built templates,
+                        all in light or dark mode."
+                      </p>
+                    </div>
+                    <button class="btn">Learn more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="faqItem">
+              <div class="faqItemHead">
+                <p>How old does my child need to be to participate in class?</p>
+                <i class="fa-solid fa-angle-down"></i>
+                <i class="fa-solid fa-angle-up"></i>
+              </div>
+              <div class="faqItemBody">
+                <div class="faqRow">
+                  <div class="faqPreview">
+                    <img src="{% static 'assets/images/pricing/faq/video.png' %}" alt="" />
+                  </div>
+                  <div class="faqContext">
+                    <div class="faqSubtitle">
+                      You don't need to do anything else
+                    </div>
+                    <div class="faqContent">
+                      <p>
+                        Mix-and-match dozens of responsive elements to quickly
+                        configure your favorite landing page layouts.
+                      </p>
+                      <p>
+                        Or hit the ground running with 10 pre-built templates,
+                        all in light or dark mode."
+                      </p>
+                    </div>
+                    <button class="btn">Learn more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="faqItem">
+              <div class="faqItemHead">
+                <p>Do I have to be a member to take class?</p>
+                <i class="fa-solid fa-angle-down"></i>
+                <i class="fa-solid fa-angle-up"></i>
+              </div>
+              <div class="faqItemBody">
+                <div class="faqRow">
+                  <div class="faqPreview">
+                    <img src="{% static 'assets/images/pricing/faq/video.png' %}" alt="" />
+                  </div>
+                  <div class="faqContext">
+                    <div class="faqSubtitle">
+                      You don't need to do anything else
+                    </div>
+                    <div class="faqContent">
+                      <p>
+                        Mix-and-match dozens of responsive elements to quickly
+                        configure your favorite landing page layouts.
+                      </p>
+                      <p>
+                        Or hit the ground running with 10 pre-built templates,
+                        all in light or dark mode."
+                      </p>
+                    </div>
+                    <button class="btn">Learn more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="faqItem">
+              <div class="faqItemHead">
+                <p>Can I join a class once it's in session?</p>
+                <i class="fa-solid fa-angle-down"></i>
+                <i class="fa-solid fa-angle-up"></i>
+              </div>
+              <div class="faqItemBody">
+                <div class="faqRow">
+                  <div class="faqPreview">
+                    <img src="{% static 'assets/images/pricing/faq/video.png' %}" alt="" />
+                  </div>
+                  <div class="faqContext">
+                    <div class="faqSubtitle">
+                      You don't need to do anything else
+                    </div>
+                    <div class="faqContent">
+                      <p>
+                        Mix-and-match dozens of responsive elements to quickly
+                        configure your favorite landing page layouts.
+                      </p>
+                      <p>
+                        Or hit the ground running with 10 pre-built templates,
+                        all in light or dark mode."
+                      </p>
+                    </div>
+                    <button class="btn">Learn more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="faqItem">
+              <div class="faqItemHead">
+                <p>Do I need to buy a yoga mat, towel, or equipment?</p>
+                <i class="fa-solid fa-angle-down"></i>
+                <i class="fa-solid fa-angle-up"></i>
+              </div>
+              <div class="faqItemBody">
+                <div class="faqRow">
+                  <div class="faqPreview">
+                    <img src="{% static 'assets/images/pricing/faq/video.png' %}" alt="" />
+                  </div>
+                  <div class="faqContext">
+                    <div class="faqSubtitle">
+                      You don't need to do anything else
+                    </div>
+                    <div class="faqContent">
+                      <p>
+                        Mix-and-match dozens of responsive elements to quickly
+                        configure your favorite landing page layouts.
+                      </p>
+                      <p>
+                        Or hit the ground running with 10 pre-built templates,
+                        all in light or dark mode."
+                      </p>
+                    </div>
+                    <button class="btn">Learn more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% comment %} <!--! faq End  --> {% endcomment %}
+  
+    {% comment %} <!--? testimonials Start  --> {% endcomment %}
+    <section class="testimonials softlightmode">
+      <div class="container">
+        <div class="wrap">
+  
+          <div class="testmonialsItem">
+            <div class="testimonialsRow">
+              <div class="testimonialsCol">
+                <div class="testimonialsLogo">
+                  <img src="{% static 'assets/images/pricing/testimonials/logo.png' %}" alt="" />
+                </div>
+                <div class="testimonialsComment">
+                  “ Fitness Pro is the greatest fitness app. It's clear the
+                  makers behind this thing use it every week, because it is so
+                  perfect. “
+                </div>
+                <div class="testimonialsDetails">
+                  <div class="detailsIcon">
+                    <img src="{% static 'assets/images/pricing/testimonials/details_icon.png' %}" alt="" />
+                  </div>
+                  <div class="descriptionInfo">
+  
+                    <div class="detailsAuthor">Megane Schumm</div>
+                    <span class="detailsDivider"></span>
+                    <div class="detailsDescription">Legacy Data Coordinator</div>
+  
+                  </div>
+                </div>
+                <button class="btn readmore">Read full story</button>
+              </div>
+              <div class="testimonialsCol">
+                <div class="testimonialsPreview">
+                  <img src="{% static 'assets/images/pricing/testimonials/preview.png' %}" alt="" />
+                  <button class="play">
+                    <img src="{% static 'assets/images/pricing/testimonials/play.svg' %}" alt="" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="testmonialsNav">
+            <div class="swiper">
+              <div class="testimonials-swiper">
+                <ul class="swiper-wrapper">
+
+
+                  {% for trainer in trainers %}
+
+                    <li class="swiper-slide">
+                      <a href="#">
+                        <div class="testimonialsAvatar">
+                          <img src=" {{ trainer.image.url}}" alt="" />
+                        </div>
+                        <div class="testimonialsGroup">
+                          <div class="testmonialsName">{{ trainer.first_name }} {{ trainer.last_name}}</div>
+                          <div class="testmonialsPosition">{{ trainer.profession}}</div>
+                        </div>
+                      </a>
+                    </li>
+                  
+                  {% endfor %}
+  
+                  
+  
+                  {% comment %} <li class="swiper-slide">
+                    <a href="#">
+                      <div class="testimonialsAvatar">
+                        <img src="{% static 'assets/images/pricing/testimonials/cardUserAvatar-2.png' %}" alt="" />
+                      </div>
+                      <div class="testimonialsGroup">
+                        <div class="testmonialsName">Kaylah Botsford</div>
+                        <div class="testmonialsPosition">Personal Trainer</div>
+                      </div>
+                    </a>
+                  </li>
+  
+                  <li class="swiper-slide">
+                    <a href="#">
+                      <div class="testimonialsAvatar">
+                        <img src="{% static 'assets/images/pricing/testimonials/cardUserAvatar-4.png' %}" alt="" />
+                      </div>
+                      <div class="testimonialsGroup">
+                        <div class="testmonialsName">Reinhold Ullrich</div>
+                        <div class="testmonialsPosition">Personal Trainer</div>
+                      </div>
+                    </a>
+                  </li>
+  
+                  <li class="swiper-slide">
+                    <a href="#">
+                      <div class="testimonialsAvatar">
+                        <img src="{% static 'assets/images/pricing/testimonials/cardUserAvatar-1.png' %}" alt="" />
+                      </div>
+                      <div class="testimonialsGroup">
+                        <div class="testmonialsName">Josh Bartoletti</div>
+                        <div class="testmonialsPosition">Personal Trainer</div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="#">
+                      <div class="testimonialsAvatar">
+                        <img src="{% static 'assets/images/pricing/testimonials/cardUserAvatar-1.png' %}" alt="" />
+                      </div>
+                      <div class="testimonialsGroup">
+                        <div class="testmonialsName">Jazmin Grady</div>
+                        <div class="testmonialsPosition">Personal Trainer</div>
+                      </div>
+                    </a>
+                  </li>
+  
+                  <li class="swiper-slide">
+                    <a href="#">
+                      <div class="testimonialsAvatar">
+                        <img src="{% static 'assets/images/pricing/testimonials/cardUserAvatar-2.png' %}" alt="" />
+                      </div>
+                      <div class="testimonialsGroup">
+                        <div class="testmonialsName">Kaylah Botsford</div>
+                        <div class="testmonialsPosition">Personal Trainer</div>
+                      </div>
+                    </a>
+                  </li>
+  
+                  <li class="swiper-slide">
+                    <a href="#">
+                      <div class="testimonialsAvatar">
+                        <img src="{% static 'assets/images/pricing/testimonials/cardUserAvatar-4.png' %}" alt="" />
+                      </div>
+                      <div class="testimonialsGroup">
+                        <div class="testmonialsName">Reinhold Ullrich</div>
+                        <div class="testmonialsPosition">Personal Trainer</div>
+                      </div>
+                    </a>
+                  </li>
+  
+                  <li class="swiper-slide">
+                    <a href="#">
+                      <div class="testimonialsAvatar">
+                        <img src="{% static 'assets/images/pricing/testimonials/cardUserAvatar-1.png' %}" alt="" />
+                      </div>
+                      <div class="testimonialsGroup">
+                        <div class="testmonialsName">Josh Bartoletti</div>
+                        <div class="testmonialsPosition">Personal Trainer</div>
+                      </div>
+                    </a>
+                  </li> {% endcomment %}
+  
+                </ul>
+              </div>
+            </div>
+  
+  
+          </div>
+        </div>
+      </div>
+    </section>
+    {% comment %} <!--! testimonials End  --> {% endcomment %}
+  
+ 
+
+
+
+{% endblock content %}
+{% comment %} *--- Content ---* {% endcomment %}
+
+{% block swiper_js %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{% endblock swiper_js %}
+
+
+{% block custom_js %}
+    <script src="{% static '/js/pricing/pricing.js' %}"></script>
+{% endblock custom_js  %}

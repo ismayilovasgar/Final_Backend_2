@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Download{% endblock title %}
+{% comment %} {% block custom_favicon %}{% endblock custom_favicon %} {% endcomment %}
+
+
+{% block custom_css %} 
+<link rel="stylesheet" href="{% static 'css/download/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/download/responsive.css' %}">
+{% endblock custom_css %}
+
+
+{% comment %} *--- Content ---* {% endcomment %}
+{% block content %}
+
+    {% comment %}? <!-- ? hero_download Start --> {% endcomment %}
+    <section class="hero_download lightmode">
+        <div class="container">
+            <div class="hero_wrap">
+
+                <div class="imagePreview">
+                    <img class="some-icon-light" src="{% static 'assets/images/download/hero_download/lightPreview.png' %}" alt="">
+                    <img class="some-icon-dark" src="{% static 'assets/images/download/hero_download/darkPreview.png' %}" alt="">
+                </div>
+
+                <div class="text_content">
+                    <p class="hero_stage">time to get fitness pro</p>
+                    <h2 class="hero_title">Fitness Pro for any device.</h2>
+                    <p class="hero_text">Track your workouts, get better results, and be the best version of you. Less
+                        thinking, more lifting.
+                    </p>
+                    <form class="subscription">
+                        <input class="subscription__input" type="email" placeholder="Enter your email">
+                        <button class="subscription__btn" type="submit">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    {% comment %}! <!-- ! hero_download End --> {% endcomment %}
+    {% comment %}? <!-- ? platfrom End --> {% endcomment %}
+    <section class="platform lightmode">
+        <div class="container">
+
+            <div class="platform_title">
+                Choose the platform
+            </div>
+
+            <div class="platform_list">
+
+                <div class="platform_item">
+                    <div class="platform_item_wrap">
+                        <div class="platform_preview apple_orange">
+                            {% comment %} <img src="{% static 'assets/images/download/platform/appple.svg' %}" alt=""> {% endcomment %}
+                            <i class="fa-brands fa-apple"></i>
+                        </div>
+
+                        <div class="platform_details">
+                            <div class="platform_status updated">Updated</div>
+                            <div class="platform_subtitle">Fitness Pro for Mac OS</div>
+                            <div class="platform_description">We realize ideas from simple.</div>
+                            <button class="platform_btn">
+                                Download
+                                {% comment %} <img src="{% static 'assets/images/download/platform/download.svg' %}" alt=""> {% endcomment %}
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="platform_item">
+                    <div class="platform_item_wrap">
+                        <div class="platform_preview windows">
+                            {% comment %} <img src="{% static 'assets/images/download/platform/windows.svg' %}" alt=""> {% endcomment %}
+                            <i class="fa-brands fa-windows"></i>
+                        </div>
+
+                        <div class="platform_details">
+                            <div class="platform_status comming_soon">Comming Soon</div>
+                            <div class="platform_subtitle">Fitness Pro for Mac OS</div>
+                            <div class="platform_description">We realize ideas from simple.</div>
+                            <button class="platform_btn">
+                                Download
+                                {% comment %} <img src="{% static 'assets/images/download/platform/download.svg' %}" alt=""> {% endcomment %}
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="platform_item">
+                    <div class="platform_item_wrap">
+                        <div class="platform_preview mouse">
+                            {% comment %} <img src="{% static 'assets/images/download/platform/computer.svg' %}" alt=""> {% endcomment %}
+                            <i class="fa-solid fa-computer-mouse"></i>
+                        </div>
+
+                        <div class="platform_details">
+                            <div class="platform_status comming_soon">Comming Soon</div>
+                            <div class="platform_subtitle">Fitness Pro for Mac OS</div>
+                            <div class="platform_description">We realize ideas from simple.</div>
+                            <button class="platform_btn">
+                                Download
+                                {% comment %} <img src="{% static 'assets/images/download/platform/download.svg' %}" alt=""> {% endcomment %}
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="platform_item">
+                    <div class="platform_item_wrap">
+                        <div class="platform_preview apple_blue">
+                            {% comment %} <img src="{% static 'assets/images/download/platform/appple.svg' %}" alt=""> {% endcomment %}
+                            <i class="fa-brands fa-apple"></i>
+
+                        </div>
+
+                        <div class="platform_details">
+                            <div class="platform_status comming_soon">Comming Soon</div>
+                            <div class="platform_subtitle">Fitness Pro for Mac OS</div>
+                            <div class="platform_description">We realize ideas from simple.</div>
+                            <button class="platform_btn">
+                                Download
+                                {% comment %} <img src="{% static 'assets/images/download/platform/download.svg' %}" alt=""> {% endcomment %}
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="platform_item">
+                    <div class="platform_item_wrap">
+                        <div class="platform_preview android">
+                            {% comment %} <img src="{% static 'assets/images/download/platform/android.svg' %}" alt=""> {% endcomment %}
+                            <i class="fa-brands fa-android"></i>
+                        </div>
+
+                        <div class="platform_details">
+                            <div class="platform_subtitle">Fitness Pro for Mac OS</div>
+                            <div class="platform_description">We realize ideas from simple.</div>
+                            <button class="platform_btn">
+                                Download
+                                {% comment %} <img src="{% static 'assets/images/download/platform/download.svg' %}" alt=""> {% endcomment %}
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="platform_see_plan">
+                <a class="seePlan">See the plan</a>
+                <a class="contactUs">Contact us</a>
+            </div>
+
+        </div>
+    </section>
+    {% comment %}! <!-- ! platform End --> {% endcomment %}
+     {% comment %}? <!-- ? Community Start --> {% endcomment %}
+    {% include "includes_partials/community.html" with community_title="Join Stacks Community"%}
+    {% comment %}! <!-- ! Community End --> {% endcomment %}
+
+{% endblock content %}
+{% comment %} *--- Content ---* {% endcomment %}
+
+
+{% block custom_js %}
+    
+{% endblock custom_js  %}

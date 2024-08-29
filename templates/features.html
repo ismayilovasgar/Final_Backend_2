@@ -1,0 +1,492 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Features{% endblock title %}
+{% comment %} {% block custom_favicon %}{% endblock custom_favicon %} {% endcomment %}
+
+{% block swiper_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+{% endblock swiper_css %}
+
+
+{% block custom_css %} 
+<link rel="stylesheet" href="{% static 'css/features/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/features/responsive.css' %}">
+{% endblock custom_css %}
+
+
+{% comment %} *--- Content ---* {% endcomment %}
+{% block content %}
+
+    {% comment %}? <!--? heroHeader Start  --> {% endcomment %}
+    <section class="heroHeader lightmode">
+        <div class="container">
+            <div class="wrap">
+                <div class="contentCol">
+                    <div class="overlap">
+                        <p class="stage">Train smarter. get stronger</p>
+                        <h2 class="mainTitle">Simple fitness experience for everyone.</h2>
+                        <p class="mainText">Track your workouts, get better results, and be the bestversion of you. Less
+                            thinking, more lifting.
+                        </p>
+                        <div class="buttons_bottomm">
+                            <button class="btn btn_orange">Download App</button>
+                            <button class="btn btn_white">Book a class</button>
+                        </div>
+                    </div>
+
+                    <button class="button_arrow_bottom">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+
+                </div>
+
+                <div class="previewCol">
+                    <img class="some-icon-light" src="{% static '/assets/images/features/heroHeader/Light.png' %}" alt="">
+                    <img class="some-icon-dark" src="{% static '/assets/images/features/heroHeader/Dark.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    {% comment %} <!--! heroHeader End  --> {% endcomment %}
+
+    {% comment %} ?<!--? intro Start  --> {% endcomment %}
+    <section class="intro lightmode">
+        <div class="container">
+            <div class="wrapper">
+
+                <div class="introContent">
+                    <h2 class="hline1">Train smarter, get stronger.</h2>
+                    <p class="body1">Fitness Pro helps track your workouts, get better results, and be the best
+                        version of you.Less thinking, more lifting &#128293;&#127936;
+                    </p>
+                    <button class="btn btn_orange">Start free trial</button>
+                </div>
+
+                <div class="introGallery">
+                    <img src="{% static 'assets/images/features/intro/Light.png' %}" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    {% comment %} <!--! intro End  --> {% endcomment %}
+
+    {% comment %}? <!--? details Start  --> {% endcomment %}
+    <section class="details lightmode">
+        <div class="container">
+            <div class="detailsHead">
+                <p class="stageSmall">New workouts added every week</p>
+                <h2 class="detailsTitle">A new fitness experience for everyone</h2>
+            </div>
+            <div class="detailsList">
+
+                <div class="detailsItem">
+                    <div class="detailsIcon">
+                        <img class="some-icon-light" src="{% static 'assets/images/features/details/img1.svg' %}" alt="">
+                        <img class="some-icon-dark" src="{% static 'assets/images/features/details/img1_dark.svg' %}" alt="">
+                    </div>
+                    <h3 class="detailsCategory">Keep track of calories and macros</h3>
+                    <p class="detailsContent">
+                        Fitness Pro helps track your workouts, get better results, and be the best
+                        version of you.Less thinking!
+                    </p>
+                </div>
+                <div class="detailsItem">
+                    <div class="detailsIcon">
+                        <img class="some-icon-light" src="{% static 'assets/images/features/details/img2.svg' %}" alt="">
+                        <img class="some-icon-dark" src="{% static 'assets/images/features/details/img2_dark.svg' %}" alt="">
+
+                    </div>
+                    <h3 class="detailsCategory">Keep track of calories and macros</h3>
+                    <p class="detailsContent">
+                        Fitness Pro helps track your workouts, get better results, and be the best
+                        version of you.Less thinking!
+                    </p>
+                </div>
+                <div class="detailsItem">
+                    <div class="detailsIcon">
+                        <img class="some-icon-light" src="{% static 'assets/images/features/details/img3.svg' %}" alt="">
+                        <img class="some-icon-dark" src="{% static 'assets/images/features/details/img3_dark.svg' %}" alt="">
+
+                    </div>
+                    <h3 class="detailsCategory">Keep track of calories and macros</h3>
+                    <p class="detailsContent">
+                        Fitness Pro helps track your workouts, get better results, and be the best
+                        version of you.Less thinking!
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    {% comment %}! <!--! details End  --> {% endcomment %}
+
+    {% comment %}? <!--? program Start  --> {% endcomment %}
+    <section class="program lightmode">
+        <div class="container">
+            <div class="wrapper">
+                <div class="programLeftCol">
+                    <h3>explore fitness pro program</h3>
+                    <div class="programList">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="programItemLeft">
+                                        <div class="programIcon">
+                                            <img src="{% static 'assets/images/features/program/light_icon.svg' %}" alt="">
+                                        </div>
+                                        <div class="programSubtitle">Program Videos</div>
+                                    </div>
+
+                                    <div class="programArrow">
+                                        <img src="{% static 'assets/images/features/program/program_icon.svg' %}" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="programItemLeft">
+                                        <div class="programIcon">
+                                            <img src="{% static 'assets/images/features/program/light_icon.svg' %}" alt="">
+                                        </div>
+                                        <div class="programSubtitle">Program Class</div>
+                                    </div>
+
+                                    <div class="programArrow">
+                                        <img src="{% static 'assets/images/features/program/program_icon.svg' %}" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="programItemLeft">
+                                        <div class="programIcon">
+                                            <img src="{% static 'assets/images/features/program/light_icon.svg' %}" alt="">
+                                        </div>
+                                        <div class="programSubtitle">Exclusive Trainers</div>
+                                    </div>
+                                    <div class="programArrow">
+                                        <img src="{% static 'assets/images/features/program/program_icon.svg' %}" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="programRightCol">
+                    <div class="programView">
+                        <img src="{% static 'assets/images/features/program/bottle-2@2x.png' %}" alt="">
+                    </div>
+                    <div class="programInfo">
+                        Stacks is a production-ready library of stackable content blocks built in
+                        React Native
+                    </div>
+                    <div class="programBookLink">
+                        <a class="btn btn_orange" href="#">Learn a more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% comment %} <!--! ProgramSection End  --> {% endcomment %}
+
+    {% comment %}? <!--? homeAbout Start  --> {% endcomment %}
+    <section class="homeAbout lightmode">
+        <div class="container">
+            <div class="topRow">
+                <div class="leftCol">
+                    <div class="aboutStage">
+                        fitness pro
+                    </div>
+                </div>
+                <div class="rightCol">
+                    <h2 class="aboutTitle">Simple, powerful, easy-to-use</h2>
+                    <p class="aboutInfo">Track your workouts, get better results, and be the best version of you. Less
+                        thinking, more lifting.
+                    </p>
+                </div>
+            </div>
+            <div class="bottomRow">
+                <div class="leftCol">
+                    <div class="aboutList">
+                        <div class="aboutItem">
+                            <div class="aboutNumber">01</div>
+                            <h2 class="aboutSubtitle">Intuitive and clean design</h2>
+                            <p class="aboutContent">Track your workouts, get better results, and be the best version of
+                                you.
+                            </p>
+                        </div>
+
+                        <div class="aboutItem">
+                            <div class="aboutNumber">02</div>
+                            <h2 class="aboutSubtitle">Intuitive and clean design</h2>
+                            <p class="aboutContent">Track your workouts, get better results, and be the best version of
+                                you.
+                            </p>
+                        </div>
+
+                        <div class="aboutItem">
+                            <div class="aboutNumber">03</div>
+                            <h2 class="aboutSubtitle">Intuitive and clean design</h2>
+                            <p class="aboutContent">Track your workouts, get better results, and be the best version of
+                                you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightCol">
+                    <div class="aboutPreview">
+                        <img class="some-icon-light" src="{% static 'assets/images/features/homeAbout/fitness_bag_light.png' %}" alt="">
+                        <img class="some-icon-dark" src="{% static 'assets/images/features/homeAbout/fitness_bag_dark.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% comment %} <!--! homeAbout End  --> {% endcomment %}
+
+    {% comment %}? <!-- * Slider --> {% endcomment %}
+    <section class="review lightmode">
+        <div class="container">
+
+            <div class="review-swiper">
+
+                <div class="review-swiper-content">
+                    <div class="swiper-wrapper">
+
+                        {% for review in reviews %}
+                        <div class="swiper-slide">
+                            <div class="reviewItem">
+                                <div class="reviewLogo">
+                                    <img src="{{ review.logo.url}}" alt="">
+                                </div>
+                                <div class="reviewTitle"> {{ review.content}}
+                                </div>
+                                <div class="reviewAuthor">{{ review.author }}</div>
+                                <div class="reviewPosition">{{ review.designer }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="reviewBtns">
+                <button class="previoustBtn"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="nextBtn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+
+        </div>
+    </section>
+    {% comment %}! <!--! review End  --> {% endcomment %}
+
+    {% comment %}? <!--? clients Start  --> {% endcomment %}
+    <section class="clients lightmode">
+        <div class="container">
+            <div class="clientsTitle">
+                <p>Trusted by more than 2M users worldwide</p>
+                <p class="mobileText">We work with people from over the world</p>
+            </div>
+            <div class="clients_swiper" style="overflow: hidden;">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><img src="{% static 'assets/images/features/clients/logo01.png' %}" alt=""></li>
+                    <li class="swiper-slide"><img src="{% static 'assets/images/features/clients/logo02.png' %}" alt=""></li>
+                    <li class="swiper-slide"><img src="{% static 'assets/images/features/clients/logo03.png' %}" alt=""></li>
+                    <li class="swiper-slide"><img src="{% static 'assets/images/features/clients/logo04.png' %}" alt=""></li>
+                    <li class="swiper-slide"><img src="{% static 'assets/images/features/clients/logo05.png' %}" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    {% comment %} <!--! clients End  --> {% endcomment %}
+
+    {% comment %}? <!--? workouts Start  --> {% endcomment %}
+    <section class="workouts lightmode">
+        <div class="container">
+            <div class="workoutsFrame">
+
+                <div class="workoutsWrap">
+                    <h2 class="hline2 workoutsTitle">All your workouts,in your pocket</h2>
+                    <p class="body1 workoutsInfo">Fitness Pro helps track your workouts, get better results, and be the
+                        best version of you.Less thinking!
+                    </p>
+                    <ul class="workoutsList">
+                        <li>Fitness Pro Cloud</li>
+                        <li>Syncs with Google Fit</li>
+                        <li>Syncs with Apple Health</li>
+                        <li>Track your progress easily</li>
+                        <li>Intuitive and clean design</li>
+                    </ul>
+                    <div class="workoutsBtns">
+                        <button class="btn btn_orange ">Choose a plan</button>
+                        <button class="btn btn_white ">Request a demo</button>
+                    </div>
+                </div>
+
+                <div class="workoutsGallery">
+                    <img class="some-icon-light" src="{% static 'assets/images/features/workouts/imageLight.png' %}" alt="">
+                    <img class="some-icon-dark" src="{% static 'assets/images/features/workouts/imageLight.png' %}" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    {% comment %} <!--! workouts End  --> {% endcomment %}
+
+    {% comment %}? <!--? lifeStyle Start  --> {% endcomment %}
+    <section class="lifeStyle lightmode">
+        <div class="container">
+            <div class="lifeStyleHead">
+                <span>explore the app</span>
+                <span>Fit for your life style</span>
+                <span>Get started with two free weeks of unlimited yoga, fitness, and meditation classes. </span>
+                <a href="#">Join a class today <img src="{% static 'assets/images/features/lifeStyle/Line.svg' %}" alt=""></a>
+            </div>
+            <div class="lifeStyleBottom">
+                <div class="listWrapper">
+                    <div class="row">
+
+                        <div class="col">
+                            <div class="lifeStyleDetails">
+                                <span>01</span>
+                                <span>The Fitness Pro Philosophy</span>
+                                <span>Whether you&#39;re a complete beginner or you want to step up your routine, get
+                                    the full studio experience at home with thousands of classes for body, mind.
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="lifeStylePreview">
+                                <img src="{% static 'assets/images/features/lifeStyle/lifestyle-pic-1@2x.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <!--  -->
+                        <div class="col">
+                            <div class="lifeStyleDetails">
+                                <span>02</span>
+                                <span>The Fitness Pro Philosophy</span>
+                                <span>Whether you&#39;re a complete beginner or you want to step up your routine,
+                                    get the full studio experience at home with thousands of classes for body, mind.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="lifeStylePreview">
+                                <img src="{% static 'assets/images/features/lifeStyle/lifestyle-pic-2@2x.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="row">
+
+                        <div class="col">
+                            <div class="lifeStyleDetails">
+                                <span>03</span>
+                                <span>The Fitness Pro Philosophy</span>
+                                <span>Whether you&#39;re a complete beginner or you want to step up your
+                                    routine, get the full studio experience at home with thousands of classes for body, mind.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="lifeStylePreview">
+                                <img src="{% static 'assets/images/features/lifeStyle/lifestyle-pic-3@2x.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+    {% comment %} <!--! lifeStyle End  --> {% endcomment %}
+
+    {% comment %}? <!--? advantages Start  --> {% endcomment %}
+    <section class="advantages softlightmode">
+        <div class="container">
+
+            <div class="advantagesHead">
+                <h2 class="advantagesTitle">For any space, at any pace</h2>
+                <p class="advantagesInfo">From the comfort of your living room to a hotel room across the globe, we put
+                    the best classes at your fingertips. No WiFi? Download videos offline for a practice that moves with
+                    you.
+                </p>
+            </div>
+
+            <div class="advantagesList">
+
+                <div class="advantagesItem">
+                    <div class="profile">
+                        <!-- <img class="" src="assets/images/features/advantages/hand-grip-circle@1x.png" alt=""> -->
+                        <img src="{% static 'assets/images/features/advantages/alet_95_154.png' %}" alt="">
+                    </div>
+                    <p class="advantagesSubtitle">Intuitive and clean design</p>
+                </div>
+                <div class="advantagesItem">
+                    <div class="profile">
+                        <!-- <img class="" src="assets/images/advantages/gloves-circle@1x.png" alt=""> -->
+                        <img src="{% static 'assets/images/features/advantages/elcekler_131_152.png' %}" alt="">
+                    </div>
+                    <p class="advantagesSubtitle">Track your progress easily</p>
+                </div>
+                <div class="advantagesItem">
+                    <div class="profile">
+                        <!-- <img class="" src="assets/images/features/advantages/bottle-circle@1x.png" alt=""> -->
+                        <img src="{% static 'assets/images/features/advantages/bottle_64_168.png' %}" alt="">
+                    </div>
+                    <p class="advantagesSubtitle">Syncs with Apple Health</p>
+                </div>
+                <div class="advantagesItem repeatItem">
+                    <div class="profile">
+                        <!-- <img class="" src="assets/images/features/advantages/hand-grip-circle@1x.png" alt=""> -->
+                        <img src="{% static 'assets/images/features/advantages/alet_95_154.png' %}" alt="">
+                    </div>
+                    <p class="advantagesSubtitle">Intuitive and clean design</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    {% comment %} <!--! advantages End  --> {% endcomment %}
+
+    {% comment %}? <!--? offers  Start  --> {% endcomment %}
+    <section class="offers lightmode">
+        <div class="container">
+
+            <div class="frame">
+                <p class="stage">try it free for 14 days &#127934;</p>
+                <h2 class="offersTitle">Anywhere you want.Anytime you want.</h2>
+                <p class="offersText">Get started with two free weeks of unlimited yoga, fitness, and meditation
+                    classes.Cancel anytime.
+                </p>
+                <button>
+                    <a class="btn btn_orange offersButton" href="#">Start Free Trial</a>
+                </button>
+            </div>
+
+        </div>
+    </section>
+    {% comment %} <!--! offers  End  --> {% endcomment %}
+
+{% endblock content %}
+{% comment %} *--- Content ---* {% endcomment %}
+
+{% block swiper_js %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{% endblock swiper_js %}
+
+
+{% block custom_js %}
+    <script src="{% static 'js/features/features.js' %}"></script>
+{% endblock custom_js  %}

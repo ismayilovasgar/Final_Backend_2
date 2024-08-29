@@ -1,0 +1,65 @@
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --history_column-gap: 48px;
+  }
+  /** post */
+  .post {
+    padding: 112px 0px;
+  }
+  .postBox .postList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media screen and (max-width: 645px) {
+  .post {
+    padding: 64px 0px;
+  }
+  .post .postTitle {
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: -1.28px;
+  }
+  .history .historyDetails {
+    padding: 40px 0px;
+    align-items: unset;
+  }
+  .history .historyDetails .storyDate {
+    display: block;
+  }
+  .post .postInfo {
+    margin-bottom: 32px;
+  }
+  .history .historyItem {
+    flex-direction: column;
+  }
+  .history .historyItem .historyLeftCol {
+    width: 100%;
+  }
+  .history .historyItem .historyRightCol {
+    align-self: center;
+    width: 100%;
+  }
+  .history .historyDetails .historyTitle {
+    max-width: 95%;
+  }
+  .history .historyDetails .historyContent {
+    max-width: 95%;
+  }
+
+  .postBox .postList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 390px) {
+  /* 
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0xp;
+    padding: 0px 32px;
+  } 
+  */
+}

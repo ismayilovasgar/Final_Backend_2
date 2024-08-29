@@ -1,0 +1,199 @@
+/** Tablet Start */
+@media screen and (max-width: 1024px) {
+  /**breadCrumb Start  */
+  .breadcrumb .breadcrumbWrap {
+    padding: 96px 14px;
+  }
+  .breadcrumb .breadcrumbWrap .breadcrumbTitle {
+    max-width: 700px;
+    margin: 0px auto 12px auto;
+  }
+  /** Catalog */
+  :root {
+    --catalog_column-count: 2;
+  }
+
+  /** testimonials Start  */
+  .testimonials .testimonialsDetails .detailsDivider {
+    display: none;
+  }
+  .testimonials .testimonialsDetails .detailsAuthor,
+  .testimonials .testimonialsDetails .detailsDescription {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* ? catalog */
+  .catalogTop .catalogNav ul {
+    display: none;
+  }
+
+  /*? testimonials */
+  .testimonials .testmonialsItem .testimonialsRow {
+    column-gap: 20px;
+  }
+  .testimonials .testimonialsCol .testimonialsLogo {
+    margin: 0px 0px 16px 0px;
+  }
+  .testimonials .testimonialsCol .testimonialsComment {
+    margin: 0px 0px 16px 0px;
+  }
+  .testimonials .wrap .testmonialsNav .sliderWrapper ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .testimonials .wrap .testmonialsNav .sliderWrapper ul li {
+    justify-self: center;
+  }
+  /** Catalog Start  */
+  .catalogList .card .cardHead .cardTitle {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .catalogList .card .cardHead .cardTrainer span.firstName {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .testimonials .testimonialsCol .testimonialsLogo {
+    margin: 0px 0px 0px;
+  }
+  .testimonials .testimonialsCol .testimonialsComment {
+    font-size: 18px;
+  }
+  .testimonials .testimonialsDetails {
+    display: flex;
+    margin: 0px 0px 12px 0px;
+  }
+  .testimonials .testimonialsCol button.readmore {
+    border-radius: 40px;
+    width: 100%;
+    padding: 12px 0px;
+  }
+  /** Catalog Start */
+  .catalogList .card .cardHead .cardLevel {
+    padding: 6px;
+  }
+  .catalogSorting {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .catalogHead .catalogTitle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  :root {
+    --catalog_column-count: 1;
+  }
+  /** testiMonials */
+  .testimonials {
+    padding: 64px 0px;
+  }
+  .testimonials .testmonialsItem .testimonialsRow {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+  }
+  .testimonials .testimonialsCol button.readmore {
+    padding: 16px 24px;
+  }
+  .breadcrumb .breadcrumbWrap .breadcrumbTitle {
+    font-size: 36px;
+    line-height: 36px;
+  }
+  .testimonials .testimonialsCol .testimonialsComment {
+    margin: 32px 0px 24px 0px;
+  }
+  .testimonials .testimonialsDetails {
+    margin: 0px 0px 32px 0px;
+  }
+  .testimonials .testmonialsItem .testimonialsRow .testimonialsCol:first-child {
+    display: block;
+  }
+  .testimonials .testimonialsCol button.readmore {
+    width: unset;
+  }
+}
+@media screen and (max-width: 480px) {
+  .catalogHead .catalogSearch {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 410px) {
+  .testimonials .wrap .testmonialsNav .sliderWrapper ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .testimonials .testimonialsDetails .descriptionInfo {
+    flex-direction: column;
+    align-items: unset;
+  }
+  .testimonials .testimonialsDetails .detailsAuthor,
+  .testimonials .testimonialsDetails .detailsDescription {
+    text-align: unset;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0px;
+    padding: 0px 32px;
+  }
+
+  .catalogHead form {
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+  .catalogHead form input {
+    flex-grow: 1;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .catalogSorting {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .catalogWrap .catalogTop {
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: unset;
+  }
+  .nice-select {
+    width: unset;
+  }
+  .catalogTop .catalogFilter {
+    display: none;
+  }
+
+  .catalogTop .advancedFilter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .catalogHead form input {
+    max-width: 125px;
+  }
+
+  .catalogList .card .cardHead {
+    flex-direction: column;
+    row-gap: 32px;
+  }
+}
+
+@media screen and (max-width: 275px) {
+  .catalogHead form input {
+    max-width: 80px;
+  }
+}

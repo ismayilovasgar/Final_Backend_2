@@ -1,0 +1,802 @@
+:root {
+  --hero_column-gap: 1px;
+}
+
+/*? heroHeader Start */
+.heroHeader {
+  background: var(--Neutrals-8, #fcfcfd);
+  padding: 40px 0px;
+}
+.heroHeader .wrap {
+  display: flex;
+  align-items: center;
+  column-gap: var(--hero_column-gap);
+}
+.heroHeader .wrap .contentCol {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 60px 0 0 0;
+  width: calc(45% - (var(--hero_column-gap) * 0.45));
+}
+.heroHeader .wrap .contentCol p.stage {
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+.heroHeader .wrap .contentCol .mainTitle {
+  color: var(--Neutrals-2, #23262f);
+  font-family: "SF Pro Display";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: -1.28px;
+  margin: 12px 0px 40px 0px;
+}
+
+.heroHeader .wrap .contentCol .mainText {
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0px 0px 40px 0px;
+}
+
+.heroHeader .wrap .contentCol button:nth-child(2):hover {
+  box-shadow: 0 0 0 2px #23262f inset;
+  background: var(--Neutrals-2);
+  color: var(--Neutrals-8);
+}
+.heroHeader .wrap .contentCol .button_arrow_bottom {
+  margin: 140px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 64px;
+  border: 2px solid var(--Neutrals-6, #e6e8ec);
+}
+.heroHeader .wrap .contentCol .button_arrow_bottom i {
+  font-size: 18px;
+  color: var(--Neutrals-4);
+}
+
+.heroHeader .wrap .previewCol {
+  width: calc(55% - (var(--hero_column-gap) * 0.55));
+  align-self: stretch;
+}
+.heroHeader .wrap .previewCol img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+/*! heroHeader End */
+
+/*? programs Start */
+:root {
+  --programs_column-gap: 32px;
+  --programs_column-count: 3;
+}
+.programs {
+  padding: 0px 0px 136px 0px;
+}
+.programs .programsTop {
+  margin: 0px auto;
+  max-width: 621px;
+  text-align: center;
+}
+.programs .programsTop h2.programsTitle {
+  color: var(--Neutrals-2, #23262f);
+  font-family: "SF Pro Display";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.32px;
+}
+.programs .programsTop p.programsInfo {
+  margin: 16px auto 0px auto;
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.programs .programsTop .programsInfo .programsGreen {
+  color: var(--Primary-4, #45b26b);
+}
+.programs .programsTop .programsInfo .programsBlack {
+  color: var(--Neutrals-2, #23262f);
+}
+
+.programs .programsWrap {
+  padding: 80px 0px;
+}
+
+.programs .programs-content {
+  overflow: hidden;
+}
+.programs .programsWrap {
+  padding: 80px 0px;
+}
+.programs .programs_swiper {
+  overflow: hidden;
+}
+
+.programs .swiper-wrapper .programsItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 32px;
+  padding: 64px 32px;
+  border-radius: 20px;
+  background-color: var(--Neutrals-7, #f4f5f6);
+  transition: all 0.3s ease;
+}
+.programs .programsItem .programsIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 40px;
+}
+
+.programs .programsItem .programsIcon.personIcon {
+  background-color: var(--Primary-4);
+}
+.programs .programsItem .programsIcon.medalIcon {
+  background-color: var(--Primary-2);
+}
+.programs .programsItem .programsIcon.lightningIcon {
+  background-color: var(--Secondary-1);
+}
+
+.programs .programsItem .programsSubtitle {
+  margin-bottom: 16px;
+  color: var(--Neutrals-2, #23262f);
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+}
+.programs .programsItem .programsContent {
+  max-width: 293px;
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.programs .programsItem .programLink {
+  padding: 16px 24px;
+  border-radius: 90px;
+  transition: all 0.5s ease;
+  border: 2px solid var(--Neutrals-6, #e6e8ec);
+}
+.programs .programsItem .program_btn {
+  color: var(--Neutrals-2, #23262f);
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  transition: all 0.5s ease;
+}
+
+.programs .programsItem:hover {
+  box-shadow: 0px 64px 64px -48px rgba(15, 15, 15, 0.1);
+  background-color: var(--Neutrals-8, #fcfcfd);
+}
+.programs .programsItem:hover .programLink {
+  background-color: var(--Primary-1);
+  cursor: pointer;
+}
+.programs .programsItem:hover .program_btn {
+  color: var(--Neutrals-8);
+}
+.programs .programsBtns {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+/*! programs End */
+/*? trainers Start */
+:root {
+  --trainers_rows-gap: 32px;
+  --trainers_columns-gap: 32px;
+  --trainers_columns-count: 4;
+}
+.trainers {
+  padding: 0 0px 136px 0px;
+}
+.trainers .trainerHead {
+  max-width: 544px;
+  margin: 0 auto 80px auto;
+}
+/*  */
+
+.select {
+  background-color: var(--Neutrals-8);
+}
+.select input,
+.select .select_arrow {
+  display: none;
+  /* background-color: var(--Neutrals-8); */
+}
+
+.select .list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.select .list li {
+  padding: 6px 12px;
+  color: var(--Neutrals-4, #777e90);
+  font-family: "SF Pro Display";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.select .list li:hover {
+  cursor: pointer;
+}
+
+.select .list li.selected {
+  border-radius: 100px;
+  background: var(--Neutrals-3, #353945);
+  color: var(--Neutrals-8);
+}
+
+.trainers .trainerHead h2.trainerTitle {
+  color: var(--Neutrals-2, #23262f);
+  text-align: center;
+
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: -0.96px;
+}
+.trainers .trainerHead p.trainerInfo {
+  margin: 20px auto 40px auto;
+  color: var(--Neutrals-3, #353945);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.trainers .trainerHead .trainerNav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 12px;
+}
+.trainers .trainerHead .trainerNav ul li {
+  padding: 6px 12px;
+  border-radius: 100px;
+}
+.trainers .trainerHead .trainerNav ul li a {
+  transition: all 0.5s ease-in;
+  display: block;
+  text-align: center;
+  color: var(--Neutrals-4, #777e90);
+
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+}
+/* .trainers .trainerHead .trainerNav ul li a:hover {
+  color: var(--Neutrals-3);
+} */
+
+/* .trainers .trainerHead .trainerNav ul li:has(a.active) {
+  background-color: var(--Neutrals-3, #353945);
+} */
+
+/* .trainers .trainerHead .trainerNav ul li a.active {
+  color: var(--Neutrals-8);
+} */
+/*? Mobil Select Mode  Start*/
+.select_box {
+  display: flex;
+  padding: 8px 12px;
+  -webkit-box-shadow: inset 0 0 0 2px #e6e8ec;
+  box-shadow: inset 0 0 0 2px #e6e8ec;
+  background: #fcfcfd;
+  border-radius: 12px;
+}
+select {
+  position: relative;
+  height: 48px;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 12px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+option {
+  position: relative !important;
+  top: 400px;
+  left: 100px;
+  margin: 100px;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.font {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+/*! Mobil Select Mode End */
+.trainers .trainersList .listWrap {
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--rows-gap) var(--columns-gap); */
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: var(--trainers_columns-gap);
+  row-gap: var(--trainers_rows-gap);
+  min-height: 338px;
+}
+
+.trainers .trainersList .listWrap .trainerItem {
+  background-color: var(--table-column-different);
+  border-radius: 24px;
+  border: 1px solid var(--Neutrals-6, #e6e8ec);
+  box-shadow: inset 0 0 0 1px var(--table-column-different);
+  text-align: center;
+  padding: 48px 0px;
+
+  width: calc(
+    (100% - (var(--trainers_columns-gap) * (var(--trainers_columns-count) - 1))) /
+      var(--trainers_columns-count)
+  );
+
+  transition: all 0.2s ease-in;
+}
+.trainers .trainersList .listWrap .trainerItem:hover {
+  border-color: var(--Neutrals-5);
+  /* cursor: pointer; */
+}
+.trainers .trainersList .listWrap .trainerItem .profile {
+  margin: 0px auto 32px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--Neutrals-6, #e6e8ec);
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.trainers .trainersList .listWrap .trainerItem .profile img {
+  width: 100%;
+  object-fit: cover;
+}
+/* .trainers .trainersList .trainerItem:hover .profile {
+  box-shadow: 0 0 0 2px #ff592c;
+} */
+
+.trainers .trainersList .listWrap .trainerItem .trainerName {
+  margin: 0px auto 4px auto;
+  color: var(--Neutrals-2, #23262f);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+.trainers .trainersList .listWrap .trainerItem .trainerPosition {
+  color: var(--Neutrals-4, #777e90);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+/*! trainers End */
+
+/*? Communtiy Start */
+.community {
+  padding: 0px 0px 136px 0px;
+}
+.some-icon-dark {
+  display: none;
+}
+
+.community .communityPreview {
+  max-width: 565px;
+  margin: 0px auto 64px auto;
+}
+.community .communityPreview img {
+  width: 100%;
+  object-fit: cover;
+}
+.community .communityBottom {
+  max-width: 586px;
+  text-align: center;
+  margin: 0 auto;
+}
+.community p.subtitle {
+  margin: 0px auto 12px auto;
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+.community h2.communityTitle {
+  margin: 0px auto 20px auto;
+  color: var(--Neutrals-2, #23262f);
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: -0.96px;
+}
+
+.community p.communityText {
+  max-width: 456px;
+  margin: 0px auto 80px auto;
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.community form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 18px;
+  padding: 8px 8px 8px 16px;
+  max-width: 355px;
+  margin: 0px auto 16px auto;
+  border-radius: 90px;
+  border: 2px solid var(--Neutrals-6, #e6e8ec);
+}
+.community form input {
+  appearance: none;
+  border: none;
+  background: none;
+  color: var(--Neutrals-2, #23262f);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  height: 24px;
+  width: 100%;
+}
+.community form.subscription button {
+  padding: 4px;
+  border-radius: 50%;
+  background-color: var(--Primary-1, #ff592c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in;
+}
+.community form.subscription button i {
+  color: #e6e8ec;
+}
+.community form.subscription button:hover {
+  background-color: #f83500;
+  cursor: pointer;
+}
+.community .communityNote {
+  color: var(--Neutrals-5, #b1b5c3);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.community .communityNote a {
+  color: var(--Primary-1, #ff592c);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+/*! Communtiy End */
+
+/** Class Modal */
+:root {
+  --trainerModal_column-gap: 32px;
+}
+.modal {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  padding-top: 60px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  z-index: 3000;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal.showed {
+  display: block;
+}
+.modalContent {
+  position: relative;
+  margin: auto;
+  padding: 20px 40px;
+  border: 1px solid #888;
+  border-radius: 16px;
+  max-width: 60%;
+  background-color: var(--Neutrals-8, #fcfcfd);
+  box-shadow: 0px 64px 64px -48px rgba(15, 15, 15, 0.1);
+}
+
+.popupContent .popupContainer {
+  width: 452px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+.modalContent .trainerTop {
+  margin: 24px 0px;
+}
+.modalContent .trainerTop .trainerAvatar {
+  margin: 0 auto;
+  width: 128px;
+  height: 128px;
+  background-color: var(--Neutrals-6);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.modal .trainers .trainerHead {
+  margin: 0px;
+}
+.modalContent .trainerTop .trainerAvatar img {
+  text-align: center;
+  width: 100%;
+  object-fit: cover;
+}
+.modalContent .trainerTop .trainerName {
+  margin: 20px 0px 0px 0px;
+  color: var(--Neutrals-2, #23262f);
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.4px;
+}
+.modalContent .trainerTop .trainerPosition {
+  color: var(--Neutrals-4, #777e90);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.modalContent .trainerTop .trainerSocials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 24px;
+  margin: 20px 0px 0px 0px;
+}
+.trainerSocials .trainer_social > i {
+  font-size: 24px;
+  color: var(--section-text);
+  transition: all 0.3s ease;
+}
+.trainerSocials .trainer_social > i:hover {
+  color: var(--Neutrals-2);
+}
+.modalContent form.subscriptionInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 18px;
+  padding: 8px 8px 8px 16px;
+  max-width: 355px;
+  margin: 0px auto 24px auto;
+  border-radius: 90px;
+  border: 2px solid var(--Neutrals-6, #e6e8ec);
+}
+
+.modalContent form.subscriptionInput input {
+  appearance: none;
+  border: none;
+  color: var(--Neutrals-2, #23262f);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  height: 24px;
+  width: 100%;
+}
+.modalContent form.subscriptionInput button {
+  padding: 4px;
+  border-radius: 50%;
+  background-color: var(--Primary-1, #ff592c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in;
+}
+.modalContent form.subscriptionInput button:hover {
+  background-color: #f83500;
+  cursor: pointer;
+}
+
+.modalContent form.subscriptionInput button i {
+  color: #fcfcfd;
+  font-size: 16px;
+}
+.modalContent .trainerSlider {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  column-gap: var(--trainerModal_column-gap);
+}
+.modalContent .trainerSlider a {
+  width: calc(50% - (var(--trainerModal_column-gap) * 0.5));
+}
+.modalContent .trainerSlider .trainerPreview {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in;
+}
+.modalContent .trainerSlider .trainerPreview:hover img {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in;
+}
+.modalContent .trainerSlider .trainerPreview:hover {
+  border-color: var(--Neutrals-4);
+}
+.modalContent .trainerSlider .trainerPreview img {
+  width: 100%;
+  object-fit: cover;
+}
+.modalContent .trainerSlider .trainerPreview p {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 8px 8px 6px 6px;
+  color: var(--Neutrals-2, #23262f);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  background: var(--Neutrals-8, #fcfcfd);
+  z-index: 50;
+}
+
+.modalContent .modalTrainerHead {
+  padding: 20px 0px 12px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalContent .modalTrainerHead .trainer__title {
+  flex-grow: 1;
+  color: var(--Neutrals-2, #23262f);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  width: 110px;
+  text-align: left;
+}
+.modalContent .modalTrainerHead .trainerLevel {
+  padding: 8px 8px 6px 8px;
+  border-radius: 4px;
+  border: 2px solid var(--Primary-4, #45b26b);
+  color: var(--Primary-4, #45b26b);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+.modalContent .trainerParameters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px 0px 0px;
+}
+
+.modalContent .trainerParameter {
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+  color: var(--Neutrals-3, #353945);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.modalContent .trainerParameter i {
+}
+.modalContent .trainerParameter span {
+}
+.modalContent .bottomBtns {
+  margin: 32px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modalContent .arrowBtns {
+  display: inline-flex;
+  column-gap: 20px;
+  align-items: center;
+}
+.modalContent button.modalCloseBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding: 10px;
+  top: 16px;
+  right: 16px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 300;
+  background-color: var(--Neutrals-8);
+  cursor: pointer;
+  box-shadow: 0px 8px 16px -8px rgba(15, 15, 15, 0.2);
+}
+.modalContent button.modalCloseBtn i {
+  font-size: 16px;
+  font-weight: bold;
+}

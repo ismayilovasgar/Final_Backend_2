@@ -1,0 +1,277 @@
+/*? artcile Start */
+:root {
+  --article_column-gap: 64px;
+  --article_column-count: 2;
+}
+.article {
+  padding: 136px 0px;
+  /* margin-bottom: 112px; */
+}
+
+.article .articleHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* column-gap: 32px; */
+  margin-bottom: 112px;
+}
+
+.article .articleHead .articleTitle {
+  max-width: 900px;
+  color: var(--Neutrals-2, #23262f);
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: -1.28px;
+}
+.article .articleHead button.articleBtn {
+  padding: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--Neutrals-6, #e6e8ec);
+}
+.article .articleHead button.articleBtn img {
+  display: block;
+}
+
+.article .articleRow {
+  display: flex;
+  align-items: center;
+  column-gap: var(--article_column-gap);
+}
+.article .articleRow .articleLeftCol {
+  width: calc(35% - var(--article_column-gap) * 0.35);
+}
+.article .articleRow .articleRightCol {
+  width: calc(65% - var(--article_column-gap) * 0.65);
+}
+
+.article .articleRightCol h2.articleTitle {
+  margin-bottom: 32px;
+  color: var(--Neutrals-2, #23262f);
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: -0.96px;
+}
+.text_justify {
+  text-align: justify;
+  padding-right: 6px;
+}
+.article .articleRightCol .articleInfo {
+  margin-bottom: 48px;
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.24px;
+}
+.article .articlePreview {
+  height: 350px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.article .articlePreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.article .articleRightCol .articleContent {
+  margin-top: 48px;
+}
+
+.article .articleRightCol .articleContent p {
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.article .articleRightCol .articleContent p:first-child {
+  margin-bottom: 24px;
+}
+
+/*! article End */
+
+/* ? review Start   */
+
+/** Slider */
+.review {
+  padding: 136px 0;
+}
+.review .review-swiper-content {
+  margin: 0 auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+.review .reviewItem {
+  margin: 0 auto;
+  text-align: center;
+}
+.review .reviewItem .reviewLogo {
+  padding: 13px 7px 13.5px 7px;
+}
+.review .reviewItem .reviewTitle {
+  max-width: 736px;
+  padding: 0px 0px 40px 0px;
+  margin: 8px auto 40px auto;
+  border-bottom: 1px solid var(--Neutrals-6);
+  color: var(--Neutrals-2, #23262f);
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.4px;
+}
+.review .reviewItem .reviewAuthor {
+  color: var(--Neutrals-2, #23262f);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+.review .reviewItem .reviewPosition {
+  margin: 4px auto 0 auto;
+  color: var(--Neutrals-4, #777e90);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.review .reviewBtns {
+  margin: 48px 0px 0px 0px;
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.review .reviewBtns button i {
+  font-size: 18px;
+}
+
+/* ! review End   */
+/* ? story  Start */
+:root {
+  --story_column_gap: 48px;
+  --story_margin_32: 16px;
+}
+.story {
+  padding: 136px 0px;
+}
+
+.story .stageSmall {
+  margin-bottom: 96px;
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+.story .storyRow {
+  display: flex;
+  column-gap: var(--story_column_gap);
+}
+.story .storyRow .storyLeftCol {
+  width: calc(50% - (var(--story_column_gap) * 0.5));
+}
+.story .storyRow .storyRightCol {
+  width: calc(50% - (var(--story_column_gap) * 0.5));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* justify-content: space-between; */
+  /* row-gap: 64px; */
+}
+
+.story .storyPreview {
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.story .storyPreview img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.story .storyTitle {
+  color: var(--Neutrals-2, #23262f);
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: -0.96px;
+}
+
+.story .sotryInfo {
+  margin-top: 32px;
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.story .storyList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 24px;
+  margin: 64px 0px;
+}
+.story .storyItem .storyCategory {
+  text-align: justify;
+  color: var(--Neutrals-2, #23262f);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--Neutrals-6);
+  margin-bottom: 16px;
+}
+.story .storyItem span.divider {
+  display: block;
+  width: 160px;
+  height: 2px;
+  background: var(--Neutrals-6, #e6e8ec);
+}
+
+.story .storyItem .storyContent {
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.story button {
+  padding: 16px 24px;
+  border-radius: 90px;
+  border: 2px solid var(--Neutrals-6, #e6e8ec);
+}
+.story button a {
+  color: var(--Neutrals-2, #23262f);
+  text-align: center;
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+}
+/* ! stroy  End   */

@@ -1,0 +1,765 @@
+/* *********************************************************** */
+@media screen and (max-width: 1440px) {
+  .tabletMenu.active {
+    display: none;
+  }
+  button.hidden {
+    display: none;
+  }
+}
+/* *********************************************************** */
+@media screen and (max-width: 1150px) {
+  /*? heroHeader Start */
+  .heroHeader {
+    padding: 120px 0px 80px 0px;
+  }
+  .heroHeader .wrap .contentCol .mainTitle p {
+    font-size: 50px;
+  }
+
+  /*! heroHeader End */
+}
+
+/* *********************************************************** */
+@media screen and (max-width: 1095px) {
+  /*? steps Start */
+  .steps .stepsList .stepsItem:not(:last-child)::after {
+    right: -50px;
+    width: 60px;
+  }
+
+  /*? Intro Start */
+  .intro .hline1 {
+    font-size: 42px;
+    line-height: 52px;
+  }
+  .intro .wrapper .introContent p {
+    margin: 24px 0px;
+  }
+
+  /* ? details Start */
+  :root {
+    --details_column-gap: 32px;
+  }
+
+  /*? workouts Start */
+  .workouts .workoutsFrame .workoutsWrap h2.workoutsTitle {
+    font-size: 44px;
+  }
+}
+
+/* *********************************************************** */
+@media screen and (max-width: 1024px) {
+  :root {
+    --detail_item-distance: 42px;
+  }
+
+  /*? heroHeader Start */
+  .heroHeader .wrap .contentCol .mainTitle {
+    margin: 12px 0px 20px 0px;
+  }
+  .heroHeader .wrap .contentCol .mainText {
+    margin: 0px 0px 20px 0px;
+  }
+  .heroHeader .wrap .contentCol .mainTitle p {
+    font-size: 45px;
+    line-height: 55px;
+  }
+  :root {
+    --hero_column-gap: 10px;
+  }
+  /*! heroHeader End */
+
+  /*? steps Start */
+  .steps {
+    padding: 112px 0;
+  }
+  .steps .stepsList {
+    flex-wrap: wrap;
+    row-gap: var(--steps_row-gap);
+  }
+
+  .steps .stepsList .stepsItem {
+    padding: 10px 0px;
+  }
+
+  .steps .stepsList .stepsItem:not(:last-child)::after {
+    content: none;
+  }
+  .steps .stepsList .stepsItem:nth-child(1) .stepsPreview:after {
+    content: none;
+  }
+  .steps .stepsList .stepsItem:nth-child(2) .stepsPreview:before,
+  .steps .stepsList .stepsItem:nth-child(3) .stepsPreview:before {
+    content: none;
+  }
+
+  .steps .stepsList .stepsItem:nth-child(2) .stepsPreview:after,
+  .steps .stepsList .stepsItem:nth-child(3) .stepsPreview:after {
+    content: none;
+  }
+
+  .steps .stepsList .stepsItem:nth-child(4) .stepsPreview:before {
+    content: none;
+  }
+
+  .steps .stepsList .stepsItem .stepsContent {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .steps .stepsList .stepsItem .stepsPreview {
+    margin: 0 auto 40px auto;
+  }
+
+  .steps .navigations ul {
+    display: flex;
+  }
+  /*! Steps End */
+  /*? Intro Start */
+  :root {
+    --intro_column-gap: 16px;
+  }
+  /*! intro End */
+
+  /*? bookPoster Start */
+
+  .bookPoster {
+    padding: 112px 0px;
+  }
+  .bookPoster .bookMenu {
+    padding: 26px;
+  }
+  /*! bookPoster End */
+
+  /* ? details Start   */
+  .details {
+    padding: 112px 0px;
+  }
+  /*! details End */
+  /*? homeAbout Start */
+
+  .homeAbout {
+    padding: 112px 0px;
+  }
+  /*! homeAbout End */
+
+  /*? trainers Start */
+  :root {
+    --trainer-row-gap: 32px;
+  }
+  .trainers {
+    padding: 112px 0px;
+  }
+  /*! trainers End */
+  /*? review Start */
+  .review {
+    padding: 0px 0px 112px 0px;
+  }
+  /*! review End */
+  /*? quality Start */
+  .quality {
+    padding: 0px 0px 112px 0px;
+  }
+  /*! quality End */
+  /*? workouts Start */
+  .workouts {
+    padding: 112px 0;
+  }
+  .workouts .workoutsFrame .workoutsWrap h2.workoutsTitle {
+    font-size: 40px;
+  }
+  /* ! workouts End   */
+  .offers {
+    padding: 136px 0 112px 0;
+  }
+}
+/* *********************************************************** */
+@media screen and (max-width: 950px) {
+  :root {
+    --poster_column-gap: 16px;
+    --workouts_column-gap: 12px;
+  }
+  /* ? heroHeader Start */
+  .heroHeader .buttons_bottomm {
+    display: flex;
+    /* justify-content: space-between; */
+  }
+  .heroHeader .buttons_bottomm button {
+    font-size: 14px;
+    padding: 12px 18px;
+  }
+  /* ! heroHeader End */
+  /*? steps Start */
+  .steps .stepsList .stepsItem .stepsPreview {
+    margin: 0 auto 20px auto;
+  }
+  .steps .stepsList .stepsItem .stepsContent {
+    max-width: 300px;
+  }
+  .steps .stepsList .stepsItem .stepsNumber {
+    margin-bottom: 20px;
+  }
+  /*! steps End */
+
+  /*? bookPoster Start */
+
+  .bookPoster .wrapper .bookList .bookItem {
+    column-gap: 20px;
+    padding: 16px;
+  }
+  .bookPoster .bookMenu {
+    padding: 16px;
+  }
+
+  .bookPoster .bookGallery {
+    width: calc(52% - (var(--poster_column-gap) * 0.52));
+  }
+
+  .bookPoster .bookMenu {
+    width: calc(48% - (var(--poster_column-gap) * 0.48));
+  }
+
+  /*! bookPoster End */
+  /*? workouts Start */
+  .workouts .workoutsFrame .workoutsWrap h2.workoutsTitle {
+    font-size: 30px;
+  }
+  .workouts .workoutsFrame .workoutsWrap .workoutsBtns {
+    margin: 36px 0px 0px 0px;
+  }
+  .workouts .workoutsBtns button {
+    padding: 12px 16px;
+  }
+  /*! workouts End */
+}
+
+@media screen and (max-width: 900px) {
+  :root {
+    --hero_column-gap: 1px;
+    --about_column-gap: 6px;
+  }
+
+  /* ? workouts Start */
+  .workouts .workoutsFrame .workoutsGallery img {
+    object-fit: unset;
+  }
+  /* ! workouts End */
+  .bookPoster .bookItem .bookDetails .bookContent {
+    min-width: 0;
+  }
+
+  .bookItem .bookDetails .bookContent br {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  :root {
+    --detail_item-distance: 42px;
+  }
+
+  /* ? workouts Start */
+  .workouts .hline2 {
+    line-height: 36px;
+  }
+  .workouts .workoutsBtns {
+    padding: 10px 0px;
+  }
+  .workouts .workoutsBtns button {
+    padding: 10px 8px;
+  }
+  .workouts .workoutsBtns .btn {
+    border-radius: 40px;
+    padding: 16px 10px;
+  }
+  /* ! workouts End */
+  .quality .qualityList {
+    column-gap: 16px;
+  }
+  .quality .qualityItem .qualityCounter {
+    font-size: 46px;
+  }
+  .quality .qualityItem .qualityCounter p.appearence_1 {
+    display: none;
+  }
+  .quality .qualityItem .qualityCounter p.appearence_2 {
+    display: block;
+  }
+}
+
+/* *********************************************************** */
+@media screen and (max-width: 768px) {
+  /*? heroHeader Start */
+  .heroHeader .wrap .contentCol .mainTitle p {
+    font-size: 36px;
+    line-height: 42px;
+  }
+  /*! heroHeader End */
+  /*? quality Start */
+  .quality .qualityList {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: var(--quality_column-gap);
+    column-gap: var(--quality_column-gap);
+  }
+  /*! quality End */
+  /*? details Start */
+  :root {
+    --detail_item-distance: 12px;
+  }
+  .details .detailsList {
+    column-gap: unset;
+  }
+  .details .detailsList .detailsItem .detailsCategory {
+    font-size: 13px;
+    max-width: 180px;
+  }
+  .details .detailsList .detailsItem .detailsContent {
+    /* max-width: 160px; */
+    width: unset;
+    font-size: 12px;
+  }
+  .details .detailsList .detailsItem .detailsContent {
+    /* max-width: 200px; */
+  }
+  .detailItemMiddle {
+    border: none;
+  }
+  /* ? bookPoster */
+  .bookPoster .wrapper .bookList .bookItem {
+    column-gap: 16px;
+    padding: 2px;
+  }
+  /* ? workouts */
+  .workouts .workoutsBtns button {
+    padding: 8px 2px;
+  }
+  /* ? clients */
+  :root {
+    --clients_column-gap: 64px;
+    --clients_column-count: 3;
+  }
+  /*? steps */
+  :root {
+    --steps_colum-count: 1;
+  }
+}
+
+/* *********************************************************** */
+@media screen and (max-width: 700px) {
+  /*? heroHeader Start */
+  .heroHeader .wrap {
+    flex-direction: column-reverse;
+  }
+
+  .heroHeader .wrap .previewCol {
+    width: 100%;
+  }
+
+  .heroHeader .wrap .contentCol {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .heroHeader .wrap .contentCol .overlap {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 400px;
+  }
+  .heroHeader .wrap .contentCol .mainTitle p {
+    display: none;
+  }
+  .heroHeader .wrap .contentCol .mainText {
+    padding: 0px 10px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .heroHeader .wrap .contentCol h3 {
+    display: block;
+    color: var(--Neutrals-2, #23262f);
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: -0.96px;
+  }
+  .heroHeader .wrap .contentCol .button_arrow_bottom {
+    margin-top: 40px;
+  }
+  .heroHeader .buttons_bottomm {
+    flex-direction: column;
+  }
+  .heroHeader .buttons_bottomm button {
+    width: 70%;
+    margin: 10px auto 0 auto;
+  }
+  /*! heroHeader End */
+
+  /*? intro Start  */
+  .intro .wrapper {
+    flex-direction: column-reverse;
+  }
+  .intro .wrapper .introGallery {
+    width: 100%;
+    padding: 0px 10px;
+  }
+  .intro .wrapper .introContent {
+    width: 100%;
+  }
+  /*! intro End  */
+  /*!? bookPoster Star  */
+  .bookPoster .wrapper {
+    flex-direction: column;
+    row-gap: 32px;
+  }
+  .bookPoster .bookMenu {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 32px;
+  }
+  .bookPoster .wrapper .bookList .bookItem {
+    column-gap: 24px;
+    padding: 16px;
+  }
+  .bookPoster .bookGallery {
+    width: 100%;
+  }
+  .bookPoster .bookMenu button.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+  }
+  /*! bookPoster End  */
+  /*? advantages Start */
+  :root {
+    --advantages_column-gap: 2px;
+    --advantages_column-count: 2;
+  }
+
+  /*?  details Start  */
+  /* details Start */
+  .details .detailsList {
+    flex-direction: column;
+  }
+  .details .detailsList .detailsItem {
+    width: 100%;
+  }
+
+  .details .detailsList .detailsItem:not(:last-child) {
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--Neutrals-6);
+  }
+  .bottomRow .leftCol .aboutList {
+    max-width: unset;
+  }
+  /*? Intro start */
+  .topRow {
+    flex-direction: column;
+  }
+  .bottomRow {
+    flex-direction: column-reverse;
+    row-gap: 20px;
+  }
+  .homeAbout .leftCol {
+    width: 100%;
+  }
+  .homeAbout .rightCol {
+    width: 100%;
+  }
+
+  /*  */
+  :root {
+    --trainer-col-gap: 32px;
+    --trainer-row-gap: 64px;
+    --trainer-col-count: 2;
+  }
+  /*  */
+  .workouts .workoutsFrame {
+    flex-direction: column-reverse;
+    align-items: unset;
+    row-gap: 24px;
+  }
+  .workouts .workoutsFrame .workoutsWrap {
+    width: 100%;
+  }
+  .workouts .workoutsFrame .workoutsGallery {
+    width: 100%;
+  }
+  .workouts .workoutsFrame .workoutsWrap .workoutsBtns {
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: unset;
+  }
+}
+
+/* *********************************************************** */
+
+@media screen and (max-width: 500px) {
+  .headerCenter .headerTrialBtn {
+    display: none;
+  }
+  /*? heroHeader Start */
+  .heroHeader .wrap .contentCol .overlap {
+    max-width: 100%;
+  }
+  .heroHeader .buttons_bottomm button {
+    width: 100%;
+  }
+  :root {
+    --clients_column-gap: 64px;
+    --clients_column-count: 2;
+  }
+  .review .reviewItem .reviewTitle {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.32px;
+  }
+  /*? bookPoster Start */
+  .bookPoster .bookMenu {
+    width: 100%;
+    max-width: 600px;
+    padding: 5px;
+  }
+  .bookPoster {
+    padding: 0px 0px 64px 0px;
+  }
+  /* ? details Start */
+  :root {
+    --details_column-count: 1;
+  }
+  .details {
+    padding: 64px 0px;
+  }
+  /*? homeAbout Start */
+  .homeAbout {
+    padding: 48px 0px;
+  }
+  .bottomRow {
+    margin-top: 60px;
+  }
+
+  /*? trainers Start */
+  .trainers {
+    padding: 64px 0px;
+  }
+
+  .trainers .trainerHead .trainerNav ul.desktop_view {
+    display: none;
+  }
+
+  /*? select mobil view */
+  .sorting {
+    width: 100%;
+  }
+
+  .select {
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    box-shadow: inset 0 0 0 2px #e6e8ec;
+    background: var(--Neutrals-8);
+    border-radius: 12px;
+    opacity: 1;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 48px;
+    border: 2px solid var(--Neutrals-6, #e6e8ec);
+  }
+  .select .select_arrow i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease-in;
+  }
+  .sorting .select_arrow i.up {
+    transform: rotate(180deg);
+  }
+
+  .focus {
+    border-color: var(--Neutrals-3);
+  }
+  .select .select_arrow {
+    display: block;
+    border-radius: 50%;
+    border: 2px solid var(--Neutrals-6);
+    color: var(--section-text);
+    padding: 4px;
+  }
+  .select .select_arrow.selected {
+    border-color: #23262f;
+  }
+
+  .select .list {
+    display: none;
+    position: absolute;
+    top: 140%;
+    left: 0px;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--Neutrals-8);
+    border-radius: 12px;
+    border: 2px solid var(--Neutrals-6);
+  }
+  .select .list li {
+    width: 100%;
+    color: var(--Neutrals-2, #edeeee);
+    background-color: var(--Neutrals-7);
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    min-height: auto;
+    padding: 10px 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    transition: all 0.5s ease;
+  }
+  .select .list li.selected {
+    border-radius: 0px;
+  }
+  ul.list li:hover {
+    cursor: pointer;
+    background-color: var(--Neutrals-6);
+  }
+  ul.list.show {
+    display: block;
+  }
+  .sorting .current {
+    color: var(--section-text);
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  .select input {
+    background-color: var(--Neutrals-8);
+    display: block;
+    border: none;
+    appearance: none;
+    height: 24px;
+    width: 100%;
+    color: var(--Neutrals-2, #23262f);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  .select .current {
+    display: block;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .select .select_arrow i.changeDirection {
+    transform: rotate(180deg);
+  }
+
+  /*? review Start */
+  .review {
+    padding: 0px;
+  }
+  /*? quality Start */
+  .quality {
+    padding: 64px 0px;
+  }
+
+  .quality .qualityList {
+    display: flex;
+    flex-direction: column;
+    row-gap: 64px;
+  }
+  .quality .qualityItem .qualityPreview {
+    margin: 0px 0px 32px 0px;
+  }
+  .quality .qualityItem .qualityContent {
+    max-width: 320px;
+  }
+  /*? Advantages Start */
+  .advantages {
+    padding: 64px 0px;
+  }
+  .advantages .advantagesItem {
+    width: 100%;
+  }
+  /*? workouts Start */
+  .workouts {
+    padding: 64px 0px;
+  }
+  /* ? offers Start */
+  .offers {
+    padding: 64px 0px;
+  }
+  .offers p.stage {
+    margin: 48px auto 16px auto;
+  }
+  .offers h2.offersTitle {
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* details */
+  .details .detailsHead .detailsTitle br {
+    display: none;
+  }
+}
+@media screen and (max-width: 430px) {
+  .tabletMenu .dropdownBody .headRow .headRightCol {
+    display: none;
+  }
+}
+@media screen and (max-width: 395px) {
+  .offers h2.offersTitle {
+    font-size: 50px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0px;
+    padding: 0px 32px;
+  }
+
+  .quality .qualityList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .advantages .advantagesList {
+    flex-direction: column;
+    row-gap: 32px;
+  }
+
+  .advantages .advantagesItem {
+    width: 100%;
+  }
+
+  .trainers .trainersList .listWrap {
+    flex-direction: column;
+  }
+  .trainers .trainersList .listWrap .trainerItem {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .details .detailsHead .detailsTitle {
+    word-wrap: break-word;
+  }
+}

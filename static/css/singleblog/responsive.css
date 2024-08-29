@@ -1,0 +1,114 @@
+
+
+/* Tablet Start */
+@media screen and (max-width: 1024px) {
+  /*  */
+  .article {
+    padding: 112px 0px;
+  }
+  .article .articleHead {
+    margin-bottom: 80px;
+  }
+
+  .review {
+    padding: 112px 0;
+  }
+  .story {
+    padding: 112px 0;
+  }
+  .story button {
+    display: none;
+  }
+
+}
+
+
+@media screen and (max-width: 699px) {
+  .article {
+    padding: 64px 0px;
+  }
+
+  .article .articleHead {
+    flex-direction: column-reverse;
+    row-gap: 16px;
+  }
+
+  .article .articleHead {
+    margin-bottom: 64px;
+  }
+
+  .article .articleRow {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .article .articleRow .articleRightCol {
+    width: 100%;
+  }
+
+  .article .articleRow .articleLeftCol {
+    width: 100%;
+  }
+  .article .articleRightCol .articleContent {
+    margin: 48px 0px;
+  }
+
+  .review {
+    padding: 64px 0;
+  }
+  .story {
+    padding: 64px 0;
+  }
+  .story .storyRow {
+    display: block;
+  }
+  .story .storyRow .storyLeftCol {
+    width: 100%;
+  }
+  .story .storyRow .storyRightCol {
+    width: 100%;
+  }
+  .story .stageSmall {
+    margin-bottom: 32px;
+  }
+  .story .storyTitle {
+    margin: 48px 0px 32px 0px;
+  }
+  .article .articleHead .articleTitle {
+    font-size: 48px;
+  }
+  .article .articleRightCol h2.articleTitle {
+    font-size: 40px;
+  }
+  .story .storyList {
+    display: block;
+    margin: 32px 0px;
+  }
+  .story .storyList .storyItem {
+    margin-bottom: 32px;
+  }
+  /*? review */
+  .review .reviewItem .reviewTitle {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.32px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0xp;
+    padding: 0px 32px;
+  }
+  .header {
+    padding: 48px 0px 24px 0px;
+  }
+
+  .header .headerTrialBtn {
+    display: none;
+  }
+  /* .story .storyList {
+      display: block;
+    } */
+}
