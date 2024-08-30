@@ -99,20 +99,21 @@ async function fetchFilteredData(text, wrap) {
   })
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       fillTrainerToCard(data, wrap);
     })
     .catch((error) => console.error("an error occurred", error));
 }
 function fillTrainerToCard(data, wrap) {
-  data.map((trainer) => {
+  data.map((data) => {
     wrap.innerHTML += `
     <div class="trainerItem">
         <div class="profile">
-          <img src="media/${trainer.image}" alt="">
+          <img src="media/${data.name}" alt="">
         </div>
-        <div class="trainerName">${trainer.first_name} ${trainer.last_name}</div>
+        <div class="trainerName">${data.name}</div>
         <div class="trainerPosition">
-          ${trainer.profession}      
+          ${data.profession}      
         </div>
     </div>
     `;

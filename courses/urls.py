@@ -9,4 +9,5 @@ urlpatterns = [
     path("<slug:category_slug>/<int:course_id>/",views.course_detail,name="course_detail"),
     path("categories/<slug:category_slug>/",views.categories_detail,name="courses_by_category"),
     path("tags/<slug:tag_slug>/",views.tags_detail,name="courses_by_tag"),
+    path("search/",views.search,name="search"),
 ] 

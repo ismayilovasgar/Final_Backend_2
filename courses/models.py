@@ -67,8 +67,8 @@ class Course(models.Model):
     available = models.BooleanField(default=True)
 
     # ? ORM Relationship
-    trainer = models.ForeignKey(Trainer, on_delete=models.CASCADE, null=True,blank=True)
-    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING, null=True)
+    trainer = models.ForeignKey(Trainer, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     tags = models.ManyToManyField(Tag)
 
     def __str__(self) -> str:
