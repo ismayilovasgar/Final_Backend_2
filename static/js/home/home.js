@@ -56,18 +56,16 @@ select_sorting.forEach((item) => {
         item.querySelector("input.current").value = list_item.textContent;
       });
     });
-    e.preventDefault();
   });
 });
-
 
 // ------------------------------------------------------------------------------------------------------
 const listWrap = document.querySelector(".trainersList  .listWrap");
 const allListItem = [...document.querySelectorAll("ul.list li")];
 
 window.onload = function () {
-  fetchFilteredData("Yoga", listWrap);
-  markFirstItem();
+  // fetchFilteredData("Yoga", listWrap);
+  // markFirstItem();
 };
 
 function markFirstItem() {
@@ -84,15 +82,14 @@ allListItem.map((item) => {
     allListItem.forEach((el) => el.classList.remove("selected"));
     // add selected tag to special item
     item.classList.toggle("selected");
-
-    fetchFilteredData(`${item.textContent}`, listWrap);
+    fetchFilteredData(`${item.getAttribute("data-value")}`, listWrap);
   });
 });
 
-function fetchFilteredData(text, wrap) {
+async function fetchFilteredData(text, wrap) {
   wrap.innerHTML = "";
 
-  fetch(`http://127.0.0.1:8000/trainer/home/${text}/`, {
+  await fetch(`http://127.0.0.1:8000/courses/categories/${text}/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -102,23 +99,24 @@ function fetchFilteredData(text, wrap) {
   })
     .then((response) => response.json())
     .then((data) => {
-      // console.log("receive data:", data);
-
-      data.map((trainer) => {
-        wrap.innerHTML += `
-        <div class="trainerItem">
-            <div class="profile">
-              <img src="media/${trainer.image}" alt="">
-            </div>
-            <div class="trainerName">${trainer.first_name} ${trainer.last_name}</div>
-            <div class="trainerPosition">
-              ${trainer.profession}      
-            </div>
-        </div>
-        `;
-      });
+      fillTrainerToCard(data, wrap);
     })
-    .catch((error) => console.error("Error fetching data:", error));
+    .catch((error) => console.error("an error occurred", error));
+}
+function fillTrainerToCard(data, wrap) {
+  data.map((trainer) => {
+    wrap.innerHTML += `
+    <div class="trainerItem">
+        <div class="profile">
+          <img src="media/${trainer.image}" alt="">
+        </div>
+        <div class="trainerName">${trainer.first_name} ${trainer.last_name}</div>
+        <div class="trainerPosition">
+          ${trainer.profession}      
+        </div>
+    </div>
+    `;
+  });
 }
 
 // Function to get CSRF token from cookies

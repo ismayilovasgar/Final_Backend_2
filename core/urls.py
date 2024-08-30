@@ -19,14 +19,16 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
+from courses.views import categories_detail, course_list, course_detail, tags_detail
 from pages import views
 
+
 urlpatterns = [
-    path("admin/", admin.site.urls),                  # http://127.0.0.1:8000/admin
-    path('',include("pages.urls")),                   # http://127.0.0.1:8000/
-    path('courses/',include("courses.urls")),                   # http://127.0.0.1:8000/
-] 
+    path("admin/", admin.site.urls),                # http://127.0.0.1:8000/admin
+    path("courses/", include("courses.urls")),      # http://127.0.0.1:8000/
+    path("", include("pages.urls")),                # http://127.0.0.1:8000/
+]
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # Serve static and media files during development
 if settings.DEBUG:

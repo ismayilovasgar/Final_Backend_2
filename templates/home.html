@@ -368,8 +368,10 @@
                         </div>
                         <ul class="list mobil_view" id="popup">
 
-                            {% for key,value in categorys  %}
-                                <li data-value="{{value| cut:" " }}" class="option">{{value}}</li>
+                            {% for category in categories  %}
+                            <li data-value="{{category.slug}}" class="option">
+                                    {{category.name}}
+                            </li>
                             {% endfor %}
                         
                         </ul>
@@ -378,6 +380,7 @@
             </div>
             <div class="trainersList">
                 <div class="listWrap">
+                    
 
                     {% comment %} {% for trainer  in trainers %}
                         <div class="trainerItem">
@@ -446,7 +449,7 @@
 
         </div>
     </section>
-    {% comment %} <!--! trainers End  --> {% endcomment %}
+    {% comment %}! <!--! trainers End  --> {% endcomment %}
 
     {% comment %}? <!-- * Slider --> {% endcomment %}
     <section class="review lightmode">

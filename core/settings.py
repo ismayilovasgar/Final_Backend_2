@@ -38,13 +38,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # my app
-    "home",
-    "filter",
+    # "filter",
+    "courses",
+    "pages",
+    "trainers",
     # Other apps
     "django_cleanup",
-    # my app 2
-    "pages",
-    "courses",
 ]
 
 MIDDLEWARE = [
