@@ -2,7 +2,9 @@ from django.shortcuts import render
 from .models import Course, Category, Tag
 from django.shortcuts import get_object_or_404
 from trainers.models import Trainer
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse
+from django.db.models import Q
+import json
 
 
 # Create your views here.
@@ -40,17 +42,23 @@ def tags_detail(request, tag_slug):
         return JsonResponse({"error": "Bad request"}, status=400)
 
 
-def search(request):
-    courses = Course.objects.filter(name__contains=request.GET.get["search"])
-    categories = Category.objects.all()
-    tags = Tag.objects.all()
+def show_by_array(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            list = data.get("data")
+            result = Course.objects.filter(
+                Q(style__name__contains=list[0])
+                & Q(time_day__name__iexact=list[1])
+                & Q(level__name__iexact=list[2])
+                & Q(intensity__name__iexact=list[3])
+            ).order_by("-created_date")
+            results = format_data(result)
 
-    context = {
-        "categories": categories,
-        "tags": tags,
-        "courses": courses,
-    }
-    return render(request, "courses.html", context)
+            return JsonResponse({"results": results})
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Invalid JSON"}, status=400)
+    return JsonResponse({"error": "Invalid request method"}, status=405)
 
 
 # ? -------------------- Return Data --------------------
@@ -103,9 +111,13 @@ def format_data(data):
             "linkedin": course.trainer.linkedin,
             # ! Course
             "course_name": course.name,
-            "course_category": course.category,
+            "course_category": course.category.name,
             "course_description": course.description,
             "course_date": course.created_date,
+            "course_level": course.level.name,
+            "course_timeofday": course.time_day.name,
+            "course_intensity": course.intensity.name,
+            "course_style": course.style.name,
         }
         for course in data
     ]

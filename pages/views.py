@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from courses.models import Category, Tag, Course, Trainer
+from courses.models import *
 from pages.models import Review
 
 
@@ -43,8 +43,19 @@ def lifestyle(request):
 
 
 def programs(request):
+    styles = Style.objects.all()
+    intensities = Intensity.objects.all()
+    timeofdaies = TimeOfDay.objects.all()
+    levels = Level.objects.all()
+    categories = Category.objects.all()
     tags = Tag.objects.all()
+
     context = {
+        "styles": styles,
+        "intensities": intensities,
+        "timeofdaies": timeofdaies,
+        "levels": levels,
+        "categories": categories,
         "tags": tags,
     }
     return render(request, "programs.html", context)

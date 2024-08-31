@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Course, Category, Tag
+from .models import *
 
 # Register your models here.
 
@@ -30,3 +30,35 @@ class TagAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Tag
+
+
+@admin.register(Level)
+class LevelAdmin(admin.ModelAdmin):
+    list_display = ("name",)
+
+    class Meta:
+        model = Level
+
+
+@admin.register(TimeOfDay)
+class TimeOfDayAdmin(admin.ModelAdmin):
+    list_display = ("name",)
+
+    class Meta:
+        model = TimeOfDay
+
+
+@admin.register(Intensity)
+class IntensityAdmin(admin.ModelAdmin):
+    list_display = ("name",)
+
+    class Meta:
+        model = Intensity
+
+
+@admin.register(Style)
+class StyleAdmin(admin.ModelAdmin):
+    list_display = ("name",)
+
+    class Meta:
+        model = Style

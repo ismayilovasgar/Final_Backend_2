@@ -79,8 +79,8 @@
 
           <div class="catalogNav">
             <ul>
-              {% for key,value in categorys  %}
-                  <li class="cataloglink {{value| cut:" " }}">{{value}}</li>
+              {% for category in categories  %}
+                  <li class="cataloglink {{category.name }}">{{category.name}}</li>
               {% endfor %}
             </ul>
           </div>
@@ -101,13 +101,13 @@
             <div class="cataloglabel">Style</div>
 
             <div class="select sorting">
-              <input type="text" name="style" class="current" value="Acro Yoga" />
+              <input type="text" name="style" class="current" value="{{styles|first}}" />
               <div class="select_arrow">
                 <i class="fa-solid fa-angle-down"></i>
               </div>
               <ul class="list">
-                {% for key,value in styles %}
-                 <li data-value="{{value}}" class="option selected">{{value}}</li>
+                {% for style in styles %}
+                 <li data-value="{{style.name}}" class="option selected">{{style.name}}</li>
                  {% comment %} <li data-value="Mini Yoga" class="option">Mini Yoga</li> {% endcomment %}
                 {% endfor %}
               </ul>
@@ -124,8 +124,8 @@
                 <i class="fa-solid fa-angle-down"></i>
               </div>
               <ul class="list">
-                {% for key,value in timeofday %}
-                 <li data-value="{{value}}" class="option selected">{{value}}</li>
+                {% for day in timeofdaies %}
+                 <li data-value="{{day.name}}" class="option selected">{{day.name}}</li>
                 {% endfor %}
               </ul>
             </div>
@@ -142,8 +142,8 @@
               </div>
               <ul class="list">
 
-                {% for key,value in difficulty %}
-                 <li data-value="{{value}}" class="option selected">{{value}}</li>
+                {% for level  in levels %}
+                 <li data-value="{{level.name}}" class="option selected">{{level.name}}</li>
                 {% endfor %}
 
               </ul>
@@ -160,8 +160,8 @@
                 <i class="fa-solid fa-angle-down"></i>
               </div>
               <ul class="list">
-                {% for key,value in intensity %}
-                <li data-value="{{value}}" class="option selected">{{value}}</li>
+                {% for intensity in intensities %}
+                <li data-value="{{intensity.name}}" class="option selected">{{intensity.name}}</li>
                {% endfor %}
               </ul>
             </div>

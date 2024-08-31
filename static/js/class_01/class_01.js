@@ -134,21 +134,22 @@ linkItems.map((item) => {
     // add selected tag to special item
     item.classList.toggle("selected");
 
-    fetchPostByText(`"category_"${item.textContent}`, catalogList);
+    // fetchPostByText(`"category_"${item.textContent}`, catalogList);
   });
 });
 
 button.addEventListener("click", (e) => {
   isValidString = inputText.value.trim();
   if (!!isValidString) {
-    fetchPostByText("name_" + isValidString, catalogList);
+    // fetchPostByText("name_" + isValidString, catalogList);
   }
 });
 
 //? click button by category name
 linkItems.forEach((item) => {
   item.addEventListener("click", (e) => {
-    fetchPostByText("category_" + item.textContent, catalogList);
+    // fetchPostByText("category_" + item.textContent, catalogList);
+    e.preventDefault();
   });
 });
 
@@ -163,7 +164,7 @@ function markFirstItem() {
 const fetchPostByText = async (search_text, wrap) => {
   wrap.innerHTML = "";
   const response = await fetch(
-    `http://127.0.0.1:8000/trainer/trainer_text/${search_text}/`,
+    `http://127.0.0.1:8000/course/programs/${search_text}/`,
     {
       method: "POST",
       headers: {
@@ -175,7 +176,7 @@ const fetchPostByText = async (search_text, wrap) => {
   );
   const data = await response.json();
 
-  fillCardToContainer(data, data.data.length, wrap);
+  // fillCardToContainer(data, data.data.length, wrap);
   inputText.value = "";
 };
 
@@ -189,17 +190,19 @@ advancFilterBtn.addEventListener("click", (e) => {
 });
 
 async function fetchPostByArray(array, wrap) {
-  const response = await fetch("http://127.0.0.1:8000/trainer/trainer_list/", {
+  const response = await fetch("http://127.0.0.1:8000/courses/programs/list/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "X-CSRFToken": getCookie("csrftoken"), // Include the CSRF token
+      "X-CSRFToken": getCookie("csrftoken"),
     },
     body: JSON.stringify({ data: array }),
   });
   const data = await response.json();
+  console.log(data);
+  // console.log(data.results);
 
-  fillCardToContainer(data, data.data.length, wrap);
+  // fillCardToContainer(data, data.data.length, wrap);
 }
 
 //! --------------------------------------------------------------------------------------------------------

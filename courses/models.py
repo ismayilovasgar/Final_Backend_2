@@ -3,6 +3,7 @@ from trainers.models import Trainer
 import os
 
 
+# ? Common Uses ----------------------------------------------------
 def get_image_upload_path(instance, filename):
     folder_name = instance.name.replace(" ", "_")
     return os.path.join("courses", folder_name, filename)
@@ -21,6 +22,81 @@ TAG_CHOICES = [
     ("Fitness", "Fitness"),
     ("Mindfulness", "Mindfulness"),
 ]
+
+
+DIFFICULTY_CHOICES = [
+    ("Beginner", "Beginner"),
+    ("Intermediate", "Intermediate"),
+    ("Advanced", "Advanced"),
+]
+
+TIME_OF_DAY_CHOICES = [
+    ("Morning", "Morning"),
+    ("Afternoon", "Afternoon"),
+    ("Evening", "Evening"),
+]
+INTENSITY_CHOICES = [
+    ("Level 1", "Level 1"),
+    ("Level 2", "Level 2"),
+    ("Level 3", "Level 3"),
+]
+STYLE_CHOICES = [
+    ("Morning Yoga", "Morning Yoga"),
+    ("Vinyasa Yoga", "Vinyasa Yoga"),
+    ("Acro Yoga", "Acro Yoga"),
+]
+
+
+#!-------------------------------------------------------------------
+class Level(models.Model):
+    name = models.CharField(
+        max_length=25,
+        choices=DIFFICULTY_CHOICES,
+        default="Intermediate",
+        help_text="Select the difficulty level of the course",
+        null=True,
+    )
+
+    def __str__(self) -> str:
+        return f"{self.name}"
+
+
+class TimeOfDay(models.Model):
+    name = models.CharField(
+        max_length=25,
+        choices=TIME_OF_DAY_CHOICES,
+        default="Morning",
+        help_text="Select the time of day for this course.",
+        null=True,
+    )
+
+    def __str__(self) -> str:
+        return f"{self.name}"
+
+
+class Intensity(models.Model):
+    name = models.CharField(
+        max_length=25,
+        choices=INTENSITY_CHOICES,
+        default="Level 2",
+        help_text="Select the intensity level of the exercise.",
+        null=True,
+    )
+
+    def __str__(self) -> str:
+        return f"{self.name}"
+
+
+class Style(models.Model):
+    name = models.CharField(
+        max_length=25,
+        choices=STYLE_CHOICES,
+        default="Morning Yoga",
+        help_text="Select the style of this course",
+    )
+
+    def __str__(self) -> str:
+        return f"{self.name}"
 
 
 class Category(models.Model):
@@ -70,6 +146,11 @@ class Course(models.Model):
     trainer = models.ForeignKey(Trainer, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     tags = models.ManyToManyField(Tag)
+    #
+    level = models.ForeignKey(Level, on_delete=models.DO_NOTHING, null=True)
+    time_day = models.ForeignKey(TimeOfDay, on_delete=models.DO_NOTHING, null=True)
+    intensity = models.ForeignKey(Intensity, on_delete=models.DO_NOTHING, null=True)
+    style = models.ForeignKey(Style, on_delete=models.DO_NOTHING, null=True)
 
     def __str__(self) -> str:
         return f"{self.name}"
