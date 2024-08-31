@@ -20,8 +20,8 @@ def categories_detail(request, category_slug):
     if request.method == "POST":
         try:
             courses = Course.objects.filter(category__slug=category_slug)
-            trainer_data = format_data(courses)
-            return JsonResponse({"trainer_data": trainer_data})
+            trainers = format_data(courses)
+            return JsonResponse({"trainer_data": trainers})
         except:
             return print("eerr-------------------------")
     else:
