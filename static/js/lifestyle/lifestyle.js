@@ -48,7 +48,7 @@ async function fetchFilteredData(text, wrap) {
             <div class="postPreview">
                 <img src="${card.course_image}" alt="">
             </div>
-            <div class="postStatus ${card.course_category}">${card.course_category}</div>
+            <div class="postStatus ${card.course_category}">${card.course_category_long}</div>
             <div class="postSubtitle">${card.course_name}</div>
             <div class="postFoot">
                 <div class="postUser">

@@ -78,6 +78,7 @@ def format_data_bytags(data):
             # ! Course
             "course_name": course.name,
             "course_category": course.category.name.replace(" & ", ""),
+            "course_category_long": course.category.name,
             "course_description": course.description,
             "course_date": course.created_date.strftime("%b %d, %Y"),
             "course_image": course.image.url,
