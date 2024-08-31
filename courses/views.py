@@ -19,15 +19,9 @@ def course_detail(request, category_slug, course_id):
 def categories_detail(request, category_slug):
     if request.method == "POST":
         try:
-
-            # Isleyir
-            courses = (
-                Course.objects.filter(category__slug=category_slug)
-                .order_by("created_date")
-                .values()
-            )
-            course_list = list(courses)
-            return JsonResponse(course_list, safe=False)
+            courses = Course.objects.filter(category__slug=category_slug)
+            trainer_data = format_data(courses)
+            return JsonResponse({"trainer_data": trainer_data})
         except:
             return print("eerr-------------------------")
     else:
@@ -56,3 +50,22 @@ def search(request):
         "courses": courses,
     }
     return render(request, "courses.html", context)
+
+
+# ? -------------------- Return Data --------------------
+def format_data(data):
+    trainer_data = [
+        {
+            # key : value
+            "id": course.trainer.pk,
+            "profession": course.trainer.profession,
+            "name": course.trainer.fullname,
+            "image_url": course.trainer.image.url,
+            "facebook": course.trainer.facebook,
+            "twitter": course.trainer.twitter,
+            "instagram": course.trainer.instagram,
+            "linkedin": course.trainer.linkedin,
+        }
+        for course in data
+    ]
+    return trainer_data

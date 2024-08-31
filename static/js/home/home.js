@@ -89,31 +89,32 @@ allListItem.map((item) => {
 async function fetchFilteredData(text, wrap) {
   wrap.innerHTML = "";
 
-  await fetch(`http://127.0.0.1:8000/courses/categories/${text}/`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-CSRFToken": getCookie("csrftoken"),
-    },
-    body: JSON.stringify("text"),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      fillTrainerToCard(data, wrap);
-    })
-    .catch((error) => console.error("an error occurred", error));
+  const response = await fetch(
+    `http://127.0.0.1:8000/courses/categories/${text}/`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": getCookie("csrftoken"),
+      },
+      body: JSON.stringify("text"),
+    }
+  );
+
+  const data = await response.json();
+  fillTrainerToCard(data.trainer_data, wrap);
 }
+
 function fillTrainerToCard(data, wrap) {
-  data.map((data) => {
+  data.map((trainer) => {
     wrap.innerHTML += `
     <div class="trainerItem">
         <div class="profile">
-          <img src="media/${data.name}" alt="">
+          <img src="${trainer.image_url}" alt="">
         </div>
-        <div class="trainerName">${data.name}</div>
+        <div class="trainerName">${trainer.name}</div>
         <div class="trainerPosition">
-          ${data.profession}      
+          ${trainer.profession}      
         </div>
     </div>
     `;
