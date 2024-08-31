@@ -3,8 +3,8 @@ const listWrap = document.querySelector(".postBox .postList");
 const allListItem = [...document.querySelectorAll(".postNav ul li")];
 
 window.onload = function () {
-  fetchFilteredData("Lifestyle", listWrap);
-  markFirstItem();
+  // fetchFilteredData("Lifestyle", listWrap);
+  // markFirstItem();
 };
 
 function markFirstItem() {
@@ -22,17 +22,17 @@ allListItem.map((item) => {
     // add selected tag to special item
     item.classList.toggle("selected");
 
-    fetchFilteredData(`${item.textContent}`, listWrap);
+    fetchFilteredData(`${item.textContent.toLowerCase()}`, listWrap);
     currentItem = 3;
   });
 });
 let items = [];
 let len = 0;
 
-function fetchFilteredData(text, wrap) {
+async function fetchFilteredData(text, wrap) {
   wrap.innerHTML = "";
 
-  fetch(`http://127.0.0.1:8000/trainer/lifestyle/${text}/`, {
+  await fetch(`http://127.0.0.1:8000/courses/tags/${text}/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -42,27 +42,28 @@ function fetchFilteredData(text, wrap) {
   })
     .then((response) => response.json())
     .then((data) => {
-      data.trainer_data.map((trainer) => {
-        wrap.innerHTML += `
-        <div class="postItem">
-          <a href="/singleblog/${trainer.id}" >
-            <div class="postPreview">
-                <img src="${trainer.move_image_url}" alt="">
-            </div>
-            <div class="postStatus ${trainer.trainer_category}">${trainer.trainer_category}</div>
-            <div class="postSubtitle">${trainer.move_title}</div>
-            <div class="postFoot">
-                <div class="postUser">
-                  <div class="postAvatar">
-                    <img src="${trainer.trainer_image_url}" alt="">
-                  </div>
-                 <div class="postAuthor">${trainer.firstname} ${trainer.lastname}</div>
-                </div>
-                <div class="postDate">${trainer.started_date}</div>
-              </div>
-            </a>
-       </div>`;
-      });
+      console.log(data.all_data);
+      // data.trainer_data.map((trainer) => {
+      //   wrap.innerHTML += `
+      //   <div class="postItem">
+      //     <a href="/singleblog/${trainer.id}" >
+      //       <div class="postPreview">
+      //           <img src="${trainer.move_image_url}" alt="">
+      //       </div>
+      //       <div class="postStatus ${trainer.trainer_category}">${trainer.trainer_category}</div>
+      //       <div class="postSubtitle">${trainer.move_title}</div>
+      //       <div class="postFoot">
+      //           <div class="postUser">
+      //             <div class="postAvatar">
+      //               <img src="${trainer.trainer_image_url}" alt="">
+      //             </div>
+      //            <div class="postAuthor">${trainer.firstname} ${trainer.lastname}</div>
+      //           </div>
+      //           <div class="postDate">${trainer.started_date}</div>
+      //         </div>
+      //       </a>
+      //  </div>`;
+      // });
       items = [...document.querySelectorAll(".postItem")];
       len = items.length;
       loadMoreItems(len, items);

@@ -35,4 +35,8 @@ def download(request):
 
 
 def lifestyle(request):
-    return render(request, "lifestyle.html")
+    tags = Tag.objects.all()
+    context = {
+        "tags": tags,
+    }
+    return render(request, "lifestyle.html", context)
