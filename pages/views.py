@@ -40,3 +40,11 @@ def lifestyle(request):
         "tags": tags,
     }
     return render(request, "lifestyle.html", context)
+
+
+def programs(request):
+    tags = Tag.objects.all()
+    context = {
+        "tags": tags,
+    }
+    return render(request, "programs.html", context)

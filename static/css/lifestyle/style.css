@@ -117,7 +117,7 @@ form button i {
 .history .historyDetails a {
   border-radius: 90px;
   padding: 12px 16px;
-  color: var(--Neutrals-8, #fcfcfd);
+  color: var(--Neutrals-6);
   text-align: center;
   font-family: "SF Pro Display", sans-serif;
   font-size: 14px;
@@ -162,6 +162,7 @@ form button i {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 64px 32px;
+  min-height: 307px;
 }
 .postBox .postItem {
   border-radius: 12px 12px 0px 0px;
@@ -281,8 +282,9 @@ form button i {
   margin-top: 80px;
 }
 .post .postBox .postBtns button {
+  display: none;
   transition: all 0.3s ease-in;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   column-gap: 12px;

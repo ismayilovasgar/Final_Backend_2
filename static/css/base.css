@@ -207,7 +207,7 @@ li.drop:hover .headerBody {
 
 .tabletMenu {
   display: none;
-  background-color: var(--section_back_color_soft);
+  background-color: var(--section_back_color);
   /* position: sticky; */
   left: 0px;
   top: 99%;

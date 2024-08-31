@@ -551,10 +551,12 @@ ul.list.show {
   line-height: 20px;
 }
 .catalogBtn {
-  text-align: center;
+  /* text-align: center; */
 }
 .catalogBtn button.discoverMore {
-  display: inline-flex;
+  margin: 0 auto;
+  /* display: flex; */
+  display: none;
   justify-content: center;
   align-items: center;
   column-gap: 16px;

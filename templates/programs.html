@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Class 01{% endblock title %}
+{% block title %}Class Programs{% endblock title %}
 
 {% comment %} {% block custom_favicon %}{% endblock custom_favicon %} {% endcomment %}
 
@@ -36,12 +36,6 @@
           <li class="breadcrumbItem">
             <a href="#" class="breadcrumbLink">
               <i class="fa-solid fa-angle-right fa-lg"></i>
-              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 25 24"
-                                fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M10.2929 7.79289C9.90237 8.18342 9.90237 8.81658 10.2929 9.20711L13.0858 12L10.2929 14.7929C9.90237 15.1834 9.90237 15.8166 10.2929 16.2071C10.6834 16.5976 11.3166 16.5976 11.7071 16.2071L15.2071 12.7071C15.5976 12.3166 15.5976 11.6834 15.2071 11.2929L11.7071 7.79289C11.3166 7.40237 10.6834 7.40237 10.2929 7.79289Z"
-                                    fill="#777E91" />
-                            </svg> -->
             </a>
           </li>
           <li class="breadcrumbItem">
@@ -132,11 +126,7 @@
               <ul class="list">
                 {% for key,value in timeofday %}
                  <li data-value="{{value}}" class="option selected">{{value}}</li>
-                 {% comment %} <li data-value="Mini Yoga" class="option">Mini Yoga</li> {% endcomment %}
                 {% endfor %}
-                {% comment %} <li data-value="Morning" class="option selected">Morning</li>
-                <li data-value="Dinner" class="option">Dinner</li>
-                <li data-value="Evening" class="option">Evening</li> {% endcomment %}
               </ul>
             </div>
 
@@ -151,13 +141,11 @@
                 <i class="fa-solid fa-angle-down"></i>
               </div>
               <ul class="list">
+
                 {% for key,value in difficulty %}
                  <li data-value="{{value}}" class="option selected">{{value}}</li>
-                 {% comment %} <li data-value="Mini Yoga" class="option">Mini Yoga</li> {% endcomment %}
                 {% endfor %}
-                {% comment %} <li data-value="Beginner" class="option selected">Beginner</li>
-                <li data-value="intermediate" class="option">intermediate</li>
-                <li data-value="Advanced" class="option">Advanced</li> {% endcomment %}
+
               </ul>
             </div>
 
@@ -174,7 +162,6 @@
               <ul class="list">
                 {% for key,value in intensity %}
                 <li data-value="{{value}}" class="option selected">{{value}}</li>
-                {% comment %} <li data-value="Mini Yoga" class="option">Mini Yoga</li> {% endcomment %}
                {% endfor %}
               </ul>
             </div>
