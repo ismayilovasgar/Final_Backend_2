@@ -737,7 +737,7 @@
   display: flex;
   align-items: flex-start;
   min-height: calc(
-    20vh + var(--trainer-row-gap)
+    30vh + var(--trainer-row-gap)
   ); /* dont change appearenc in feth js */
   flex-wrap: wrap;
   column-gap: var(--trainer-col-gap);

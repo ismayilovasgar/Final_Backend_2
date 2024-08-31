@@ -1,25 +1,33 @@
 from django.shortcuts import render
-from courses.models import Category, Tag, Course
+from courses.models import Category, Tag, Course, Trainer
+from pages.models import Review
 
 
-# Create your views here.
 def index(request):
     categories = Category.objects.all()
-    # courses = Course.objects.all()
+    reviews = Review.objects.all()
     context = {
         "categories": categories,
-        # "courses": courses,
+        "reviews": reviews,
     }
 
     return render(request, "home.html", context)
 
 
 def pricing(request):
-    return render(request, "pricing.html")
+    trainers = Trainer.objects.all()
+    context = {
+        "trainers": trainers,
+    }
+    return render(request, "pricing.html", context)
 
 
 def features(request):
-    return render(request, "features.html")
+    reviews = Review.objects.all()
+    context = {
+        "reviews": reviews,
+    }
+    return render(request, "features.html", context)
 
 
 def download(request):
