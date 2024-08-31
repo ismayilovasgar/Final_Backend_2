@@ -219,7 +219,7 @@ form button i {
   margin-bottom: 16px;
 }
 
-.postBox .postItem .postStatus.Fitness_Gym {
+.postBox .postItem .postStatus.FitnessGym {
   background: var(--Primary-1, #ff592c);
   color: var(--Neutrals-6);
 }

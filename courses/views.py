@@ -33,7 +33,7 @@ def tags_detail(request, tag_slug):
         try:
             courses = Course.objects.filter(tags__slug=tag_slug)
             result = format_data_bytags(courses)
-            return JsonResponse({"all_data": result})
+            return JsonResponse({"cards": result})
         except:
             return print("eerr-------------------------")
     else:
@@ -74,12 +74,13 @@ def format_data_bytags(data):
             # key : value
             #! Trainer
             "name": course.trainer.fullname,
-            "image_url": course.trainer.image.url,
+            "trainer_image_url": course.trainer.image.url,
             # ! Course
             "course_name": course.name,
-            "course_category": course.category.name,
+            "course_category": course.category.name.replace(" & ", ""),
             "course_description": course.description,
-            "course_date": course.created_date,
+            "course_date": course.created_date.strftime("%b %d, %Y"),
+            "course_image": course.image.url,
         }
         for course in data
     ]

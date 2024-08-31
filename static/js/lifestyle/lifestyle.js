@@ -31,7 +31,6 @@ let len = 0;
 
 async function fetchFilteredData(text, wrap) {
   wrap.innerHTML = "";
-
   await fetch(`http://127.0.0.1:8000/courses/tags/${text}/`, {
     method: "POST",
     headers: {
@@ -42,28 +41,27 @@ async function fetchFilteredData(text, wrap) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.all_data);
-      // data.trainer_data.map((trainer) => {
-      //   wrap.innerHTML += `
-      //   <div class="postItem">
-      //     <a href="/singleblog/${trainer.id}" >
-      //       <div class="postPreview">
-      //           <img src="${trainer.move_image_url}" alt="">
-      //       </div>
-      //       <div class="postStatus ${trainer.trainer_category}">${trainer.trainer_category}</div>
-      //       <div class="postSubtitle">${trainer.move_title}</div>
-      //       <div class="postFoot">
-      //           <div class="postUser">
-      //             <div class="postAvatar">
-      //               <img src="${trainer.trainer_image_url}" alt="">
-      //             </div>
-      //            <div class="postAuthor">${trainer.firstname} ${trainer.lastname}</div>
-      //           </div>
-      //           <div class="postDate">${trainer.started_date}</div>
-      //         </div>
-      //       </a>
-      //  </div>`;
-      // });
+      data.cards.map((card) => {
+        wrap.innerHTML += `
+        <div class="postItem">
+          <a href="/singleblog/${card.id}" >
+            <div class="postPreview">
+                <img src="${card.course_image}" alt="">
+            </div>
+            <div class="postStatus ${card.course_category}">${card.course_category}</div>
+            <div class="postSubtitle">${card.course_name}</div>
+            <div class="postFoot">
+                <div class="postUser">
+                  <div class="postAvatar">
+                    <img src="${card.trainer_image_url}" alt="">
+                  </div>
+                 <div class="postAuthor">${card.name}</div>
+                </div>
+                <div class="postDate">${card.course_date}</div>
+              </div>
+            </a>
+       </div>`;
+      });
       items = [...document.querySelectorAll(".postItem")];
       len = items.length;
       loadMoreItems(len, items);
