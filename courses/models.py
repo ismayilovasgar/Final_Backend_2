@@ -142,9 +142,14 @@ class Course(models.Model):
     duration = models.PositiveIntegerField(
         validators=[
             MinValueValidator(1),  # Minimum value of 1
-            MaxValueValidator(100),  # Maximum value of 100
+            MaxValueValidator(59),  # Maximum value of 59
         ],
-        null=True,
+    )
+    classes = models.PositiveIntegerField(
+        validators=[
+            MinValueValidator(1),  # Minimum value of 1
+            MaxValueValidator(10),  # Maximum value of 10
+        ],
     )
     date = models.DateTimeField(auto_now=True, null=True)
     created_date = models.DateTimeField(auto_now_add=True, null=True)
