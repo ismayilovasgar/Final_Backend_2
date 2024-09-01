@@ -53,7 +53,7 @@ select_sorting.forEach((item) => {
     sorting_list_items = item.querySelectorAll("ul li");
     sorting_list_items.forEach((list_item) => {
       list_item.addEventListener("click", (e) => {
-        item.querySelector("input.current").value = list_item.textContent;
+        item.querySelector("input.current").value = list_item.innerText;
       });
     });
   });

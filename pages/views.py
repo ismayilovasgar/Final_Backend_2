@@ -43,6 +43,7 @@ def lifestyle(request):
 
 
 def programs(request):
+    trainers = Trainer.objects.all()
     styles = Style.objects.all()
     intensities = Intensity.objects.all()
     timeofdaies = TimeOfDay.objects.all()
@@ -57,6 +58,7 @@ def programs(request):
         "levels": levels,
         "categories": categories,
         "tags": tags,
+        "trainers": trainers,
     }
     return render(request, "programs.html", context)
 
