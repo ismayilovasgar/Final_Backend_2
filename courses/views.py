@@ -7,17 +7,7 @@ from django.db.models import Q
 import json
 
 
-# Create your views here.
-def course_list(request):
-    return render(request, "home.html")
-
-
-def course_detail(request, category_slug, course_id):
-    course = Course.objects.get(category__slug=category_slug, id=course_id)
-    context = {"course": course}
-    return render(request, "home.html", context)
-
-
+# ----------------------- Start Functions -----------------------
 def categories_detail(request, category_slug):
     if request.method == "POST":
         try:
@@ -55,6 +45,27 @@ def show_by_array(request):
             ).order_by("-created_date")
             results = format_data(result)
 
+            return JsonResponse({"results": results})
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Invalid JSON"}, status=400)
+    return JsonResponse({"error": "Invalid request method"}, status=405)
+
+
+def show_by_text(request, text):
+    if request.method == "POST":
+        try:
+            pre_text = text.split("_")[0]
+            text = text.split("_")[1]
+            if pre_text.startswith("category"):
+                results = Course.objects.filter(category__name=text).order_by(
+                    "-created_date"
+                )
+            else:
+                results = Course.objects.filter(name__contains=text).order_by(
+                    "-created_date"
+                )
+
+            results = format_data(results)
             return JsonResponse({"results": results})
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
@@ -101,16 +112,18 @@ def format_data(data):
         {
             # key : value
             #! Trainer
-            "id": course.trainer.id,
+            "trainer_id": course.trainer.id,
             "profession": course.trainer.profession,
-            "name": course.trainer.fullname,
-            "image_url": course.trainer.image.url,
+            "trainer_fullname": course.trainer.fullname,
+            "trainer_image": course.trainer.image.url,
             "facebook": course.trainer.facebook,
             "twitter": course.trainer.twitter,
             "instagram": course.trainer.instagram,
             "linkedin": course.trainer.linkedin,
             # ! Course
+            "course_id": course.pk,
             "course_name": course.name,
+            "course_image": course.image.url,
             "course_category": course.category.name,
             "course_description": course.description,
             "course_date": course.created_date,

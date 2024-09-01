@@ -461,7 +461,7 @@ ul.list.show {
   display: flex;
   column-gap: 12px;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 .catalogList .card .cardHead .cardUser .cardAvatar {
   display: flex;

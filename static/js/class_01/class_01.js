@@ -141,15 +141,15 @@ linkItems.map((item) => {
 button.addEventListener("click", (e) => {
   isValidString = inputText.value.trim();
   if (!!isValidString) {
-    // fetchPostByText("name_" + isValidString, catalogList);
+    fetchPostByText("name_" + isValidString, catalogList);
   }
 });
 
 //? click button by category name
 linkItems.forEach((item) => {
   item.addEventListener("click", (e) => {
-    // fetchPostByText("category_" + item.textContent, catalogList);
-    e.preventDefault();
+    fetchPostByText("category_" + item.textContent, catalogList);
+    // e.preventDefault();
   });
 });
 
@@ -164,19 +164,20 @@ function markFirstItem() {
 const fetchPostByText = async (search_text, wrap) => {
   wrap.innerHTML = "";
   const response = await fetch(
-    `http://127.0.0.1:8000/course/programs/${search_text}/`,
+    `http://127.0.0.1:8000/courses/programs/${search_text}/`,
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "X-CSRFToken": getCookie("csrftoken"),
       },
-      body: JSON.stringify("search_text"),
+      body: JSON.stringify(),
     }
   );
   const data = await response.json();
+  console.log(data);
 
-  // fillCardToContainer(data, data.data.length, wrap);
+  // fillCardToContainer(data, data.results.length, wrap);
   inputText.value = "";
 };
 
@@ -199,10 +200,8 @@ async function fetchPostByArray(array, wrap) {
     body: JSON.stringify({ data: array }),
   });
   const data = await response.json();
-  console.log(data);
-  // console.log(data.results);
 
-  // fillCardToContainer(data, data.data.length, wrap);
+  fillCardToContainer(data.results, data.results.length, wrap);
 }
 
 //! --------------------------------------------------------------------------------------------------------
@@ -237,30 +236,30 @@ function reverseCard() {
 async function fillCardToContainer(data, len, wrap = catalogList) {
   oldest_status = true;
   newest_status = false;
-  wrap.innerHTML = "";
   if (len !== 0) {
-    data.data.map((item) => {
+    wrap.innerHTML = "";
+    data.map((item) => {
       wrap.innerHTML += `
-    <a class="card" href="/class_01_detail/${item.id}/">
+    <a class="card" href="/class_01_detail/${item.course_id}/">
     <div class="">
             <div class="cardPreview">
-                <img class="backPreview" src="${item.move_image_url}" alt="">
-                <div class="cardStatus ${item.trainer_category}">${item.trainer_category}</div>
+                <img class="backPreview" src="${item.course_image}" alt="">
+                <div class="cardStatus ${item.course_category}">${item.course_category}</div>
             </div>
       
             <div class="cardHead">
                 <div class="cardUser">
                     <div class="cardAvatar">
-                        <img src="${item.trainer_image_url}" alt="">
+                        <img src="${item.trainer_image}" alt="">
                     </div>
                     <div class="cardDetails">
-                        <div class="cardTitle">${item.move_title}</div>
+                        <div class="cardTitle">${item.course_description}</div>
                         <div class="cardTrainer">
-                            <span class="firstName">${item.firstname} ${item.lastname}</span>
+                            <span class="firstName">${item.trainer_fullname} </span>
                         </div>
                     </div>
                 </div>
-                <div class="cardLevel ${item.move_difficulty}">${item.move_difficulty}</div>
+                <div class="cardLevel ${item.course_level}">${item.course_level}</div>
             </div>
       
             <div class="cardParameters">
@@ -278,6 +277,8 @@ async function fillCardToContainer(data, len, wrap = catalogList) {
     `;
     });
   } else {
+    wrap.innerHTML = "";
+
     // notFounded();
   }
 }
