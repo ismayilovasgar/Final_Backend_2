@@ -59,3 +59,11 @@ def programs(request):
         "tags": tags,
     }
     return render(request, "programs.html", context)
+
+
+def programs_detail(request, id):
+    course = Course.objects.get(id=id)
+    context = {
+        "course": course,
+    }
+    return render(request, "class_01_detail.html", context)

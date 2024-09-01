@@ -399,6 +399,32 @@
   /*! heroHeader End */
 
   /*? intro Start  */
+  .intro {
+    padding-bottom: 64px;
+  }
+  .aboutStageHidden {
+    display: none;
+  }
+  .our_service {
+    margin-bottom: 20px;
+  }
+  .about_mobil_items {
+    display: block;
+  }
+
+  .homeAbout .topRow .rightCol .wrap > * {
+    margin: 0px auto 20px auto;
+  }
+  .topRow .aboutTitle {
+    max-width: unset;
+    text-align: center;
+    margin: 20px 0px;
+  }
+
+  .topRow .aboutInfo {
+    text-align: center;
+    margin: 0 auto;
+  }
   .intro .wrapper {
     flex-direction: column-reverse;
   }

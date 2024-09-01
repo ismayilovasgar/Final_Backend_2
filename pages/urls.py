@@ -9,4 +9,5 @@ urlpatterns = [
     path("download/", views.download, name="download"),          # http://127.0.0.1:8000/download
     path("lifestyle/", views.lifestyle, name="lifestyle"),          # http://127.0.0.1:8000/download
     path("programs/", views.programs, name="programs"),          # http://127.0.0.1:8000/programs
+    path("programs/detail/<int:id>/", views.programs_detail, name="programs_detail"),          # http://127.0.0.1:8000/programs
 ]

@@ -239,7 +239,7 @@ function fillCardToContainer(data, len, wrap = catalogList) {
     wrap.innerHTML = "";
     data.map((item) => {
       wrap.innerHTML += `
-    <a class="card" href="/class_01_detail/${item.course_id}/">
+    <a class="card" href="/programs/detail/${item.course_id}/">
     <div class="">
             <div class="cardPreview">
                 <img class="backPreview" src="${item.course_image}" alt="">

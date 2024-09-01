@@ -24,7 +24,7 @@
             <div class="descriptionRow">
                 <div class="descriptionLeftCol">
                     <div class="descriptionDetails">
-                        <span class="category">fitness</span>
+                        <span class="category">{{ course.category.name}}</span>
                         <span class="release">new release</span>
                     </div>
                     <h2 class="descroptionTitle">Sweet and tone</h2>
@@ -55,14 +55,14 @@
                                 <img src="{% static 'assets/images/class_01_detail/description/scoreboard.svg' %}" alt="">
                                 <span>Difficulity</span>
                             </div>
-                            <span class="detailInfo">Beginner</span>
+                            <span class="detailInfo">{{ course.level.name }}</span>
                         </div>
                         <div class="descriptionItem">
                             <div class="left">
                                 <img src="{% static 'assets/images/class_01_detail/description/candlesticks.svg' %}" alt="">
                                 <span>Intensity</span>
                             </div>
-                            <span class="detailInfo">Level 2</span>
+                            <span class="detailInfo">{{ course.intensity.name}}</span>
                         </div>
 
                     </div>
