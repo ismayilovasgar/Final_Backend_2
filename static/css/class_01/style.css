@@ -58,7 +58,7 @@
   --catalog_row-gap: 32px;
 }
 .catalog {
-  padding: 80px 0px;
+  padding: 80px 0px 136px 0px;
 }
 .catalogHead {
   display: flex;
@@ -593,7 +593,7 @@ ul.list.show {
 
 /*? testimonials Start */
 .testimonials {
-  padding: 136px 0px;
+  padding: 0px 0px 136px 0px;
 }
 
 .testimonials .testmonialsItem .testimonialsRow {

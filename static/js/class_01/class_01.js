@@ -175,9 +175,8 @@ const fetchPostByText = async (search_text, wrap) => {
     }
   );
   const data = await response.json();
-  console.log(data);
 
-  // fillCardToContainer(data, data.results.length, wrap);
+  fillCardToContainer(data.results, data.results.length, wrap);
   inputText.value = "";
 };
 
@@ -233,10 +232,10 @@ function reverseCard() {
 //! --------------------------------------------------------------------------------------------------------
 //! --------------------------------------------------------------------------------------------------------
 
-async function fillCardToContainer(data, len, wrap = catalogList) {
+function fillCardToContainer(data, len, wrap = catalogList) {
   oldest_status = true;
   newest_status = false;
-  if (len !== 0) {
+  if (len > 0) {
     wrap.innerHTML = "";
     data.map((item) => {
       wrap.innerHTML += `
@@ -278,16 +277,14 @@ async function fillCardToContainer(data, len, wrap = catalogList) {
     });
   } else {
     wrap.innerHTML = "";
-
-    // notFounded();
+    notFounded();
   }
 }
 
 function notFounded() {
-  catalogList.innerHTML = "";
   catalogList.innerHTML = `<div class="notFounded">not founded available content .....</div>`;
   setTimeout(() => {
-    catalogList.innerHTML = "";
+    // catalogList.innerHTML = "";
   }, 750);
 }
 
