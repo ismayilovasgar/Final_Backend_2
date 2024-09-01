@@ -1,6 +1,7 @@
 from django.db import models
 from trainers.models import Trainer
 import os
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 # ? Common Uses ----------------------------------------------------
@@ -138,7 +139,13 @@ class Course(models.Model):
     )
     description = models.TextField(blank=True, null=True, max_length=300)
     image = models.ImageField(upload_to=get_image_upload_path, default="course.jpg")
-    # duration=models.
+    duration = models.PositiveIntegerField(
+        validators=[
+            MinValueValidator(1),  # Minimum value of 1
+            MaxValueValidator(100),  # Maximum value of 100
+        ],
+        null=True,
+    )
     date = models.DateTimeField(auto_now=True, null=True)
     created_date = models.DateTimeField(auto_now_add=True, null=True)
     available = models.BooleanField(default=True)
