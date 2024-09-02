@@ -96,7 +96,7 @@
                     </div>
 
                     <div class="headerGroups">
-                        <ul>
+                        <ul class="social_links">
                             <li>
                                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                             </li>
@@ -109,7 +109,22 @@
                         </ul>
 
                         <div class="buttonGroups">
-                            <button class="headerTrialBtn">Get free trial</button>
+                            {% comment %} <button class="headerTrialBtn">Get free trial</button> {% endcomment %}
+                            <ul class="accounts_ul">
+                                {% if request.user.is_authenticated %}
+                                    <li class="account_link">
+                                        <a href="{% url "accounts:login" %}" class="log_link login_link">
+                                            <i class="fa-solid fa-right-to-bracket"></i>
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li class="account_link">
+                                        <a href="{% url "accoubts:logout" %}" class="log_link logout_link">
+                                            <i class="fa-solid fa-right-from-bracket"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            </ul>
                             <button class="hidden"><i class="fa-solid fa-bars"></i></button>
                         </div>
                     </div>

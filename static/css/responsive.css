@@ -62,13 +62,13 @@
     border: none;
     padding: 0px;
   }
-  .headerCenter .headerGroups ul {
+  .headerCenter .headerGroups ul.social_links {
     display: none;
   }
   .buttonGroups {
     display: flex;
     align-items: center;
-    column-gap: 40px;
+    column-gap: 20px;
   }
   .buttonGroups .bars {
     display: block;
@@ -231,9 +231,7 @@
     padding: 48px 0px 24px 0px;
   }
 
-  .header .headerTrialBtn {
-    display: none;
-  }
+
 }
 
 @media screen and (max-width: 300px) {

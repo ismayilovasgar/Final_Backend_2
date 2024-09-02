@@ -125,8 +125,10 @@
   border-radius: 50px;
   margin: 0 5px;
 }
-a {
-  text-decoration: none;
+
+#sign-in-btn2,
+#sign-up-btn2 {
+  color: var(--section-text);
 }
 .social-icon:hover {
   color: #df4adf;
