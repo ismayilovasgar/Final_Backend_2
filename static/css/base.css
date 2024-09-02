@@ -624,7 +624,7 @@ footer {
 
 /* right col */
 
-form {
+.footer_subs_form {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -663,44 +663,6 @@ footer .subscription__btn i {
   color: var(--Neutrals-8);
 }
 
-label {
-  position: absolute;
-  width: 45px;
-  height: 26px;
-  left: 5px;
-  bottom: 0px;
-  border: 2px solid;
-  border-radius: 20px;
-  /* z-index: 2000; */
-  transition: all 0.3s ease-in-out;
-}
-
-label:before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 1px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  background: #000;
-  cursor: pointer;
-  transition: 0.4s;
-  transition: all 0.3s ease-in-out;
-}
-label.active:before {
-  left: 100%;
-  background-color: #fff;
-  transform: translate(-100%, -50%);
-  transition: all 0.3s ease-in-out;
-}
-label.active {
-  background-color: #000;
-  border-color: var(--Neutrals-2);
-  transition: all 0.3s ease-in-out;
-}
-
 footer .bar_wrapper {
   padding: 24px 0px;
   display: flex;
@@ -727,6 +689,45 @@ footer .bar_wrapper ul i {
 footer .bar_wrapper ul li i:hover {
   color: var(--class-filter-text);
   transition: all 0.3s ease-in;
+}
+
+/*  Label Chanhe Theme */
+.label_footer {
+  position: absolute;
+  width: 45px;
+  height: 26px;
+  left: 5px;
+  bottom: 0px;
+  border: 2px solid;
+  border-radius: 20px;
+  /* z-index: 2000; */
+  transition: all 0.3s ease-in-out;
+}
+
+.label_footer:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #000;
+  cursor: pointer;
+  transition: 0.4s;
+  transition: all 0.3s ease-in-out;
+}
+.label_footer.active:before {
+  left: 100%;
+  background-color: #fff;
+  transform: translate(-100%, -50%);
+  transition: all 0.3s ease-in-out;
+}
+.label_footer.active {
+  background-color: #000;
+  border-color: var(--Neutrals-2);
+  transition: all 0.3s ease-in-out;
 }
 /* ! Footer End */
 

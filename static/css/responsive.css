@@ -174,7 +174,7 @@
     width: unset;
     overflow: unset;
   }
-  label {
+  .label_footer {
     left: unset;
     bottom: unset;
     top: 50%;
