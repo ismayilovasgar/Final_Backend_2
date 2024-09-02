@@ -28,17 +28,18 @@
                     <h2 class="title">Sign in</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" name="username" id="id_login_username" value="{{ login_form.username.value }}">
-                        {% if login_form.username.errors %}
+                        <input type="text" placeholder="Username" name="username" id="id_login_username" value="">
+                        {% comment %} <input type="text" placeholder="Username" name="username" id="id_login_username" value="{{ login_form.username.value }}"> {% endcomment %}
+                        {% comment %} {% if login_form.username.errors %}
                             <div>{{ login_form.username.errors }}</div>
-                        {% endif %}
+                        {% endif %} {% endcomment %}
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Password" name="password" id="id_login_password" >
-                        {% if login_form.password.errors %}
+                        {% comment %} {% if login_form.password.errors %}
                              <div>{{ login_form.password.errors }}</div>
-                        {% endif %}
+                        {% endif %} {% endcomment %}
                     </div>
                     {% comment %} <input type="submit" name="Login" value="Login" class="btn_submit"> {% endcomment %}
                     <button type="submit"  name="login"  class="btn_submit" >Login</button>
@@ -65,17 +66,19 @@
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" name="username" id="id_register_username" value="{{ register_form.username.value }}">
-                        {% if register_form.username.errors %}
+                        {% comment %} <input type="text" placeholder="Username" name="username" id="id_register_username" value="{{ register_form.username.value }}"> {% endcomment %}
+                        <input type="text" placeholder="Username" name="username" id="id_register_username" value="">
+                        {% comment %} {% if register_form.username.errors %}
                             <div>{{ register_form.username.errors }}</div>
-                        {% endif %}
+                        {% endif %} {% endcomment %}
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" name="email" id="id_register_email" value="{{ register_form.email.value }}">
-                        {% if register_form.email.errors %}
+                        {% comment %} <input type="email" placeholder="Email" name="email" id="id_register_email" value="{{ register_form.email.value }}"> {% endcomment %}
+                        <input type="email" placeholder="Email" name="email" id="id_register_email" value="">
+                        {% comment %} {% if register_form.email.errors %}
                             <div>{{ register_form.email.errors }}</div>
-                        {% endif %}
+                        {% endif %} {% endcomment %}
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
@@ -87,10 +90,10 @@
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Confirm Password" name="password2" id="id_password2">
-                        {% if register_form.password2.errors %}
-                            <div>{{ register_form.password2.errors }}</div>
-                        {% endif %}
                     </div>
+                    {% comment %} {% if register_form.password2.errors %}
+                            <div>{{ register_form.password2.errors }}</div>
+                    {% endif %} {% endcomment %}
                     {% comment %} <input type="submit" name="Register" value="Register" class="btn_submit"> {% endcomment %}
                     <button type="submit" name="register"  class="btn_submit">Sign up</button>
 

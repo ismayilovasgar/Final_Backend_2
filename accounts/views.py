@@ -22,7 +22,7 @@ def user_login(request):
             if login_form.is_valid():
                 user = login_form.get_user()
                 login(request, user)
-                messages.info(request, f"Welcome {{request.user.username}}")
+                messages.info(request, "Welcome, ")
 
                 return redirect("home")
             messages.warning(request, "Check Username or Password !")
