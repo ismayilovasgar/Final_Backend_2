@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Register {% endblock title %}
+
+
+{% block custom_css %} 
+<link rel="stylesheet" href="{% static 'css/accounts/register/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/accounts/register/responsive.css' %}">
+{% endblock custom_css %}
+
+
+{% comment %} ?--- Content ---* {% endcomment %}
+{% block content %}
+
+
+{% endblock content %}
+{% comment %} ?--- Content ---* {% endcomment %}
+
+{% block custom_js %}
+    <script src="{% static '/js/register/register.js' %}"></script>
+{% endblock custom_js  %}
