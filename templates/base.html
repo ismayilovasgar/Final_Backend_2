@@ -111,16 +111,17 @@
                         <div class="buttonGroups">
                             {% comment %} <button class="headerTrialBtn">Get free trial</button> {% endcomment %}
                             <ul class="accounts_ul">
-                                {% if request.user.is_authenticated %}
+                                {% if user.is_authenticated %}
+                                    <li class="account_link">
+                                        <a href="{% url "accounts:logout" %}" class="log_link logout_link">
+                                            <i class="fa-solid fa-right-from-bracket"></i>
+                                        </a>
+                                    </li>
+
+                                {% else %}
                                     <li class="account_link">
                                         <a href="{% url "accounts:login" %}" class="log_link login_link">
                                             <i class="fa-solid fa-right-to-bracket"></i>
-                                        </a>
-                                    </li>
-                                {% else %}
-                                    <li class="account_link">
-                                        <a href="{% url "accoubts:logout" %}" class="log_link logout_link">
-                                            <i class="fa-solid fa-right-from-bracket"></i>
                                         </a>
                                     </li>
                                 {% endif %}

@@ -8,13 +8,13 @@ def user_login(request):
     if request.method == "POST":
         if "register" in request.POST:
             register_form = RegisterForm(request.POST)
-            login_form = AuthenticationForm()
+            login_form = LoginForm()
             if register_form.is_valid():
                 user = register_form.save()
                 login(request, user)
                 return redirect("home")
         elif "login" in request.POST:
-            login_form = AuthenticationForm(request, data=request.POST)
+            login_form = LoginForm(request, data=request.POST)
             register_form = RegisterForm()
             if login_form.is_valid():
                 user = login_form.get_user()
@@ -22,7 +22,7 @@ def user_login(request):
                 return redirect("home")
     else:
         register_form = RegisterForm()
-        login_form = AuthenticationForm()
+        login_form = LoginForm()
 
     return render(
         request,
@@ -33,7 +33,7 @@ def user_login(request):
 
 def user_logout(request):
     logout(request)
-    return redirect("login")
+    return redirect("home")
 
 
 # def user_login(request):
