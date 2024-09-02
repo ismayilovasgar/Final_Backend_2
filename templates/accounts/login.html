@@ -23,18 +23,26 @@
     <div class="context_warpper">
         <div class="context">
             <div class="signin-signup">
-                <form action="" class="sign-in-form form_tag">
+                <form  class="sign-in-form form_tag" method="POST">
+                    {% csrf_token %}
                     <h2 class="title">Sign in</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username">
+                        <input type="text" placeholder="Username" name="username" id="id_login_username" value="{{ login_form.username.value }}">
+                        {% if login_form.username.errors %}
+                            <div>{{ login_form.username.errors }}</div>
+                        {% endif %}
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Password" name="password" id="id_login_password" >
+                        {% if login_form.password.errors %}
+                             <div>{{ login_form.password.errors }}</div>
+                        {% endif %}
                     </div>
-                    <input type="submit" value="Login" class="btn_submit">
-                    <p class="social-text">Or Sign in with social platform</p>
+                    {% comment %} <input type="submit" name="Login" value="Login" class="btn_submit"> {% endcomment %}
+                    <button type="submit"  name="login"  class="btn_submit" >Login</button>
+                    {% comment %} <p class="social-text">Or Sign in with social platform</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
                             <i class="fab fa-facebook"></i>
@@ -48,29 +56,45 @@
                         <a href="" class="social-icon">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                    </div>
+                    </div> {% endcomment %}
+
                     <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
                 </form>
-                <form action="" class="sign-up-form form_tag">
+                <form  class="sign-up-form form_tag" method="POST">
+                    {% csrf_token %}
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username">
+                        <input type="text" placeholder="Username" name="username" id="id_register_username" value="{{ register_form.username.value }}">
+                        {% if register_form.username.errors %}
+                            <div>{{ register_form.username.errors }}</div>
+                        {% endif %}
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="text" placeholder="Email">
+                        <input type="email" placeholder="Email" name="email" id="id_register_email" value="{{ register_form.email.value }}">
+                        {% if register_form.email.errors %}
+                            <div>{{ register_form.email.errors }}</div>
+                        {% endif %}
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Password"  name="password1" id="id_register_password1">
+                        {% if register_form.password1.errors %}
+                            <div>{{ register_form.password1.errors }}</div>
+                        {% endif %}
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Confirm Password">
+                        <input type="password" placeholder="Confirm Password" name="password2" id="id_password2">
+                        {% if register_form.password2.errors %}
+                            <div>{{ register_form.password2.errors }}</div>
+                        {% endif %}
                     </div>
-                    <input type="submit" value="Sign up" class="btn_submit">
-                    <p class="social-text">Or Sign in with social platform</p>
+                    {% comment %} <input type="submit" name="Register" value="Register" class="btn_submit"> {% endcomment %}
+                    <button type="submit" name="register"  class="btn_submit">Sign up</button>
+
+                    {% comment %} <p class="social-text">Or Sign in with social platform</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
                             <i class="fab fa-facebook"></i>
@@ -84,7 +108,8 @@
                         <a href="" class="social-icon">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                    </div>
+                    </div> {% endcomment %}
+
                     <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
                 </form>
             </div>

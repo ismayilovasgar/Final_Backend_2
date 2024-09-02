@@ -1,87 +1,30 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-
-
-class LoginForm(forms.Form):
-    username = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                "class": "",
-                "placeholder": "Username",
-            }
-        )
-    )
-    password = forms.PasswordInput(
-        widget=forms.PasswordInput(
-            attrs={
-                "class": "",
-                "placeholder": "Password",
-            }
-        )
-    )
+from django.contrib.auth import authenticate
 
 
 class RegisterForm(UserCreationForm):
-    first_name = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                "class": "",
-                "placeholder": "First Name",
-            }
-        )
-    )
-
-    last_name = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                "class": "",
-                "placeholder": "Last Name",
-            }
-        )
-    )
-
-    username = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                "class": "",
-                "placeholder": "Username",
-            }
-        )
-    )
-    email = forms.CharField(
-        widget=forms.EmailInput(
-            attrs={
-                "class": "",
-                "placeholder": "Email",
-            }
-        )
-    )
-    password1 = forms.CharField(
-        widget=forms.PasswordInput(
-            attrs={
-                "class": "",
-                "placeholder": "Password",
-            }
-        )
-    )
-    password2 = forms.CharField(
-        widget=forms.PasswordInput(
-            attrs={
-                "class": "",
-                "placeholder": "Re-Type Password",
-            }
-        )
-    )
+    email = forms.EmailField(required=True)
 
     class Meta:
         model = User
-        # fields = "__all__"
-        fields = [
-            "first_name",
-            "last_name",
-            "username",
-            "email",
-            "password1",
-            "password2",
-        ]
+        fields = ["username", "email", "password1", "password2"]
+
+
+class LoginForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ["username", "password"]
+
+    def clean(self):
+        username = self.cleaned_data.get("username")
+        password = self.cleaned_data.get("password")
+        user = authenticate(username=username, password=password)
+
+        if not user:
+            raise forms.ValidationError("Invalid username or password !")
+
+        return self.cleaned_data

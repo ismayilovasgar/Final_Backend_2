@@ -1,6 +1,7 @@
 from django.urls import path,include
 from pages import views
 
+# app_name="pages"
 
 urlpatterns = [
     path("", views.index, name="home"),                        # http://127.0.0.1:8000/
