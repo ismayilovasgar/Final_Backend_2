@@ -2,6 +2,7 @@ from django.db import models
 from trainers.models import Trainer
 import os
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.contrib.auth.models import User
 
 
 # ? Common Uses ----------------------------------------------------
@@ -165,6 +166,10 @@ class Course(models.Model):
     time_day = models.ForeignKey(TimeOfDay, on_delete=models.DO_NOTHING, null=True)
     intensity = models.ForeignKey(Intensity, on_delete=models.DO_NOTHING, null=True)
     style = models.ForeignKey(Style, on_delete=models.DO_NOTHING, null=True)
+    #
+    students = models.ManyToManyField(
+        User, blank=True, null=True, related_name="courses_joined"
+    )
 
     def __str__(self) -> str:
         return f"{self.name}"
