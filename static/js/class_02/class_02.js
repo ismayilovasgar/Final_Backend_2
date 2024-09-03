@@ -73,14 +73,14 @@ allListItem.map((item) => {
     // add selected tag to special item
     item.classList.toggle("selected");
     // posts();
-    fetchFilteredData(`${item.textContent}`, listWrap);
+    fetchFilteredData(`${item.getAttribute("data-value")}`, listWrap);
   });
 });
 
-function fetchFilteredData(text, wrap) {
+async function fetchFilteredData(text, wrap) {
   wrap.innerHTML = "";
 
-  fetch(`http://127.0.0.1:8000/trainer/class/${text}/`, {
+  fetch(`http://127.0.0.1:8000/courses/categories/${text}/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

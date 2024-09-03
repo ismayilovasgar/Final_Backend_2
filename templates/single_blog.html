@@ -33,8 +33,8 @@
                 <div class="articleRow">
                     <div class="articleLeftCol">
                         <div class="articlePreview">
-                            {% comment %} <img src="{% static 'assets/images/singleblog/article/history-pic.png' %}" alt=""> {% endcomment %}
-                            <img src="{{ trainer.move_image.url }}" alt="">
+                            <img src="{% static 'assets/images/singleblog/article/history-pic.png' %}" alt="">
+                            {% comment %} <img src="{{ course.trainer.image.url }}" alt=""> {% endcomment %}
                         </div>
                     </div>
 
@@ -85,13 +85,15 @@
             <div class="storyRow">
                 <div class="storyLeftCol">
                     <div class="storyPreview">
-                        <img src="{% static 'assets/images/singleblog/story/story-pic.png' %}" alt="">
+                        {% comment %} <img src="{% static 'assets/images/singleblog/story/story-pic.png' %}" alt=""> {% endcomment %}
+                        <img src="{{ course.image.url }}" alt="">
+
                     </div>
                 </div>
                 <div class="storyRightCol">
                     <div class="topTitle">
                         <h2 class="storyTitle">
-                            {{ trainer.move_title}}
+                            {{ course.name }}
                         </h2>
                         <div class="sotryInfo ">
                             The Stacks series of products: Stacks: Landing Page Kit, Stacks: Portfolio Kit, Stacks:

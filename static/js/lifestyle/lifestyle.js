@@ -44,7 +44,7 @@ async function fetchFilteredData(text, wrap) {
       data.cards.map((card) => {
         wrap.innerHTML += `
         <div class="postItem">
-          <a href="/singleblog/${card.id}" >
+          <a href="/singleblog/${card.course_id}" >
             <div class="postPreview">
                 <img src="${card.course_image}" alt="">
             </div>

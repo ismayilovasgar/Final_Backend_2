@@ -72,7 +72,7 @@
   letter-spacing: -0.24px;
 }
 .article .articlePreview {
-  height: 350px;
+  min-height: 350px;
   border-radius: 16px;
   overflow: hidden;
 }
@@ -198,6 +198,7 @@
 }
 
 .story .storyPreview {
+  min-height: 722px;
   height: 100%;
   border-radius: 16px;
   overflow: hidden;

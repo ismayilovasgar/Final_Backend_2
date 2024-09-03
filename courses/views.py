@@ -124,6 +124,7 @@ def format_data_bytags(data):
             "name": course.trainer.fullname,
             "trainer_image_url": course.trainer.image.url,
             # ! Course
+            "course_id": course.id,
             "course_name": course.name,
             "course_category": course.category.name.replace(" & ", ""),
             "course_category_long": course.category.name,

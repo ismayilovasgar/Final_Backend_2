@@ -188,8 +188,11 @@
                     
                     <ul class="list mobil_view" id="popup">
 
-                        {% for key,value in categorys  %}
-                            <li data-value="{{value}}" class="option">{{value}}</li>
+                        {% for category in categories  %}
+                            {% comment %} <li data-value="{{category.name}}" class="option"> {{category.name}} </li> {% endcomment %}
+                            <li data-value="{{category.slug}}" class="option">
+                                {{category.name}}
+                            </li>
                         {% endfor %}
                     
                     </ul>
