@@ -54,8 +54,8 @@ const listWrap = document.querySelector(".listWrap");
 const allListItem = [...document.querySelectorAll("ul.list li")];
 
 window.onload = function () {
-  fetchFilteredData("Yoga", listWrap);
-  markFirstItem();
+  // fetchFilteredData("yoga", listWrap);
+  // markFirstItem();
 };
 
 function markFirstItem() {
@@ -73,9 +73,31 @@ allListItem.map((item) => {
     // add selected tag to special item
     item.classList.toggle("selected");
     // posts();
-    fetchFilteredData(`${item.getAttribute("data-value")}`, listWrap);
+    // fetchFilteredData_2(`${item.getAttribute("data-value")}`, listWrap);
+    fetchFilteredData_2(`${item.innerText}`, listWrap);
   });
 });
+
+async function fetchFilteredData_2(text, wrap) {
+  wrap.innerHTML = "";
+
+  const response = await fetch(
+    `http://127.0.0.1:8000/class_02/category/${text}/`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": getCookie("csrftoken"),
+      },
+      body: JSON.stringify(""),
+    }
+  );
+  const jsonData = await response.json();
+  console.log(jsonData);
+  // jsonData.result.map((trainer) => {
+  //   console.log(trainer);
+  // });
+}
 
 async function fetchFilteredData(text, wrap) {
   wrap.innerHTML = "";

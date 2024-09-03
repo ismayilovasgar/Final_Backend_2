@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from courses.models import *
 from pages.models import Review
+from django.http import JsonResponse
+from django.db.models import Q
+import json
 
 
 def index(request):
@@ -89,6 +92,82 @@ def programs_detail(request, id):
         "course": course,
     }
     return render(request, "class_01_detail.html", context)
+
+
+def class02_trainers(request, category_name):
+    if request.method == "POST":
+        try:
+            category = Category.objects.get(name__contains="Gymnastics")
+            print(category)
+            trainers = Trainer.objects.prefetch_related(
+                models.Prefetch(
+                    "courses",
+                    queryset=Course.objects.filter(category=category),
+                )
+            ).all()
+
+            result = []
+
+            for trainer in trainers:
+                trainer_data = {
+                    "name": trainer.fullname,
+                    "image": trainer.image.url,
+                    "profession": trainer.profession,
+                    "courses": [],
+                }
+                for course in trainer.courses.all():
+                    course_data = {
+                        # "category": course.category.name,
+                        "level": course.level.name,
+                        "image": course.image.url,
+                        "description": course.description,
+                    }
+                    trainer_data["courses"].append(course_data)
+
+                # Only add the trainer to the result if they have courses in the specified category
+                if trainer_data["courses"]:
+                    result.append(trainer_data)
+                print(result)
+                return JsonResponse({"result": result}, safe=False)
+        except Category.DoesNotExist:
+            return JsonResponse({"error": "Category not found"}, status=404)
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+
+
+# ? -------------------------- DATA API --------------------------
+
+
+def short_format_data(category_name):
+    trainers = Trainer.objects.prefetch_related(
+        models.Prefetch(
+            "courses", queryset=Course.objects.filter(category=category_name)
+        )
+    ).all()
+
+    result = []
+
+    for trainer in trainers:
+        trainer_data = {
+            "name": trainer.fullname,
+            "image": trainer.image.url,
+            "profession": trainer.profession,
+            "courses": [],
+        }
+        for course in trainer.courses.all():
+            course_data = {
+                "category": course.category.name,
+                "level": course.level,
+                "image": course.image.url,
+                "description": course.description,
+            }
+            trainer_data["courses"].append(course_data)
+
+        # Only add the trainer to the result if they have courses in the specified category
+        if trainer_data["courses"]:
+            result.append(trainer_data)
+    print(result)
+    return JsonResponse(result, safe=False)
 
 
 def format_data(data):
