@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Dashboard {% endblock title %}
+
+
+{% block custom_css %} 
+<link rel="stylesheet" href="{% static 'css/accounts/dashboard/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/accounts/dashboard/responsive.css' %}">
+{% endblock custom_css %}
+
+
+{% comment %} ?--- Content ---* {% endcomment %}
+{% block content %}
+
+{% comment %}  {% endcomment %}
+
+{% comment %} <div class="modal-footer">
+    <form action="{% url "enroll_the_course" %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="user_id" value="{{user.id}}">
+            <input type="hidden" name="course_id" value="{{course.id}}">
+            <input type="submit" class="btn_success" value="I am Sure">
+    </form>
+    <button type="button" class="btn_secondary" data-dismmis="modal">Cancel</button>
+</div> {% endcomment %}
+
+{% comment %}  {% endcomment %}
+
+{% endblock content %}
+{% comment %} ?--- Content ---* {% endcomment %}
+
+{% block custom_js %}
+    <script src="{% static '/js/dashboard/dashboard.js' %}"></script>
+{% endblock custom_js  %}

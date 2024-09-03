@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from .forms import LoginForm, RegisterForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from courses.models import Course
+from django.contrib.auth.models import User
 
 
 def user_login(request):
@@ -43,5 +46,35 @@ def user_logout(request):
     return redirect("home")
 
 
+@login_required(login_url="login")
 def user_dashboard(request):
+    current_user = request.user
+    courses = current_user.courses_joined.all()
+    context = {
+        "courses": courses,
+    }
+    return render(request, "accounts/dashboard.html", context)
+    pass
+
+
+def enroll_the_course(request):
+    user_id = request.POST["user_id"]
+    course_id = request.POST["course_id"]
+    course = Course.objects.get(id=course_id)
+    user = User.objects.get(id=user_id)
+
+    course.students.add(user)
+    return redirect("dashboard")
+    pass
+
+
+def release_the_course(request):
+    user_id = request.POST["user_id"]
+    course_id = request.POST["course_id"]
+    course = Course.objects.get(id=course_id)
+    user = User.objects.get(id=user_id)
+
+    course.students.remove(user)
+    return redirect("dashboard")
+    pass
     pass

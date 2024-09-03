@@ -72,6 +72,35 @@ def show_by_text(request, text):
     return JsonResponse({"error": "Invalid request method"}, status=405)
 
 
+def courses_list(request):
+    # 1
+    # current_user = request.user
+    # if current_user.is_authenticated:
+    #     enrolled_courses = current_user.courses_joined.all()
+    #     courses = Course.objects.all().order_by("created_date")
+    #     for course in enrolled_courses:
+    #         courses = courses.exclude(id=course.id)
+    # else:
+    #     courses = Course.objects.all()
+
+    # 2
+    # current_user = request.user
+
+    # if current_user.is_authenticated:
+    #     courses = Course.objects.exclude(students=current_user)
+    #     # courses = Course.objects.exclude(students__username=current_user)
+    # else:
+    #     courses = Course.objects.all().order_by("-created_date")
+
+    # ortaq hisse
+    # contenxt = {
+    # "courses": courses,
+    # "tags": tags,
+    # "categories": categories,
+    # }
+    pass
+
+
 # ? -------------------- Return Data --------------------
 def format_data_simple(data):
     trainer_data = [
