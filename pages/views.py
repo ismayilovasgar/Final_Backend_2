@@ -98,6 +98,7 @@ def class02_trainers(request, category_name):
     if request.method == "POST":
         try:
             category = Category.objects.get(name=category_name)
+            trainer_ids = set()
             trainers = Trainer.objects.all()
             result = []
 
@@ -106,24 +107,28 @@ def class02_trainers(request, category_name):
                     trainer=trainer, category=category
                 )
                 if trainer_courses.exists():
-                    trainer_data = {
-                        "fullname": trainer.fullname,
-                        "trainer_image": trainer.image.url,
-                        "profession": trainer.profession,
-                        "facebook": trainer.facebook,
-                        "twitter": trainer.twitter,
-                        "instagram": trainer.instagram,
-                        "linkedin": trainer.linkedin,
-                        "courses": [],
-                    }
-                    for course in trainer_courses:
-                        course_data = {
-                            "image": course.image.url,
-                            "description": course.description,
+                    if trainer.id not in trainer_ids:
+                        trainer_data = {
+                            "fullname": trainer.fullname,
+                            "trainer_image": trainer.image.url,
+                            "profession": trainer.profession,
+                            "facebook": trainer.facebook,
+                            "twitter": trainer.twitter,
+                            "instagram": trainer.instagram,
+                            "linkedin": trainer.linkedin,
+                            "courses": [],
                         }
-                        trainer_data["courses"].append(course_data)
+                        for course in trainer_courses:
+                            course_data = {
+                                "image": course.image.url,
+                                "description": course.description,
+                                "level": course.level.name,
+                                "category": course.category.name,
+                            }
+                            trainer_data["courses"].append(course_data)
 
                         result.append(trainer_data)
+                        trainer_ids.add(trainer.id)
             return JsonResponse(result, safe=False)
         except Category.DoesNotExist:
             return JsonResponse({"error": "Category not found"}, status=404)
