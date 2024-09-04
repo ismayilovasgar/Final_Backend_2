@@ -58,15 +58,60 @@ select_sorting.forEach((item) => {
     });
   });
 });
-
+//
+//
+//
+// Home Trainer Category
 // ------------------------------------------------------------------------------------------------------
 const listWrap = document.querySelector(".trainersList  .listWrap");
 const allListItem = [...document.querySelectorAll("ul.list li")];
 
-window.onload = function () {
-  // fetchFilteredData("Yoga", listWrap);
-  // markFirstItem();
-};
+// document.addEventListener("DOMContentLoaded", function () {
+//   const categorySlug = "yoga"; // Replace with the actual category slug
+//   const localStorageKey = `trainers_${categorySlug}`;
+//   const trainersContainer = document.querySelector(".trainersList  .listWrap");
+
+//   // Function to display trainer cards
+//   function displayTrainers(data) {
+//     listWrap.innerHTML = "";
+//     data.map((trainer) => {
+//       listWrap.innerHTML += `
+//       <div class="trainerItem">
+//           <div class="profile">
+//             <img src="${trainer.image_url}" alt="">
+//           </div>
+//           <div class="trainerName">${trainer.name}</div>
+//           <div class="trainerPosition">
+//             ${trainer.profession}
+//           </div>
+//       </div>
+//       `;
+//     });
+//   }
+
+//   // Function to update Local Storage with new data
+//   function updateLocalStorage(trainers) {
+//     localStorage.setItem(localStorageKey, JSON.stringify(trainers));
+//   }
+
+//   // Check Local Storage first
+//   const storedData = localStorage.getItem(localStorageKey);
+//   if (storedData) {
+//     displayTrainers(JSON.parse(storedData)); // Display cached data
+//   }
+//   const data = fetchFilteredData(categorySlug);
+//   if (data.trainers) {
+//     updateLocalStorage(data.trainers); // Update Local Storage
+//     displayTrainers(data.trainers); // Display new data
+//   } else {
+//     console.log("++++");
+//     trainersContainer.innerHTML = "No trainers found.";
+//   }
+// });
+//
+//
+//
+//
 
 function markFirstItem() {
   // Select the first item in the list
@@ -82,13 +127,11 @@ allListItem.map((item) => {
     allListItem.forEach((el) => el.classList.remove("selected"));
     // add selected tag to special item
     item.classList.toggle("selected");
-    fetchFilteredData(`${item.getAttribute("data-value")}`, listWrap);
+    fetchFilteredData(`${item.getAttribute("data-value")}`);
   });
 });
 
-async function fetchFilteredData(text, wrap) {
-  wrap.innerHTML = "";
-
+async function fetchFilteredData(text) {
   const response = await fetch(
     `http://127.0.0.1:8000/courses/categories/${text}/`,
     {
@@ -102,12 +145,14 @@ async function fetchFilteredData(text, wrap) {
   );
 
   const data = await response.json();
-  fillTrainerToCard(data.trainer_data, wrap);
+  // return data.trainers;
+  displayTrainers(data.trainers);
 }
 
-function fillTrainerToCard(data, wrap) {
-  data.map((trainer) => {
-    wrap.innerHTML += `
+function displayTrainers(trainers) {
+  listWrap.innerHTML = "";
+  trainers.map((trainer) => {
+    listWrap.innerHTML += `
     <div class="trainerItem">
         <div class="profile">
           <img src="${trainer.image_url}" alt="">

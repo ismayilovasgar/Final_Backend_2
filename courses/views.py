@@ -21,7 +21,7 @@ def categories_detail(request, category_slug):
 
             results = format_data_simple(trainers)
 
-            return JsonResponse({"trainer_data": results})
+            return JsonResponse({"trainers": results})
         except:
             return print("eerr-------------------------")
     else:
