@@ -141,6 +141,11 @@ async function fillDemo(data, wrap) {
                                     }" target="_blank" class="trainer_social">
                                         <i class="fa-brands fa-twitter"></i>
                                     </a>
+                                    <a href="${
+                                      item.linkedin
+                                    }" target="_blank" class="trainer_social">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
                                 </div>
                             </div>
                             <form action="" method="/" class="subscriptionInput">
@@ -156,10 +161,6 @@ async function fillDemo(data, wrap) {
                                 ${item.courses
                                   .map(
                                     (el) => `
-
-    
-                                 
-                                    
                                         <div class="card">
                                             <div class="trainerPreview">
                                                 <img src="${el.image}" alt="">
@@ -180,8 +181,6 @@ async function fillDemo(data, wrap) {
                                                 </div>
                                             </div>
                                         </div>
-
-
                                      `
                                   )
                                   .join("")}
