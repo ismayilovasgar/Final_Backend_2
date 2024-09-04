@@ -14,8 +14,23 @@
   }
 }
 
+@media screen and (max-width: 900px) {
+  :root {
+    --trainerModal_column-gap: 16px;
+  }
+  .modalContent .trainerSlider {
+    display: block;
+  }
+  .modalContent .trainerSlider .card {
+    width: unset;
+  }
+}
+
 /* Mobil Start */
 @media screen and (max-width: 768px) {
+  :root {
+    --trainerModal_column-gap: 16px;
+  }
   .heroHeader .container {
     width: 1120px;
     max-width: 100%;

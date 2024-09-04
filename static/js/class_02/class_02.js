@@ -1,5 +1,3 @@
-// Get the modal
-
 // ! Swiper - 1
 let swiper_programs = new Swiper(".programs_swiper", {
   grabCursor: true,
@@ -27,7 +25,6 @@ let swiper_programs = new Swiper(".programs_swiper", {
     },
   },
 });
-
 //? Filter Select
 //* sorting-select
 const select_sorting = document.querySelectorAll(".sorting");
@@ -100,6 +97,13 @@ async function fetchFilteredData(text, wrap) {
   //   });
   // });
 }
+// JavaScript function to truncate strings
+function truncateString(str, num) {
+  if (str.length <= num) {
+    return str;
+  }
+  return str.slice(0, num) + "...";
+}
 
 async function fillDemo(data, wrap) {
   wrap.innerHTML = "";
@@ -156,19 +160,24 @@ async function fillDemo(data, wrap) {
                                 </button>
                             </form>
 
-                            <div class="trainerModalWrap">
-                                <div class="trainerSlider">
+                            <div class="trainerModalWrap programs_swiper2">
+                                <div class="trainerSlider swiper-wrapper">
                                 ${item.courses
                                   .map(
                                     (el) => `
-                                        <div class="card">
+                                        <div class="card programs_swiper ">
                                             <div class="trainerPreview">
                                                 <img src="${el.image}" alt="">
                                                 <p>${el.category}</p>
                                             </div>
                                             <div class="modalTrainerHead">
-                                                <div class="trainer__title">${el.description}</div>
-                                                <div class="trainerLevel">${el.level}</div>
+                                                <div class="trainer__title">${truncateString(
+                                                  el.description,
+                                                  25
+                                                )}</div>
+                                                <div class="trainerLevel">${
+                                                  el.level
+                                                }</div>
                                             </div>
                                             <div class="trainerParameters">
                                                 <div class="trainerParameter">
@@ -205,6 +214,7 @@ async function fillDemo(data, wrap) {
      
     `;
   });
+
   const trainers = [...document.querySelectorAll(".listWrap .trainerItem")];
   const closeBtns = [...document.querySelectorAll(".modal .modalCloseBtn")];
 
