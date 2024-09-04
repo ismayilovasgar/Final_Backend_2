@@ -97,38 +97,34 @@ def programs_detail(request, id):
 def class02_trainers(request, category_name):
     if request.method == "POST":
         try:
-            category = Category.objects.get(name__contains="Gymnastics")
-            print(category)
-            trainers = Trainer.objects.prefetch_related(
-                models.Prefetch(
-                    "courses",
-                    queryset=Course.objects.filter(category=category),
-                )
-            ).all()
-
+            category = Category.objects.get(name=category_name)
+            trainers = Trainer.objects.all()
             result = []
 
             for trainer in trainers:
-                trainer_data = {
-                    "name": trainer.fullname,
-                    "image": trainer.image.url,
-                    "profession": trainer.profession,
-                    "courses": [],
-                }
-                for course in trainer.courses.all():
-                    course_data = {
-                        # "category": course.category.name,
-                        "level": course.level.name,
-                        "image": course.image.url,
-                        "description": course.description,
+                trainer_courses = Course.objects.filter(
+                    trainer=trainer, category=category
+                )
+                if trainer_courses.exists():
+                    trainer_data = {
+                        "fullname": trainer.fullname,
+                        "trainer_image": trainer.image.url,
+                        "profession": trainer.profession,
+                        "facebook": trainer.facebook,
+                        "twitter": trainer.twitter,
+                        "instagram": trainer.instagram,
+                        "linkedin": trainer.linkedin,
+                        "courses": [],
                     }
-                    trainer_data["courses"].append(course_data)
+                    for course in trainer_courses:
+                        course_data = {
+                            "image": course.image.url,
+                            "description": course.description,
+                        }
+                        trainer_data["courses"].append(course_data)
 
-                # Only add the trainer to the result if they have courses in the specified category
-                if trainer_data["courses"]:
-                    result.append(trainer_data)
-                print(result)
-                return JsonResponse({"result": result}, safe=False)
+                        result.append(trainer_data)
+            return JsonResponse(result, safe=False)
         except Category.DoesNotExist:
             return JsonResponse({"error": "Category not found"}, status=404)
         except Exception as e:

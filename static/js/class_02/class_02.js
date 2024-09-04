@@ -74,13 +74,11 @@ allListItem.map((item) => {
     item.classList.toggle("selected");
     // posts();
     // fetchFilteredData_2(`${item.getAttribute("data-value")}`, listWrap);
-    fetchFilteredData_2(`${item.innerText}`, listWrap);
+    fetchFilteredData(`${item.innerText}`, listWrap);
   });
 });
 
-async function fetchFilteredData_2(text, wrap) {
-  wrap.innerHTML = "";
-
+async function fetchFilteredData(text, wrap) {
   const response = await fetch(
     `http://127.0.0.1:8000/class_02/category/${text}/`,
     {
@@ -92,33 +90,33 @@ async function fetchFilteredData_2(text, wrap) {
       body: JSON.stringify(""),
     }
   );
-  const jsonData = await response.json();
-  console.log(jsonData);
-  // jsonData.result.map((trainer) => {
-  //   console.log(trainer);
+  const data = await response.json();
+  console.log(data);
+
+  //* data.map((item) => {
+  //   console.log(item.fullname);
+  //*   item.courses.map((course) => {
+  //     console.log(course.description);
+  //   });
   // });
 }
 
-async function fetchFilteredData(text, wrap) {
-  wrap.innerHTML = "";
+async function fillDemo(data, wrap) {
+  
 
-  fetch(`http://127.0.0.1:8000/courses/categories/${text}/`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-CSRFToken": getCookie("csrftoken"),
-    },
-    body: JSON.stringify("text"),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      data.trainer_data.map((trainer) => {
-        wrap.innerHTML += `
+}
+
+async function fillDataToContainer(data, wrap) {
+  wrap.innerHTML = "";
+  console.log(data);
+  data.map((trainer) => {
+    console.log(trainer.profession);
+    wrap.innerHTML += `
         <div class="trainerItem">
             <div class="profile">
-              <img src="${trainer.trainer_image_url}" alt="">
+              <img src="${trainer.trainer_image}" alt="">
             </div>
-            <div class="trainerName">${trainer.firstname} ${trainer.lastname}</div>
+            <div class="trainerName">${trainer.fullname}</div>
             <div class="trainerPosition"> ${trainer.profession} </div>
         </div>
 
@@ -128,18 +126,22 @@ async function fetchFilteredData(text, wrap) {
 
                             <div class="trainerTop">
                                 <div class="trainerAvatar">
-                                    <img src="${trainer.trainer_image_url}" alt="">
+                                    <img src="${trainer.trainer_image}" alt="">
                                 </div>
-                                <div class="trainerName">${trainer.firstname} ${trainer.lastname}</div>
-                                <div class="trainerPosition">${trainer.profession}</div>
+                                <div class="trainerName">${fullname}</div>
+                                <div class="trainerPosition">${profession}</div>
                                 <div class="trainerSocials">
-                                    <a href="${trainer.facebook}" target="_blank" class="trainer_social">
+                                    <a href="${facebook}" target="_blank" class="trainer_social">
                                         <i class="fa-brands fa-facebook"></i>
                                     </a>
-                                    <a href="${trainer.instagram}" target="_blank" class="trainer_social">
+                                    <a href="${
+                                      trainer.instagram
+                                    }" target="_blank" class="trainer_social">
                                         <i class="fa-brands fa-instagram"></i>
                                     </a>
-                                    <a href="${trainer.twitter}" target="_blank" class="trainer_social">
+                                    <a href="${
+                                      trainer.twitter
+                                    }" target="_blank" class="trainer_social">
                                         <i class="fa-brands fa-twitter"></i>
                                     </a>
                                 </div>
@@ -155,14 +157,21 @@ async function fetchFilteredData(text, wrap) {
                             <div class="trainerModalWrap">
                                 <div class="trainerSlider">
                                     <a href="#" target="_blank">
+                                    ${courses.map((item) =>
+                                      console.log(item.description)
+                                    )}
                                         <div class="card">
                                             <div class="trainerPreview">
-                                                <img src="${trainer.move_image_url}" alt="">
+                                                <img src="${
+                                                  trainer.move_image_url
+                                                }" alt="">
                                                 <p>Fitness</p>
                                             </div>
                                             <div class="modalTrainerHead">
                                                 <div class="trainer__title">Power Yoga Sculpt</div>
-                                                <div class="trainerLevel">${trainer.move_level}</div>
+                                                <div class="trainerLevel">${
+                                                  trainer.move_level
+                                                }</div>
                                             </div>
                                             <div class="trainerParameters">
                                                 <div class="trainerParameter">
@@ -195,36 +204,32 @@ async function fetchFilteredData(text, wrap) {
                     </div>
             </div>
         `;
-      });
+  });
 
-      const trainers = [...document.querySelectorAll(".listWrap .trainerItem")];
-      const closeBtns = [...document.querySelectorAll(".modal .modalCloseBtn")];
+  const trainers = [...document.querySelectorAll(".listWrap .trainerItem")];
+  const closeBtns = [...document.querySelectorAll(".modal .modalCloseBtn")];
 
-      trainers.forEach((trainer) => {
-        trainer.addEventListener("click", (e) => {
-          // trainer.nextElementSibling.style.display = "block";
-          trainer.nextElementSibling.classList.add("showed");
-          e.preventDefault();
-        });
-      });
+  trainers.forEach((trainer) => {
+    trainer.addEventListener("click", (e) => {
+      // trainer.nextElementSibling.style.display = "block";
+      trainer.nextElementSibling.classList.add("showed");
+      e.preventDefault();
+    });
+  });
 
-      closeBtns.forEach((closeBtn) => {
-        closeBtn.addEventListener("click", (e) => {
-          // closeBtn.closest(".modal").style.display = "none";
-          closeBtn.closest(".modal").classList.remove("showed");
-        });
-      });
-      window.onclick = function (event) {
-        const modal = document.querySelector(".modal.showed");
+  closeBtns.forEach((closeBtn) => {
+    closeBtn.addEventListener("click", (e) => {
+      // closeBtn.closest(".modal").style.display = "none";
+      closeBtn.closest(".modal").classList.remove("showed");
+    });
+  });
+  window.onclick = function (event) {
+    const modal = document.querySelector(".modal.showed");
 
-        if (event.target == modal) {
-          modal.classList.remove("showed");
-        }
-      };
-
-      //
-    })
-    .catch((error) => console.error("Error fetching data:", error));
+    if (event.target == modal) {
+      modal.classList.remove("showed");
+    }
+  };
 }
 
 // Function to get CSRF token from cookies
