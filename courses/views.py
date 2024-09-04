@@ -11,9 +11,17 @@ import json
 def categories_detail(request, category_slug):
     if request.method == "POST":
         try:
-            courses = Course.objects.filter(category__slug=category_slug)
-            trainers = format_data_simple(courses)
-            return JsonResponse({"trainer_data": trainers})
+            # Retrieve the category
+            category = Category.objects.get(slug=category_slug)
+            # Filter courses by this category
+            courses = Course.objects.filter(category=category).select_related("trainer")
+
+            # Extract trainers from these courses
+            trainers = {course.trainer for course in courses}
+
+            results = format_data_simple(trainers)
+
+            return JsonResponse({"trainer_data": results})
         except:
             return print("eerr-------------------------")
     else:
@@ -25,6 +33,7 @@ def tags_detail(request, tag_slug):
         try:
             courses = Course.objects.filter(tags__slug=tag_slug)
             result = format_data_bytags(courses)
+            result = format_data_simple(result)
             return JsonResponse({"cards": result})
         except:
             return print("eerr-------------------------")
@@ -102,16 +111,16 @@ def courses_list(request):
 
 
 # ? -------------------- Return Data --------------------
-def format_data_simple(data):
+def format_data_simple(trainers):
     trainer_data = [
         {
             # key : value
             #! Trainer
-            "profession": course.trainer.profession,
-            "name": course.trainer.fullname,
-            "image_url": course.trainer.image.url,
+            "profession": trainer.profession,
+            "name": trainer.fullname,
+            "image_url": trainer.image.url,
         }
-        for course in data
+        for trainer in trainers
     ]
     return trainer_data
 
