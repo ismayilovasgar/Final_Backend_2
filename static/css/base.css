@@ -364,11 +364,14 @@ ul.accounts_ul li.account_link:hover a.log_link {
   margin-bottom: 8px;
 }
 .tabletMenu .headLeftCol .headerBox .headerIcon {
-  padding: 4px;
+  padding: 6px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.tabletMenu .headLeftCol .headerBox .headerIcon img {
-  display: block;
+.tabletMenu .headLeftCol .headerBox .headerIcon i {
+  font-size: 14px;
 }
 .tabletMenu .headLeftCol .headerBox:nth-child(1) .headerIcon {
   background-color: var(--Secondary-1);

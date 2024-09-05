@@ -743,6 +743,11 @@
 }
 @media screen and (max-width: 480px) {
   /* details */
+
+  .heroHeader .wrap .contentCol h3 {
+    font-size: 36px;
+    line-height: 36px;
+  }
   .details .detailsHead .detailsTitle br {
     display: none;
   }
