@@ -63,108 +63,162 @@ select_sorting.forEach((item) => {
 //
 // Home Trainer Category
 // ------------------------------------------------------------------------------------------------------
-const listWrap = document.querySelector(".trainersList  .listWrap");
+const trainersContainer = document.querySelector(".trainersList  .listWrap");
 const allListItem = [...document.querySelectorAll("ul.list li")];
+let categorySlug = "yoga";
+localStorage.setItem("category", categorySlug);
+let localStorageKey = localStorage.getItem("category");
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   const categorySlug = "yoga"; // Replace with the actual category slug
-//   const localStorageKey = `trainers_${categorySlug}`;
-//   const trainersContainer = document.querySelector(".trainersList  .listWrap");
-
-//   // Function to display trainer cards
-//   function displayTrainers(data) {
-//     listWrap.innerHTML = "";
-//     data.map((trainer) => {
-//       listWrap.innerHTML += `
-//       <div class="trainerItem">
-//           <div class="profile">
-//             <img src="${trainer.image_url}" alt="">
-//           </div>
-//           <div class="trainerName">${trainer.name}</div>
-//           <div class="trainerPosition">
-//             ${trainer.profession}
-//           </div>
-//       </div>
-//       `;
-//     });
-//   }
-
-//   // Function to update Local Storage with new data
-//   function updateLocalStorage(trainers) {
-//     localStorage.setItem(localStorageKey, JSON.stringify(trainers));
-//   }
-
-//   // Check Local Storage first
-//   const storedData = localStorage.getItem(localStorageKey);
-//   if (storedData) {
-//     displayTrainers(JSON.parse(storedData)); // Display cached data
-//   }
-//   const data = fetchFilteredData(categorySlug);
-//   if (data.trainers) {
-//     updateLocalStorage(data.trainers); // Update Local Storage
-//     displayTrainers(data.trainers); // Display new data
-//   } else {
-//     console.log("++++");
-//     trainersContainer.innerHTML = "No trainers found.";
-//   }
-// });
-//
-//
-//
-//
-
-function markFirstItem() {
-  // Select the first item in the list
-  const firstItem = document.querySelector("ul.list li");
-
-  // Apply a CSS class to mark the first item
-  if (firstItem) firstItem.classList.add("selected");
-}
-
-allListItem.map((item) => {
-  item.addEventListener("click", (e) => {
-    // remove all selected tag
-    allListItem.forEach((el) => el.classList.remove("selected"));
-    // add selected tag to special item
-    item.classList.toggle("selected");
-    fetchFilteredData(`${item.getAttribute("data-value")}`);
-  });
-});
-
-async function fetchFilteredData(text) {
-  const response = await fetch(
-    `http://127.0.0.1:8000/courses/categories/${text}/`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-CSRFToken": getCookie("csrftoken"),
-      },
-      body: JSON.stringify("text"),
-    }
-  );
-
-  const data = await response.json();
-  // return data.trainers;
-  displayTrainers(data.trainers);
-}
-
+// Function to display trainer cards
 function displayTrainers(trainers) {
-  listWrap.innerHTML = "";
+  trainersContainer.innerHTML = "";
+
   trainers.map((trainer) => {
-    listWrap.innerHTML += `
+    trainersContainer.innerHTML += `
     <div class="trainerItem">
         <div class="profile">
           <img src="${trainer.image_url}" alt="">
         </div>
         <div class="trainerName">${trainer.name}</div>
         <div class="trainerPosition">
-          ${trainer.profession}      
+          ${trainer.profession}
         </div>
     </div>
     `;
   });
 }
+
+function searchCoursesByCategory(slug) {
+  fetch(`http://127.0.0.1:8000/courses/categories/${slug}/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-CSRFToken": getCookie("csrftoken"),
+    },
+    body: JSON.stringify("text"),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data && data.length > 0) {
+        // Override the previous data in localStorage with new search results
+        localStorage.setItem("trainers", JSON.stringify(data));
+        localStorage.setItem("lastCategory", slug); // Store the last used category slug
+
+        // Add the new search results to the container
+        displayTrainers(data);
+      } else {
+        console.warn("No data found for the selected category.");
+      }
+    })
+    .catch((error) => console.error("Error fetching data:", error));
+}
+
+// Event listener for category input (e.g., dropdown or search box)
+allListItem.map((item) => {
+  item.addEventListener("click", (e) => {
+    // remove all selected tag
+    allListItem.forEach((el) => el.classList.remove("selected"));
+    // add selected tag to special item
+    item.classList.toggle("selected");
+
+    const slug = item.getAttribute("data-value");
+
+    if (slug) {
+      // Perform search by category slug
+      searchCoursesByCategory(slug);
+    }
+  });
+});
+
+// On page load, check if there is a last used category slug stored in localStorage
+const lastCategorySlug = localStorage.getItem("lastCategory");
+if (lastCategorySlug) {
+  searchCoursesByCategory(lastCategorySlug);
+}
+
+// On page load, try to load the last search result from localStorage
+const storedCards = localStorage.getItem("trainers");
+if (storedCards) {
+  // Display the stored cards on initial page load
+  displayTrainers(JSON.parse(storedCards));
+}
+//
+//
+//
+document.addEventListener("DOMContentLoaded", function () {
+  const lastCategorySlug = localStorage.getItem("lastCategory");
+  if (lastCategorySlug) {
+    let lastSelectedItem = document.querySelector(
+      `ul.list li[data-value=${lastCategorySlug}]`
+    );
+    lastSelectedItem.classList.add("selected");
+    displayTrainers(JSON.parse(localStorage.getItem("trainers")));
+  } else {
+    const category = localStorage.getItem("category");
+    const data = searchCoursesByCategory(category);
+    let lastSelectedItem = document.querySelector(
+      `ul.list li[data-value=${category}]`
+    );
+    lastSelectedItem.classList.add("selected");
+    displayTrainers(data);
+  }
+});
+
+//! My Old Solution  and lacking so use time is bad )))
+// const listWrap = document.querySelector(".trainersList  .listWrap");
+// const allListItem = [...document.querySelectorAll("ul.list li")];
+// function markFirstItem() {
+//   // Select the first item in the list
+//   const firstItem = document.querySelector("ul.list li");
+
+//   // Apply a CSS class to mark the first item
+//   if (firstItem) firstItem.classList.add("selected");
+// }
+
+// allListItem.map((item) => {
+//   item.addEventListener("click", (e) => {
+//     // remove all selected tag
+//     allListItem.forEach((el) => el.classList.remove("selected"));
+//     // add selected tag to special item
+//     item.classList.toggle("selected");
+//     fetchFilteredData(`${item.getAttribute("data-value")}`);
+//   });
+// });
+
+// async function fetchFilteredData(text) {
+//   const response = await fetch(
+//     `http://127.0.0.1:8000/courses/categories/${text}/`,
+//     {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//         "X-CSRFToken": getCookie("csrftoken"),
+//       },
+//       body: JSON.stringify("text"),
+//     }
+//   );
+
+//   const data = await response.json();
+//   // return data.trainers;
+//   displayTrainers(data.trainers);
+// }
+
+// function displayTrainers(trainers) {
+//   listWrap.innerHTML = "";
+//   trainers.map((trainer) => {
+//     listWrap.innerHTML += `
+//     <div class="trainerItem">
+//         <div class="profile">
+//           <img src="${trainer.image_url}" alt="">
+//         </div>
+//         <div class="trainerName">${trainer.name}</div>
+//         <div class="trainerPosition">
+//           ${trainer.profession}
+//         </div>
+//     </div>
+//     `;
+//   });
+// }
 
 // Function to get CSRF token from cookies
 function getCookie(name) {
