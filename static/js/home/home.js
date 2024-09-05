@@ -153,6 +153,10 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     lastSelectedItem.classList.add("selected");
     displayTrainers(JSON.parse(localStorage.getItem("trainers")));
+    document.querySelector("input.current").value =
+      lastSelectedItem.textContent.trim();
+
+    // document.querySelector("input.current").value = lastSelectedItem.textContent;
   } else {
     const category = localStorage.getItem("category");
     const data = searchCoursesByCategory(category);
@@ -161,6 +165,9 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     lastSelectedItem.classList.add("selected");
     displayTrainers(data);
+
+    document.querySelector("input.current").value =
+      lastSelectedItem.textContent.trim();
   }
 });
 
