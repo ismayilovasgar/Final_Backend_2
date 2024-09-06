@@ -1,37 +1,42 @@
 //? For recieve data with fetch request
-const listWrap = document.querySelector(".postBox .postList");
+const cardsContainer = document.querySelector(".postBox .postList");
 const allListItem = [...document.querySelectorAll(".postNav ul li")];
 
-window.onload = function () {
-  // fetchFilteredData("Lifestyle", listWrap);
-  // markFirstItem();
-};
+let tagSlug = "mindfulness";
+localStorage.setItem("tag", tagSlug);
+let localStorageKey = localStorage.getItem("tag");
 
-function markFirstItem() {
-  // Select the first item in the list
-  const firstItem = document.querySelector(".postNav ul li");
+function displayCourses(cards) {
+  cardsContainer.innerHTML = "";
 
-  // Apply a CSS class to mark the first item
-  if (firstItem) firstItem.classList.add("selected");
+  cards.map((card) => {
+    cardsContainer.innerHTML += `
+    <div class="postItem">
+      <a href="/singleblog/${card.course_id}" >
+        <div class="postPreview">
+            <img src="${card.course_image}" alt="">
+        </div>
+        <div class="postStatus ${card.course_category}">${card.course_category_long}</div>
+        <div class="postSubtitle">${card.course_name}</div>
+        <div class="postFoot">
+            <div class="postUser">
+              <div class="postAvatar">
+                <img src="${card.trainer_image_url}" alt="">
+              </div>
+             <div class="postAuthor">${card.name}</div>
+            </div>
+            <div class="postDate">${card.course_date}</div>
+          </div>
+        </a>
+   </div>`;
+  });
 }
 
-allListItem.map((item) => {
-  item.addEventListener("click", (e) => {
-    // remove all selected tag
-    allListItem.forEach((el) => el.classList.remove("selected"));
-    // add selected tag to special item
-    item.classList.toggle("selected");
-
-    fetchFilteredData(`${item.textContent.toLowerCase()}`, listWrap);
-    currentItem = 3;
-  });
-});
 let items = [];
 let len = 0;
 
-async function fetchFilteredData(text, wrap) {
-  wrap.innerHTML = "";
-  await fetch(`http://127.0.0.1:8000/courses/tags/${text}/`, {
+async function searchCoursesByTag(slug) {
+  await fetch(`http://127.0.0.1:8000/courses/tags/${slug}/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -41,27 +46,17 @@ async function fetchFilteredData(text, wrap) {
   })
     .then((response) => response.json())
     .then((data) => {
-      data.cards.map((card) => {
-        wrap.innerHTML += `
-        <div class="postItem">
-          <a href="/singleblog/${card.course_id}" >
-            <div class="postPreview">
-                <img src="${card.course_image}" alt="">
-            </div>
-            <div class="postStatus ${card.course_category}">${card.course_category_long}</div>
-            <div class="postSubtitle">${card.course_name}</div>
-            <div class="postFoot">
-                <div class="postUser">
-                  <div class="postAvatar">
-                    <img src="${card.trainer_image_url}" alt="">
-                  </div>
-                 <div class="postAuthor">${card.name}</div>
-                </div>
-                <div class="postDate">${card.course_date}</div>
-              </div>
-            </a>
-       </div>`;
-      });
+      if (data && data.length > 0) {
+        // Override the previous data in localStorage with new search results
+        localStorage.setItem("courses", JSON.stringify(data));
+        localStorage.setItem("lastTag", slug); // Store the last used category slug
+
+        // Add the new search results to the container
+        displayCourses(data);
+      } else {
+        console.warn("No data found for the selected category.");
+      }
+
       items = [...document.querySelectorAll(".postItem")];
       len = items.length;
       loadMoreItems(len, items);
@@ -69,21 +64,60 @@ async function fetchFilteredData(text, wrap) {
     .catch((error) => console.error("Error fetching data:", error));
 }
 
-// Function to get CSRF token from cookies
-function getCookie(name) {
-  let cookieValue = null;
-  if (document.cookie && document.cookie !== "") {
-    const cookies = document.cookie.split(";");
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i].trim();
-      if (cookie.substring(0, name.length + 1) === name + "=") {
-        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-        break;
-      }
+allListItem.map((item) => {
+  item.addEventListener("click", (e) => {
+    // remove all selected tag
+    allListItem.forEach((el) => el.classList.remove("selected"));
+    // add selected tag to special item
+    item.classList.toggle("selected");
+
+    searchCoursesByTag(`${item.textContent.toLowerCase()}`);
+
+    const tag = item.getAttribute("data-value");
+
+    if (tag) {
+      // Perform search by category slug
+      searchCoursesByTag(tag);
     }
-  }
-  return cookieValue;
+
+    currentItem = 3;
+  });
+});
+
+// On page load, check if there is a last used category slug stored in localStorage
+const lastTagSlug = localStorage.getItem("lastTag");
+if (lastTagSlug) {
+  searchCoursesByTag(lastTagSlug);
 }
+
+// On page load, try to load the last search result from localStorage
+const storedCards = localStorage.getItem("courses");
+if (storedCards) {
+  // Display the stored cards on initial page load
+  displayCourses(JSON.parse(storedCards));
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const lastTagSlug = localStorage.getItem("lastTag");
+  if (lastTagSlug) {
+    let lastSelectedItem = document.querySelector(
+      `ul li[data-value=${lastTagSlug}]`
+    );
+    console.log(lastSelectedItem);
+    lastSelectedItem.classList.add("selected");
+    displayCourses(JSON.parse(localStorage.getItem("courses")));
+
+    // document.querySelector("input.current").value = lastSelectedItem.textContent;
+  } else {
+    const tag = localStorage.getItem("tag");
+    const data = searchCoursesByTag(tag);
+    let lastSelectedItem = document.querySelector(
+      `ul.list li[data-value=${tag}]`
+    );
+    lastSelectedItem.classList.add("selected");
+    displayCourses(data);
+  }
+});
 
 //?  For load more button
 const loadMoreBtn = document.querySelector(".postBtns button");
@@ -106,6 +140,7 @@ function loadMoreItems(itemsLength, items) {
     }
   });
 }
+
 function clickBtn() {
   items = [...document.querySelectorAll(".postItem")];
   len = items.length;
@@ -120,4 +155,20 @@ function clickBtn() {
       }
     }
   });
+}
+
+// Function to get CSRF token from cookies
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== "") {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.substring(0, name.length + 1) === name + "=") {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
 }

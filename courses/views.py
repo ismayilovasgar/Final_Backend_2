@@ -32,9 +32,8 @@ def tags_detail(request, tag_slug):
     if request.method == "POST":
         try:
             courses = Course.objects.filter(tags__slug=tag_slug)
-            result = format_data_bytags(courses)
-            result = format_data_simple(result)
-            return JsonResponse({"cards": result})
+            results = format_data_bytags(courses)
+            return JsonResponse(results, safe=False)
         except:
             return print("eerr-------------------------")
     else:

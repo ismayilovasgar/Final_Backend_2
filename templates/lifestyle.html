@@ -54,7 +54,7 @@
             <div class="postNav">
                 <ul>
                     {% for tag in tags %}
-                    <li>{{ tag.name }}</li>
+                    <li data-value="{{tag.slug}}" class="option">{{ tag.name }}</li>
                     {% endfor %}
                 </ul>
             </div>
