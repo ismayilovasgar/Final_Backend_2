@@ -678,11 +678,12 @@
 }
 
 .bottomRow .rightCol .aboutPreview img.main_img {
+  max-width: 453px;
   position: absolute;
-  top: 37px;
-  left: 65px;
-  /* right: 0px; */
-  /* bottom: 0px; */
+  /* top: 37px; */
+  /* left: 65px; */
+  right: 0px;
+  bottom: 0px;
 }
 .bottomRow .rightCol .aboutPreview img.plate {
   position: absolute;
