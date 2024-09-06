@@ -16,7 +16,7 @@
 .header {
   position: sticky;
   top: 0px;
-  padding: 48px 0px;
+  padding: 24px 0px;
   z-index: 2000;
   width: 100%;
   background-color: var(--Neutrals-8);

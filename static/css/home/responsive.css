@@ -40,6 +40,7 @@
   /* ? details Start */
   :root {
     --details_column-gap: 32px;
+    --detailsItem-max-width: 245px;
   }
 
   /*? workouts Start */
@@ -133,9 +134,11 @@
   /*! bookPoster End */
 
   /* ? details Start   */
+
   .details {
     padding: 112px 0px;
   }
+
   /*! details End */
   /*? homeAbout Start */
 
@@ -307,24 +310,7 @@
   :root {
     --detail_item-distance: 12px;
   }
-  .details .detailsList {
-    column-gap: unset;
-  }
-  .details .detailsList .detailsItem .detailsCategory {
-    font-size: 13px;
-    max-width: 180px;
-  }
-  .details .detailsList .detailsItem .detailsContent {
-    /* max-width: 160px; */
-    width: unset;
-    font-size: 12px;
-  }
-  .details .detailsList .detailsItem .detailsContent {
-    /* max-width: 200px; */
-  }
-  .detailItemMiddle {
-    border: none;
-  }
+
   /* ? bookPoster */
   .bookPoster .wrapper .bookList .bookItem {
     column-gap: 16px;
@@ -333,6 +319,9 @@
   /* ? workouts */
   .workouts .workoutsBtns button {
     padding: 8px 2px;
+  }
+  .workouts .workoutsBtns .btn {
+    padding: 12px 6px;
   }
   /* ? clients */
   :root {
@@ -470,19 +459,11 @@
   }
 
   /*?  details Start  */
-  /* details Start */
-  .details .detailsList {
-    flex-direction: column;
-  }
-  .details .detailsList .detailsItem {
-    width: 100%;
+  :root {
+    --details_column-gap: 24px;
+    --detailsItem-max-width: 200px;
   }
 
-  .details .detailsList .detailsItem:not(:last-child) {
-    padding-bottom: 32px;
-    margin-bottom: 32px;
-    border-bottom: 1px solid var(--Neutrals-6);
-  }
   .bottomRow .leftCol .aboutList {
     max-width: unset;
   }
@@ -528,6 +509,43 @@
 
 /* *********************************************************** */
 
+@media screen and (max-width: 600px) {
+  :root {
+    --details_column-gap: 32px;
+  }
+  .details .detailsList .details_divider {
+    display: none;
+  }
+  .details .detailsList .detailsItem .detailsCategory {
+    font-size: 12px;
+    margin: 32px 0px 16px 0px;
+  }
+  .details .detailsList .detailsItem .detailsContent {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .details .detailsList {
+    flex-direction: column;
+    align-items: unset;
+  }
+  .details .detailsList .detailsItem {
+    max-width: unset;
+  }
+  .details .detailsList .detailsItem:not(:last-child) {
+    margin: 0px 0px 24px 0px;
+    border-bottom: 1px solid var(--Neutrals-6);
+    padding: 0px 0px 24px 0px;
+  }
+  .details .detailsList .detailsItem .detailsCategory {
+    font-size: 16px;
+    margin: 32px 0px;
+  }
+  .details .detailsList .detailsItem .detailsContent {
+    font-size: 14px;
+  }
+}
 @media screen and (max-width: 500px) {
   .headerCenter .headerTrialBtn {
     display: none;

@@ -487,6 +487,7 @@
 
 /*? details Start  */
 :root {
+  --detailsItem-max-width: 262px;
   --details_column-gap: 83px;
   --details_column-count: 3;
   --details_divider-width: 1px;
@@ -524,21 +525,20 @@
   display: flex;
   align-items: center;
   column-gap: var(--details_column-gap);
+  justify-content: space-between;
 }
-.details .detailsList span.divider {
+.details .detailsList .details_divider {
   width: var(--details_divider-width);
   height: 300px;
   background-color: var(--Neutrals-6);
 }
 
 .details .detailsList .detailsItem {
-  width: calc(
+  /* width: calc(
     (100% - ((var(--details_column-count) - 1) * var(--details_column-gap))) /
       var(--details_column-count)
-  );
-}
-.details .detailsList .detailsItem .detailsIcon img {
-  display: block;
+  ); */
+  max-width: var(--detailsItem-max-width);
 }
 
 .details .detailsList .detailsItem .detailsCategory {
@@ -1233,12 +1233,13 @@ ul.list.show {
 .workouts .workoutsFrame .workoutsWrap .workoutsBtns {
   margin: 48px 0px 0px 0px;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
+  column-gap: 12px;
 }
-.workouts .workoutsFrame .workoutsWrap .workoutsBtns button:first-child {
+/* .workouts .workoutsFrame .workoutsWrap .workoutsBtns button:first-child {
   margin: 0px 12px 0px 0px;
-}
+} */
 .workouts .workoutsFrame .workoutsGallery {
   align-self: stretch;
   width: calc(60% - (var(--workouts_column-gap) * 0.6));
