@@ -618,7 +618,7 @@
 }
 .homeAbout .leftCol {
   /* width: calc(47% - 0.47 * 32px); */
-  width: 262px;
+  width: clamp(262px, 262px, 262px);
 }
 
 .homeAbout .rightCol {

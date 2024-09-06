@@ -265,7 +265,7 @@
     display: none;
   }
   .bottomRow .leftCol .aboutList {
-    max-width: 202px;
+    /* max-width: 202px; */
   }
 }
 
