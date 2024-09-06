@@ -351,8 +351,11 @@
                 </div>
                 <div class="rightCol">
                     <div class="aboutPreview">
-                        <img class="some-icon-light" src="{% static 'assets/images/home/homeAbout/fitness_scene_light.png' %}" alt="">
-                        <img class="some-icon-dark" src="{% static 'assets/images/home/homeAbout/fitness_scene_dark.png' %}" alt="">
+                        {% comment %} <img class="some-icon-light" src="{% static 'assets/images/home/homeAbout/fitness_scene_light.png' %}" alt=""> {% endcomment %}
+                        {% comment %} <img class="some-icon-dark" src="{% static 'assets/images/home/homeAbout/fitness_scene_dark.png' %}" alt=""> {% endcomment %}
+                        <img class="main_img some-icon-light" src="{% static 'assets/images/home/homeAbout/pillscolor_light.png' %}" alt="">
+                        <img class="plate" src="{% static 'assets/images/home/homeAbout/plate_dark.png' %}" alt="">
+                        <img class="main_img some-icon-dark" src="{% static 'assets/images/home/homeAbout/pillscolor_dark.png' %}" alt="">
                     </div>
                 </div>
             </div>

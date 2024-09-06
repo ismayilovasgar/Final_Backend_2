@@ -145,6 +145,15 @@
   .homeAbout {
     padding: 112px 0px;
   }
+  .bottomRow .rightCol {
+    overflow: hidden;
+  }
+  .bottomRow .rightCol .aboutPreview img.plate {
+    width: 170px;
+    transform: unset;
+    left: 0px;
+    top: 0px;
+  }
   /*! homeAbout End */
 
   /*? trainers Start */
@@ -254,6 +263,9 @@
 
   .bookItem .bookDetails .bookContent br {
     display: none;
+  }
+  .bottomRow .leftCol .aboutList {
+    max-width: 202px;
   }
 }
 
