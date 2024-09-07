@@ -111,6 +111,7 @@
   background-color: var(--Primary-1);
   color: var(--Neutrals-8);
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .intro .wrapper .introGallery {

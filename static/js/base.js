@@ -20,7 +20,7 @@ btnHidden.addEventListener("click", (e) => {
   btnHidden.classList.toggle("fa-xmark");
   // alert(tabletMenu);
   tabletMenu.classList.toggle("show");
-  headerTrialBtn.classList.toggle("hidden");
+  // headerTrialBtn.classList.toggle("hidden");
 });
 
 dropdownBtn.addEventListener("click", (e) => {

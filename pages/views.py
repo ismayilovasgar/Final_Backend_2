@@ -74,7 +74,7 @@ def class02__page(request):
         "categories": categories,
     }
     return render(request, "class_02.html", context)
-    pass
+ 
 
 
 def blog_detail(request, id):

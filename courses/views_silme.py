@@ -53,7 +53,7 @@ def show_by_array(request):
             ).order_by("-created_date")
             results = format_data(result)
 
-            return JsonResponse(results, safe=False)
+            return JsonResponse({"results": results})
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
     return JsonResponse({"error": "Invalid request method"}, status=405)
@@ -74,7 +74,7 @@ def show_by_text(request, text):
                 )
 
             results = format_data(results)
-            return JsonResponse(results, safe=False)
+            return JsonResponse({"results": results})
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
     return JsonResponse({"error": "Invalid request method"}, status=405)

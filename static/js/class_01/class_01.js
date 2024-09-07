@@ -161,6 +161,20 @@ function markFirstItem() {
   if (firstItem) firstItem.classList.add("selected");
 }
 
+
+async function fetchPostByArray(array, wrap) {
+  const response = await fetch("http://127.0.0.1:8000/courses/programs/list/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-CSRFToken": getCookie("csrftoken"),
+    },
+    body: JSON.stringify({ data: array }),
+  });
+  const data = await response.json();
+
+  fillCardToContainer(data.results, data.results.length, wrap);
+}
 const fetchPostByText = async (search_text, wrap) => {
   wrap.innerHTML = "";
   const response = await fetch(
@@ -188,20 +202,6 @@ advancFilterBtn.addEventListener("click", (e) => {
   );
   fetchPostByArray(myarray, catalogList);
 });
-
-async function fetchPostByArray(array, wrap) {
-  const response = await fetch("http://127.0.0.1:8000/courses/programs/list/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-CSRFToken": getCookie("csrftoken"),
-    },
-    body: JSON.stringify({ data: array }),
-  });
-  const data = await response.json();
-
-  fillCardToContainer(data.results, data.results.length, wrap);
-}
 
 //! --------------------------------------------------------------------------------------------------------
 //! --------------------------------------------------------------------------------------------------------
@@ -277,17 +277,18 @@ function fillCardToContainer(data, len, wrap = catalogList) {
     });
   } else {
     wrap.innerHTML = "";
-    notFounded();
+    // notFounded();
   }
 }
 
 function notFounded() {
   catalogList.innerHTML = `<div class="notFounded">not founded available content .....</div>`;
   setTimeout(() => {
-    // catalogList.innerHTML = "";
+    catalogList.innerHTML = "";
   }, 750);
 }
 
+// !----------------------------------------------------------------------------------------------
 function getCookie(name) {
   let cookieValue = null;
   if (document.cookie && document.cookie !== "") {
