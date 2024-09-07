@@ -145,14 +145,15 @@
   .homeAbout {
     padding: 112px 0px;
   }
-  .bottomRow .rightCol {
-    overflow: hidden;
-  }
+
   .bottomRow .rightCol .aboutPreview img.plate {
     width: 170px;
     transform: unset;
     left: 0px;
     top: 0px;
+  }
+  .bottomRow {
+    margin-top: 80px;
   }
   /*! homeAbout End */
 
@@ -249,7 +250,7 @@
 @media screen and (max-width: 900px) {
   :root {
     --hero_column-gap: 1px;
-    --about_column-gap: 6px;
+    /* --about_column-gap: 6px; */
   }
 
   /* ? workouts Start */
@@ -263,9 +264,6 @@
 
   .bookItem .bookDetails .bookContent br {
     display: none;
-  }
-  .bottomRow .leftCol .aboutList {
-    /* max-width: 202px; */
   }
 }
 
@@ -321,6 +319,14 @@
   /*? details Start */
   :root {
     --detail_item-distance: 12px;
+    --width-right-col: 370px;
+  }
+  .bottomRow .rightCol .aboutPreview img.main_img {
+    max-width: 220px;
+  }
+
+  .homeAbout .bottomRow .rightCol {
+    height: unset;
   }
 
   /* ? bookPoster */
@@ -414,18 +420,17 @@
   }
 
   .homeAbout .topRow .rightCol .wrap > * {
-    margin: 0px auto 20px auto;
+    margin: 0px 0px 20px 0px;
   }
   .topRow .aboutTitle {
-    max-width: unset;
-    text-align: center;
     margin: 20px 0px;
   }
 
   .topRow .aboutInfo {
-    text-align: center;
-    margin: 0 auto;
+    max-width: 340px;
   }
+
+  /*? intro Start */
   .intro .wrapper {
     flex-direction: column-reverse;
   }
@@ -476,25 +481,16 @@
     --detailsItem-max-width: 200px;
   }
 
+  /*? homeAbout Start */
+
   .bottomRow .leftCol .aboutList {
     max-width: unset;
   }
-  /*? Intro start */
-  .topRow {
-    flex-direction: column;
-  }
+
   .bottomRow {
-    flex-direction: column-reverse;
     row-gap: 20px;
   }
-  .homeAbout .leftCol {
-    width: 100%;
-  }
-  .homeAbout .rightCol {
-    width: 100%;
-  }
-
-  /*  */
+  /*? Trainers Start */
   :root {
     --trainer-col-gap: 32px;
     --trainer-row-gap: 64px;
@@ -594,14 +590,35 @@
   .details {
     padding: 64px 0px;
   }
+  .topRow .aboutInfo {
+    max-width: unset;
+  }
   /*? homeAbout Start */
   .homeAbout {
     padding: 48px 0px;
   }
-  .bottomRow {
+  .homeAbout .bottomRow {
     margin-top: 60px;
   }
+  .homeAbout .topRow {
+    flex-direction: column;
+  }
 
+  .homeAbout .leftCol {
+    width: 100%;
+  }
+  .homeAbout .topRow .rightCol {
+    width: 100%;
+    max-width: 100%;
+  }
+  .homeAbout .bottomRow {
+    flex-direction: column-reverse;
+    row-gap: 60px;
+  }
+  .homeAbout .bottomRow .rightCol {
+    height: 350px;
+    width: 100%;
+  }
   /*? trainers Start */
   .trainers {
     padding: 64px 0px;

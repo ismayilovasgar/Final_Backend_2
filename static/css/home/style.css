@@ -613,12 +613,12 @@
   margin-top: 128px;
   column-gap: var(--about_column-gap);
 }
-.bottomRow .leftCol .aboutList {
+/* .bottomRow .leftCol .aboutList {
   max-width: 262px;
-}
+} */
 .homeAbout .leftCol {
   /* width: calc(47% - 0.47 * 32px); */
-  width: clamp(262px, 262px, 262px);
+  width: clamp(202px, 252px, 262px);
 }
 
 .homeAbout .rightCol {
