@@ -42,12 +42,9 @@
     font-size: 48px;
     line-height: 50px;
   }
-  /* intro Start */
-  .intro .wrapper .introContent h2 {
-    font-size: 48px;
-    line-height: 48px;
-  }
-  /* workouts Start */
+  /*? intro Start */
+
+  /*? workouts Start */
   .workouts .workoutsFrame .workoutsWrap h2.workoutsTitle {
     line-height: 48px;
   }
@@ -78,6 +75,10 @@
     flex-direction: column;
     row-gap: 16px;
     align-items: unset;
+  }
+  /*? intro Start */
+  .intro .wrapper .introContent h2 {
+    font-size: 54px;
   }
 }
 
@@ -165,6 +166,9 @@
     max-width: 100%;
     margin: 32px 0px 40px 0px;
   }
+  .intro .wrapper .introContent h2 {
+    font-size: 64px;
+  }
 
   /*? details Start */
   .details .detailsList {
@@ -193,7 +197,13 @@
     display: none;
   }
   .program .programRightCol .programView {
-    padding: 16px 45px;
+    padding: 0px;
+  }
+  .program .programRightCol .programView {
+    text-align: center;
+  }
+  .program .programRightCol .programView img {
+    width: 60%;
   }
   .program .programList > ul li > a {
     display: block;
@@ -214,6 +224,9 @@
   .program .programItemLeft {
     flex-direction: column;
     justify-content: center;
+  }
+  .program .wrapper .programRightCol {
+    width: unset;
   }
   /*? homeAbout */
   .homeAbout .topRow {
@@ -366,6 +379,7 @@
   }
   .workouts .workoutsFrame .workoutsWrap .workoutsBtns {
     flex-direction: column;
+    column-gap: 16px;
   }
   .program .wrapper .programRightCol {
     width: 100%;

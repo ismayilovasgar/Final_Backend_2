@@ -372,6 +372,7 @@ ul.accounts_ul li.account_link:hover a.log_link {
 }
 .tabletMenu .headLeftCol .headerBox .headerIcon i {
   font-size: 14px;
+  color: #fcfcfd;
 }
 .tabletMenu .headLeftCol .headerBox:nth-child(1) .headerIcon {
   background-color: var(--Secondary-1);
