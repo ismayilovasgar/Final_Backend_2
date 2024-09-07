@@ -806,6 +806,10 @@
   .tabletMenu .dropdownBody .headRow .headRightCol {
     display: none;
   }
+  .intro .hline1 {
+    font-size: 52px;
+    line-height: 46px;
+  }
 }
 @media screen and (max-width: 395px) {
   /*? homeAbout Start */
