@@ -373,15 +373,19 @@
     flex-direction: column;
     margin: 0 auto;
     text-align: center;
-    max-width: 400px;
+    /* max-width: 400px; */
+  }
+  .heroHeader .wrap .contentCol .mainTitle {
+    margin: 12px auto 20px auto;
+    max-width: 600px;
   }
   .heroHeader .wrap .contentCol .mainTitle p {
     display: none;
   }
   .heroHeader .wrap .contentCol .mainText {
-    padding: 0px 10px;
-    max-width: 100%;
-    margin: 0 auto;
+    margin: 0px auto 40px auto;
+    max-width: 550px;
+    text-align: center;
   }
   .heroHeader .wrap .contentCol h3 {
     display: block;
@@ -397,12 +401,9 @@
     margin-top: 40px;
   }
   .heroHeader .buttons_bottomm {
-    flex-direction: column;
+    justify-content: center;
   }
-  .heroHeader .buttons_bottomm button {
-    width: 70%;
-    margin: 10px auto 0 auto;
-  }
+
   /*! heroHeader End */
 
   /*? intro Start  */
@@ -440,6 +441,10 @@
   }
   .intro .wrapper .introContent {
     width: 100%;
+  }
+  .intro .hline1 {
+    font-size: 64px;
+    line-height: 64px;
   }
   /*! intro End  */
   /*!? bookPoster Star  */
@@ -562,9 +567,7 @@
   .heroHeader .wrap .contentCol .overlap {
     max-width: 100%;
   }
-  .heroHeader .buttons_bottomm button {
-    width: 100%;
-  }
+
   :root {
     --clients_column-gap: 64px;
     --clients_column-count: 2;
@@ -817,9 +820,9 @@
 
   .container {
     width: 100%;
-    max-width: 100%;
-    margin: 0px;
-    padding: 0px 32px;
+    max-width: 95%;
+    margin: 0px auto;
+    padding: 0px;
   }
 
   .quality .qualityList {
@@ -843,6 +846,16 @@
   }
 }
 
+@media screen and (max-width: 375px) {
+  .heroHeader .wrap .contentCol .buttons_bottomm {
+    align-items: stretch;
+  }
+  .heroHeader .buttons_bottomm {
+    flex-direction: column;
+    align-items: unset;
+    row-gap: 16px;
+  }
+}
 @media screen and (max-width: 200px) {
   .details .detailsHead .detailsTitle {
     word-wrap: break-word;
