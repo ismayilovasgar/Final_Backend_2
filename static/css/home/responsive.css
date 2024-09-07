@@ -805,6 +805,12 @@
   }
 }
 @media screen and (max-width: 395px) {
+  /*? homeAbout Start */
+  .bottomRow .rightCol .icon_preview {
+    width: 47px;
+    height: 47px;
+  }
+  /*! homeAbout End */
   .offers h2.offersTitle {
     font-size: 50px;
   }
