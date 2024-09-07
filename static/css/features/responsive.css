@@ -66,6 +66,9 @@
 }
 
 @media screen and (max-width: 900px) {
+  :root {
+    --details_column-gap: 32px;
+  }
   .workouts .workoutsFrame .workoutsWrap .workoutsBtns {
     display: flex;
     row-gap: 16px;
@@ -159,7 +162,7 @@
     width: 100%;
   }
   .intro .wrapper .introContent p {
-    max-width: 80%;
+    max-width: 100%;
     margin: 32px 0px 40px 0px;
   }
 
@@ -297,6 +300,7 @@
     flex-direction: column;
     row-gap: 46px;
   }
+  /*  */
   .clients .clientsList ul {
     flex-wrap: wrap;
     align-items: center;
@@ -308,10 +312,12 @@
   .clients .clientsList ul li:nth-child(3) {
     display: block;
   }
+  /*  */
   .workouts .workoutsFrame .workoutsWrap {
     width: 100%;
     padding: 10px 0px 40px 0px;
   }
+  /*  */
   .offers p.offersText {
     width: unset;
     max-width: 450px;
@@ -320,6 +326,24 @@
     display: flex;
     font-size: 42px;
     line-height: 42px;
+  }
+  /*  */
+  .lifeStyle {
+    padding: 64px 0px;
+  }
+  .lifeStyle .listWrapper .row {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .lifeStyle .listWrapper .row .col:nth-child(1) {
+    width: unset;
+  }
+  .lifeStyle .listWrapper .row .col:nth-child(2) {
+    align-self: center;
+    width: unset;
+  }
+  .lifeStyle .listWrapper .lifeStyleDetails {
+    max-width: unset;
   }
 }
 
