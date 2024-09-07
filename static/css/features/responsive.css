@@ -98,6 +98,7 @@
     margin: 24px 0px;
   }
 }
+
 @media screen and (max-width: 768px) {
   :root {
     --advantages_column-gap: 32px;
@@ -105,13 +106,17 @@
     --advantages_column-count: 2;
   }
 
-  /* advantages Start */
+  /*? advantages Start */
   .advantages .advantagesList {
     flex-wrap: wrap;
     row-gap: var(--advantages_row-gap);
   }
   .advantages .advantagesItem.repeatItem {
     display: block;
+  }
+  /* ? Lifestyle Start */
+  :root {
+    --lifestyle-row-column-gap: 32px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -141,7 +146,7 @@
     line-height: 56px;
   }
 
-  /* intro Start */
+  /*? intro Start */
   .intro .wrapper {
     flex-direction: column-reverse;
     row-gap: 32px;
@@ -158,7 +163,7 @@
     margin: 32px 0px 40px 0px;
   }
 
-  /* details Start */
+  /*? details Start */
   .details .detailsList {
     flex-direction: column;
   }
@@ -172,7 +177,7 @@
     border-bottom: 1px solid var(--Neutrals-6);
   }
 
-  /* program Start */
+  /*? program Start */
   .program .wrapper {
     flex-direction: column;
     padding: 48px 24px;
@@ -207,7 +212,7 @@
     flex-direction: column;
     justify-content: center;
   }
-  /* homeAbout */
+  /*? homeAbout */
   .homeAbout .topRow {
     display: block;
   }
@@ -239,32 +244,32 @@
     width: 100%;
   }
   .bottomRow .leftCol .aboutList {
-    max-width: 450px;
+    max-width: 100%;
   }
   .homeAbout {
     padding: 48px 0px;
   }
 
-  /* review Start */
+  /*? review Start */
   .review .reviewItem {
     max-width: 736px;
     width: unset;
   }
 
-  /* clients Start */
+  /*? clients Start */
   .clients .clientsList ul li:last-child {
     display: none;
   }
 
-  /* lifeStyle */
+  /*? lifeStyle */
   .lifeStyle .listWrapper .row {
-    flex-direction: column-reverse;
+    /* flex-direction: column-reverse; */
     row-gap: 48px;
   }
   .lifeStyle .listWrapper .row .col {
     width: 100%;
   }
-  /*  */
+  /*? advantages Start */
   .advantages {
     padding: 64px 0px;
   }

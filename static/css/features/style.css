@@ -67,7 +67,7 @@
 .heroHeader .wrap .contentCol .button_arrow_bottom {
   margin-top: 40px;
   padding: 20px;
-  border-radius: 64px;
+  border-radius: 50%;
   border: 2px solid var(--Neutrals-6, #e6e8ec);
 }
 .heroHeader .wrap .contentCol .button_arrow_bottom i {
@@ -580,6 +580,9 @@
   object-fit: cover;
 }
 /* ! workouts End   */
+:root {
+  --lifestyle-row-column-gap: 120px;
+}
 
 /*? lifeStyle Start */
 .lifeStyle {
@@ -646,13 +649,19 @@
 .lifeStyle .listWrapper .row {
   display: flex;
   align-items: center;
-  column-gap: 120px;
+  /* justify-content: space-between; */
+  column-gap: var(--lifestyle-row-column-gap);
 }
-.lifeStyle .listWrapper .row .col {
-  width: calc(50% - 112px * 0.5);
+.lifeStyle .listWrapper .row .col:nth-child(1) {
+  width: calc(40% - var(--lifestyle-row-column-gap) * 0.4);
+}
+
+.lifeStyle .listWrapper .row .col:nth-child(2) {
+  align-self: stretch;
+  width: calc(60% - var(--lifestyle-row-column-gap) * 0.6);
 }
 .lifeStyle .listWrapper .row:not(:last-child) {
-  margin: 0px 0px 102px 0px;
+  margin: 0px 0px 112px 0px;
 }
 .lifeStyle .listWrapper .lifeStyleDetails {
   max-width: 256px;
@@ -665,9 +674,7 @@
   padding: 0px 0px 24px 0px;
   margin: 0px 0px 24px 0px;
   border-bottom: 2px solid var(--Neutrals-6, #e6e8ec);
-
   color: var(--Neutrals-2, #23262f);
-
   font-family: "SF Pro Display", sans-serif;
   font-size: 32px;
   font-style: normal;
@@ -677,10 +684,7 @@
 }
 .lifeStyle .listWrapper .lifeStyleDetails span:nth-child(2) {
   margin: 0px 0px 16px 0px;
-
   color: var(--Neutrals-2, #23262f);
-
-  /* Body 2 (Bold) */
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -699,9 +703,11 @@
 .lifeStyle .listWrapper .lifeStylePreview {
   overflow: hidden;
   border-radius: 24px;
-  background-color: var(--Secondary-1, #3772ff);
+  /* background-color: var(--Secondary-1, #3772ff); */
+  /* height: 100%; */
 }
 .lifeStyle .listWrapper .lifeStylePreview img {
+  /* height: 100%; */
   width: 100%;
   object-fit: cover;
 }
