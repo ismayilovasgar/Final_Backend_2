@@ -533,6 +533,7 @@ ul.accounts_ul li.account_link:hover a.log_link {
   --main_percent: 38%;
 }
 footer {
+  border-top: 1px solid var(--class-crumb-back);
   /* background-color: var(----section_back_color); */
 }
 .footer__center {
@@ -563,7 +564,7 @@ footer {
 
 .footer__col:nth-child(2),
 .footer__col:nth-child(3) {
-  border-left: 1px solid #e6e8ec;
+  border-left: 1px solid var(--class-crumb-back);
   width: calc((100% - var(--main_percent)) / 2);
 }
 

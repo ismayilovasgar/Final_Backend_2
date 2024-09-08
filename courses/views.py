@@ -1,6 +1,6 @@
-from django.shortcuts import render
 from .models import Course, Category, Tag
-from django.shortcuts import get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from trainers.models import Trainer
 from django.http import JsonResponse
 from django.db.models import Q
@@ -51,6 +51,10 @@ def show_by_array(request):
                 & Q(level__name__iexact=list[2])
                 & Q(intensity__name__iexact=list[3])
             ).order_by("-created_date")
+
+            # for exclude courses that user enrolled
+            results = results.exclude(students=request.user)
+            #
             results = format_data(result)
 
             return JsonResponse(results, safe=False)
@@ -72,7 +76,9 @@ def show_by_text(request, text):
                 results = Course.objects.filter(name__contains=text).order_by(
                     "-created_date"
                 )
-
+            # for exclude courses that user enrolled
+            results = results.exclude(students=request.user)
+            #
             results = format_data(results)
             return JsonResponse(results, safe=False)
         except json.JSONDecodeError:
@@ -107,6 +113,40 @@ def courses_list(request):
     # "categories": categories,
     # }
     pass
+
+
+@login_required(login_url="login")
+def enroll_course(request, course_id):
+    course = get_object_or_404(Course, id=course_id)
+
+    if request.method == "POST":
+        course.students.add(request.user)  # Enroll user in course
+        return redirect(
+            "courses:dashboard"
+        )  # Redirect to the dashboard or course detail page
+
+    return redirect("programs_detail", id=course.id)
+
+
+@login_required(login_url="login")
+def release_course(request, course_id):
+    course = get_object_or_404(Course, id=course_id)
+    if request.method == "POST":
+        course.students.remove(request.user)  # Unenroll user from course
+        return redirect(
+            "courses:dashboard"
+        )  # Redirect to the dashboard or course detail page
+
+    return redirect("programs_detail", id=course.id)
+
+
+@login_required(login_url="login")
+def dashboard__page(request):
+    # Get all courses the user is enrolled in
+    courses = (
+        request.user.courses_joined.all()
+    )  # Assuming `courses_joined` is a ManyToManyField
+    return render(request, "accounts/dashboard.html", {"courses": courses})
 
 
 # ? -------------------- Return Data --------------------

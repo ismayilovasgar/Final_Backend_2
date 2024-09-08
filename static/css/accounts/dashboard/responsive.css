@@ -1,0 +1,47 @@
+@media screen and (max-width: 1024px) {
+  :root {
+    --catalog_column-count: 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /** Catalog Start  */
+  .catalogList .card .cardHead .cardTitle {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .catalogList .card .cardHead .cardTrainer span.firstName {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  /** Catalog Start */
+  .catalogList .card .cardHead .cardLevel {
+    padding: 6px;
+  }
+  .catalogSorting {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 540px) {
+  :root {
+    --catalog_column-count: 1;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    width: 312px;
+    max-width: 95%;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .catalogList .card .cardHead {
+    flex-direction: column;
+    row-gap: 32px;
+  }
+}

@@ -120,11 +120,11 @@ function loadFromLocalStorage() {
   const savedResults = JSON.parse(localStorage.getItem("searchResults"));
 
   if (savedFilters) {
-    catalogInput.value = savedFilters.text || "";
-    inputArray[0].value = savedFilters.input1 || "";
-    inputArray[1].value = savedFilters.input2 || "";
-    inputArray[2].value = savedFilters.input3 || "";
-    inputArray[3].value = savedFilters.input4 || "";
+    // catalogInput.value = savedFilters.text || "";
+    // inputArray[0].value = savedFilters.input1 || "";
+    // inputArray[1].value = savedFilters.input2 || "";
+    // inputArray[2].value = savedFilters.input3 || "";
+    // inputArray[3].value = savedFilters.input4 || "";
   }
 
   if (savedResults) {

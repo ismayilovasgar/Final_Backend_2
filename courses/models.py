@@ -161,7 +161,9 @@ class Course(models.Model):
     trainer = models.ForeignKey(
         Trainer, on_delete=models.CASCADE, related_name="coursess"
     )
-    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING,related_name='courses')
+    category = models.ForeignKey(
+        Category, on_delete=models.DO_NOTHING, related_name="courses"
+    )
     tags = models.ManyToManyField(Tag)
     #
     level = models.ForeignKey(Level, on_delete=models.DO_NOTHING, null=True)

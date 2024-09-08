@@ -3,6 +3,7 @@ from courses.models import *
 from pages.models import Review
 from django.http import JsonResponse
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 import json
 
 
@@ -74,7 +75,6 @@ def class02__page(request):
         "categories": categories,
     }
     return render(request, "class_02.html", context)
- 
 
 
 def blog_detail(request, id):
@@ -86,12 +86,13 @@ def blog_detail(request, id):
     return render(request, "single_blog.html", context)
 
 
+@login_required(login_url="accounts:login")
 def programs_detail(request, id):
     course = Course.objects.get(id=id)
     context = {
         "course": course,
     }
-    return render(request, "class_01_detail.html", context)
+    return render(request, "class_02_detail.html", context)
 
 
 def class02_trainers(request, category_name):

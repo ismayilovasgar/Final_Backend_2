@@ -158,28 +158,10 @@
                     </div>
                     <div class="workouttime__btns">
                         <button class="lock__button">
+                            {% comment %} <img src="./images/lock.svg"> {% endcomment %}
                             <i class="fa-solid fa-lock"></i>
                         </button>
-                        {% comment %}  {% endcomment %}
-                        {% if user.is_authenticated %}
-                            {% if course in user.courses_joined.all %}
-                                <!-- Unenroll Form -->
-                                <form class="" action="{% url 'courses:release_course' course.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <button type="submit" class="book__button release_btn">Unenroll now</button>
-                                </form>
-                            {% else %}
-                                <!-- Enroll Form -->
-                                <form class="" action="{% url 'courses:enroll_course' course.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <button type="submit" class="book__button enroll_btn">Book now</button>
-                                </form>
-                            {% endif %}
-                        {% else %}
-                            <button class="book__button"><a href="{% url 'accounts:login' %}">log in</a></button>
-                        {% endif %}
-                        {% comment %}  {% endcomment %}
-                        {% comment %} <button class="book__button">Book Now</button> {% endcomment %}
+                        <button class="book__button">Book Now</button>
                     </div>
                 </div>
             </div>

@@ -366,15 +366,22 @@ button {
 }
 .workouttime__btns {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
+  column-gap: 24px;
   align-items: center;
 }
+.workouttime__btns form {
+  flex-grow: 1;
+}
+.workouttime__btns .release_btn {
+  background-color: rgb(117, 24, 24);
+}
+.workouttime__btns .release_btn:hover {
+  background-color: red;
+}
+
 .lock__button {
   padding: 12px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+
   border-radius: 40px;
   border: 2px solid var(--Neutrals-6, #e6e8ec);
 }
@@ -383,9 +390,9 @@ button {
   color: #777e90;
 }
 .book__button {
-  width: 83%;
+  display: block;
+  width: 100%;
   padding: 16px 24px;
-  gap: 40px;
   border-radius: 90px;
   background: var(--Primary-1, #ff592c);
   color: #fcfcfd;

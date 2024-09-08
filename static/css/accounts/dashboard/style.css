@@ -1,0 +1,221 @@
+.dashboard {
+}
+.head_caption {
+  padding-top: 20px;
+}
+.head_caption .head_title {
+  color: var(--Neutrals-2, #23262f);
+  text-align: center;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -1.92px;
+}
+
+/** cards */
+/*? catalog Start */
+:root {
+  --catalog_column-gap: 32px;
+  --catalog_column-count: 3;
+  --catalog_row-gap: 32px;
+}
+
+.catalogList {
+  padding: 36px 0px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px;
+  min-height: 457px;
+}
+
+.catalogList .card {
+  width: calc(
+    (100% - (var(--catalog_column-gap) * (var(--catalog_column-count) - 1))) /
+      var(--catalog_column-count)
+  );
+}
+.catalogList .card .cardPreview {
+  height: 300px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.5s ease;
+}
+.catalogList .card .cardPreview img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.catalogList .card:hover {
+  cursor: pointer;
+}
+.catalogList .card:hover .cardPreview {
+  border-color: var(--Primary-1);
+}
+
+.catalogList .card:hover .cardPreview img {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.1);
+}
+.catalogList .card .cardPreview .cardStatus {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 8px;
+  color: #fcfcfd;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+.catalogList .card .cardPreview .playSmall {
+  position: absolute;
+  padding: 12px;
+  background-color: var(--Neutrals-5);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 8px 16px -8px rgba(15, 15, 15, 0.2);
+  background: var(--Neutrals-8);
+}
+.catalogList .card .cardPreview .playSmall img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  z-index: 5;
+}
+.catalogList .card .cardPreview .cardStatus.yoga {
+  background-color: var(--Primary-4);
+}
+.catalogList .card .cardPreview .cardStatus.fitness-gym {
+  background-color: var(--Primary-1);
+}
+
+.catalogList .card .cardPreview .cardStatus.running {
+  background-color: var(--Primary-3);
+}
+.catalogList .card .cardPreview .cardStatus.gymnastics {
+  background-color: var(--Primary-2);
+}
+
+.catalogList .card .cardHead {
+  margin: 20px 0px 12px 0px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--Neutrals-6);
+  display: flex;
+  justify-content: space-between;
+  column-gap: 6px;
+}
+.catalogList .card .cardHead .cardUser {
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.catalogList .card .cardHead .cardUser .cardAvatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Neutrals-4);
+  border-radius: 50%;
+  align-self: flex-start;
+  overflow: hidden;
+  flex: 0 0 40px;
+}
+.catalogList .card .cardHead .cardUser .cardAvatar img {
+  width: 100%;
+  object-fit: cover;
+}
+.catalogList .card .cardHead .cardTitle {
+  /* min-height: 48px; */
+  color: var(--Neutrals-2, #23262f);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.catalogList .card .cardHead .cardTrainer {
+  color: var(--Neutrals-4, #777e90);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.catalogList .card .cardHead .cardTrainer span {
+  display: inline-block;
+}
+.catalogList .card .cardHead .cardTrainer span.firstName {
+  margin-right: 4px;
+}
+
+.catalogList .card .cardHead .cardLevel {
+  align-self: flex-start;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px;
+  text-transform: uppercase;
+  padding: 6px;
+  border-radius: 4px;
+}
+.catalogList .card .cardHead .cardLevel.Beginner {
+  border: 2px solid var(--Primary-4);
+  color: var(--Primary-4);
+}
+.catalogList .card .cardHead .cardLevel.Intermediate {
+  border: 2px solid var(--Primary-2);
+  color: var(--Primary-2);
+}
+.catalogList .card .cardHead .cardLevel.Advanced {
+  border: 2px solid var(--Primary-1);
+  color: var(--Primary-1);
+}
+
+.catalogList .card .cardParameters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.catalogList .card .cardParameters .cardParameter {
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+}
+.catalogList .card .cardParameters .cardParameter i {
+  font-size: 13px;
+  background-color: transparent;
+  color: var(--section-text);
+}
+.catalogList .card .cardParameters .cardParameter span {
+  color: var(--section-text);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.not_enrolled_courses {
+  text-align: center;
+  font-size: 22px;
+  color: var(--section-text);
+  height: calc(100vh - calc(92px + 52px + 2vh));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
