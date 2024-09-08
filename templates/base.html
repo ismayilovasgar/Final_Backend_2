@@ -86,6 +86,14 @@
                                                 <span class="link_text">Premium Classes</span>
                                             </a>
                                         </li>
+                                        <li>
+                                            <a href="{% url "accounts:dashboard" %}" class="class_link">
+                                                <div class="link_icon">
+                                                    <i class="fa-solid fa-bolt"></i>
+                                                </div>
+                                                <span class="link_text">Dashboard</span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class = "{% if 'lifestyle/' in request.path %} which_page {% endif %}">

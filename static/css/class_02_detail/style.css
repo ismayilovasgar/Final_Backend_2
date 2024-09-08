@@ -372,6 +372,9 @@ button {
 .workouttime__btns form {
   flex-grow: 1;
 }
+.workouttime__btns button:hover {
+  cursor: pointer;
+}
 .workouttime__btns .release_btn {
   background-color: rgb(117, 24, 24);
 }
