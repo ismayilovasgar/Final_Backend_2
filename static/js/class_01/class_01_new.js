@@ -172,6 +172,8 @@ function fillCardToContainer(data, len) {
   oldest_status = true;
   newest_status = false;
   if (len > 0) {
+    cardsContainer.style.height = "auto";
+    cardsContainer.style.padding = "40px 0px";
     cardsContainer.innerHTML = "";
     data.map((item) => {
       cardsContainer.innerHTML += `
