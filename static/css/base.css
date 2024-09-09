@@ -2,7 +2,23 @@
   /* border-bottom: 2px solid var(--section-text) !important; */
   /* border-radius: 1px; */
 }
-
+.dashboard_circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: absolute;
+  right: 1px;
+  top: 100px;
+  z-index: 2000;
+  background-color: var(--Neutrals-2);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard_circle i {
+  font-size: 20px;
+  color: var(--Neutrals-8);
+}
 /*? Header Start */
 .show {
   display: none;
@@ -27,6 +43,7 @@
   align-items: center;
   justify-content: space-between;
   height: 44px;
+  position: relative;
 }
 
 .headerCenter .headerLinksWrap .navbarLogo {
@@ -122,13 +139,13 @@
 .headerLinksWrap .headerNav .drop .classDropdownMenu .class_link {
   display: flex;
   align-items: center;
-  column-gap: 12px;
+  column-gap: 10px;
 }
 
 .headerLinksWrap .headerNav .drop .classDropdownMenu .class_link .link_icon {
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,17 +158,21 @@
   background-color: var(--Primary-1);
 }
 
+.headerNav .drop .classDropdownMenu li:nth-child(3) .class_link .link_icon {
+  background-color: var(--Primary-4);
+}
+
 .headerLinksWrap .headerNav .drop .classDropdownMenu .class_link .link_icon i {
-  font-size: 12px;
+  font-size: 10px;
   color: rgba(252, 252, 253, 1);
 }
 .headerLinksWrap .headerNav .drop .classDropdownMenu .class_link .link_text {
   color: var(--Neutrals-4);
   font-family: "SF Pro Display", sans-serif;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 700;
-  line-height: 22px;
+  font-weight: 600;
+  line-height: 16 px;
 }
 .headerLinksWrap .headerNav .drop .dropdownMenu > i {
   font-size: 12px;
@@ -239,7 +260,7 @@ ul.accounts_ul li.account_link:hover a.log_link {
   top: 99%;
   width: 100%;
   z-index: 2000;
-  padding: 24px 0px 48px 0px;
+  padding: 24px 0px;
 }
 
 .tabletMenu .wrap {
@@ -252,7 +273,7 @@ ul.accounts_ul li.account_link:hover a.log_link {
 }
 .tabletMenu .menuLinks li:not(:last-child) {
   /* margin-bottom: 48px; */
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 .tabletMenu .menuLinks a:not(.dropdownLink a) {
   display: block;
@@ -274,10 +295,12 @@ ul.accounts_ul li.account_link:hover a.log_link {
 .bottomMenuLink a {
   color: var(--Neutrals-4, #777e90);
   font-family: "SF Pro Display", sans-serif;
-  font-size: 40px;
+  /* font-size: 40px; */
+  font-size: 32px;
   font-style: normal;
   font-weight: 700;
-  line-height: 48px;
+  /* line-height: 48px; */
+  line-height: 40px;
   letter-spacing: -0.4px;
 }
 .tabletMenu .wrap .contactInfo li:not(:last-child) {
@@ -314,7 +337,7 @@ ul.accounts_ul li.account_link:hover a.log_link {
 
 .tabletMenu .dropdownBody {
   display: none;
-  margin: 48px 0px 0px 0px;
+  margin: 36px 0px 0px 0px;
   border-radius: 24px;
   border: 1px solid var(--Neutrals-6, #e6e8ec);
   background-color: var(--Neutrals-8, #fcfcfd);
@@ -331,7 +354,7 @@ ul.accounts_ul li.account_link:hover a.log_link {
 }
 .tabletMenu .dropdownBody .headRow .headLeftCol {
   border-right: 1px solid var(--Neutrals-6, #e6e8ec);
-  border-bottom: 1px solid var(--Neutrals-6, #e6e8ec);
+  /* border-bottom: 1px solid var(--Neutrals-6, #e6e8ec); */
   width: 45%;
 }
 .tabletMenu .dropdownBody .headLeftCol a.headerDirection {
@@ -351,27 +374,29 @@ ul.accounts_ul li.account_link:hover a.log_link {
 .tabletMenu .headLeftCol .headerBox {
   display: flex;
   align-items: center;
-  column-gap: 13px;
-  padding: 16px;
+  column-gap: 12px;
+  padding: 10px 1px 6px 10px;
   color: var(--Neutrals-2, #23262f);
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
 }
 .tabletMenu .headLeftCol .headerBox:nth-child(1) {
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
 }
 .tabletMenu .headLeftCol .headerBox .headerIcon {
-  padding: 6px;
+  /* padding: 6px; */
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .tabletMenu .headLeftCol .headerBox .headerIcon i {
-  font-size: 14px;
+  font-size: 10px;
   color: #fcfcfd;
 }
 .tabletMenu .headLeftCol .headerBox:nth-child(1) .headerIcon {
@@ -522,8 +547,8 @@ ul.accounts_ul li.account_link:hover a.log_link {
   line-height: 24px;
 }
 .tabletMenu .lastElement {
-  /* margin-top: 48px; */
-  margin-top: 24px;
+  /* margin-top: 24px; */
+  margin-top: 18px;
 }
 
 /*! Header End */

@@ -49,6 +49,11 @@
 }
 
 @media screen and (max-width: 1024px) {
+  /*? dashboard btn start */
+  .dashboard_circle {
+    display: flex;
+  }
+  /*  */
   .show {
     display: block;
   }
@@ -230,8 +235,6 @@
   /* .header {
     padding: 48px 0px 24px 0px;
   } */
-
-
 }
 
 @media screen and (max-width: 300px) {

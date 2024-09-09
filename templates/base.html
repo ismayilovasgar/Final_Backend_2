@@ -37,6 +37,7 @@
         {% endfor %}
     </ul>
     {% endif %}
+
     <section class="header lightmode">
         <div class="wrapper">
 
@@ -86,14 +87,16 @@
                                                 <span class="link_text">Premium Classes</span>
                                             </a>
                                         </li>
+                                        {% if user.is_authenticated %}
                                         <li>
                                             <a href="{% url "accounts:dashboard" %}" class="class_link">
-                                                <div class="link_icon">
+                                                <div class="link_icon dashboard">
                                                     <i class="fa-solid fa-bolt"></i>
                                                 </div>
                                                 <span class="link_text">Dashboard</span>
                                             </a>
                                         </li>
+                                        {% endif %}
                                     </ul>
                                 </li>
                                 <li class = "{% if 'lifestyle/' in request.path %} which_page {% endif %}">
@@ -138,6 +141,10 @@
                             <button class="hidden"><i class="fa-solid fa-bars"></i></button>
                         </div>
                     </div>
+
+                    {% if user.is_authenticated %}
+                        <a class="dashboard_circle" href="{% url "accounts:dashboard" %}"><i class="fa-regular fa-user"></i></a>
+                    {% endif %}
 
                 </div>
             </div>
