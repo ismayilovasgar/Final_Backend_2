@@ -45,9 +45,7 @@ button.addEventListener("click", async (e) => {
   const isValidString = inputText.value.trim();
   if (!!isValidString) {
     const data = await fetchPostByText("name_" + isValidString);
-    const filters = { text: isValidString };
     fillCardToContainer(data, data.length);
-    saveToLocalStorage(filters, data);
     inputText.value = "";
   }
 });
@@ -56,10 +54,9 @@ button.addEventListener("click", async (e) => {
 linkItems.forEach((item) => {
   item.addEventListener("click", async (e) => {
     const data = await fetchPostByText("category_" + item.textContent);
-    // Fetch Data
-    const filters = { category: item.innerText.trim() };
+    localStorage.setItem("filterResults", JSON.stringify(data));
+
     fillCardToContainer(data, data.length);
-    saveToLocalStorage(filters, data); // Save filters and results to localStorage
   });
 });
 
@@ -70,16 +67,11 @@ advancFilterBtn.addEventListener("click", async (e) => {
     (el) => el.value
   );
   // Fetch Data
-  console.log(myarray[1]);
-  const filters = {
-    input1: myarray[0],
-    input2: myarray[1],
-    input3: myarray[2],
-    input4: myarray[3],
-  };
+
   const data = await fetchPostByArray(myarray);
+  localStorage.setItem("filterResults", JSON.stringify(data));
+
   fillCardToContainer(data, data.length);
-  saveToLocalStorage(filters, data); // Save filters and results to localStorage
 });
 
 //! --------------------------------------------------------------------------------------------------------
@@ -109,29 +101,26 @@ function reverseCard() {
 }
 
 // !-------------------------------------------------------------------------
-// Save filter data and results to localStorage
-function saveToLocalStorage(filters, data) {
-  localStorage.setItem("filters", JSON.stringify(filters));
-  localStorage.setItem("searchResults", JSON.stringify(data));
-}
-// Load filters and results from localStorage
-function loadFromLocalStorage() {
-  const savedFilters = JSON.parse(localStorage.getItem("filters"));
-  const savedResults = JSON.parse(localStorage.getItem("searchResults"));
 
-  if (savedFilters) {
-    // catalogInput.value = savedFilters.text || "";
-    // inputArray[0].value = savedFilters.input1 || "";
-    // inputArray[1].value = savedFilters.input2 || "";
-    // inputArray[2].value = savedFilters.input3 || "";
-    // inputArray[3].value = savedFilters.input4 || "";
-  }
-
-  if (savedResults) {
-    fillCardToContainer(savedResults); // Populate the container with saved results
-  }
+function updateDOMWithResults(data) {
+  fillCardToContainer(data, data.length);
 }
 
+window.addEventListener("DOMContentLoaded", async (e) => {
+  const filterValue = "Yoga";
+
+  // Check if there's data in localStorage for this filter
+  let storedData = localStorage.getItem("filterResults");
+
+  if (storedData) {
+    let parsedData = JSON.parse(storedData);
+    // Update the DOM with the stored data
+    updateDOMWithResults(parsedData);
+  } else {
+    const data = await fetchPostByText("category_" + filterValue);
+    updateDOMWithResults(data);
+  }
+});
 // ! Fetch Function ---------------------------------------------------------------
 async function fetchPostByArray(array) {
   try {
@@ -176,8 +165,6 @@ async function fetchPostByText(search_text) {
     return []; // Return an empty array in case of an error
   }
 }
-// Load previous filters and results from localStorage on page load
-window.addEventListener("load", loadFromLocalStorage);
 //! --------------------------------------------------------------------------------------------------------
 //! --------------------------------------------------------------------------------------------------------
 
@@ -226,7 +213,7 @@ function fillCardToContainer(data, len) {
     });
   } else {
     cardsContainer.innerHTML = "";
-    // notFounded();
+    notFounded();
   }
 }
 
@@ -234,7 +221,7 @@ function notFounded() {
   cardsContainer.innerHTML = `<div class="notFounded">not founded available content .....</div>`;
   setTimeout(() => {
     cardsContainer.innerHTML = "";
-  }, 750);
+  }, 1000);
 }
 
 // !----------------------------------------------------------------------------------------------

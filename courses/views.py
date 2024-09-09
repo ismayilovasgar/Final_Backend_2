@@ -45,6 +45,7 @@ def show_by_array(request):
         try:
             data = json.loads(request.body)
             list = data.get("data")
+            print(list)
             result = Course.objects.filter(
                 Q(style__name__contains=list[0])
                 & Q(time_day__name__iexact=list[1])
@@ -52,8 +53,10 @@ def show_by_array(request):
                 & Q(intensity__name__iexact=list[3])
             ).order_by("-created_date")
 
-            # for exclude courses that user enrolled
-            results = results.exclude(students=request.user)
+            if request.user.is_authenticated:
+                # for exclude courses that user enrolled
+                result = result.exclude(students=request.user)
+
             #
             results = format_data(result)
 
@@ -76,43 +79,15 @@ def show_by_text(request, text):
                 results = Course.objects.filter(name__contains=text).order_by(
                     "-created_date"
                 )
-            # for exclude courses that user enrolled
-            results = results.exclude(students=request.user)
-            #
+            if request.user.is_authenticated:
+                # for exclude courses that user enrolled
+                results = results.exclude(students=request.user)
+
             results = format_data(results)
             return JsonResponse(results, safe=False)
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
     return JsonResponse({"error": "Invalid request method"}, status=405)
-
-
-def courses_list(request):
-    # 1
-    # current_user = request.user
-    # if current_user.is_authenticated:
-    #     enrolled_courses = current_user.courses_joined.all()
-    #     courses = Course.objects.all().order_by("created_date")
-    #     for course in enrolled_courses:
-    #         courses = courses.exclude(id=course.id)
-    # else:
-    #     courses = Course.objects.all()
-
-    # 2
-    # current_user = request.user
-
-    # if current_user.is_authenticated:
-    #     courses = Course.objects.exclude(students=current_user)
-    #     # courses = Course.objects.exclude(students__username=current_user)
-    # else:
-    #     courses = Course.objects.all().order_by("-created_date")
-
-    # ortaq hisse
-    # contenxt = {
-    # "courses": courses,
-    # "tags": tags,
-    # "categories": categories,
-    # }
-    pass
 
 
 @login_required(login_url="login")
@@ -149,7 +124,11 @@ def dashboard__page(request):
     return render(request, "accounts/dashboard.html", {"courses": courses})
 
 
-# ? -------------------- Return Data --------------------
+def user_unenrolled_course(request):
+    pass
+
+
+# ? --------------------------------------------- Return Data Functions ---------------------------------------------
 def format_data_simple(trainers):
     trainer_data = [
         {

@@ -12,6 +12,7 @@ urlpatterns = [
     path("tags/<slug:tag_slug>/",views.tags_detail,name="courses_by_tag"),
     path("programs/list/",views.show_by_array,name="show_by_array"),
     path("programs/<str:text>/",views.show_by_text,name="show_by_text"),
+    path("programs/unenrolled/",views.user_unenrolled_course,name="User_unenrolled_courses"),
     #! enroll and release course
     path("enroll/<int:course_id>/",views.enroll_course,name="enroll_course"),
     path("release/<int:course_id>/",views.release_course,name="release_course"),
