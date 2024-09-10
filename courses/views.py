@@ -95,11 +95,11 @@ def enroll_course(request, course_id):
     course = get_object_or_404(Course, id=course_id)
 
     if request.method == "POST":
-        course.students.add(request.user)  # Enroll user in course
-        return redirect(
-            "courses:dashboard"
-        )  # Redirect to the dashboard or course detail page
+        # Enroll user in course
+        course.students.add(request.user) 
 
+        # Redirect to the dashboard or course detail page
+        return redirect("courses:dashboard")  
     return redirect("programs_detail", id=course.id)
 
 
