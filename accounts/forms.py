@@ -15,8 +15,32 @@ class RegisterForm(UserCreationForm):
 
 
 class LoginForm(AuthForm):
-    username = forms.CharField(max_length=254)
-    password = forms.CharField(widget=forms.PasswordInput)
+    # !No widget
+    # username = forms.CharField(max_length=254)
+    # password = forms.CharField(widget=forms.PasswordInput)
+    # ? use widget
+    username = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "name": "username",
+                "type": "text",
+                "class": "form-control",
+                "placeholder": "Username",
+                "id": "id_login_username",
+            }
+        )
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={
+                "name": "password",
+                "type": "password",
+                "class": "form-control",
+                "placeholder": "Password",
+                "id": "id_login_password",
+            }
+        )
+    )
 
 
 # class LoginForm(forms.ModelForm):

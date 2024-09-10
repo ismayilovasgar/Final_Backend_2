@@ -115,7 +115,7 @@
 .social-media {
   display: flex;
   justify-content: center;
-  display: none;
+  opacity: 0;
 }
 .social-icon {
   height: 45px;
@@ -187,8 +187,29 @@
 .right-panel .content {
   transform: translateX(0);
 }
-.account-text {
-  display: none;
+.alert {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-family: "Poppins", sans-serif;
+}
+.alert-error {
+  color: red;
+}
+.alert-success {
+  color: green;
+}
+.account-text-login,
+.alert-error {
+  transition: all 0.2s ease-in;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.expand {
+  transition: all 0.3s ease-in;
+
+  opacity: 1;
+  visibility: visible;
 }
 /*Animation*/
 .context.sign-up-mode::before {
@@ -241,7 +262,7 @@
   .panels-container {
     display: none;
   }
-  .account-text {
+  .account-text-login {
     display: initial;
     margin-top: 30px;
   }

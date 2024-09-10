@@ -30,13 +30,7 @@
 </head>
 <body>
 {% comment %}! <!--? Header Start  --> {% endcomment %}
-    {% if messages %}
-    <ul>
-        {% for message in messages %}
-            <li class="{{ message.tags }}">{{ message }} {{request.user.username}}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+    
 
     <section class="header lightmode">
         <div class="wrapper">

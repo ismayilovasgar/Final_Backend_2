@@ -118,8 +118,9 @@
   position: absolute;
   width: 350%;
   left: 4px;
+  background-color: transparent;
   background-color: var(--Neutrals-8);
-  padding: 4px 0px 4px 4px;
+  /* padding: 4px 0px 4px 4px; */
   /* margin-top: 10px; */
   border-radius: 6px;
 }

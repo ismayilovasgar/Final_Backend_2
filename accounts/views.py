@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
+from django.urls.base import reverse
 from .forms import LoginForm, RegisterForm
 from django.contrib.auth import login, logout, authenticate
+
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from courses.models import Course
@@ -15,9 +17,9 @@ def user_login(request):
             if register_form.is_valid():
                 user = register_form.save()
                 login(request, user)
-                messages.success(request, "Account has been created, You can Login !")
+                messages.success(request, "Register successful!")
                 return redirect("login")
-            messages.info(request, "You make mistake  !")
+            messages.error(request, "Invalid username or password.")
 
         elif "login" in request.POST:
             login_form = LoginForm(request, data=request.POST)
@@ -25,10 +27,10 @@ def user_login(request):
             if login_form.is_valid():
                 user = login_form.get_user()
                 login(request, user)
-                messages.info(request, "Welcome, ")
-
+                messages.success(request, "Login successful!")
                 return redirect("home")
-            messages.warning(request, "Check Username or Password !")
+            messages.error(request, "Invalid username or password")
+            # return redirect(reverse("login"))
 
     else:
         register_form = RegisterForm()
