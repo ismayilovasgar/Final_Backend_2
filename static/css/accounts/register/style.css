@@ -11,12 +11,14 @@ section.login_page {
 }
 .login-wrapper {
   display: flex;
+  column-gap: 16px;
+
   /* align-items: center; */
   position: relative;
   /* height: 100vh; */
 }
 .login-wrapper .box-col {
-  width: 50%;
+  width: calc(50% - 16px * 0.5);
   /* height: 100%; */
   position: relative;
 }

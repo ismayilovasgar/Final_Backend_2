@@ -11,13 +11,14 @@ section.login_page {
 }
 .login-wrapper {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  column-gap: 16px;
   position: relative;
   /* padding: 60px 0px; */
   /* height: 80vh; */
 }
 .login-wrapper .box-col {
-  width: 50%;
+  width: calc(50% - 16px * 0.5);
   /* height: 100%; */
   position: relative;
 }

@@ -10,7 +10,7 @@
 }
 @media (max-width: 530px) {
   .login-wrapper {
-    padding: 20px;
+    /* padding: 20px; */
   }
   .login-wrapper .box-form {
     height: auto;
