@@ -79,7 +79,12 @@
                                         <div class="custom_alert alert-error">
                                         {{ message }}
                                         </div>
-                                    {% endif %} 
+                                    {% endif %}
+                                    {% if message.tags == 'info' %}
+                                        <div class="custom_alert alert-success">
+                                        {{ message }}
+                                        </div>
+                                    {% endif %}  
                                 {% endfor %}
                             {% endif %} 
                        </p>

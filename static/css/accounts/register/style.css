@@ -39,7 +39,7 @@ section.login_page {
 .login-wrapper .inner {
   /* max-width: 330px; */
   max-width: 85%;
-  row-gap: 20px;
+  row-gap: 12px;
   margin: auto;
   display: flex;
   flex-direction: column;

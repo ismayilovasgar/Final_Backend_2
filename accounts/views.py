@@ -68,9 +68,9 @@ def user_register(request):
         register_form = RegisterForm(request.POST)
         if register_form.is_valid():
             user = register_form.save()
-            login(request, user)
+            # login(request, user)
             request.session["register_success"] = True
-            messages.success(request, "Register successful!")
+            messages.info(request, "Register successful!")
             return redirect("accounts:login")
         messages.error(request, "Invalid form Filled.")
     if request.user.is_authenticated:
