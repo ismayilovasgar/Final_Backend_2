@@ -61,13 +61,15 @@
                                {% endcomment %}
                            </div>
                        </form>
+                       <div class="bottom-register">
+                        <span class="remember_text">Don't have an account?</span>
+                           <a href="{% url "accounts:register" %}" class="link register_link">Join free Today!</a>
+                       </div>
+
                    </div>
                </div>
         
-               <div class="bottom-register">
-                <span class="remember_text">Don't have an account?</span>
-                   <a href="{% url "accounts:register" %}" class="link register_link">Join free Today!</a>
-               </div>
+              
             </div>
         </div>
     </div>
