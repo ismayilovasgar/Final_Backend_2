@@ -15,17 +15,13 @@
 <section class="login_page lightmode">
     <div class="container">
         <div class="login-wrapper ">
+            <div class="box-image box-col box-col-left"><img src="{% static "assets/images/accounts/login/sideimage.png" %}" alt="sideimage"></div>
 
-
-
-            <div class=" box-image box-col"><img src="{% static "assets/images/accounts/login/sideimage.png" %}" alt="sideimage"></div>
-            {% comment %} <div class="box-col"> {% endcomment %}
-
-            <div class="box-form box-col">
+            <div class="box-form box-col box-col-right">
                 <div class="inner">
                     <form class="form-head" method="POST">
-                    {% csrf_token %}
-                    {{ form.non_field_errors }}
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
                         <div class="title">Register Page</div>
                         <div class="form-group">
                             <div class="label-text">Username</div>
@@ -61,16 +57,21 @@
                         <span class="remember_text">You have an account?</span>
                         <a href="{% url "accounts:login" %}" class="link register_link">Log in here</a>
                     </div>
-
+                    <p class="error_text">
+                        {% if messages %}
+                            {% for message in messages %}
+                                {% if message.tags == 'error' %}
+                                    <div class="custom_alert alert-error">
+                                    {{ message }}
+                                    </div>
+                                {% endif %} 
+                            {% endfor %}
+                        {% endif %} 
+                   </p>
                 </div>
             </div>
-        
-            
-            {% comment %} </div> {% endcomment %}
-
-
-
         </div>
+        
     </div>
 </section>
 {% endblock content %}

@@ -49,7 +49,6 @@ def user_login(request):
         if login_form.is_valid():
             user = login_form.get_user()
             login(request, user)
-
             # Set the session variable only if this is the user's first login
             # if "first_login" not in request.session:
             #     request.session["first_login"] = True  # First successful login flag
@@ -70,6 +69,7 @@ def user_register(request):
         if register_form.is_valid():
             user = register_form.save()
             login(request, user)
+            request.session["register_success"] = True
             messages.success(request, "Register successful!")
             return redirect("accounts:login")
         messages.error(request, "Invalid form Filled.")

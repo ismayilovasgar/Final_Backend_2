@@ -1,5 +1,5 @@
 section.login_page {
-  padding: 60px 0px;
+  padding: 50px 0px;
 }
 
 .link {
@@ -11,21 +11,22 @@ section.login_page {
 }
 .login-wrapper {
   display: flex;
-  column-gap: 16px;
-
-  /* align-items: center; */
+  column-gap: 8px;
   position: relative;
-  /* height: 100vh; */
+}
+.login-wrapper .box-col-left {
+  width: calc(55% - 8px * 0.5);
+}
+.login-wrapper .box-col-right {
+  width: calc(45% - 8px * 0.45);
 }
 .login-wrapper .box-col {
-  width: calc(50% - 16px * 0.5);
-  /* height: 100%; */
   position: relative;
 }
 .login-wrapper .box-col img {
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
+  object-fit: cover;
 }
 .login-wrapper .box-form {
   /* padding: 20px; */
@@ -37,7 +38,7 @@ section.login_page {
 
 .login-wrapper .inner {
   /* max-width: 330px; */
-  max-width: 80%;
+  max-width: 85%;
   row-gap: 20px;
   margin: auto;
   display: flex;
@@ -177,4 +178,27 @@ section.login_page {
 
 .bottom-register a.register_link {
   color: var(--login-title);
+}
+
+/*! Error Message Align */
+
+.custom_alert {
+  opacity: 0;
+  visibility: hidden;
+  font-size: 18px;
+  padding: 10px 0px;
+  text-align: center;
+  transition: all 0.4s ease-in;
+  /*  */
+  color: #721c24;
+  background-color: #f8d7da;
+  padding: 0.75rem 0rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+.show_alert {
+  opacity: 1;
+  visibility: visible;
+  border-color: #f5c6cb;
 }
