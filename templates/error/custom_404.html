@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}404 Not Founded{% endblock title %}
+{% comment %} {% block custom_favicon %}{% endblock custom_favicon %} {% endcomment %}
+
+
+{% block custom_css %} 
+<link rel="stylesheet" href="{% static 'css/error_404/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/error_404/responsive.css' %}">
+{% endblock custom_css %}
+
+
+{% comment %} *--- Content ---* {% endcomment %}
+{% block content %}
+
+
+{% comment %}  {% endcomment %}
+
+<section class="custom_error softlightmode">
+  <div class="container">
+    <main class="main">
+      <section class="home">
+        <div class="home_container">
+          <div class="home_data">
+            <span>Error 404</span>
+            <h1 class="home_title">Hey Jean</h1>
+            <p class="detail_text">we can't seem to find the page <br> you are looking for.</p>
+            <a href="#" class="go_home_btn">Go Home</a>
+          </div>
+        
+          <div class="home_img">
+            <img class="ghost" src="{% static "assets/images/error_404/ghost2.png" %}" alt="ghost img">
+            <div class="home_shadow"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</section>
+
+{% comment %}  {% endcomment %}
+
+
+{% endblock content %}
+{% comment %} *--- Content ---* {% endcomment %}
+
+
+{% block custom_js %}
+<script src="{% static '/js/error_404/error_404.js' %}"></script>
+
+{% endblock custom_js  %}

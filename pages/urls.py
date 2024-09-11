@@ -14,4 +14,5 @@ urlpatterns = [
     path("class_02/category/<str:category_name>/", views.class02_trainers,name="class02_trainers"),                                  # http://127.0.0.1:8000/programs
     path("singleblog/<int:id>/", views.blog_detail, name="blog_detail"),                    # http://127.0.0.1:8000/single_blog/id
     path("programs/detail/<int:id>/", views.programs_detail, name="programs_detail"),       # http://127.0.0.1:8000/programs/detail/id/
+    path("error/", views.custom_404, name="custom_404"),      
 ]

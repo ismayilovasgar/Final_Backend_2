@@ -29,6 +29,7 @@ urlpatterns = [
     path("trainers/", include("trainers.urls")),  # http://127.0.0.1:8000/trainers/...
     path("accounts/", include("accounts.urls")),  # http://127.0.0.1:8000/accounts/...
 ]
+# handler404 = "pages.views.custom_404"  
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # Serve static and media files during development
 if settings.DEBUG:

@@ -137,6 +137,10 @@ def class02_trainers(request, category_name):
             return JsonResponse({"error": str(e)}, status=500)
 
 
+def custom_404(request, exception):
+    return render(request, "error/custom_404.html")
+
+
 # ? -------------------------- DATA API --------------------------
 
 
