@@ -36,7 +36,7 @@ section.login_page {
   /* position: relative; */
 }
 .login-wrapper .inner {
-  max-width: 350px;
+  max-width: 80%;
   margin: auto;
 }
 .form-head .title {
