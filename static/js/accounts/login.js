@@ -1,4 +1,4 @@
-const alert_text = document.querySelector(".alert");
+const alert_text = document.querySelector(".custom_alert");
 const submit_btn = document.querySelector(".actions button");
 
 submit_btn.addEventListener("click", (e) => {

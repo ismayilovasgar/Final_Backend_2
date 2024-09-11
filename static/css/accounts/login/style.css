@@ -174,7 +174,7 @@ section.login_page {
 p.error_text {
 }
 
-.alert {
+.custom_alert {
   opacity: 0;
   visibility: hidden;
   margin-top: 10px;
