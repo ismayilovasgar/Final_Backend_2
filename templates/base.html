@@ -135,7 +135,28 @@
                             <button class="hidden"><i class="fa-solid fa-bars"></i></button>
                         </div>
                     </div>
-
+                    {% comment %}? Log in Messages {% endcomment %}
+                    {% if user.is_authenticated %}
+                        {% if  login_success %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        {% if message.tags == 'success' %}
+                                            <div class="alert alert-success login_msg_position">
+                                           Welcome {{ request.user.username }}
+                                            </div>
+                                        {% endif %} 
+                                    {% endfor %}
+                                {% endif %} 
+                                <script>
+                                    const login_message=document.querySelector(".login_msg_position");
+                                    login_message.classList.add("show_alert_msg")
+                                    setTimeout((e) => {
+                                        login_message.classList.remove("show_alert_msg");
+                                    }, 1550);
+                                </script>
+                        {% endif %}
+                    {% endif %}
+                    {% comment %}? Dashboard circle {% endcomment %}
                     {% if user.is_authenticated %}
                         <a class="dashboard_circle" href="{% url "accounts:dashboard" %}"><i class="fa-regular fa-user"></i></a>
                     {% endif %}

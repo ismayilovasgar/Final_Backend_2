@@ -61,6 +61,8 @@
   --login-title: #fcfcfd;
   --label-title-text: #b1b5c3;
 }
+
+/*? Theme background Mode */
 .lightmode {
   background-color: var(--section_back_color);
 }
@@ -71,6 +73,7 @@
 .softlightmode_dark {
   background-color: var(--soft-lightmode-dark);
 }
+/*? Reset CSS */
 * {
   outline: none;
   padding: 0;

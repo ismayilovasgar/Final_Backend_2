@@ -1,5 +1,5 @@
 section.login_page {
-  padding: 60px 0px;
+  padding: 40px 0px;
 }
 
 .link {
@@ -168,4 +168,37 @@ section.login_page {
 
 .bottom-register a.register_link {
   color: var(--login-title);
+}
+
+/* error text witj alert */
+p.error_text {
+}
+
+.alert {
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 10px;
+  text-align: center;
+  padding: 8px 0px;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+.show_alert {
+  opacity: 1;
+  visibility: visible;
+}
+.alert-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+.alert-dark {
+  color: #1b1e21;
+  background-color: #d6d8d9;
+  border-color: #c6c8ca;
 }

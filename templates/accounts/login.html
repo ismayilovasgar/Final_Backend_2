@@ -15,15 +15,7 @@
 
 {% comment %}  {% endcomment %}
 <section class="login_page lightmode">
-    {% if messages %}
-        {% for message in messages %}
-            {% if message.tags == 'error' %}
-                <div class="alert alert-error">
-                {{ message }}
-                </div>
-            {% endif %} 
-        {% endfor %}
-    {% endif %} 
+    
 
     <div class="container">
         <div class="login-wrapper ">
@@ -77,10 +69,20 @@
                            </div>
                        </form>
                        <div class="bottom-register">
-                        <span class="remember_text">Don't have an account?</span>
-                           <a href="{% url "accounts:register" %}" class="link register_link">Join free Today!</a>
+                            <span class="remember_text">Don't have an account?</span>
+                            <a href="{% url "accounts:register" %}" class="link register_link">Join free Today!</a>
                        </div>
-
+                       <p class="error_text">
+                            {% if messages %}
+                                {% for message in messages %}
+                                    {% if message.tags == 'error' %}
+                                        <div class="alert alert-error">
+                                        {{ message }}
+                                        </div>
+                                    {% endif %} 
+                                {% endfor %}
+                            {% endif %} 
+                       </p>
                    </div>
                </div>
         

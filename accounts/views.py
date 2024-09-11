@@ -49,6 +49,11 @@ def user_login(request):
         if login_form.is_valid():
             user = login_form.get_user()
             login(request, user)
+
+            # Set the session variable only if this is the user's first login
+            # if "first_login" not in request.session:
+            #     request.session["first_login"] = True  # First successful login flag
+            request.session["login_success"] = True
             messages.success(request, "Login successful!")
             return redirect("home")
         messages.error(request, "Invalid username or password")

@@ -2,6 +2,33 @@
   /* border-bottom: 2px solid var(--section-text) !important; */
   /* border-radius: 1px; */
 }
+/*? Alert Messages */
+.alert {
+  position: absolute;
+  text-align: center;
+  /* Bootstrap sizes */
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in;
+}
+.show_alert_msg {
+  opacity: 1;
+  visibility: visible;
+}
+.login_msg_position {
+  top: 100px;
+  font-size: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+/*? Dashboard Messages */
 .dashboard_circle {
   width: 48px;
   height: 48px;
