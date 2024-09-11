@@ -13,31 +13,33 @@ section.login_page {
   display: flex;
   align-items: center;
   position: relative;
-  height: 80vh;
+  /* padding: 60px 0px; */
+  /* height: 80vh; */
 }
 .login-wrapper .box-col {
   width: 50%;
-  height: 100%;
+  /* height: 100%; */
   position: relative;
 }
 .login-wrapper .box-col img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  /* height: 100%; */
+  /* object-fit: cover; */
+  min-height: 400px;
 }
 .login-wrapper .box-form {
-  padding: 20px;
-  display: flex;
-  height: 100%;
-  align-items: center;
-  position: relative;
+  /* padding: 20px; */
+  /* display: flex; */
+  /* height: 100%; */
+  /* align-items: center; */
+  /* position: relative; */
 }
 .login-wrapper .inner {
   max-width: 350px;
   margin: auto;
 }
 .form-head .title {
-  font-size: 30px;
+  font-size: 26px;
   font-weight: bold;
   color: var(--login-title);
   margin-bottom: 12px;

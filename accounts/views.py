@@ -53,12 +53,25 @@ def user_login(request):
             return redirect("home")
         messages.error(request, "Invalid username or password")
     login_form = LoginForm()
-    # context = {"form": login_form}
+    if request.user.is_authenticated:
+        return render(request, "home.html")
+
     return render(request, "accounts/login.html", {"form": login_form})
 
 
 def user_register(request):
-    pass
+    if request.method == "POST":
+        register_form = RegisterForm(request.POST)
+        if register_form.is_valid():
+            user = register_form.save()
+            login(request, user)
+            messages.success(request, "Register successful!")
+            return redirect("accounts:login")
+        messages.error(request, "Invalid form Filled.")
+    if request.user.is_authenticated:
+        return render(request, "home.html")
+    register_form = RegisterForm()
+    return render(request, "accounts/register.html", {"form": register_form})
 
 
 def user_logout(request):

@@ -12,7 +12,57 @@
 {% comment %} ?--- Content ---* {% endcomment %}
 {% block content %}
 
+<section class="login_page lightmode">
+    <div class="container">
+        <div class="login-wrapper ">
 
+
+
+            <div class=" box-image box-col"><img src="{% static "assets/images/accounts/login/sideimage.png" %}" alt="sideimage"></div>
+            {% comment %} <div class="box-col"> {% endcomment %}
+
+            <div class="box-form box-col">
+                <div class="inner">
+                    <form class="form-head" method="POST">
+                    {% csrf_token %}
+                        <div class="title">Register Page</div>
+                        <div class="form-group">
+                            <div class="label-text">Username</div>
+                            <input class="form-control" required type="text" placeholder="Username" name="username" id="id_register_username" value="">
+                        </div>
+                        <div class="form-group">
+                            <div class="label-text">Email</div>
+                            <input class="form-control" required type="email" placeholder="Email" name="email" id="id_register_email" value="">
+                        </div>
+                        <div class="form-group">
+                            <div class="label-text">Password</div>
+                            <input class="form-control" class="form-control" required type="password" placeholder="Password"  name="password1" id="id_register_password1">
+                        </div>
+
+                        <div class="form-group">
+                            <div class="label-text">Confirm Password</div>
+                            <input class="form-control" required type="password" placeholder="Confirm Password" name="password2" id="id_password2">
+                        </div>
+                        <div class="actions">
+                            <button type="submit" class="btn btn-submit">Register</button>
+                        </div>
+                    </form>
+                    <div class="bottom-register">
+                        <span class="remember_text">You have an account?</span>
+                        <a href="{% url "accounts:login" %}" class="link register_link">Log in here</a>
+                    </div>
+
+                </div>
+            </div>
+        
+            
+            {% comment %} </div> {% endcomment %}
+
+
+
+        </div>
+    </div>
+</section>
 {% endblock content %}
 {% comment %} ?--- Content ---* {% endcomment %}
 
