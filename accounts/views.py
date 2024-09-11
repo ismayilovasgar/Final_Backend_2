@@ -44,9 +44,17 @@ from django.contrib.auth.models import User
 
 
 def user_login(request):
-    context = {"name": "mname"}
-    return render(request, "accounts/login.html", context)
-    # pass
+    if request.method == "POST":
+        login_form = LoginForm(request, data=request.POST)
+        if login_form.is_valid():
+            user = login_form.get_user()
+            login(request, user)
+            messages.success(request, "Login successful!")
+            return redirect("home")
+        messages.error(request, "Invalid username or password")
+    login_form = LoginForm()
+    # context = {"form": login_form}
+    return render(request, "accounts/login.html", {"form": login_form})
 
 
 def user_register(request):
