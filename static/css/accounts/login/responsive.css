@@ -1,0 +1,25 @@
+/* responsiveness */
+
+@media (max-width: 768px) {
+  .login-wrapper .box-image {
+    display: none;
+  }
+  .login-wrapper .box-col {
+    width: 100%;
+  }
+}
+@media (max-width: 530px) {
+  .login-wrapper {
+    padding: 20px;
+  }
+  .login-wrapper .box-form {
+    height: auto;
+  }
+  .bottom-register {
+    margin: 20px 0px;
+    position: relative;
+  }
+  .form-head .title {
+    font-size: 26px;
+  }
+}

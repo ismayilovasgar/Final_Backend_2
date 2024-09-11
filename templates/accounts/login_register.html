@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Login {% endblock title %}
+
+
+{% block custom_css %} 
+<link rel="stylesheet" href="{% static 'css/accounts/login_register/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/accounts/login_register/responsive.css' %}">
+{% endblock custom_css %}
+
+
+{% comment %} ?--- Content ---* {% endcomment %}
+{% block content %}
+
+
+{% comment %}  {% endcomment %}
+<section class="loginPage lightmode">
+
+{% comment %}  {% endcomment %}
+
+
+<div class="container">
+    <div class="context_warpper">
+        <div class="context">
+            <div class="signin-signup">
+                <form  class="sign-in-form form_tag" method="POST">
+                    {% csrf_token %}
+                    <h2 class="title">Sign in</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        {% comment %} <input type="text" placeholder="Username" name="username" id="id_login_username" value=""> {% endcomment %}
+                        {{login_form.username}}
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        {% comment %} <input type="password" placeholder="Password" name="password" id="id_login_password" > {% endcomment %}
+                        {{login_form.password}}
+                    </div>
+                   
+                    <button type="submit"  name="login"  class="btn_submit" id="login_button" >Login</button>
+                    <p class="account-text-login">
+                        {% comment %} {% if login_form.non_field_errors %}
+                            <div class="error">
+                                {% for error in login_form.non_field_errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %} {% endcomment %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                {% if message.tags == 'error' %}
+                                    <div class="alert alert-error">
+                                    {{ message }}
+                                    </div>
+                                {% endif %} 
+                            {% endfor %}
+                        {% endif %} 
+                    </p>
+                </form>
+                <form  class="sign-up-form form_tag" method="POST">
+                    {% csrf_token %}
+                    <h2 class="title">Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input required type="text" placeholder="Username" name="username" id="id_register_username" value="">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input required type="email" placeholder="Email" name="email" id="id_register_email" value="">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input required type="password" placeholder="Password"  name="password1" id="id_register_password1">
+                        {% comment %} {% if register_form.password1.errors %}
+                            <div>{{ register_form.password1.errors }}</div>
+                        {% endif %} {% endcomment %}
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input required type="password" placeholder="Confirm Password" name="password2" id="id_password2">
+                    </div>
+                    <button type="submit" name="register"  class="btn_submit">Sign up</button>
+                    {% comment %} <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p> {% endcomment %}
+                </form>
+            </div>
+            <div class="panels-container">
+                <div class="panel left-panel">
+                    <div class="content">
+                        <h3>Member of Brand?</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt minima iure?</p>
+                        <button class="btn_submit" id="sign-in-btn">Sign in</button>
+                    </div>
+                </div>
+                <div class="panel right-panel">
+                    <div class="content">
+                        <h3>New to Brand?</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt minima iure?</p>
+                        <button class="btn_submit" id="sign-up-btn">Sign up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% comment %}  {% endcomment %}
+
+</section>
+
+{% comment %}  {% endcomment %}
+
+{% endblock content %}
+{% comment %} ?--- Content ---* {% endcomment %}
+
+{% block custom_js %}
+    {% comment %} <script src="{% static '/js/login/login.js' %}"></script> {% endcomment %}
+    <script src="{% static '/js/accounts/login_register.js' %}"></script>
+{% endblock custom_js  %}

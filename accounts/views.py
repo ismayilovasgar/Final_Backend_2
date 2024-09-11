@@ -9,38 +9,48 @@ from courses.models import Course
 from django.contrib.auth.models import User
 
 
+# def user_login_register(request):
+#     if request.method == "POST":
+#         if "register" in request.POST:
+#             register_form = RegisterForm(request.POST)
+#             login_form = LoginForm()
+#             if register_form.is_valid():
+#                 user = register_form.save()
+#                 login(request, user)
+#                 messages.success(request, "Register successful!")
+#                 return redirect("accounts:login_register")
+#             messages.error(request, "Invalid username or password.")
+
+#         elif "login" in request.POST:
+#             login_form = LoginForm(request, data=request.POST)
+#             register_form = RegisterForm()
+#             if login_form.is_valid():
+#                 user = login_form.get_user()
+#                 login(request, user)
+#                 messages.success(request, "Login successful!")
+#                 return redirect("home")
+#             messages.error(request, "Invalid username or password")
+
+#     else:
+#         register_form = RegisterForm()
+#         login_form = LoginForm()
+
+
+#     return render(
+#         request,
+#         "accounts/login_register.html",
+#         {"register_form": register_form, "login_form": login_form},
+#     )
+
+
 def user_login(request):
-    if request.method == "POST":
-        if "register" in request.POST:
-            register_form = RegisterForm(request.POST)
-            login_form = LoginForm()
-            if register_form.is_valid():
-                user = register_form.save()
-                login(request, user)
-                messages.success(request, "Register successful!")
-                return redirect("login")
-            messages.error(request, "Invalid username or password.")
+    context = {"name": "mname"}
+    return render(request, "accounts/login.html", context)
+    # pass
 
-        elif "login" in request.POST:
-            login_form = LoginForm(request, data=request.POST)
-            register_form = RegisterForm()
-            if login_form.is_valid():
-                user = login_form.get_user()
-                login(request, user)
-                messages.success(request, "Login successful!")
-                return redirect("home")
-            messages.error(request, "Invalid username or password")
-            # return redirect(reverse("login"))
 
-    else:
-        register_form = RegisterForm()
-        login_form = LoginForm()
-
-    return render(
-        request,
-        "accounts/login.html",
-        {"register_form": register_form, "login_form": login_form},
-    )
+def user_register(request):
+    pass
 
 
 def user_logout(request):
