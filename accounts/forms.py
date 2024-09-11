@@ -7,7 +7,48 @@ from django.contrib.auth import authenticate
 
 
 class RegisterForm(UserCreationForm):
-    email = forms.EmailField(required=True)
+    # Customizing the username field
+    username = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control",  # Adding a custom CSS class
+                "placeholder": "Username",
+                "autocomplete": "username",
+            }
+        )
+    )
+
+    # Customizing the email field
+    email = forms.EmailField(
+        widget=forms.EmailInput(
+            attrs={
+                "class": "form-control",  # Adding a custom CSS class
+                "placeholder": "Email",  # Placeholder text
+                "autocomplete": "email",  # HTML5 autocomplete attribute
+            }
+        )
+    )
+
+    # Customizing the password1 field
+    password1 = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={
+                "class": "form-control",  # Adding a custom CSS class
+                "placeholder": "Password",
+                "autocomplete": "new-password",
+            }
+        )
+    )
+
+    password2 = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={
+                "class": "form-control",  # Adding a custom CSS class
+                "placeholder": "Confirm Password",
+                "autocomplete": "new-password",
+            }
+        )
+    )
 
     class Meta:
         model = User
@@ -27,6 +68,7 @@ class LoginForm(AuthForm):
                 "class": "form-control",
                 "placeholder": "Username",
                 "id": "id_login_username",
+                "autocomplete": "username",  # Autocomplete attribute for better UX
             }
         )
     )
@@ -38,6 +80,7 @@ class LoginForm(AuthForm):
                 "class": "form-control",
                 "placeholder": "Password",
                 "id": "id_login_password",
+                "autocomplete": "current-password",
             }
         )
     )

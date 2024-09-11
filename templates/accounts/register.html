@@ -25,23 +25,33 @@
                 <div class="inner">
                     <form class="form-head" method="POST">
                     {% csrf_token %}
+                    {{ form.non_field_errors }}
                         <div class="title">Register Page</div>
                         <div class="form-group">
                             <div class="label-text">Username</div>
-                            <input class="form-control" required type="text" placeholder="Username" name="username" id="id_register_username" value="">
+                            {% comment %} <input class="form-control" required type="text" placeholder="Username" name="username" id="id_register_username" value=""> {% endcomment %}
+                            {{ form.username }}
+                            {{ form.username.errors }}
                         </div>
                         <div class="form-group">
                             <div class="label-text">Email</div>
-                            <input class="form-control" required type="email" placeholder="Email" name="email" id="id_register_email" value="">
+                            {% comment %} <input class="form-control" required type="email" placeholder="Email" name="email" id="id_register_email" value=""> {% endcomment %}
+                            {{ form.email }}
+                            {{ form.email.errors }}
                         </div>
                         <div class="form-group">
                             <div class="label-text">Password</div>
-                            <input class="form-control" class="form-control" required type="password" placeholder="Password"  name="password1" id="id_register_password1">
+                            {% comment %} <input class="form-control" class="form-control" required type="password" placeholder="Password"  name="password1" id="id_register_password1"> {% endcomment %}
+                            {{form.password1}}
+                            {{form.password1.errors}}
                         </div>
 
                         <div class="form-group">
                             <div class="label-text">Confirm Password</div>
-                            <input class="form-control" required type="password" placeholder="Confirm Password" name="password2" id="id_password2">
+                            {% comment %} <input class="form-control" required type="password" placeholder="Confirm Password" name="password2" id="id_password2"> {% endcomment %}
+                            {{form.password2}}
+                            {{form.password2.errors}}
+
                         </div>
                         <div class="actions">
                             <button type="submit" class="btn btn-submit">Register</button>
