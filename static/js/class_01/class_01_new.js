@@ -1,7 +1,9 @@
 //? Fetch Data From Django url
 const cardsContainer = document.querySelector(".catalogList");
 const catalogSearch = document.querySelector(".catalogSearch");
-const linkItems = [...document.querySelectorAll("ul li.cataloglink")];
+const linkItems = [
+  ...document.querySelectorAll(".catalogNav ul li.cataloglink"),
+];
 const inputArray = [
   ...document.querySelectorAll(".catalogSorting .catalogCell input"),
 ];
@@ -38,6 +40,7 @@ linkItems.map((item) => {
     linkItems.forEach((el) => el.classList.remove("selected"));
     // add selected tag to special item
     item.classList.toggle("selected");
+    console.log("+++");
   });
 });
 
@@ -71,9 +74,16 @@ advancFilterBtn.addEventListener("click", async (e) => {
   const data = await fetchPostByArray(myarray);
   localStorage.setItem("filterResults", JSON.stringify(data));
 
+  removeSelectedNav();
   fillCardToContainer(data, data.length);
 });
 
+function removeSelectedNav() {
+  const catalogNavLi = document.querySelectorAll(".catalogNav > ul li");
+  catalogNavLi.forEach((li) => {
+    li.classList.remove("selected");
+  });
+}
 //! --------------------------------------------------------------------------------------------------------
 const oldestBtn = document.querySelector("[data-value='Oldest']");
 const newestBtn = document.querySelector("[data-value='Newest']");
@@ -115,10 +125,10 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   if (storedData) {
     let parsedData = JSON.parse(storedData);
     // Update the DOM with the stored data
-    updateDOMWithResults(parsedData);
+    fillCardToContainer(parsedData, parsedData.length);
   } else {
     const data = await fetchPostByText("category_" + filterValue);
-    updateDOMWithResults(data);
+    fillCardToContainer(data, data.length);
   }
 });
 // ! Fetch Function ---------------------------------------------------------------
@@ -173,7 +183,7 @@ function fillCardToContainer(data, len) {
   newest_status = false;
   if (len > 0) {
     cardsContainer.style.height = "auto";
-    cardsContainer.style.padding = "40px 0px";
+    cardsContainer.style.padding = "40px 0px 0px 0px";
     cardsContainer.innerHTML = "";
     data.map((item) => {
       cardsContainer.innerHTML += `
@@ -215,15 +225,23 @@ function fillCardToContainer(data, len) {
     });
   } else {
     cardsContainer.innerHTML = "";
+    localStorage.setItem("displayMessage", "true");
     notFounded();
   }
 }
+document.addEventListener("DOMContentLoaded", (e) => {
+  localStorage.setItem("displayMessage", "false");
+});
 
 function notFounded() {
-  cardsContainer.innerHTML = `<div class="notFounded">not founded available content .....</div>`;
-  setTimeout(() => {
-    cardsContainer.innerHTML = "";
-  }, 1000);
+  if (JSON.parse(localStorage.getItem("displayMessage"))) {
+    const hiddenMessage = document.querySelector(".catalog .hidden_msg");
+    // cardsContainer.innerHTML = ``;
+    hiddenMessage.classList.remove("hidden_msg");
+    setTimeout(() => {
+      hiddenMessage.classList.add("hidden_msg");
+    }, 1500);
+  }
 }
 
 // !----------------------------------------------------------------------------------------------
@@ -242,53 +260,6 @@ function getCookie(name) {
   return cookieValue;
 }
 
-// ------------------------------------------------------------------------
-//? nice-select
-const select = document.querySelector(".nice-select");
-const spanText = document.querySelector(".nice-select input.current");
-const arrows = document.querySelectorAll(".nice-select .select_arrow i");
-const list = document.querySelector(".nice-select ul.list");
-const listItems = document.querySelectorAll(".nice-select ul.list li");
-
-select.addEventListener("click", (e) => {
-  list.classList.toggle("show");
-  select.classList.toggle("focus");
-
-  arrows.forEach((arrow) => {
-    arrow.classList.toggle("changeDirection");
-  });
-
-  listItems.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      spanText.value = item.textContent;
-    });
-  });
-});
-//! --------------------------------------------------------------------------------------------------------
-//! --------------------------------------------------------------------------------------------------------
-
-//? sorting-select
-const select_sorting = document.querySelectorAll(".sorting");
-let sorting_list_items = "";
-select_sorting.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    item.querySelector("i").classList.toggle("changeDirection");
-    item.classList.toggle("focus");
-
-    item.querySelector(".select_arrow").classList.toggle("focus");
-    item.querySelector("ul.list").classList.toggle("show");
-
-    sorting_list_items = item.querySelectorAll("ul li");
-    sorting_list_items.forEach((list_item) => {
-      list_item.addEventListener("click", (e) => {
-        item.querySelector("input.current").value = list_item.innerText;
-      });
-      //
-    });
-    //
-  });
-  //
-});
 //! --------------------------------------------------------------------------------------------------------
 //! --------------------------------------------------------------------------------------------------------
 //? Form
@@ -339,3 +310,81 @@ var swiper = new Swiper(".testimonials-swiper", {
 });
 //! --------------------------------------------------------------------------------------------------------
 //! --------------------------------------------------------------------------------------------------------
+//? nice-select
+const select = document.querySelector(".nice-select");
+const spanText = document.querySelector(".nice-select input.current");
+const arrows = document.querySelectorAll(".nice-select .select_arrow i");
+const list = document.querySelector(".nice-select ul.list");
+const listItems = document.querySelectorAll(".nice-select ul.list li");
+
+select.addEventListener("click", (e) => {
+  list.classList.toggle("show");
+  select.classList.toggle("focus");
+
+  arrows.forEach((arrow) => {
+    arrow.classList.toggle("changeDirection");
+  });
+
+  listItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      spanText.value = item.textContent;
+    });
+  });
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function (event) {
+  if (!event.target.closest(".nice-select")) {
+    list.classList.remove("show");
+    select.classList.remove("focus");
+  }
+});
+//? sorting-select - new version
+document.querySelectorAll(".sorting").forEach((input) => {
+  input.addEventListener("click", function (event) {
+    const ul = input.querySelector(".list");
+
+    input.querySelector("i").classList.toggle("changeDirection");
+    input.classList.toggle("focus");
+
+    // Close all other ul elements
+    document.querySelectorAll(".sorting ul").forEach((otherUl) => {
+      if (otherUl !== ul) {
+        otherUl.style.display = "none";
+      }
+    });
+
+    // Toggle the clicked ul
+    if (ul.style.display === "none" || ul.style.display === "") {
+      ul.style.display = "block";
+      list.classList.remove("show");
+      select.classList.remove("focus");
+    } else {
+      ul.style.display = "none";
+    }
+
+    // Stop click event from bubbling up to the document
+    event.stopPropagation();
+  });
+});
+
+// Hide ul when clicking outside of it
+document.addEventListener("click", function (event) {
+  document.querySelectorAll(".sorting ul").forEach((ul) => {
+    if (
+      !ul.contains(event.target) &&
+      !ul.previousElementSibling.contains(event.target)
+    ) {
+      ul.style.display = "none";
+    }
+  });
+});
+// Handle li click to set input value
+document.querySelectorAll(".sorting ul li").forEach((li) => {
+  li.addEventListener("click", function () {
+    const input =
+      this.parentElement.previousElementSibling.previousElementSibling;
+    const liValue = this.getAttribute("data-value"); // Get the value from data-value attribute
+    input.value = liValue; // Set the data-value to the input field
+  });
+});
