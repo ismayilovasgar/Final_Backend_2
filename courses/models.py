@@ -138,6 +138,9 @@ class Course(models.Model):
         verbose_name="Class Name",
         help_text="enter class name",
     )
+    title = models.TextField(
+        blank=True, null=True, max_length=300, default="Sweet and tone"
+    )
     description = models.TextField(blank=True, null=True, max_length=300)
     image = models.ImageField(upload_to=get_image_upload_path, default="course.jpg")
     duration = models.PositiveIntegerField(

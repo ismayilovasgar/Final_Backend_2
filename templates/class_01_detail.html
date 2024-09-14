@@ -28,8 +28,10 @@
                         <span class="release">new release</span>
                     </div>
                     <h2 class="descroptionTitle">Sweet and tone</h2>
-                    <div class="descriptionInfo">A 7-days training program designed to boost your strength &
-                        endurance over the course of a week.
+                    <div class="descriptionInfo">
+                        {% comment %} A 7-days training program designed to boost your strength &
+                        endurance over the course of a week. {% endcomment %}
+                        {{course.description}}
                     </div>
                 </div>
 
@@ -41,14 +43,14 @@
                                 <img src="{% static 'assets/images/class_01_detail/description/calendar.svg' %}" alt="">
                                 <span>Classes</span>
                             </div>
-                            <span class="detailInfo">7</span>
+                            <span class="detailInfo">{{course.classes}}</span>
                         </div>
                         <div class="descriptionItem">
                             <div class="left">
                                 <img src="{% static 'assets/images/class_01_detail/description/clock.svg' %}" alt="">
                                 <span>Average duration</span>
                             </div>
-                            <span class="detailInfo">20 minutes</span>
+                            <span class="detailInfo">{{course.duration}} minutes</span>
                         </div>
                         <div class="descriptionItem">
                             <div class="left">
@@ -74,7 +76,9 @@
 
                 <div class="descriptionLeftCol">
                     <div class="descriptionPreview">
-                        <img src="{% static 'assets/images/class_01_detail/description/workout-pic.png' %}" alt="">
+                        {% comment %} <img src="{% static 'assets/images/class_01_detail/description/workout-pic.png' %}" alt=""> {% endcomment %}
+                        <img src="{{course.image.url}}" alt="">
+
                     </div>
                 </div>
 

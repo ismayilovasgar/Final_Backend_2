@@ -181,6 +181,7 @@ async function fetchPostByText(search_text) {
 function fillCardToContainer(data, len) {
   oldest_status = true;
   newest_status = false;
+  console.log(data);
   if (len > 0) {
     cardsContainer.style.height = "auto";
     cardsContainer.style.padding = "40px 0px 0px 0px";

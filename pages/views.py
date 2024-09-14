@@ -4,6 +4,8 @@ from pages.models import Review
 from django.http import JsonResponse
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404
+
 import json
 
 
@@ -71,6 +73,12 @@ def programs(request):
     return render(request, "programs.html", context)
 
 
+def class01_detail_page(request, course_id):
+    course = get_object_or_404(Course, id=course_id)
+    context = {"course", course}
+    return render(request, "class_01_detail.html", context)
+
+
 def class02__page(request):
     courses = Course.objects.all()
     categories = Category.objects.all()
@@ -82,7 +90,7 @@ def class02__page(request):
 
 
 def blog_detail(request, id):
-    course = Course.objects.get(id=id)
+    course = get_object_or_404(Course, id=id)
     context = {
         "course": course,
     }
@@ -90,13 +98,15 @@ def blog_detail(request, id):
     return render(request, "single_blog.html", context)
 
 
-@login_required(login_url="accounts:login")
+# @login_required(login_url="accounts:login")
 def programs_detail(request, id):
-    course = Course.objects.get(id=id)
+    course = get_object_or_404(Course, id=id)
     context = {
         "course": course,
     }
-    return render(request, "class_02_detail.html", context)
+    if request.user.is_authenticated:
+        return render(request, "class_02_detail.html", context)
+    return render(request, "class_01_detail.html", context)
 
 
 def class02_trainers(request, category_name):

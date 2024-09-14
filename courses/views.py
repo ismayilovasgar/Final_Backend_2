@@ -32,7 +32,7 @@ def tags_detail(request, tag_slug):
     if request.method == "POST":
         try:
             courses = Course.objects.filter(tags__slug=tag_slug)
-            results = format_data_bytags(courses)
+            results = format_data_bytags(request, courses)
             return JsonResponse(results, safe=False)
         except:
             return print("eerr-------------------------")
@@ -83,7 +83,7 @@ def show_by_text(request, text):
                 # for exclude courses that user enrolled
                 results = results.exclude(students=request.user)
 
-            results = format_data(results)
+            results = format_data(request, results)
             return JsonResponse(results, safe=False)
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
@@ -96,10 +96,10 @@ def enroll_course(request, course_id):
 
     if request.method == "POST":
         # Enroll user in course
-        course.students.add(request.user) 
+        course.students.add(request.user)
 
         # Redirect to the dashboard or course detail page
-        return redirect("courses:dashboard")  
+        return redirect("courses:dashboard")
     return redirect("programs_detail", id=course.id)
 
 
@@ -143,7 +143,7 @@ def format_data_simple(trainers):
     return trainer_data
 
 
-def format_data_bytags(data):
+def format_data_bytags(request, data):
     result = [
         {
             # key : value
@@ -158,13 +158,15 @@ def format_data_bytags(data):
             "course_description": course.description,
             "course_date": course.created_date.strftime("%b %d, %Y"),
             "course_image": course.image.url,
+            #! Determine if the user is authenticated
+            "is_authenticated": request.user.is_authenticated,
         }
         for course in data
     ]
     return result
 
 
-def format_data(data):
+def format_data(request, data):
     trainer_data = [
         {
             # key : value
@@ -188,6 +190,8 @@ def format_data(data):
             "course_timeofday": course.time_day.name,
             "course_intensity": course.intensity.name,
             "course_style": course.style.name,
+            #! Determine if the user is authenticated
+            "is_authenticated": request.user.is_authenticated,
         }
         for course in data
     ]
