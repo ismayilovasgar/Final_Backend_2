@@ -54,10 +54,14 @@
                     <div class="green__label">
                         <h4>exclusive trainer</h4>
                     </div>
-                    <div class="trainer__image"><img src="{% static 'assets/images/class_02_detail/book_class/trainer.png' %}"></div>
+                    <div class="trainer__image">
+                        {% comment %} <img src="{% static 'assets/images/class_02_detail/book_class/trainer.png' %}"> {% endcomment %}
+                        <img src="{{course.trainer.image.url}}">
+                    </div>
                     <div class="trainer__subtitle">
-                        <h2>Darianna Hammers</h2>
-                        <p>Yoga Master</p>
+                        {% comment %} <h2>Darianna Hammers</h2> {% endcomment %}
+                        <h2>{{course.trainer.fullname}}</h2>
+                        <p>{{course.trainer.profession}}</p>
                     </div>
                 </div>
                 <div class="class__about">
@@ -86,7 +90,7 @@
                                         <div class="class__content">Average duration</div>
                                     </div>
                                     <div class="right">
-                                        <p>20 minutes</p>
+                                        <p>{{course.duration}} minutes</p>
                                     </div>
                                 </li>
 
@@ -99,7 +103,7 @@
                                         <div class="class__content">Difficulty</div>
                                     </div>
                                     <div class="right">
-                                        <p>Beginner</p>
+                                        <p>{{course.level}}</p>
                                     </div>
                                 </li>
 
@@ -114,7 +118,7 @@
                                         <div class="class__content">Intensity</div>
                                     </div>
                                     <div class="right">
-                                        <p>Level 2</p>
+                                        <p>{{course.intensity}}</p>
                                     </div>
                                 </li>
 
