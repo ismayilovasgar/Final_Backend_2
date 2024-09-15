@@ -28,6 +28,28 @@ class RegisterForm(UserCreationForm):
             }
         )
     )
+    # Customizing the firstname field
+    first_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control",  # Adding a custom CSS class
+                "placeholder": "Firstname",  # Placeholder text
+                "autocomplete": "firstname",  # HTML5 autocomplete attribute
+                "id": "id_register_firstname",
+            }
+        )
+    )
+    # Customizing the lastname field
+    last_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control",  # Adding a custom CSS class
+                "placeholder": "Lastname",  # Placeholder text
+                "autocomplete": "lastname",  # HTML5 autocomplete attribute
+                "id": "id_register_lastname",
+            }
+        )
+    )
 
     # Customizing the password1 field
     password1 = forms.CharField(
@@ -52,7 +74,14 @@ class RegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ["username", "email", "password1", "password2"]
+        fields = [
+            "username",
+            "email",
+            "first_name",
+            "last_name",
+            "password1",
+            "password2",
+        ]
 
 
 class LoginForm(AuthForm):

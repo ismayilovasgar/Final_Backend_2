@@ -22,28 +22,46 @@
                     <form class="form-head" method="POST">
                         {% csrf_token %}
                         {{ form.non_field_errors }}
-                        <div class="title">Register Page</div>
+                        {% comment %} <div class="title">Register Page</div> {% endcomment %}
+                        
                         <div class="form-group">
-                            <div class="label-text">Username</div>
+                            {% comment %} <div class="label-text">Username</div> {% endcomment %}
                             {% comment %} <input class="form-control" required type="text" placeholder="Username" name="username" id="id_register_username" value=""> {% endcomment %}
                             {{ form.username }}
                             {{ form.username.errors }}
                         </div>
+
                         <div class="form-group">
-                            <div class="label-text">Email</div>
+                            {% comment %} <label class="label-text" for="id_register_email">Email</label> {% endcomment %}
                             {% comment %} <input class="form-control" required type="email" placeholder="Email" name="email" id="id_register_email" value=""> {% endcomment %}
                             {{ form.email }}
                             {{ form.email.errors }}
                         </div>
+
+                        <div class="form-group-custom">
+                            <div class="form_user form_group_left">
+                                {% comment %} <label class="label-text" for="id_register_email">Firstname</label> {% endcomment %}
+                                {% comment %} <input class="form-control" required type="email" placeholder="Firstname" name="firstname" id="id_register_firstname" value=""> {% endcomment %}
+                                {{form.first_name}}
+                            </div>
+                            <div class="form_user form_group_left">
+                                {% comment %} <label class="label-text" for="id_register_email">Lastname</label> {% endcomment %}
+                                {% comment %} <input class="form-control" required type="email" placeholder="Lastname" name="Lastname" id="id_register_lastname" value=""> {% endcomment %}
+                                {{form.last_name}}
+
+                            </div>
+                        </div>
+
+
                         <div class="form-group">
-                            <div class="label-text">Password</div>
+                            {% comment %} <div class="label-text">Password</div> {% endcomment %}
                             {% comment %} <input class="form-control" class="form-control" required type="password" placeholder="Password"  name="password1" id="id_register_password1"> {% endcomment %}
                             {{form.password1}}
                             {{form.password1.errors}}
                         </div>
 
                         <div class="form-group">
-                            <div class="label-text">Confirm Password</div>
+                            {% comment %} <div class="label-text">Confirm Password</div> {% endcomment %}
                             {% comment %} <input class="form-control" required type="password" placeholder="Confirm Password" name="password2" id="id_password2"> {% endcomment %}
                             {{form.password2}}
                             {{form.password2.errors}}

@@ -59,7 +59,35 @@ section.login_page {
 .form-group {
   margin-bottom: 20px;
 }
+/*  */
+
+.form-group-custom {
+  display: flex;
+  column-gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-group-custom .form_user {
+  width: calc(50% - 10px * 0.5);
+}
+.form-group-custom .form_user input {
+  width: 100%;
+  height: 50px;
+  padding: 7px 10px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #3d065d;
+}
+
+.form-group-custom .label-text {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: var(--label-title-text);
+}
+/*  */
 .form-group .label-text {
+  display: block;
   font-size: 16px;
   margin-bottom: 6px;
   color: var(--label-title-text);

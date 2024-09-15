@@ -50,6 +50,7 @@ section.login_page {
   margin-bottom: 20px;
 }
 .form-group .label-text {
+  display: block;
   font-size: 16px;
   margin-bottom: 6px;
   color: var(--label-title-text);
