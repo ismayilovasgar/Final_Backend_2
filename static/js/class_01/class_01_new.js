@@ -40,7 +40,6 @@ linkItems.map((item) => {
     linkItems.forEach((el) => el.classList.remove("selected"));
     // add selected tag to special item
     item.classList.toggle("selected");
-    console.log("+++");
   });
 });
 
@@ -377,9 +376,11 @@ document.addEventListener("click", function (event) {
       !ul.previousElementSibling.contains(event.target)
     ) {
       ul.style.display = "none";
+      ul.parentElement.classList.remove("focus");
     }
   });
 });
+
 // Handle li click to set input value
 document.querySelectorAll(".sorting ul li").forEach((li) => {
   li.addEventListener("click", function () {

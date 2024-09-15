@@ -50,51 +50,46 @@ select_sorting.forEach((item) => {
 const listWrap = document.querySelector(".listWrap");
 const allListItem = [...document.querySelectorAll("ul.list li")];
 
-window.onload = function () {
-  // fetchFilteredData("yoga", listWrap);
-  // markFirstItem();
-};
-
 document.addEventListener("DOMContentLoaded", async (e) => {
   const filterValue = "Yoga";
 
   // Check if there's data in localStorage for this filter
-  let storedData = localStorage.getItem("trainers_info");
-  console.log(JSON.parse(storedData));
+  let storedData = localStorage.getItem("trainers_detail");
 
   if (storedData) {
     let parsedData = JSON.parse(storedData);
     // Update the DOM with the stored data
-    fillDemo(parsedData, parsedData.length);
+    fillDemo(parsedData);
+    markSelectCat(localStorage.getItem("trainers_detail_cat"));
   } else {
     const data = await fetchFilteredData(filterValue);
-    localStorage.setItem("trainers_info", JSON.stringify(data));
+    localStorage.setItem("trainers_detail", JSON.stringify(data));
+    localStorage.setItem("trainers_detail_cat", filterValue);
+    markSelectCat(localStorage.getItem("trainers_detail_cat"));
 
-    // fillDemo(data, data.length);
+    fillDemo(data);
   }
 });
 
-function markFirstItem() {
-  // Select the first item in the list
-  const firstItem = document.querySelector("ul.list li");
-
-  // Apply a CSS class to mark the first item
-  if (firstItem) firstItem.classList.add("selected");
-}
-
 allListItem.map((item) => {
-  item.addEventListener("click", (e) => {
+  item.addEventListener("click", async (e) => {
     // remove all selected tag
     allListItem.forEach((el) => el.classList.remove("selected"));
+
     // add selected tag to special item
     item.classList.toggle("selected");
-    // posts();
-    // fetchFilteredData_2(`${item.getAttribute("data-value")}`, listWrap);
-    fetchFilteredData(`${item.innerText}`, listWrap);
+
+    // Fetch data and stored in localstorage
+    const data = await fetchFilteredData(`${item.innerText}`);
+    localStorage.setItem("trainers_detail", JSON.stringify(data));
+    localStorage.setItem("trainers_detail_cat", JSON.stringify(item.innerText));
+    fillDemo(data);
+
+    //
   });
 });
 
-async function fetchFilteredData(text, wrap) {
+async function fetchFilteredData(text) {
   const response = await fetch(
     `http://127.0.0.1:8000/class_02/category/${text}/`,
     {
@@ -107,15 +102,15 @@ async function fetchFilteredData(text, wrap) {
     }
   );
   const data = await response.json();
-  console.log(data);
-  fillDemo(data, wrap);
-  //* data.map((item) => {
-  //   console.log(item.fullname);
-  //*   item.courses.map((course) => {
-  //     console.log(course.description);
-  //   });
-  // });
+  return data;
 }
+
+// mark category that click above
+function markSelectCat(text) {
+  const item = document.querySelector(`ul.list li[data-value=${text}]`);
+  item.classList.add("selected");
+}
+
 // JavaScript function to truncate strings
 function truncateString(str, num) {
   if (str.length <= num) {
@@ -124,10 +119,10 @@ function truncateString(str, num) {
   return str.slice(0, num) + "...";
 }
 
-async function fillDemo(data, wrap) {
-  wrap.innerHTML = "";
+async function fillDemo(data) {
+  listWrap.innerHTML = "";
   data.map((item) => {
-    wrap.innerHTML += `
+    listWrap.innerHTML += `
     <div class="trainerItem">
             <div class="profile">
               <img src="${item.trainer_image}" alt="">

@@ -189,9 +189,7 @@
 
                         {% for category in categories  %}
                             {% comment %} <li data-value="{{category.name}}" class="option"> {{category.name}} </li> {% endcomment %}
-                            <li data-value="{{category.slug}}" class="option">
-                                {{category.name}}
-                            </li>
+                            <li data-value="{{category.name}}" class="option">{{category.name}}</li>
                         {% endfor %}
                     
                     </ul>
@@ -224,5 +222,6 @@
 
 {% block custom_js %}
     <script src="{% static '/js/class_02/class_02_slider.js' %}"></script>
-    <script src="{% static '/js/class_02/class_02.js' %}"></script>
+    {% comment %} <script src="{% static '/js/class_02/class_02.js' %}"></script> {% endcomment %}
+    <script src="{% static '/js/class_02/class_02_new.js' %}"></script>
 {% endblock custom_js  %}
