@@ -541,6 +541,7 @@ option {
 /*! Communtiy End */
 
 /** Class Modal */
+
 :root {
   --trainerModal_column-gap: 32px;
 }
@@ -567,7 +568,8 @@ option {
   padding: 20px 40px;
   border: 1px solid #888;
   border-radius: 16px;
-  max-width: 60%;
+  width: 600px;
+  max-width: 80%;
   background-color: var(--Neutrals-8, #fcfcfd);
   box-shadow: 0px 64px 64px -48px rgba(15, 15, 15, 0.1);
 }
@@ -673,40 +675,45 @@ option {
   color: #fcfcfd;
   font-size: 16px;
 }
-.modalContent .trainerSlider {
+
+.modalContent .swiper-wrapper {
   display: flex;
   align-items: flex-start;
-  flex-wrap: wrap;
-  column-gap: var(--trainerModal_column-gap);
   row-gap: var(--trainerModal_column-gap);
 }
-.modalContent .trainerSlider .card {
-  width: calc(50% - (var(--trainerModal_column-gap) * 0.5));
+.modalContent .swiper-slide {
+  padding: 0px 5px !important;
 }
-.modalContent .trainerSlider .trainerPreview {
+.modalContent .swiper-slide:not(:last-child) {
+  /* width: calc(50% - (var(--trainerModal_column-gap) * 0.5)) !important; */
+  margin-right: 16px !important;
+}
+.modalContent .trainerPreview {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
   transition: all 0.3s ease-in;
 }
-.modalContent .trainerSlider .trainerPreview:hover img {
+.modalContent .trainerPreview:hover img {
   transform: scale(1.1);
   transition: all 0.3s ease-in;
 }
-.modalContent .trainerSlider .trainerPreview:hover {
-  border-color: var(--Neutrals-4);
+.modalContent .trainerPreview:hover {
+  border-color: var(--Primary-1);
 }
-.modalContent .trainerSlider .trainerPreview img {
+.modalContent .trainerPreview img {
   width: 100%;
   object-fit: cover;
+  transition: all 0.3s ease-in;
 }
-.modalContent .trainerSlider .trainerPreview p {
+
+.modalContent .trainerPreview p {
   position: absolute;
   top: 10px;
   left: 10px;
   padding: 8px 8px 6px 6px;
-  color: var(--Neutrals-2, #23262f);
+  color: var(#23262f);
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-style: normal;
@@ -714,7 +721,7 @@ option {
   line-height: 12px;
   text-transform: uppercase;
   border-radius: 4px;
-  background: var(--Neutrals-8, #fcfcfd);
+  background: #fcfcfd;
   z-index: 50;
 }
 
@@ -797,11 +804,30 @@ option {
   border-radius: 50%;
   overflow: hidden;
   z-index: 300;
-  background-color: var(--Neutrals-8);
+  background-color: var(--section_back_color_soft);
+  color: var(--Neutrals-4);
   cursor: pointer;
   box-shadow: 0px 8px 16px -8px rgba(15, 15, 15, 0.2);
+  transition: all 0.4s ease-in;
 }
+
 .modalContent button.modalCloseBtn i {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
+  transition: all 0.4s ease-in;
+  width: 12px;
+  height: 12px;
+}
+
+.modalContent button.modalCloseBtn:hover {
+  background-color: var(--class-filter-text);
+}
+
+.modalContent button.modalCloseBtn:hover i {
+  color: var(--Neutrals-8);
+}
+
+/*  */
+.trainerModalWrap {
+  overflow: hidden;
 }

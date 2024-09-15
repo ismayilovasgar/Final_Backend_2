@@ -1,5 +1,6 @@
 // ! Swiper - 1
-let swiper_programs = new Swiper(".programs_swiper", {
+
+let swiper_programs2 = new Swiper(".programs_swiper", {
   grabCursor: true,
   slidesPerView: 3,
   spaceBetween: 24,
@@ -174,40 +175,47 @@ async function fillDemo(data) {
                                 </button>
                             </form>
 
+                            <div class="swiper">
                             <div class="trainerModalWrap programs_swiper2">
-                                <div class="trainerSlider swiper-wrapper">
-                                ${item.courses
-                                  .map(
-                                    (el) => `
-                                        <div class="card programs_swiper ">
-                                            <div class="trainerPreview">
-                                                <img src="${el.image}" alt="">
-                                                <p>${el.category}</p>
+                                <div class="swiper-wrapper">
+                                      ${item.courses
+                                        .map(
+                                          (el) => `
+                                            <div class="swiper-slide">
+
+                                                  <div class="trainerPreview">
+                                                      <img src="${
+                                                        el.image
+                                                      }" alt="">
+                                                      <p>${el.category}</p>
+                                                  </div>
+
+                                                  <div class="modalTrainerHead">
+                                                      <div class="trainer__title">${truncateString(
+                                                        el.description,
+                                                        20
+                                                      )}</div>
+                                                      <div class="trainerLevel">${
+                                                        el.level
+                                                      }</div>
+                                                  </div>
+
+                                                  <div class="trainerParameters">
+                                                      <div class="trainerParameter">
+                                                        <i class="fa-brands fa-youtube"></i>
+                                                        <span>7</span>  
+                                                      </div>
+                                                      <div class="trainerParameter">
+                                                        <i class="fa-regular fa-user"></i> 
+                                                        <span>160</span> 
+                                                      </div>
+                                                 </div>
                                             </div>
-                                            <div class="modalTrainerHead">
-                                                <div class="trainer__title">${truncateString(
-                                                  el.description,
-                                                  25
-                                                )}</div>
-                                                <div class="trainerLevel">${
-                                                  el.level
-                                                }</div>
-                                            </div>
-                                            <div class="trainerParameters">
-                                                <div class="trainerParameter">
-                                                   <i class="fa-brands fa-youtube"></i>
-                                                   <span>7</span>  
-                                                </div>
-                                                <div class="trainerParameter">
-                                                  <i class="fa-regular fa-user"></i> 
-                                                  <span>160</span> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                     `
-                                  )
-                                  .join("")}
+                                      `
+                                        )
+                                        .join("")}
                                 </div>
+                              </div>
                             </div>
 
                             <div class="bottomBtns">
@@ -227,6 +235,32 @@ async function fillDemo(data) {
             </div>
      
     `;
+    let swiper_programs = new Swiper(".programs_swiper2", {
+      grabCursor: true,
+      slidesPerView: 2,
+      spaceBetween: 16,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".programs_next_btn",
+        prevEl: ".programs_prev_btn",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+
+        768: {
+          slidesPerView: 1,
+        },
+        1024: {
+          slidesPerView: 2,
+        },
+      },
+    });
   });
 
   const trainers = [...document.querySelectorAll(".listWrap .trainerItem")];
@@ -234,6 +268,7 @@ async function fillDemo(data) {
 
   trainers.forEach((trainer) => {
     trainer.addEventListener("click", (e) => {
+      console.log(trainer);
       // trainer.nextElementSibling.style.display = "block";
       trainer.nextElementSibling.classList.add("showed");
       e.preventDefault();
