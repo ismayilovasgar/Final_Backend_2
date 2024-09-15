@@ -220,8 +220,8 @@ async function fillDemo(data) {
 
                             <div class="bottomBtns">
                                 <div class="arrowBtns">
-                                    <i class="fa-solid fa-left-long"></i>
-                                   <i class="fa-solid fa-right-long"></i>
+                                    <i class="fa-solid fa-left-long left_arrow"></i>
+                                   <i class="fa-solid fa-right-long right_arrow"></i>
                                 </div>
                                 <button class="btn btn_orange">Browse all class</button>
                             </div>
@@ -245,8 +245,8 @@ async function fillDemo(data) {
         clickable: true,
       },
       navigation: {
-        nextEl: ".programs_next_btn",
-        prevEl: ".programs_prev_btn",
+        nextEl: ".arrowBtns .right_arrow",
+        prevEl: ".arrowBtns .left_arrow",
       },
       breakpoints: {
         0: {
