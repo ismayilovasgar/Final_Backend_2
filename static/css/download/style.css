@@ -206,7 +206,7 @@ form button i {
   color: var(--Neutrals-2, #23262f);
 }
 .platform .platform_item .platform_details .platform_status.comming_soon {
-  color: var(--Neutrals-8, #fcfcfd);
+  color: #fcfcfd;
   background: var(--Primary-4, #45b26b);
 }
 
