@@ -75,7 +75,9 @@ def programs(request):
 
 def class01_detail_page(request, id):
     course = get_object_or_404(Course, id=id)
-    context = {"course", course}
+    context = {
+        "course": course,
+    }
     return render(request, "class_01_detail.html", context)
 
 

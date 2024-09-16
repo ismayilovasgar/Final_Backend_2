@@ -39,15 +39,18 @@ class TestUrls(SimpleTestCase):
     def test_class01_detail_url_resolves(self):
         url = reverse("class01_detail", args=[35])
         self.assertEqual(resolve(url).func, class01_detail_page)
+        self.assertEqual(resolve(url).kwargs, {"id": 35})
 
     def test_class02_trainers_url_resolves(self):
-        url = reverse("class02_trainers", args=["some-slug"])
+        url = reverse("class02_trainers", args=["some-name"])
         self.assertEqual(resolve(url).func, class02_trainers)
 
     def test_blog_detail_url_resolves(self):
         url = reverse("blog_detail", args=[35])
         self.assertEqual(resolve(url).func, blog_detail)
+        self.assertEqual(resolve(url).kwargs, {"id": 35})
 
     def test_programs_detail_url_resolves(self):
         url = reverse("programs_detail", args=[35])
         self.assertEqual(resolve(url).func, programs_detail)
+        self.assertEqual(resolve(url).kwargs, {"id": 35})
