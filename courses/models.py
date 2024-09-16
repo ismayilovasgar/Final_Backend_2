@@ -174,9 +174,7 @@ class Course(models.Model):
     intensity = models.ForeignKey(Intensity, on_delete=models.DO_NOTHING, null=True)
     style = models.ForeignKey(Style, on_delete=models.DO_NOTHING, null=True)
     #
-    students = models.ManyToManyField(
-        User, blank=True, null=True, related_name="courses_joined"
-    )
+    students = models.ManyToManyField(User, blank=True, related_name="courses_joined")
 
     def __str__(self) -> str:
         return f"{self.name}"
