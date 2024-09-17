@@ -415,6 +415,9 @@ button.direction i {
   font-weight: 600;
   line-height: 20px;
 }
+.swiper-wrapper .card .cardParameters .cardParameter i {
+  font-size: 16px;
+}
 
 .interestingBtn {
   margin-top: 64px;
