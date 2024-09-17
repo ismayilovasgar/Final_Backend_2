@@ -408,6 +408,9 @@ button {
   font-weight: 700;
   line-height: 16px;
 }
+.book__button:hover {
+  background: var(--Primary-1-hover);
+}
 .value__props {
   padding: 0px 0px 136px;
   background: var(--Neutrals-8, #fcfcfd);
