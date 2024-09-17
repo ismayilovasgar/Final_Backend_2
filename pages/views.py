@@ -103,8 +103,10 @@ def blog_detail(request, id):
 # @login_required(login_url="accounts:login")
 def programs_detail(request, id):
     course = get_object_or_404(Course, id=id)
+    courses = Course.objects.all()
     context = {
         "course": course,
+        "courses": courses,
     }
     if request.user.is_authenticated:
         return render(request, "class_02_detail.html", context)

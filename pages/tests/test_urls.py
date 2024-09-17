@@ -1,17 +1,19 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
 from courses.models import Course
-from pages.views import (
-    pricing,
-    features,
-    download,
-    lifestyle,
-    programs,
-    class01_detail_page,
-    class02_trainers,
-    blog_detail,
-    programs_detail,
-)
+from pages.views import *
+
+# (
+#     pricing,
+#     features,
+#     download,
+#     lifestyle,
+#     programs,
+#     class01_detail_page,
+#     class02_trainers,
+#     blog_detail,
+#     programs_detail,
+# )
 
 
 class TestUrls(SimpleTestCase):

@@ -184,16 +184,25 @@
   flex-grow: 1;
 }
 
+/*? Interesting Start */
+
 :root {
   --interesting_column_count: 3;
   --interesting_column_gap: 32px;
 }
 .interesting {
-  position: relative;
+  /* position: relative; */
   padding-bottom: 136px;
 }
+
+.interesting .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
 .interesting .interestingTitle {
-  margin-bottom: 64px;
   color: var(--Neutrals-2, #23262f);
   font-family: "SF Pro Display", sans-serif;
   font-size: 48px;
@@ -203,36 +212,47 @@
   letter-spacing: -0.96px;
 }
 
-.interesting .catalogList {
-  /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px; */
-  display: flex;
+.interesting .swiper-wrapper {
+  /*
+  display: flex; 
   flex-wrap: wrap;
   column-gap: var(--list-column-gap);
   row-gap: var(--list-row-gap);
   overflow: hidden;
+  */
+}
+.description .content {
+  overflow: hidden;
+}
+
+.top .direction_btns {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
 }
 button.direction {
-  position: absolute;
-  top: 16px;
-  z-index: 20;
+  /* position: absolute; */
+  /* top: 16px; */
+  /* z-index: 20; */
   width: 24px;
-  background-color: none;
-  border: none;
+  /* background-color: none; */
+  /* border: none; */
 }
 button.direction i {
   color: var(--Neutrals-4);
-  font-size: 16px;
+  font-size: 15px;
 }
 .slickPrev {
-  right: 44px;
+  /* right: 44px; */
 }
 .slickNext {
-  right: 16px;
+  /* right: 16px; */
 }
-.catalogList .card {
-  width: calc(
+.swiper-wrapper {
+  width: 100%;
+}
+.swiper-wrapper .card {
+  /* width: calc(
     (
         100% -
           (
@@ -240,35 +260,35 @@ button.direction i {
               var(--interesting_column_gap)
           )
       ) / var(--interesting_column_count)
-  );
+  ); */
 }
-.catalogList .card .cardPreview {
+.swiper-wrapper .card .cardPreview {
   position: relative;
   border-radius: 12px;
   border: 2px solid transparent;
   transition: all 0.5s ease;
   overflow: hidden;
 }
-.catalogList .card .cardPreview img {
+.swiper-wrapper .card .cardPreview img {
   object-fit: cover;
   width: 100%;
   height: 297px;
   transition: all 0.5s ease;
 }
 
-.catalogList .card:hover {
+.swiper-wrapper .card:hover {
   cursor: pointer;
 }
-.catalogList .card:hover .cardPreview {
+.swiper-wrapper .card:hover .cardPreview {
   overflow: hidden;
   border-color: var(--Primary-1);
 }
 
-.catalogList .card:hover .cardPreview img {
+.swiper-wrapper .card:hover .cardPreview img {
   transform: scale(1.1);
 }
 
-.catalogList .card .cardPreview .cardStatus {
+.swiper-wrapper .card .cardPreview .cardStatus {
   position: absolute;
   top: 8px;
   left: 8px;
@@ -282,7 +302,7 @@ button.direction i {
   text-transform: uppercase;
   border-radius: 4px;
 }
-.catalogList .card .cardPreview .playSmall {
+.swiper-wrapper .card .cardPreview .playSmall {
   position: absolute;
   padding: 12px;
   background-color: var(--Neutrals-5);
@@ -293,32 +313,32 @@ button.direction i {
   box-shadow: 0px 8px 16px -8px rgba(15, 15, 15, 0.2);
   background: var(--Neutrals-8);
 }
-.catalogList .card .cardPreview .playSmall img {
+.swiper-wrapper .card .cardPreview .playSmall img {
   display: block;
   width: 24px;
   height: 24px;
   z-index: 5;
 }
-.catalogList .card .cardPreview .cardStatus.yoga {
+.swiper-wrapper .card .cardPreview .cardStatus.yoga {
   background-color: var(--Primary-4);
 }
-.catalogList .card .cardPreview .cardStatus.fitness {
+.swiper-wrapper .card .cardPreview .cardStatus.fitness {
   background-color: var(--Primary-1);
 }
 
-.catalogList .card .cardHead {
+.swiper-wrapper .card .cardHead {
   margin: 20px 0px 12px 0px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--Neutrals-6);
   display: flex;
   justify-content: space-between;
 }
-.catalogList .card .cardHead .cardUser {
+.swiper-wrapper .card .cardHead .cardUser {
   display: flex;
   column-gap: 16px;
   align-items: center;
 }
-.catalogList .card .cardHead .cardUser .cardAvatar {
+.swiper-wrapper .card .cardHead .cardUser .cardAvatar {
   align-self: flex-start;
   width: 40px;
   height: 40px;
@@ -326,11 +346,11 @@ button.direction i {
   border-radius: 50%;
   overflow: hidden;
 }
-.catalogList .card .cardHead .cardUser .cardAvatar img {
+.swiper-wrapper .card .cardHead .cardUser .cardAvatar img {
   width: 100%;
   object-fit: cover;
 }
-.catalogList .card .cardHead .cardTitle {
+.swiper-wrapper .card .cardHead .cardTitle {
   color: var(--Neutrals-2, #23262f);
   font-family: "Poppins", sans-serif;
   font-size: 16px;
@@ -339,7 +359,7 @@ button.direction i {
   line-height: 24px;
 }
 
-.catalogList .card .cardHead .cardTrainer {
+.swiper-wrapper .card .cardHead .cardTrainer {
   color: var(--Neutrals-4, #777e90);
   font-family: "Poppins", sans-serif;
   font-size: 14px;
@@ -347,14 +367,14 @@ button.direction i {
   font-weight: 400;
   line-height: 24px;
 }
-.catalogList .card .cardHead .cardTrainer span {
+.swiper-wrapper .card .cardHead .cardTrainer span {
   display: inline-block;
 }
-.catalogList .card .cardHead .cardTrainer span.firstName {
+.swiper-wrapper .card .cardHead .cardTrainer span.fullname {
   margin-right: 4px;
 }
 
-.catalogList .card .cardHead .cardLevel {
+.swiper-wrapper .card .cardHead .cardLevel {
   align-self: flex-start;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
@@ -365,26 +385,26 @@ button.direction i {
   padding: 8px;
   border-radius: 4px;
 }
-.catalogList .card .cardHead .cardLevel.beginner {
+.swiper-wrapper .card .cardHead .cardLevel.beginner {
   border: 2px solid var(--Primary-4);
   color: var(--Primary-4);
 }
-.catalogList .card .cardHead .cardLevel.intermediate {
+.swiper-wrapper .card .cardHead .cardLevel.intermediate {
   border: 2px solid var(--Primary-2);
   color: var(--Primary-2);
 }
-.catalogList .card .cardHead .cardLevel.advanced {
+.swiper-wrapper .card .cardHead .cardLevel.advanced {
   border: 2px solid var(--Primary-1);
   color: var(--Primary-1);
 }
 
-.catalogList .card .cardParameters {
+.swiper-wrapper .card .cardParameters {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.catalogList .card .cardParameters .cardParameter {
+.swiper-wrapper .card .cardParameters .cardParameter {
   display: flex;
   column-gap: 8px;
   align-items: center;
