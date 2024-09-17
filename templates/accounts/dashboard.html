@@ -12,7 +12,7 @@
 {% comment %} ?--- Content ---* {% endcomment %}
 {% block content %}
 
-<section class="dashboard  lightmode">
+<section class="dashboard  softlightmode">
    
 
     <div class="container ">
@@ -25,38 +25,49 @@
       <div class="catalogList">
           {% for course in courses %}
 
-            <a class="card" href="{% url 'programs_detail' course.id %}">
-                    <div class="cardPreview">
-                        <img class="backPreview" src="{{course.image.url}}" alt="">
-                        <div class="cardStatus {{ course.category.slug }}">{{ course.category.name }}</div>
-                    </div>
-              
-                    <div class="cardHead">
-                        <div class="cardUser">
-                            <div class="cardAvatar">
-                                <img src="{{ course.trainer.image.url}}" alt="">
-                            </div>
-                            <div class="cardDetails">
-                                <div class="cardTitle">{{ course.description|truncatechars:16}}</div>
-                                <div class="cardTrainer">
-                                    <span class="firstName">{{course.trainer.fullname}}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cardLevel {{course.level.name}}">{{course.level.name}}</div>
-                    </div>
-              
-                    <div class="cardParameters">
-                        <div class="cardParameter">
-                            <i class="fa-brands fa-youtube"></i>
-                            <span>7</span> 
-                        </div>
-                        <div class="cardParameter">
-                            <i class="fa-regular fa-user"></i>
-                          <span>160</span>
-                        </div>
-                    </div>
-              </a>
+          <div class="card" >
+                <div class="card_content" >
+                {% comment %} < class="card" href="{% url 'programs_detail' course.id %}"> {% endcomment %}
+                  <div class="cardPreview">
+                      <img class="backPreview" src="{{course.image.url}}" alt="">
+                      <div class="cardStatus {{ course.category.slug }}">{{ course.category.name }}</div>
+                  </div>
+            
+                  <div class="cardHead">
+                      <div class="cardUser">
+                          <div class="cardAvatar">
+                              <img src="{{ course.trainer.image.url}}" alt="">
+                          </div>
+                          <div class="cardDetails">
+                              <div class="cardTitle">{{ course.description|truncatechars:16}}</div>
+                              <div class="cardTrainer">
+                                  <span class="fullname">{{course.trainer.fullname}}</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="cardLevel {{course.level.name}}">{{course.level.name}}</div>
+                  </div>
+            
+                  <div class="cardParameters">
+                      <div class="cardParameter">
+                          <i class="fa-brands fa-youtube"></i>
+                          <span>7</span> 
+                      </div>
+                      <div class="cardParameter">
+                          <i class="fa-regular fa-user"></i>
+                        <span>160</span>
+                      </div>
+                  </div>
+              </div>
+              {% if user.is_authenticated %}
+              {% if course in user.courses_joined.all %}
+                <form class="release_form" action="{% url 'courses:release_course' course.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="release release_btn">Release</button>
+                </form>                       
+              {% endif %}
+              {% endif %}
+            </div>
           {% endfor %}
         </div>
 
