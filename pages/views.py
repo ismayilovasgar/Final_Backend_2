@@ -1,10 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from courses.models import *
 from pages.models import Review
 from django.http import JsonResponse
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
+
+# sending message
+from .forms import ContactForm
+from django.core.mail import send_mail
+from django.conf import settings
+
+#
+from django.core.mail import EmailMessage
+from django.http import HttpResponseRedirect
 
 import json
 
@@ -157,6 +166,67 @@ def class02_trainers(request, category_name):
 
 def custom_404(request, exception):
     return render(request, "error/custom_404.html")
+
+
+def send_simple_email(request):
+    url = request.META.get("HTTP_REFERER")
+
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data["email"]
+            subject = "Subject here 3"
+            message = "Here is the message 3."
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = [email]
+
+        send_mail(
+            subject,
+            message,
+            email_from,
+            recipient_list,
+            fail_silently=False,
+        )
+        return JsonResponse(
+            {
+                "status": "success",
+                "message": "Your message has been sent successfully!",
+            }
+        )
+
+    else:
+        form = ContactForm()
+        # Return error if the form is invalid
+        return JsonResponse(
+            {
+                "status": "error",
+                "message": "Form validation failed. Please correct the errors.",
+            }
+        )
+
+    # return HttpResponseRedirect(url)
+
+
+def send_custom_email(request):
+    subject = "Custom Email Subject"
+    body = "This is the body of the email."
+    from_email = "your_email@gmail.com"
+    to_email = ["recipient1@example.com"]
+
+    email = EmailMessage(subject, body, from_email, to_email)
+    email.send()
+    return redirect("home")
+
+
+def send_html_email():
+    subject = "HTML Email"
+    html_content = "<h1>Here is the HTML email</h1><p>This is the body.</p>"
+    from_email = "your_email@gmail.com"
+    to_email = ["recipient@example.com"]
+
+    email = EmailMessage(subject, html_content, from_email, to_email)
+    email.content_subtype = "html"  # Set content to HTML
+    email.send()
 
 
 # ? -------------------------- DATA API --------------------------
