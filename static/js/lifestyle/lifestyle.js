@@ -172,3 +172,55 @@ function getCookie(name) {
   }
   return cookieValue;
 }
+
+// ? Community Send Message Code
+// Handle form submission via Fetch API
+const forms = document.querySelectorAll("form.subscription");
+forms.forEach((element) => {
+  element.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    const csrfToken = document.querySelector(
+      "[name=csrfmiddlewaretoken]"
+    ).value; // CSRF token
+
+    // Send form data using Fetch API
+    fetch("http://127.0.0.1:8000/sendmail/", {
+      method: "POST",
+      headers: {
+        "X-CSRFToken": csrfToken, // Include CSRF token in the request header
+        Accept: "application/json",
+      },
+      body: formData, // Send the form data
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const messageDiv = document.querySelector(
+          `#${element.id} ~ .result_email_msg`
+        );
+        messageDiv.classList.add("active");
+        if (data.status === "success") {
+          messageDiv.innerHTML = `<p style="color:green;">${data.message}</p>`;
+          element.reset(); // Reset the form on success
+        } else {
+          messageDiv.innerHTML = `<p style="color:red;">${data.message}</p>`;
+        }
+
+        setTimeout(() => {
+          messageDiv.classList.remove("active");
+        }, 1500);
+      })
+      .catch((error) => {
+        const messageDiv = document.querySelector(
+          `#${element.id} ~ .result_email_msg`
+        );
+
+        messageDiv.innerHTML = "";
+        messageDiv.classList.add("active");
+        messageDiv.innerHTML = `<p style="color:red;">There was an error. Please try again.</p>`;
+        setTimeout(() => {
+          messageDiv.classList.remove("active");
+        }, 1500);
+      });
+  });
+});

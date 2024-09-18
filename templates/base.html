@@ -348,13 +348,16 @@
                     <div class="footer__info">
                         Subscribe our newsletter to get more free design course and resource.
                     </div>
-                    <form action="" method="POST" class="footer_subs_form">
-                        <input class="subscription__input" type="email" placeholder="your mail">
-                        <button class="subscription__btn">
-                            <img src="{% static 'assets/images/footer/arrow.svg' %}" alt="">
-                            <!-- <i class="fa-solid fa-arrow-right"></i> -->
+                    <form  method="POST" action="{% url "send_simple_mail" %}"  class="footer_subs_form" id="base_bottom_form">
+                        {% csrf_token %}
+                        <input class="subscription__input" type="email" name="email" placeholder="your mail">
+                        <button class="subscription__btn" type="submit">
+                            <i class="fa-solid fa-arrow-right"></i> 
+                            {% comment %} <img src="{% static 'assets/images/footer/arrow.svg' %}" alt=""> {% endcomment %}
                         </button>
                     </form>
+                    <div id="message" class="result_email_msg">Demo</div>
+
                 </div>
 
 

@@ -744,7 +744,7 @@ footer {
 }
 footer .subscription__btn i {
   font-size: 15px;
-  color: var(--Neutrals-8);
+  color: #fcfcfd;
 }
 
 footer .bar_wrapper {
@@ -818,4 +818,18 @@ footer .bar_wrapper ul li i:hover {
 /*? community Start */
 .community_hidden {
   display: none;
+}
+
+/*? Message */
+.result_email_msg {
+  /* text-indent: 15px; */
+  text-align: center;
+  margin: 10px 0px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+}
+.result_email_msg.active {
+  opacity: 1;
+  visibility: visible;
 }

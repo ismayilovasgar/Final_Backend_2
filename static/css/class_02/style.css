@@ -831,3 +831,16 @@ option {
 .trainerModalWrap {
   overflow: hidden;
 }
+
+/*? Message */
+.result_email_msg {
+  text-indent: 15px;
+  margin: 10px 0px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+}
+.result_email_msg.active {
+  opacity: 1;
+  visibility: visible;
+}

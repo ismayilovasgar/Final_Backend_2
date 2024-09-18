@@ -241,7 +241,7 @@ def send_simple_email(request):
             return JsonResponse(
                 {
                     "status": "success",
-                    "message": "Your message has been sent successfully!",
+                    "message": "Message  sent successfully!",
                 }
             )
 
