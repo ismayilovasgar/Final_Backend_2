@@ -12,9 +12,12 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 #
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage, EmailMultiAlternatives
 from django.http import HttpResponseRedirect
-
+from django.template.loader import render_to_string
+from premailer import transform
+from django.utils.html import strip_tags
+import os
 import json
 
 
@@ -50,6 +53,7 @@ def features(request):
 
 
 def download(request):
+
     return render(request, "download.html")
 
 
@@ -168,34 +172,79 @@ def custom_404(request, exception):
     return render(request, "error/custom_404.html")
 
 
+def join_simple_email(request):
+    if request.method == "POST":
+        try:
+            # Parse the JSON request body
+            data = json.loads(request.body)
+            email = data.get("email")
+
+            if email:
+                send_mail(
+                    "Your subject here",
+                    "Your message content here",
+                    settings.EMAIL_HOST_USER,
+                    [email],
+                    fail_silently=False,
+                )
+                return JsonResponse({"message": "Email sent successfully!"}, status=200)
+            else:
+                return JsonResponse({"error": "Email address not provided"}, status=400)
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Invalid JSON"}, status=400)
+    return JsonResponse({"error": "Only POST method allowed"}, status=405)
+
+
 def send_simple_email(request):
     url = request.META.get("HTTP_REFERER")
+    form = ContactForm()
 
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data["email"]
-            subject = "Subject here 3"
-            message = "Here is the message 3."
             email_from = settings.EMAIL_HOST_USER
             recipient_list = [email]
 
-        send_mail(
-            subject,
-            message,
-            email_from,
-            recipient_list,
-            fail_silently=False,
-        )
-        return JsonResponse(
-            {
-                "status": "success",
-                "message": "Your message has been sent successfully!",
-            }
-        )
+            # contact = ContactForm(email=email)
+            # contact.save()
 
-    else:
-        form = ContactForm()
+            # Load the external CSS file
+            css_file_path = os.path.join("static/css/email/", "style.css")
+            with open(css_file_path, "r") as f:
+                external_css = f.read()
+
+            context = {"name": request.user.first_name}
+            html_content = render_to_string("email.html", context)
+
+            # Inline the external CSS using Premailer
+            html_with_inline_css = transform(html_content, css_text=external_css)
+
+            # Strip HTML to create a plain-text version (optional)
+            text_content = strip_tags(html_with_inline_css)
+
+            # Send the email
+            from_email = email_from
+            to_email = recipient_list
+
+            email = EmailMultiAlternatives(
+                subject="Welcome to Our Service!",
+                body=text_content,
+                from_email=from_email,
+                to=to_email,
+            )
+
+            # Attach HTML version with inlined CSS
+            email.attach_alternative(html_with_inline_css, "text/html")
+            email.send()
+
+            return JsonResponse(
+                {
+                    "status": "success",
+                    "message": "Your message has been sent successfully!",
+                }
+            )
+
         # Return error if the form is invalid
         return JsonResponse(
             {
@@ -203,30 +252,77 @@ def send_simple_email(request):
                 "message": "Form validation failed. Please correct the errors.",
             }
         )
-
-    # return HttpResponseRedirect(url)
-
-
-def send_custom_email(request):
-    subject = "Custom Email Subject"
-    body = "This is the body of the email."
-    from_email = "your_email@gmail.com"
-    to_email = ["recipient1@example.com"]
-
-    email = EmailMessage(subject, body, from_email, to_email)
-    email.send()
-    return redirect("home")
+    # Return error if the form is invalid
+    return JsonResponse(
+        {
+            "status": "error",
+            "message": "Form must sended with Post .",
+        }
+    )
 
 
-def send_html_email():
-    subject = "HTML Email"
-    html_content = "<h1>Here is the HTML email</h1><p>This is the body.</p>"
-    from_email = "your_email@gmail.com"
-    to_email = ["recipient@example.com"]
+# def send_simple_email(request):
+#     url = request.META.get("HTTP_REFERER")
 
-    email = EmailMessage(subject, html_content, from_email, to_email)
-    email.content_subtype = "html"  # Set content to HTML
-    email.send()
+#     if request.method == "POST":
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             email = form.cleaned_data["email"]
+#             subject = "Subject here 3"
+#             message = "Here is the message 3."
+#             email_from = settings.EMAIL_HOST_USER
+#             recipient_list = [email]
+
+#             # contact = ContactForm(email=email)
+#             # contact.save()
+
+#         send_mail(
+#             subject,
+#             message,
+#             email_from,
+#             recipient_list,
+#             fail_silently=False,
+#         )
+#         return JsonResponse(
+#             {
+#                 "status": "success",
+#                 "message": "Your message has been sent successfully!",
+#             }
+#         )
+
+#     else:
+#         form = ContactForm()
+#         # Return error if the form is invalid
+#         return JsonResponse(
+#             {
+#                 "status": "error",
+#                 "message": "Form validation failed. Please correct the errors.",
+#             }
+#         )
+
+# return HttpResponseRedirect(url)
+
+
+# def send_custom_email(request):
+#     subject = "Custom Email Subject"
+#     body = "This is the body of the email."
+#     from_email = "your_email@gmail.com"
+#     to_email = ["recipient1@example.com"]
+
+#     email = EmailMessage(subject, body, from_email, to_email)
+#     email.send()
+#     return redirect("home")
+
+
+# def send_html_email():
+#     subject = "HTML Email"
+#     html_content = "<h1>Here is the HTML email</h1><p>This is the body.</p>"
+#     from_email = "your_email@gmail.com"
+#     to_email = ["recipient@example.com"]
+
+#     email = EmailMessage(subject, html_content, from_email, to_email)
+#     email.content_subtype = "html"  # Set content to HTML
+#     email.send()
 
 
 # ? -------------------------- DATA API --------------------------

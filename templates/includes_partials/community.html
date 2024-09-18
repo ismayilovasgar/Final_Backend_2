@@ -18,17 +18,20 @@
                 <p class="communityText">Join Stacks community now to get free updates and also alot of freebies are
                     waiting for you.
                 </p>
-                <form action="{% url "send_mail" %}" class="subscription" method="POST" id="contactForm">
+                <form method="POST" action="{% url "send_simple_mail" %}" class="subscription"  id="contactForm">
                     {% csrf_token %}
                     <input type="email" name="email" placeholder="Enter your email">
                     <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
-                </form>
+                </form> 
+                {% comment %} <form  class="subscription"  id="contactForm" mehtod="POST" action="{% url "download" %}">
+                    {% csrf_token %}
+                    <input type="email" name="email" placeholder="Enter your email" id="email_input">
+                    <button type="submit" id="mailFormButton"><i class="fa-solid fa-arrow-right"></i></button>
+                </form> {% endcomment %}
                 <div class="communityNote">
                     By click sign in you, you agree with Stacks <a href="#">terms</a> and <a href="#">policy</a>
                 </div>
-                <div id="message" >
-                    Demo
-                </div>
+                <div id="message" >Demo</div>
             </div>
 
         </div>

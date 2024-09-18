@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "accounts",
     # Other apps
     "django_cleanup",
+    "premailer",
 ]
 
 MIDDLEWARE = [
@@ -144,5 +145,5 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "ismayilov.asgarr.21@gmail.com"  # Replace with your email
-EMAIL_HOST_PASSWORD = ""  # Replace with your email password
+EMAIL_HOST_PASSWORD = "smrt cyvn cggt nchw"  # Replace with your email password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

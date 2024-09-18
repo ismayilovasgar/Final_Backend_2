@@ -2,9 +2,7 @@
 document
   .getElementById("contactForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    // Prepare the form data
+    event.preventDefault();
     const formData = new FormData(this);
     const csrfToken = document.querySelector(
       "[name=csrfmiddlewaretoken]"
@@ -26,11 +24,9 @@ document
         messageDiv.classList.add("active");
         if (data.status === "success") {
           messageDiv.innerHTML = `<p style="color:green;">${data.message}</p>`;
-          console.log("+++");
           document.getElementById("contactForm").reset(); // Reset the form on success
         } else {
           messageDiv.innerHTML = `<p style="color:red;">${data.message}</p>`;
-          console.log("---");
         }
 
         setTimeout(() => {
@@ -51,3 +47,53 @@ document
         }, 2000);
       });
   });
+
+// ? Fetch Button Click Method
+// const mailForm = document.getElementById("contactForm");
+// const formButton = document.getElementById("mailFormButton");
+// const emailAddress = document.getElementById("email_input");
+// //
+// mailForm.addEventListener("submit", async (e) => {
+//   fetchPostByMail(emailAddress.value);
+// });
+
+// async function fetchPostByMail(str_email) {
+//   //
+//   const url = "http://127.0.0.1:8000/joinmebymail/";
+//   const emailData = {
+//     email: `${str_email}`,
+//   };
+//   //
+//   try {
+//     const response = await fetch(`${url}`, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//         "X-CSRFToken": getCookie("csrftoken"),
+//       },
+//       body: JSON.stringify(emailData),
+//     });
+//     const data = await response.json();
+//     console.log(data);
+//     //
+//   } catch (error) {
+//     console.log(error);
+//     return []; // Return an empty array in case of an error
+//   }
+// }
+
+// // ? csrf token
+// function getCookie(name) {
+//   let cookieValue = null;
+//   if (document.cookie && document.cookie !== "") {
+//     const cookies = document.cookie.split(";");
+//     for (let i = 0; i < cookies.length; i++) {
+//       const cookie = cookies[i].trim();
+//       if (cookie.substring(0, name.length + 1) === name + "=") {
+//         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+//         break;
+//       }
+//     }
+//   }
+//   return cookieValue;
+// }

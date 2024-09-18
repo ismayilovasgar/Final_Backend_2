@@ -18,3 +18,10 @@ class Review(models.Model):
 
     def __str__(self) -> str:
         return f"{self.author} "
+
+
+class Contact(models.Model):
+    email = models.EmailField(max_length=250)
+
+    def __str__(self) -> str:
+        return f"${self.email}"

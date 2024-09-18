@@ -36,5 +36,6 @@ urlpatterns = [
         "programs/detail/<int:id>/", views.programs_detail, name="programs_detail"
     ),  # http://127.0.0.1:8000/programs/detail/id/
     path("error/", views.custom_404, name="custom_404"),
-    path("sendmail/", views.send_simple_email, name="send_mail"),
+    path("joinmebymail/", views.join_simple_email, name="send_mail"),
+    path("sendmail/", views.send_simple_email, name="send_simple_mail"),
 ]
