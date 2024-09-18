@@ -1,6 +1,6 @@
 // Handle form submission via Fetch API
-const forms = document.querySelectorAll("form.subscription");
-forms.forEach((element) => {
+const mailForms = document.querySelectorAll("form.subscription");
+mailForms.forEach((element) => {
   element.addEventListener("submit", function (event) {
     event.preventDefault();
     const formData = new FormData(this);

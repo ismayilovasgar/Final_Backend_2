@@ -119,8 +119,8 @@ function setLightMode() {
 
 //? Send Message Form Code
 // Handle form submission via Fetch API
-const forms = document.querySelectorAll("form.footer_subs_form");
-forms.forEach((element) => {
+const baseMailForms = document.querySelectorAll(".footer_subs_form");
+baseMailForms.forEach((element) => {
   element.addEventListener("submit", function (event) {
     event.preventDefault();
     const formData = new FormData(this);
