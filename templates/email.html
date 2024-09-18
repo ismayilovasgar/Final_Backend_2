@@ -1,4 +1,5 @@
 <!-- email_template.html -->
+ {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +14,60 @@
         {% comment %} <p class="user_tag">Hi, <span>{{ name }}</span> </p> {% endcomment %}
         <p>Thank you for joining our service. We’re excited to have you!</p>
         {% comment %} <a class="button" href="{{ url }}">Get Started</a> {% endcomment %}
+    </div>
+
+    <div class="trainersList">
+        <div class="listWrap">
+
+            <div class="trainerItem">
+                <div class="profile">
+                    <img src="cid:image1" alt="">
+                </div>
+                <div class="trainerName">Baron Toy</div>
+                <div class="trainerPosition">Yoga Master</div>
+            </div>
+
+            <div class="trainerItem">
+                <div class="profile">
+                    <img  src="cid:image2" alt="">
+                </div>
+                <div class="trainerName">Kacie Kiehn</div>
+                <div class="trainerPosition">Personal Trainer</div>
+            </div>
+
+            <div class="trainerItem">
+                <div class="profile">
+                    <img src="cid:image3" alt="">
+                </div>
+                <div class="trainerName">Marcelino Hettinger</div>
+                <div class="trainerPosition">Boxer</div>
+            </div>
+
+            <div class="trainerItem">
+                <div class="profile">
+                    <img src="cid:image4" alt="">
+                </div>
+                <div class="trainerName">Rosemarie Hintz</div>
+                <div class="trainerPosition">Business Analytic</div>
+            </div>
+
+            <div class="trainerItem">
+                <div class="profile">
+                    <img src="cid:image5" alt="">
+                </div>
+                <div class="trainerName">Syble Prohaska</div>
+                <div class="trainerPosition">Business Analytic</div>
+            </div>
+
+            <div class="trainerItem">
+                <div class="profile">
+                    <img src="cid:image6" alt="">
+                </div>
+                <div class="trainerName">Ila Reigner</div>
+                <div class="trainerPosition">Business Analytic</div>
+            </div>
+
+        </div>
     </div>
 </body>
 </html>

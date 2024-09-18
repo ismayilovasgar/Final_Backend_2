@@ -96,7 +96,10 @@ form button i {
   border-radius: 50%;
   background-color: var(--Primary-1, #ff592c);
 }
-
+.hero_download .hero_wrap form.subscription button:hover {
+  background-color: var(--Primary-1-hover);
+  cursor: pointer;
+}
 /*! hero-download End */
 /*? platform Start */
 :root {

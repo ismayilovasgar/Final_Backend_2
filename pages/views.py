@@ -17,6 +17,7 @@ from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
 from premailer import transform
 from django.utils.html import strip_tags
+from email.mime.image import MIMEImage
 import os
 import json
 
@@ -236,6 +237,28 @@ def send_simple_email(request):
 
             # Attach HTML version with inlined CSS
             email.attach_alternative(html_with_inline_css, "text/html")
+
+            # Define the paths for the images you want to attach
+            image_paths = [
+                os.path.join("static/assets/images/home/trainers", "avatar-1.png"),
+                os.path.join("static/assets/images/home/trainers", "avatar-2.png"),
+                os.path.join("static/assets/images/home/trainers", "avatar-3.png"),
+                os.path.join("static/assets/images/home/trainers", "avatar-4.png"),
+                os.path.join("static/assets/images/home/trainers", "avatar-5.png"),
+                os.path.join("static/assets/images/home/trainers", "avatar-6.png"),
+            ]
+
+            # Attach each image with a unique Content-ID
+            for idx, image_path in enumerate(image_paths, 1):
+                with open(image_path, "rb") as img:
+                    image = MIMEImage(img.read())
+                    image.add_header(
+                        "Content-ID", f"<image{idx}>"
+                    )  # Assign unique Content-ID
+                    email.attach(image)
+
+            # Send the email
+
             email.send()
 
             return JsonResponse(

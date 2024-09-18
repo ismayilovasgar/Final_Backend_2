@@ -741,6 +741,11 @@ footer {
   padding: 8px;
   border-radius: 50%;
   background-color: var(--Primary-1);
+  transition: all 0.4s ease-in-out;
+}
+.subscription__btn:hover {
+  cursor: pointer;
+  background-color: var(--Primary-1-hover);
 }
 footer .subscription__btn i {
   font-size: 15px;
