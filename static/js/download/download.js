@@ -1,7 +1,7 @@
 // Handle form submission via Fetch API
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
+const forms = document.querySelectorAll("form.subscription");
+forms.forEach((element) => {
+  element.addEventListener("submit", function (event) {
     event.preventDefault();
     const formData = new FormData(this);
     const csrfToken = document.querySelector(
@@ -19,35 +19,35 @@ document
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle the response data
-        const messageDiv = document.getElementById("message");
+        const messageDiv = document.querySelector(
+          `#${element.id} ~ .result_email_msg`
+        );
         messageDiv.classList.add("active");
         if (data.status === "success") {
           messageDiv.innerHTML = `<p style="color:green;">${data.message}</p>`;
-          document.getElementById("contactForm").reset(); // Reset the form on success
+          element.reset(); // Reset the form on success
         } else {
           messageDiv.innerHTML = `<p style="color:red;">${data.message}</p>`;
         }
 
         setTimeout(() => {
           messageDiv.classList.remove("active");
-        }, 2000);
+        }, 1500);
       })
       .catch((error) => {
-        const messageDiv = document.getElementById("message");
-        // Handle any unexpected errors
+        const messageDiv = document.querySelector(
+          `#${element.id} ~ .result_email_msg`
+        );
+
         messageDiv.innerHTML = "";
         messageDiv.classList.add("active");
-
-        document.getElementById(
-          "message"
-        ).innerHTML = `<p style="color:red;">There was an error. Please try again.</p>`;
+        messageDiv.innerHTML = `<p style="color:red;">There was an error. Please try again.</p>`;
         setTimeout(() => {
           messageDiv.classList.remove("active");
-        }, 2000);
+        }, 1500);
       });
   });
-
+});
 // ? Fetch Button Click Method
 // const mailForm = document.getElementById("contactForm");
 // const formButton = document.getElementById("mailFormButton");

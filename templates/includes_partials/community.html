@@ -18,7 +18,7 @@
                 <p class="communityText">Join Stacks community now to get free updates and also alot of freebies are
                     waiting for you.
                 </p>
-                <form method="POST" action="{% url "send_simple_mail" %}" class="subscription"  id="contactForm">
+                <form method="POST" action="{% url "send_simple_mail" %}" class="subscription"  id="contactFormBottom">
                     {% csrf_token %}
                     <input type="email" name="email" placeholder="Enter your email">
                     <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
@@ -31,7 +31,7 @@
                 <div class="communityNote">
                     By click sign in you, you agree with Stacks <a href="#">terms</a> and <a href="#">policy</a>
                 </div>
-                <div id="message" >Demo</div>
+                <div id="message" class="result_email_msg">Demo</div>
             </div>
 
         </div>

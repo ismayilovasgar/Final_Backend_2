@@ -29,12 +29,12 @@
                     <p class="hero_text">Track your workouts, get better results, and be the best version of you. Less
                         thinking, more lifting.
                     </p>
-                    <form class="subscription">
-                        <input class="subscription__input" type="email" placeholder="Enter your email">
-                        <button class="subscription__btn" type="submit">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
+                    <form method="POST" action="{% url "send_simple_mail" %}" class="subscription "  id="contactFormTop" >
+                        <input class="subscription__input" type="email" name="email" placeholder="Enter your email">
+                        <button class="subscription__btn" type="submit"><i class="fa-solid fa-arrow-right"></i></button>
                     </form>
+                    <div id="message" class="result_email_msg">Demo</div>
+
                 </div>
 
             </div>
