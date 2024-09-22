@@ -215,7 +215,9 @@ def send_simple_email(request):
             with open(css_file_path, "r") as f:
                 external_css = f.read()
 
-            context = {"name": request.user.first_name}
+            context = {"name": "Customer"}
+            if request.user.is_authenticated:
+                context = {"name": request.user.first_name}
             html_content = render_to_string("email.html", context)
 
             # Inline the external CSS using Premailer

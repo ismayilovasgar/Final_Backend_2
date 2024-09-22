@@ -23,7 +23,7 @@ urlpatterns = [
     ),  # http://127.0.0.1:8000/programs
     path(
         "class_02/", views.class02__page, name="class02"
-    ),  # http://127.0.0.1:8000/programs
+    ),  # http://127.0.0.1:8000/class_02
     path(
         "class_02/category/<str:category_name>/",
         views.class02_trainers,

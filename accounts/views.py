@@ -103,7 +103,7 @@ def enroll_the_course(request):
 
     course.students.add(user)
     return redirect("dashboard")
-    pass
+
 
 
 def release_the_course(request):
@@ -114,5 +114,4 @@ def release_the_course(request):
 
     course.students.remove(user)
     return redirect("dashboard")
-    pass
-    pass
+
