@@ -141,12 +141,13 @@
 }
 .myswiper {
   width: 100%;
+  overflow: hidden;
 }
 .steps .stepsList {
   /* display: grid;
     grid-template-columns: repeat(4, 1fr); */
   display: flex;
-  column-gap: var(--steps_column-gap);
+  /* column-gap: var(--steps_column-gap); */
 }
 .steps .stepsList .stepsItem {
   position: relative;

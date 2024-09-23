@@ -76,7 +76,7 @@
     padding: 112px 0;
   }
   .steps .stepsList {
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     row-gap: var(--steps_row-gap);
   }
 
