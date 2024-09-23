@@ -1170,19 +1170,20 @@ ul.list.show {
   line-height: 24px;
 }
 .advantages .advantagesList {
-  display: flex;
+  overflow: hidden;
+  /* display: flex;
   flex-wrap: wrap;
   align-items: center;
   row-gap: var(--advantages_row-gap);
-  column-gap: var(--advantages_column-gap);
+  column-gap: var(--advantages_column-gap); */
 }
 .advantages .advantagesItem {
-  width: calc(
+  /* width: calc(
     (
         100% -
           (var(--advantages_column-gap) * (var(--advantages_column-count) - 1))
       ) / (var(--advantages_column-count))
-  );
+  ); */
 }
 .advantages .advantagesItem .profile {
   text-align: center;

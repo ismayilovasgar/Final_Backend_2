@@ -171,6 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// ? swiper_content_steps
 var swiper = new Swiper(".swiper_content_steps", {
   slidesPerView: 4,
   spaceBetween: 20,
@@ -193,6 +194,16 @@ var swiper = new Swiper(".swiper_content_steps", {
       slidesPerView: 3,
       spaceBetween: 30,
     },
+  },
+});
+
+// ? advantages list
+var swiper = new Swiper(".swiper_content_advantageslist", {
+  slidesPerView: "auto",
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
   },
 });
 
