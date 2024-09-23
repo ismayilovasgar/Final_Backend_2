@@ -142,12 +142,12 @@
 }
 
 @media screen and (max-width: 390px) {
-  .container {
+  /* .container {
     width: 100%;
     max-width: 100%;
     margin: 0px;
     padding: 0px 32px;
-  }
+  } */
 
   .catalogHead form {
     flex-grow: 1;

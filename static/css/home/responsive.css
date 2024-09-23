@@ -822,12 +822,12 @@
     font-size: 50px;
   }
 
-  .container {
+  /* .container {
     width: 100%;
     max-width: 95%;
     margin: 0px auto;
     padding: 0px;
-  }
+  } */
 
   .quality .qualityList {
     grid-template-columns: repeat(1, 1fr);

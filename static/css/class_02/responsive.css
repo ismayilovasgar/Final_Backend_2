@@ -255,11 +255,11 @@
 
 /*? Mobile Start */
 @media screen and (max-width: 390px) {
-  .container {
-    width: 311px;
+  /* .container {
+    width: 312px;
     max-width: 95%;
     margin: 0px auto;
-  }
+  } */
   .heroHeader .wrap .contentCol .mainTitle {
     font-size: 36px;
     line-height: 36px;

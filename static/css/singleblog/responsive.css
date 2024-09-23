@@ -95,12 +95,12 @@
 }
 
 @media screen and (max-width: 390px) {
-  .container {
+  /* .container {
     width: 100%;
     max-width: 100%;
     margin: 0xp;
     padding: 0px 32px;
-  }
+  } */
   .header {
     padding: 48px 0px 24px 0px;
   }

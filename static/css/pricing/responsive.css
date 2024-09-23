@@ -2,7 +2,7 @@
   :root {
     --comment_column-count: 3;
   }
-  
+
   /** table  */
   table tbody tr:nth-child(even) {
     display: none;
@@ -236,10 +236,13 @@
   }
 }
 
-@media screen and (max-width: 390px) {
+/* @media screen and (max-width: 390px) {
   .container {
     width: 100%;
     max-width: 100%;
-    padding: 0px 32px;
+    padding: 0px 32px; 
+    width: 311px;
+    max-width: 95%;
+    margin: 0 auto;
   }
-}
+} */

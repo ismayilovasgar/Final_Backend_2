@@ -367,7 +367,7 @@ ul.accounts_ul li.account_link:hover a.log_link {
   display: none;
   /* margin: 36   px 0px 0px 0px; */
   margin: 24px 0px 0px 0px;
-  border-radius: 24px;
+  border-radius: 12px;
   border: 1px solid var(--Neutrals-6, #e6e8ec);
   background-color: var(--Neutrals-8, #fcfcfd);
   box-shadow: 0px 64px 64px -48px rgba(15, 15, 15, 0.1);
@@ -385,7 +385,7 @@ ul.accounts_ul li.account_link:hover a.log_link {
 .tabletMenu .dropdownBody .headRow .headLeftCol {
   border-right: 1px solid var(--Neutrals-6, #e6e8ec);
   /* border-bottom: 1px solid var(--Neutrals-6, #e6e8ec); */
-  width: 45%;
+  width: 40%;
 }
 .tabletMenu .dropdownBody .headLeftCol a.headerDirection {
   display: flex;
@@ -405,7 +405,9 @@ ul.accounts_ul li.account_link:hover a.log_link {
   display: flex;
   align-items: center;
   column-gap: 12px;
-  padding: 10px 1px 6px 10px;
+  padding: 10px 0px;
+}
+.tabletMenu .headLeftCol .headerBox .headerText {
   color: var(--Neutrals-2, #23262f);
   font-family: "Poppins", sans-serif;
   font-size: 22px;
@@ -437,11 +439,11 @@ ul.accounts_ul li.account_link:hover a.log_link {
 }
 
 .tabletMenu .dropdownBody .headRow .headRightCol {
-  width: 55%;
+  width: 60%;
 }
 .tabletMenu .headRightCol .headerItem {
   display: flex;
-  column-gap: 24px;
+  column-gap: 16px;
   height: 120px;
 }
 .tabletMenu .headRightCol .headerItem:not(:last-child) {
@@ -463,6 +465,7 @@ ul.accounts_ul li.account_link:hover a.log_link {
 }
 .tabletMenu .headRightCol .headerPhoto img {
   width: 100%;
+  height: 100%;
   display: block;
   object-fit: cover;
   border-radius: 8px;
@@ -474,7 +477,7 @@ ul.accounts_ul li.account_link:hover a.log_link {
 .tabletMenu .headRightCol .headerItem .headerStatus {
   padding: 8px;
   display: inline-block;
-  color: var(--Neutrals-8, #fcfcfd);
+  color: var(--table-column-same);
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-style: normal;

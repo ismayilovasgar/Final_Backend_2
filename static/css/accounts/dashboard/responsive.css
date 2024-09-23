@@ -32,12 +32,12 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+/* @media screen and (max-width: 375px) {
   .container {
     width: 312px;
     max-width: 95%;
   }
-}
+} */
 
 @media screen and (max-width: 325px) {
   .catalogList .card .cardHead {
