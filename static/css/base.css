@@ -365,7 +365,8 @@ ul.accounts_ul li.account_link:hover a.log_link {
 
 .tabletMenu .dropdownBody {
   display: none;
-  margin: 36px 0px 0px 0px;
+  /* margin: 36   px 0px 0px 0px; */
+  margin: 24px 0px 0px 0px;
   border-radius: 24px;
   border: 1px solid var(--Neutrals-6, #e6e8ec);
   background-color: var(--Neutrals-8, #fcfcfd);
@@ -378,7 +379,8 @@ ul.accounts_ul li.account_link:hover a.log_link {
   display: flex;
 }
 .tabletMenu .dropdownBody .headRow .headCol {
-  padding: 32px;
+  /* padding: 32px; */
+  padding: 24px;
 }
 .tabletMenu .dropdownBody .headRow .headLeftCol {
   border-right: 1px solid var(--Neutrals-6, #e6e8ec);
@@ -443,7 +445,7 @@ ul.accounts_ul li.account_link:hover a.log_link {
   height: 120px;
 }
 .tabletMenu .headRightCol .headerItem:not(:last-child) {
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
 }
 .tabletMenu .headRightCol .headerPhoto {
   width: 140px;

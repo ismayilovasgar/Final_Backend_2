@@ -17,16 +17,17 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
    
+    {% comment %} ? Swiper Css {% endcomment %}
     {% block swiper_css %}
-    {% comment %} <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> {% endcomment %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     {% endblock swiper_css %}
 
     <link rel="stylesheet" href=" {% static 'css/reset.css' %}">
     <link rel="stylesheet" href=" {% static 'css/base.css' %}">
     <link rel="stylesheet" href=" {% static 'css/responsive.css' %}">
 
-    {% block custom_css %} 
-    {% endblock custom_css %}
+    {% comment %} ? My Custom Css {% endcomment %}
+    {% block custom_css %} {% endblock custom_css %}
 </head>
 <body>
 {% comment %}! <!--? Header Start  --> {% endcomment %}
@@ -236,49 +237,80 @@
                                     </div>
                                 </div>
                                 <div class="headCol headRightCol">
-                                    <a class="headerItem" href="#">
-                                        <div class="headerPhoto">
-                                            <img src="{% static '/assets/images/desktopMode/header-pic-2@2x.png' %}" alt="">
-                                        </div>
-                                        <div class="headerDescription">
-                                            <div class="headerStatus yoga">
-                                                Yoga
-                                            </div>
-                                            <div class="headerUser">
-                                                <div class="headerAvatar">
-                                                    <img src="{% static '/assets/images/tabletMode/avatar-2.png' %}" alt="">
-                                                </div>
-                                                <div class="headerDetail">
-                                                    <div class="headerTitle">Sweet and Tome
-                                                    </div>
-                                                    <div class="headerTrainer">Zack Beier</div>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                    </a>
-                                    <a class="headerItem" href="#">
-                                        <div class="headerPhoto">
-                                            <img src="{% static 'assets/images/desktopMode/header-pic-3@2x.png' %}" alt="">
-                                        </div>
-                                        <div class="headerDescription">
-                                            <div class="headerStatus mindfullness">
-                                                mindfullness
-                                            </div>
-                                            <div class="headerUser">
-                                                <div class="headerAvatar">
-                                                    <img src="{% static 'assets/images/desktopMode/avatar-3.png' %}" alt="">
-                                                </div>
-                                                <div class="headerDetail">
-                                                    <div class="headerTitle">
-                                                        Sweet and Tome
+                                    <div class="swiper swiper_content_navbar">
+                                        <div class="swiper-wrapper">
+                                            {% for course  in courses  %}
+                                                <a class="headerItem swiper-slide" href="#">
+                                                    <div class="headerPhoto">
+                                                        {% comment %} <img src="{% static '/assets/images/desktopMode/header-pic-2@2x.png' %}" alt=""> {% endcomment %}
+                                                        <img src="{{ course.image.url}}" alt="">
                                                     </div>
-                                                    <div class="headerTrainer">Zack Beier</div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                    <div class="headerDescription">
+                                                        {% comment %} <div class="headerStatus yoga">Yoga</div> {% endcomment %}
+                                                        <div class="headerStatus yoga">{{course.category.name}}</div>
+                                                        <div class="headerUser">
+                                                            <div class="headerAvatar">
+                                                                {% comment %} <img src="{% static '/assets/images/tabletMode/avatar-2.png' %}" alt=""> {% endcomment %}
+                                                                <img src="{{course.trainer.image.url}}" alt="">
+                                                            </div>
+                                                            <div class="headerDetail">
+                                                                {% comment %} <div class="headerTitle">Sweet and Tome</div> {% endcomment %}
+                                                                <div class="headerTitle">{{course.title}}</div>
+                                                                {% comment %} <div class="headerTrainer">Zack Beier</div> {% endcomment %}
+                                                                <div class="headerTrainer">{{course.trainer.fullname}}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            {% endfor %}
 
-                                    </a>
+                                            {% comment %} <a class="headerItem swiper-slide" href="#">
+                                                <div class="headerPhoto">
+                                                    <img src="{% static '/assets/images/desktopMode/header-pic-2@2x.png' %}" alt="">
+                                                </div>
+                                                <div class="headerDescription">
+                                                    <div class="headerStatus yoga">
+                                                        Yoga
+                                                    </div>
+                                                    <div class="headerUser">
+                                                        <div class="headerAvatar">
+                                                            <img src="{% static '/assets/images/tabletMode/avatar-2.png' %}" alt="">
+                                                        </div>
+                                                        <div class="headerDetail">
+                                                            <div class="headerTitle">Sweet and Tome
+                                                            </div>
+                                                            <div class="headerTrainer">Zack Beier</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </a>
+                                            <a class="headerItem swiper-slide" href="#">
+                                                <div class="headerPhoto">
+                                                    <img src="{% static 'assets/images/desktopMode/header-pic-3@2x.png' %}" alt="">
+                                                </div>
+                                                <div class="headerDescription">
+                                                    <div class="headerStatus mindfullness">
+                                                        mindfullness
+                                                    </div>
+                                                    <div class="headerUser">
+                                                        <div class="headerAvatar">
+                                                            <img src="{% static 'assets/images/desktopMode/avatar-3.png' %}" alt="">
+                                                        </div>
+                                                        <div class="headerDetail">
+                                                            <div class="headerTitle">
+                                                                Sweet and Tome
+                                                            </div>
+                                                            <div class="headerTrainer">Zack Beier</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </a>  {% endcomment %}
+                                        </div>
+                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -377,13 +409,11 @@
         </div>
     </footer>
 {% comment %} ! Footer End {% endcomment %}
-<script src="{% static '/js/base.js' %}"></script>
-
     {% block swiper_js %}
-    {% comment %} <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> {% endcomment %}
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     {% endblock swiper_js %}
 
-    
+    <script src="{% static '/js/base.js' %}"></script>
     {% block custom_js %} {% endblock custom_js  %}
 </body>
 

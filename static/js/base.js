@@ -168,3 +168,11 @@ baseMailForms.forEach((element) => {
       });
   });
 });
+
+// swiper cards in navbar
+var swiper = new Swiper(".swiper_content_navbar", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

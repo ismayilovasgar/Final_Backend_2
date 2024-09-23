@@ -27,11 +27,13 @@ def index(request):
     # first_login = request.session.pop("first_login", None)  # Remove after showing once
     login_success = request.session.pop("login_success", None)  # Show the message once
     categories = Category.objects.all()
+    courses = Course.objects.all()
     reviews = Review.objects.all()
     context = {
         "login_success": login_success,
         "categories": categories,
         "reviews": reviews,
+        "courses": courses,
     }
 
     return render(request, "home.html", context)

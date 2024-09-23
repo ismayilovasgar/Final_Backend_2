@@ -4,6 +4,9 @@
 {% comment %} {% block custom_favicon %}{% endblock custom_favicon %} {% endcomment %}
 
 
+{% comment %}? Swiper Css bundle {% endcomment %}
+{% comment %} {% block swiper_css %}{% endblock swiper_css %} {% endcomment %}
+
 {% block custom_css %} 
 <link rel="stylesheet" href="{% static 'css/download/style.css' %}">
 <link rel="stylesheet" href="{% static 'css/download/responsive.css' %}">
@@ -169,6 +172,12 @@
 {% comment %} *--- Content ---* {% endcomment %}
 
 
+
+{% comment %}? Swiper Js {% endcomment %}
+{% comment %} {% block swiper_js %}{% endblock swiper_js %} {% endcomment %}
+
+
+{% comment %}? My Custom Js {% endcomment %}
 {% block custom_js %}
     <script src="{% static "js/download/download.js" %}"></script>
 {% endblock custom_js  %}
