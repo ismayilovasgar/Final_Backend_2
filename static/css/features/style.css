@@ -750,24 +750,23 @@
   line-height: 24px;
 }
 .advantages .advantagesList {
-  display: flex;
+  overflow: hidden;
+  /* display: flex;
   align-items: center;
-  column-gap: var(--advantages_column-gap);
+  column-gap: var(--advantages_column-gap); */
   /* display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: var(--advantages_column-gap); */
 }
 .advantages .advantagesItem {
-  width: calc(
+  /* width: calc(
     (
         100% -
           (var(--advantages_column-gap) * (var(--advantages_column-count) - 1))
       ) / (var(--advantages_column-count))
-  );
+  ); */
 }
-.repeatItem {
-  display: none;
-}
+
 .advantages .advantagesItem .profile {
   text-align: center;
   margin-bottom: 36px;

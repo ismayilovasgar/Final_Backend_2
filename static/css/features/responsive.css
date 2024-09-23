@@ -112,12 +112,10 @@
 
   /*? advantages Start */
   .advantages .advantagesList {
-    flex-wrap: wrap;
-    row-gap: var(--advantages_row-gap);
+    /* flex-wrap: wrap;
+    row-gap: var(--advantages_row-gap); */
   }
-  .advantages .advantagesItem.repeatItem {
-    display: block;
-  }
+ 
   /* ? Lifestyle Start */
   :root {
     --lifestyle-row-column-gap: 32px;
@@ -309,10 +307,10 @@
     --clients-column-gap: 16px;
     --clients-row-gap: 16px;
   }
-  .advantages .advantagesList {
+  /* .advantages .advantagesList {
     flex-direction: column;
     row-gap: 46px;
-  }
+  } */
   /*  */
   .clients .clientsList ul {
     flex-wrap: wrap;
@@ -413,9 +411,9 @@
   .workouts .workoutsFrame .workoutsWrap .workoutsBtns {
     flex-direction: column;
   }
-  .advantages .advantagesItem {
+  /* .advantages .advantagesItem {
     width: 100%;
-  }
+  } */
   .intro .wrapper .introContent p {
     max-width: unset;
   }
