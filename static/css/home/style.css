@@ -145,7 +145,8 @@
 }
 .steps .stepsList {
   /* display: grid;
-    grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(4, 1fr); 
+  */
   display: flex;
   /* column-gap: var(--steps_column-gap); */
 }
@@ -161,7 +162,7 @@
 .steps .stepsList .stepsItem:not(:last-child)::after {
   content: "";
   position: absolute;
-  top: 39px;
+  top: 42px;
   right: -79px;
   width: 120px;
   height: 2px;
@@ -285,6 +286,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+  max-width: 250px;
+  margin: 0 auto;
 }
 
 .steps .navigations {

@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 var swiper = new Swiper(".swiper_content_steps", {
   slidesPerView: 4,
-  spaceBetween: 30,
+  spaceBetween: 20,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -184,7 +184,8 @@ var swiper = new Swiper(".swiper_content_steps", {
       slidesPerView: 1,
       spaceBetween: 20,
     },
-    640: {
+
+    600: {
       slidesPerView: 2,
       spaceBetween: 20,
     },
