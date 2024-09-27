@@ -360,12 +360,13 @@
 
 .bookPoster .wrapper {
   display: flex;
-  /* column-gap: var(--poster_column-gap); */
+  align-items: center;
+  column-gap: var(--poster_column-gap);
 }
 
 .bookPoster .bookGallery {
   align-self: stretch;
-  width: calc(50% - (var(--poster_column-gap) * 0.5));
+  width: calc(52% - (var(--poster_column-gap) * 0.52));
   box-shadow: 0px 64px 64px -48px rgba(15, 15, 15, 0.1);
 }
 
@@ -376,7 +377,7 @@
 }
 
 .bookPoster .bookMenu {
-  width: calc(50% - (var(--poster_column-gap) * 0.5));
+  width: calc(48% - (var(--poster_column-gap) * 0.48));
   padding: 48px;
   border-radius: 20px;
   background-color: var(--Neutrals-8, #fcfcfd);
