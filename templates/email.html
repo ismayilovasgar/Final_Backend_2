@@ -82,5 +82,30 @@
 
         </div>
     </div>
+
+
+
+    <script>
+            var items = document.querySelectorAll(".listWrap .trainerItem")
+            // Simulate a media query using JavaScript
+            function applyResponsiveStyles() {
+              if (window.innerWidth <= 600) {
+                items.forEach(function item(item) {
+                  item.style.width = "48%"
+                })
+              } 
+              if (window.innerWidth <= 400) {
+                items.forEach(function item(item) {
+                  item.style.width = "98%"
+                })
+              } 
+            }
+        
+            // Apply the responsive styles on page load
+            applyResponsiveStyles();
+        
+            // Apply the responsive styles when the window is resized
+            window.onresize = applyResponsiveStyles;
+    </script>
 </body>
 </html>
