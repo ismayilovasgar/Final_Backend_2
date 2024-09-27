@@ -252,6 +252,7 @@
   :root {
     --hero_column-gap: 1px;
     /* --about_column-gap: 6px; */
+    --poster_column-gap: 12px;
   }
 
   /* ? workouts Start */
@@ -271,6 +272,7 @@
 @media screen and (max-width: 840px) {
   :root {
     --detail_item-distance: 42px;
+    --poster_column-gap: 8px;
   }
 
   /* ? workouts Start */
@@ -526,6 +528,7 @@
 @media screen and (max-width: 600px) {
   :root {
     --details_column-gap: 32px;
+    --poster_column-gap: 0px;
   }
   .details .detailsList .details_divider {
     display: none;
