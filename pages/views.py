@@ -40,35 +40,45 @@ def index(request):
 
 
 def pricing(request):
+    courses = Course.objects.all()
     trainers = Trainer.objects.all()
     context = {
         "trainers": trainers,
+        "courses": courses,
     }
     return render(request, "pricing.html", context)
 
 
 def features(request):
+    courses = Course.objects.all()
     reviews = Review.objects.all()
     context = {
         "reviews": reviews,
+        "courses": courses,
     }
     return render(request, "features.html", context)
 
 
 def download(request):
-
-    return render(request, "download.html")
+    courses = Course.objects.all()
+    context = {
+        "courses": courses,
+    }
+    return render(request, "download.html", context)
 
 
 def lifestyle(request):
+    courses = Course.objects.all()
     tags = Tag.objects.all()
     context = {
         "tags": tags,
+        "courses": courses,
     }
     return render(request, "lifestyle.html", context)
 
 
 def programs(request):
+    courses = Course.objects.all()
     trainers = Trainer.objects.all()
     styles = Style.objects.all()
     intensities = Intensity.objects.all()
@@ -85,14 +95,17 @@ def programs(request):
         "categories": categories,
         "tags": tags,
         "trainers": trainers,
+        "courses": courses,
     }
     return render(request, "programs.html", context)
 
 
 def class01_detail_page(request, id):
+    courses = Course.objects.all()
     course = get_object_or_404(Course, id=id)
     context = {
         "course": course,
+        "courses": courses,
     }
     return render(request, "class_01_detail.html", context)
 
